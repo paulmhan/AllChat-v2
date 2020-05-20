@@ -6,13 +6,16 @@ const routes = require('./routes');
 const PORT = process.env.PORT || 3001;
 
 const app = express();
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
 
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
 require('./services/passport');
+
 // Connect database
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
 
 app.listen(PORT);
