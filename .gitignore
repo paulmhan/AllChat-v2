@@ -3,3 +3,4 @@ package-lock.json
 .idea
 config.js
 .DS_Store
+.env
