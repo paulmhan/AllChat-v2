@@ -1,6 +1,20 @@
 const { User, Todo } = require('../models/index');
 
 module.exports = {
+  addTodo: async (req, res) => {
+    const { text } = req.body;
+    if (!text) {
+      return res.status(400).json({ error: 'You must provide text' });
+    }
+    try {
+      const newTodo = await new Todo({ text, user: req.user._id }).save();
+      req.user.todos.push(newTodo);
+      await req.user.save();
+      return res.status(200).json(newTodo);
+    } catch (e) {
+      return res.status(403).json({ e });
+    }
+  },
   getAllUserEmails: async (req, res) => {
     try {
       const userEmail = await User.findOne({ email: req.query.email }, 'email');
