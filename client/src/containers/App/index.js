@@ -9,7 +9,7 @@ import UserTodoList from '../UserTodoList';
 import SignUp from '../SignUp';
 import SignOut from '../SignOut';
 import SignIn from '../SignIn';
-import Room from "../Room";
+import Room from "../../pages/Room";
 
 
 import { connect } from 'react-redux';
