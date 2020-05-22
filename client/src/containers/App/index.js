@@ -9,6 +9,7 @@ import UserTodoList from '../UserTodoList';
 import SignUp from '../SignUp';
 import SignOut from '../SignOut';
 import SignIn from '../SignIn';
+import Room from "../Room";
 
 
 import { connect } from 'react-redux';
@@ -26,6 +27,8 @@ class App extends Component {
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signout' component={SignOut}/>
           <Route exact path='/' component={SignUp}/>
+          {/* <Route exact path="/rooms" component={ChatRooms}/> */}
+          <Route exact path="/room" component={Room}/>
         </Grid.Column>
       </Grid>
     );

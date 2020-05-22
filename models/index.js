@@ -1,7 +1,9 @@
-const Todo = require('./Todo');
+const Room = require("./Room");
+const Message = require("./Message");
 const User = require('./User');
 
 module.exports = {
-  Todo,
+  Room,
+  Message,
   User,
 };
