@@ -1,14 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const routes = require('./routes');
+const routes = require("./routes");
 
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-const server = require("http").createServer(app);
-const io = require("socket.io")(server);
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
 
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
