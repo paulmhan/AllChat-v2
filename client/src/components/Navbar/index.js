@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react';
 
-
-
 export default (props) => (
   <Menu widths={4}>
     { props.isLoggedIn ? null : <Menu.Item as={Link} to='/' content='Sign Up'/> }

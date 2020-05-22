@@ -20,9 +20,13 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
-  todos: [{
+  room: {
     type: Schema.Types.ObjectId,
-    ref: 'Todo',
+    ref: 'Room',
+  },
+  messages: [{
+    type: Schema.Types.ObjectId,
+    ref: "Message",
   }],
 });
 
