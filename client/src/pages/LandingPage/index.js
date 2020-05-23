@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 
 import LandingBodyText from "../../components/LandingBodyText"
-import LandingPageModal from "../../containers/LandingPageModal";
+// import LandingPageModal from "../../containers/LandingPageModal";
 import "./style.css";
 
 class LandingPage extends Component {
@@ -23,7 +23,7 @@ class LandingPage extends Component {
                 <Grid.Row
                     centered
                     columns={1}>
-                    <LandingPageModal socket={this.props.socket} />
+                    {/* <LandingPageModal socket={this.props.socket} /> */}
                 </Grid.Row>
             </Grid>
         )

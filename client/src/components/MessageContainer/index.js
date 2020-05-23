@@ -11,13 +11,13 @@ class MessageContainer extends Component {
     return (
       <div className="message-outline">
         <div className="ui message" id="message-container">
-            {this.props.messages.map((message, index) =>
+            {/* {this.props.messages.map((message, index) =>
             <Segment key={index}>
               <p id="timeStamp">
                 <span>{message.timeStamp}</span>
               </p>
               <p id ="userName"> <strong>{message.name}:</strong> {message.title}</p>
-            </Segment>)}
+            </Segment>)} */}
         </div>
       </div>
     )
