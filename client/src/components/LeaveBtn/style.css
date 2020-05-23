@@ -1,0 +1,13 @@
+#LeaveBtn {
+    border: solid white 1px;
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+#LeaveBtn:hover {
+    color: black;
+    background-color: white;
+    transition: 0.8s;
+}
