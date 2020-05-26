@@ -56,7 +56,6 @@ class SignUp extends Component {
         <Segment stacked>
           <Field
             name='email'
-            iscool='mannyiscool'
             component={ this.renderEmail }
             validate={
               [
@@ -76,7 +75,7 @@ class SignUp extends Component {
             }
           />
           <Button
-            content='Sign Up'
+            content='Sign up'
             color='teal'
             fluid
             size='large'

@@ -5,7 +5,9 @@ import {
   GET_USER_TODOS_ERROR,
   UPDATE_TODO_BY_ID_ERROR,
 } from '../types';
+
 import axios from 'axios';
+
 export const getAllTodos = () => async dispatch => {
   try {
     const { data } = await axios.get('/api/todos');
