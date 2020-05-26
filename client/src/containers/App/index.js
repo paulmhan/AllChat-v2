@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { Grid } from 'semantic-ui-react';
+// import { Grid } from 'semantic-ui-react';
 
-import Counter from '../Counter';
-import AllTodosList from '../AllTodosList';
-import UserTodoList from '../UserTodoList';
+// import Counter from '../Counter';
+// import AllTodosList from '../AllTodosList';
+// import UserTodoList from '../UserTodoList';
 
-import SignUp from '../SignUp';
-import SignOut from '../SignOut';
-import SignIn from '../SignIn';
+// import SignUp from '../SignUp';
+// import SignOut from '../SignOut';
+// import SignIn from '../SignIn';
 import Room from "../../pages/Room";
-import io from "socket.io-client";
+// import io from "socket.io-client";
 import AllChatTitle from "../../components/AllChatTitle";
 import LandingPage from "../../pages/LandingPage";
 
 
 import { connect } from 'react-redux';
-// import Navbar from './../../components/Navbar';
+import Navbar from './../../components/Navbar';
 
 class App extends Component {
 
@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div>
         <div className="container">
-          <AllChatTitle />
+          <Navbar />
         </div>
         <br />
         <Route exact path="/" component={LandingPage} />
