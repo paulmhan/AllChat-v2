@@ -6,7 +6,7 @@ import AllChatTitle from "../AllChatTitle";
 import "./style.css";
 
 export default (props) => (
-  <Menu widths={2} id="navbar">
+  <Menu id="navbar">
     <Menu.Item position="left">
       <AllChatTitle />
     </Menu.Item>
