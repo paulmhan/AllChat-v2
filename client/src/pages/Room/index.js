@@ -10,7 +10,7 @@ import LeaveBtn from "../../components/LeaveBtn";
 import { withRouter } from "react-router-dom";
 import "./style.css";
 
-class Chat extends Component {
+class Room extends Component {
 
 
     render() {
@@ -61,4 +61,4 @@ class Chat extends Component {
         )
     }
 
-} export default withRouter(Chat);
+} export default withRouter(Room);

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
-
-import SignUpModal from "../../components/SignUpModal";
 import LandingBodyText from "../../components/LandingBodyText"
 // import LandingPageModal from "../../containers/LandingPageModal";
 import "./style.css";
-import SignInModal from "../../components/SignInModal";
+import SignUp from "../../containers/SignUp";
+import SignIn from "../../containers/SignIn";
+
 
 class LandingPage extends Component {
 
@@ -25,7 +25,8 @@ class LandingPage extends Component {
                 <Grid.Row
                     centered
                     columns={1}>
-                    <SignUpModal />
+                    <SignUp />
+                    <SignIn />
                    {/* <LandingPageModal socket={this.props.socket} /> */}
                 </Grid.Row>
             </Grid>

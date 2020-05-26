@@ -6,9 +6,9 @@ import { Route } from 'react-router-dom';
 // import AllTodosList from '../AllTodosList';
 // import UserTodoList from '../UserTodoList';
 
-// import SignUp from '../SignUp';
+import SignUp from '../SignUp';
 // import SignOut from '../SignOut';
-// import SignIn from '../SignIn';
+import SignIn from '../SignIn';
 import Room from "../../pages/Room";
 // import io from "socket.io-client";
 import AllChatTitle from "../../components/AllChatTitle";
@@ -32,7 +32,9 @@ class App extends Component {
         </div>
         <br />
         <Route exact path="/" component={LandingPage} />
-        <Route path="/room" component={Room} />
+        <Route exact path="/room" component={Room} />
+        <Route exact path='/signin' component={SignIn}/>
+        <Route exact path='/signup' component={SignUp}/>
       </div>
     );
   }
@@ -54,9 +56,7 @@ export default connect(mapStateToProps)(App);
       //     <Route exact path='/counter' component={Counter}/>
       //     <Route exact path='/usertodos' component={UserTodoList}/>
       //     <Route exact path='/alltodos' component={AllTodosList}/>
-      //     <Route exact path='/signin' component={SignIn}/>
-      //     <Route exact path='/signout' component={SignOut}/>
-      //     <Route exact path='/' component={SignUp}/>
+      // {/* <Route exact path='/signout' component={SignOut}/> */}
       //     {/* <Route exact path="/rooms" component={ChatRooms}/> */}
       //     <Route exact path="/room" component={Room}/>
       //   </Grid.Column>

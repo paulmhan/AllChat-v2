@@ -12,7 +12,7 @@ class SignUp extends Component {
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
       dispatch({ type: AUTH_USER, payload: data.token });
-      this.props.history.push('/counter');
+      this.props.history.push('/room');
     } catch (e) {
       dispatch({ type: AUTH_USER_ERROR, payload: e });
     }
