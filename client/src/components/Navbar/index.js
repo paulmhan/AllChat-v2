@@ -6,9 +6,11 @@ import AllChatTitle from "../AllChatTitle";
 import "./style.css";
 
 export default (props) => (
-  <Menu widths={4} id="navbar">
-    <AllChatTitle />
-    { props.isLoggedIn ? <Menu.Item as={Link} to='/signout' content='Sign Out'/> : <Menu.Item><SignInModal /></Menu.Item>}
+  <Menu widths={2} id="navbar">
+    <Menu.Item position="left">
+      <AllChatTitle />
+    </Menu.Item>
+    { props.isLoggedIn ? <Menu.Item as={Link} to='/signout' positon="right" content='Sign Out'/> : <Menu.Item positon="right"><SignInModal /></Menu.Item>}
   </Menu>
 );
 
