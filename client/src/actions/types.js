@@ -1,3 +1,7 @@
+//User Messages Section
+export const GET_USER_MESSAGES = "GET_USER_MESSAGES";
+export const GET_USER_MESSAGES_ERROR = "GET_USER_MESSAGES_ERROR";
+
 //counter section
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';

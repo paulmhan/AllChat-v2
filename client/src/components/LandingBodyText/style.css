@@ -1,0 +1,32 @@
+#body-text-grid {
+    background-color: transparent;
+}
+
+#text1 {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    font-size: 24px;
+}
+
+#text2 {
+    text-align: center;
+}
+
+#header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+#together {
+    color: white;
+}
+
+#paragraph {
+    font-size: 18px;
+}
+

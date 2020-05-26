@@ -1,0 +1,16 @@
+#message-container {
+    height: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.message-outline {
+    padding: 20px;
+    background-image: url(./../../assets/images/metallic-silver-alt.jpg);
+    border-radius: 25px;
+}
+
+#timeStamp {
+    font-size: 10px;
+}
+

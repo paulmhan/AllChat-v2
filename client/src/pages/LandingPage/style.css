@@ -1,0 +1,10 @@
+/* #landing-container {
+    position: relative;
+    top: 150px;
+} */
+
+#welcome {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+}
