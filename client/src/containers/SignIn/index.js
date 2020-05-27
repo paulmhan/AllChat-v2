@@ -12,7 +12,7 @@ class SignIn extends Component {
       const { data } = await axios.post('/api/auth/signin', formValues);
       localStorage.setItem('token', data.token);
       dispatch({ type: AUTH_USER, payload: data });
-      this.props.history.push('/chat');
+      this.props.history.push('/rooms');
     } catch (e) {
       throw new SubmissionError({
         email: 'Please try again',
