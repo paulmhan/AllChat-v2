@@ -12,7 +12,7 @@ class SignUp extends Component {
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
       dispatch({ type: AUTH_USER, payload: data.token });
-      this.props.history.push('/counter');
+      this.props.history.push('/chat');
     } catch (e) {
       dispatch({ type: AUTH_USER_ERROR, payload: e });
     }
@@ -56,7 +56,6 @@ class SignUp extends Component {
         <Segment stacked>
           <Field
             name='email'
-            iscool='mannyiscool'
             component={ this.renderEmail }
             validate={
               [
@@ -76,7 +75,7 @@ class SignUp extends Component {
             }
           />
           <Button
-            content='Sign Up'
+            content='Sign up'
             color='teal'
             fluid
             size='large'
