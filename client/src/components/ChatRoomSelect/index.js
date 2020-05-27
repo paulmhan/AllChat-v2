@@ -1,21 +1,56 @@
 import React from "react";
-import { Accordion } from "semantic-ui-react";
-import _ from "lodash";
-import faker from "faker";
+import { List, Accordion, Button } from "semantic-ui-react";
 
-const panels = _.times(3, (i) => ({
-    key: `panel - ${i}`,
-    title: faker.lorem.sentence(),
-    content: faker.lorem.paragraphs()
-}))
+
+
+const ChatRoom1 = (
+    <div>
+        <List>
+            <List.Item>User 1</List.Item>
+            <List.Item>User 2</List.Item>
+            <List.Item>User 3</List.Item>
+        </List>
+        <Button content="Join Chat" />
+    </div>
+);
+
+const ChatRoom2 = (
+    <div>
+        <List>
+            <List.Item>User 1</List.Item>
+            <List.Item>User 2</List.Item>
+            <List.Item>User 3</List.Item>
+        </List>
+        <Button content="Join Chat" />
+    </div>
+);
+
+const ChatRoom3 = (
+    <div>
+        <List>
+            <List.Item>User 1</List.Item>
+            <List.Item>User 2</List.Item>
+            <List.Item>User 3</List.Item>
+        </List>
+        <Button content="Join Chat" />
+    </div>
+);
+
+const ChatRooms = [
+    { key: "Chatroom 1", title: "Chatroom 1", content: { content: ChatRoom1 } },
+    { key: "Chatroom 2", title: "Chatroom 2", content: { content: ChatRoom2 } },
+    { key: "Chatroom 3", title: "Chatroom 3", content: { content: ChatRoom3 } }
+];
+
 
 const ChatRoomSelect = () => {
     return(
         <Accordion 
-            defaultActiveIndex={[0, 2]}
-            panels={panels}
+            defaultActiveIndex={[0]}
+            panels={ChatRooms}
             exclusive={false}
             fluid
+            styled
         />
     )
 }

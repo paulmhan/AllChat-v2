@@ -15,7 +15,7 @@ class SignUp extends Component {
       console.log(data.user);
       dispatch({ type: AUTH_USER, payload: data });
 
-      this.props.history.push('/rooms');
+      this.props.history.push('/chat');
     } catch (e) {
       dispatch({ type: AUTH_USER_ERROR, payload: e });
     }

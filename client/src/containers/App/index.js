@@ -18,8 +18,9 @@ const socket = io();
 class App extends Component {
   render () {
     return (
-      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-        <Grid.Column style={{ maxWidth: 700 }}>
+      // <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+      //   <Grid.Column style={{ maxWidth: 700 }}>
+      <div>
           <Navbar isLoggedIn={this.props.authenticated}/>
           <Route exact path='/signin'  render={() => <SignIn socket={socket} />}/>
           <Route exact path='/signup'  render={() => <SignUp socket={socket} />}/>
@@ -27,8 +28,9 @@ class App extends Component {
           <Route exact path='/chat'  render={() => <Chat socket={socket} />}/>
           <Route exact path='/'  render={() => <LandingPage socket={socket} />}/>
           <Route exact path='/rooms' render={() => <Rooms socket={socket} />}/>
-        </Grid.Column>
-      </Grid>
+      </div>
+      //   </Grid.Column>
+      // </Grid>
     );
   }
 }

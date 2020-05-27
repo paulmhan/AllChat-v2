@@ -11,7 +11,7 @@ import LeaveBtn from "../../components/LeaveBtn";
 // import { withRouter } from "react-router-dom";
 import "./style.css";
 
-class Room extends Component {
+class Chat extends Component {
 
 
     render() {
@@ -29,7 +29,7 @@ class Room extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                     name={this.props.user.firstName} 
+                                    //  name={this.props.user.firstName} 
                                      />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
