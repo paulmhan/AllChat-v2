@@ -11,9 +11,10 @@ import SignIn from '../SignIn';
 
 import { connect } from 'react-redux';
 import Navbar from './../../components/Navbar';
-import io from "socket.io-client";
+import ChatRoomSelect from '../../components/ChatRoomSelect';
+// import io from "socket.io-client";
 
-const socket = io();
+// const socket = io();
 
 class App extends Component {
   render () {
@@ -22,15 +23,21 @@ class App extends Component {
       //   <Grid.Column style={{ maxWidth: 700 }}>
       <div>
           <Navbar isLoggedIn={this.props.authenticated}/>
-          <Route exact path='/signin'  render={() => <SignIn socket={socket} />}/>
+          {/* <Route exact path='/signin'  render={() => <SignIn socket={socket} />}/>
           <Route exact path='/signup'  render={() => <SignUp socket={socket} />}/>
           <Route exact path='/signout'  render={() => <SignOut socket={socket} />}/>
           <Route exact path='/chat'  render={() => <Chat socket={socket} />}/>
           <Route exact path='/'  render={() => <LandingPage socket={socket} />}/>
-          <Route exact path='/rooms' render={() => <Rooms socket={socket} />}/>
+           */}
+          <Route exact path='/signin' component={SignIn}/>
+          <Route exact path='/signup' component={SignUp}/>
+          <Route exact path='/signout' component={SignOut}/>
+          <Route exact path='/chat' component={Chat}/>
+          <Route exact path='/' component={LandingPage}/>
+          <Route exact path='/rooms' component={ChatRoomSelect} />
+        {/* </Grid.Column>
+      </Grid> */}
       </div>
-      //   </Grid.Column>
-      // </Grid>
     );
   }
 }
