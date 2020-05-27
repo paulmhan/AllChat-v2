@@ -11,6 +11,9 @@ import SignIn from '../SignIn';
 
 import { connect } from 'react-redux';
 import Navbar from './../../components/Navbar';
+import io from "socket.io-client";
+
+const socket = io();
 
 class App extends Component {
   render () {
@@ -18,11 +21,11 @@ class App extends Component {
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 700 }}>
           <Navbar isLoggedIn={this.props.authenticated}/>
-          <Route exact path='/signin' component={SignIn}/>
-          <Route exact path='/signout' component={SignOut}/>
-          <Route exact path='/signup' component={SignUp}/>
-          <Route exact path='/chat' component={Chat}/>
-          <Route exact path='/' component={LandingPage}/>
+          <Route exact path='/signin'  render={() => <SignIn socket={socket} />}/>
+          <Route exact path='/signup'  render={() => <SignUp socket={socket} />}/>
+          <Route exact path='/signout'  render={() => <SignOut socket={socket} />}/>
+          <Route exact path='/chat'  render={() => <Chat socket={socket} />}/>
+          <Route exact path='/'  render={() => <LandingPage socket={socket} />}/>
         </Grid.Column>
       </Grid>
     );

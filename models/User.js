@@ -16,9 +16,13 @@ const UserSchema = new Schema({
     required: [true, 'You must provide a password'],
     validate: [(value) => isLength(value, { min: 6 }), 'Your password must be at least 6 characters long'],
   },
-  dateCreated: {
-    type: Date,
-    default: Date.now(),
+  firstName: {
+    type: String,
+    required: [true, 'You must provide a first name'],
+  },
+  lastName: {
+    type: String,
+    required: [true, 'You must provide a last name'],
   },
   room: {
     type: Schema.Types.ObjectId,

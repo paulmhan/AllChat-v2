@@ -10,6 +10,8 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
+
+
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,5 +20,10 @@ require('./services/passport');
 
 // Connect database
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
+
+io.on("connection", socket => {
+    console.log("New client connected.");
+    socket.on("createRoom",  )
+})
 
 app.listen(PORT);
