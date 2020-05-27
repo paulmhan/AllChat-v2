@@ -7,11 +7,14 @@ import axios from 'axios';
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
 
 class SignUp extends Component {
+
   onSubmit = async (formValues, dispatch) => {
     try {
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
-      dispatch({ type: AUTH_USER, payload: data.token });
+      console.log(data.user);
+      dispatch({ type: AUTH_USER, payload: data });
+
       this.props.history.push('/chat');
     } catch (e) {
       dispatch({ type: AUTH_USER_ERROR, payload: e });
@@ -31,6 +34,18 @@ class SignUp extends Component {
       />
     );
   }
+  renderNames = ({ input, meta, placeholder }) => {
+    return (
+      <Form.Input
+        {...input}
+        error={ meta.touched && meta.error }
+        fluid
+        autoComplete='off'
+        placeholder={placeholder}
+      />
+    );
+  }
+  
 
 
   renderPassword = ({ input, meta }) => {
@@ -54,6 +69,27 @@ class SignUp extends Component {
     return (
       <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
         <Segment stacked>
+        <Field
+            name='firstName'
+            component={ this.renderNames }
+            placeholder = "First Name"
+            validate={
+              [
+                required({ msg: 'First name is required' })
+              ]
+            }
+          />
+          <Field
+            name='lastName'
+            component={ this.renderNames }
+            placeholder = "Last Name"
+            validate={
+              [
+                required({ msg: 'Last name is required' })
+              ]
+            }
+          />
+        
           <Field
             name='email'
             component={ this.renderEmail }

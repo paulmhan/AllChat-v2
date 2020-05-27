@@ -4,4 +4,4 @@ package-lock.json
 config.js
 .DS_Store
 .env
-
+playground.mongodb

@@ -11,7 +11,7 @@ class SignIn extends Component {
     try {
       const { data } = await axios.post('/api/auth/signin', formValues);
       localStorage.setItem('token', data.token);
-      dispatch({ type: AUTH_USER, payload: data.token });
+      dispatch({ type: AUTH_USER, payload: data });
       this.props.history.push('/chat');
     } catch (e) {
       throw new SubmissionError({

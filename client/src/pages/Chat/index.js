@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
+import { connect } from 'react-redux';
 // import moment from "moment";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
 import ChatSideBar from "../../components/ChatSideBar";
@@ -7,7 +8,7 @@ import MessageContainer from "../../components/MessageContainer";
 import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
 // import ReactDOM from "react-dom";
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 import "./style.css";
 
 class Chat extends Component {
@@ -28,7 +29,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                    //  name={this.state.name} 
+                                     name={this.props.user.firstName} 
                                      />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
@@ -61,4 +62,10 @@ class Chat extends Component {
         )
     }
 
-} export default withRouter(Chat);
+} 
+
+function mapStateToProps(state) {
+    return { user: state.auth.currentUser }
+}
+
+export default connect(mapStateToProps,{})(Chat);
