@@ -51,5 +51,9 @@ module.exports = {
       return res.status(403).json({ e });
     }
   },
-  signIn: (req, res) => res.json({ token: tokenForUser(req.user) }),
+  signIn: async (req, res) => {
+    const currentUser = await User.findById(req.user._id).select('-password');
+    res.json({ token: tokenForUser(req.user), user: currentUser });
+  }
+    
 };
