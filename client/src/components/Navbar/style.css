@@ -1,3 +1,11 @@
 #navbar {
-    background-color: orange;
+    background-color: transparent;
+}
+
+#signup {
+    color: white;
+}
+
+#signin {
+    color: white;
 }

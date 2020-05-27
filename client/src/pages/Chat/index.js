@@ -29,7 +29,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                     name={this.props.user.firstName} 
+                                    //  name={this.props.user.firstName} 
                                      />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
