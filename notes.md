@@ -20,3 +20,7 @@ order: component => calls actions => to reducer => changes state in store => red
 
 a higher order component is taking a component, and returning a new component
 connect(mapStateToProps,{})(Chat); takes the chat component, and returns it altered with the new state
+
+- Make the flags, 
+- Leave room button
+- 
