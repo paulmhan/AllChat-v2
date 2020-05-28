@@ -12,18 +12,11 @@ import SignIn from '../SignIn';
 import { connect } from 'react-redux';
 import Navbar from './../../components/Navbar';
 import ChatRoomSelect from '../../components/ChatRoomSelect';
-import io from "socket.io-client";
 
 
-const socket = io();
+
 
 class App extends Component {
-
-  
-
-  componentDidMount(){
-    socket.emit("connection", {hi:"Hi"})
-  }
 
   render () {
     return (
