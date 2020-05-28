@@ -69,7 +69,7 @@ class Chat extends Component {
             //     </Grid.Row>
             // </Grid>
             <div>
-                <button onClick={()=> this.props.sendMessage("hello")}>hello</button>
+                <button onClick={()=> this.props.sendMessage("hello")}>Button</button>
             </div>
         )
     }

@@ -2,6 +2,7 @@ import { NEW_MESSAGE } from "../socketTypes";
 
 
 export const suscribeToMessageFromServer = () => dispatch => {
+    console.log("message is sending to reducer")
     dispatch({
         event: "serverToClientMessage",
         handle: data => dispatch({
@@ -12,6 +13,7 @@ export const suscribeToMessageFromServer = () => dispatch => {
 };
 
 export const sendMessage = message => {
+    console.log("message sent to server")
     return {
         event: "message",
         payload: message,
@@ -20,9 +22,20 @@ export const sendMessage = message => {
 };
 
 
+
 export const unsuscribeMessage = message => {
     return {
         event: "message",
         leave: true,
     };
+    
+};
+
+export const createRoom = roomName => {
+    return {
+        event: "createRoom",
+        payload: roomName,
+        emit: true,
+    };
+    
 };

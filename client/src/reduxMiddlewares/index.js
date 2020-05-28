@@ -8,6 +8,7 @@ export default function socketMiddleware() {
         }
 
         const {
+            
             emit,
             event,
             leave,
@@ -15,6 +16,7 @@ export default function socketMiddleware() {
             payload,
             result,
             ...rest
+
         } = action; 
 
 
