@@ -7,6 +7,8 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
+import { withRouter } from "react-router-dom";
+
 // import ReactDOM from "react-dom";
 // import { withRouter } from "react-router-dom";
 import "./style.css";
@@ -68,4 +70,4 @@ function mapStateToProps(state) {
     return { user: state.auth.currentUser }
 }
 
-export default connect(mapStateToProps,{})(Chat);
+export default withRouter(connect(mapStateToProps,{})(Chat));

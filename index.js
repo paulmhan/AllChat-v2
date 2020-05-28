@@ -21,9 +21,12 @@ require('./services/passport');
 // Connect database
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
 
-// io.on("connection", socket => {
-//     console.log("New client connected.");
-//     socket.on("createRoom",  )
-// })
+io.on("connection", socket => {
+    console.log("New client connected.");
+    // socket.on("createRoom",  )
+    socket.on("disconnect", () => {
+        console.log("Client disconnected.");
+    })
+})
 
-app.listen(PORT);
+server.listen(PORT, () => console.log(`Server started on port ${PORT}`));

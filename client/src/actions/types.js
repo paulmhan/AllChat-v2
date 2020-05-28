@@ -26,3 +26,4 @@ export const AUTH_USER_ERROR = 'AUTH_USER_ERROR';
 //creating rooms
 export const CREATE_ROOM = "CREATE_ROOM";
 export const CREATE_ROOM_ERROR = "CREATE_ROOM_ERROR";
+export const CREATE_ROOM_SUCCESS = "CREATE_ROOM_SUCCESS";
