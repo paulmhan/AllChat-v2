@@ -26,10 +26,14 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 
 io.on("connection", socket => {
     console.log("New client connected.");
+    socket.on("message", data => {
+        socket.emit("serverToClientMessage", data);
+    });
     // socket.on("createRoom",  )
     socket.on("disconnect", () => {
         console.log("Client disconnected.");
-    })
+        return;
+    });
 })
 
 server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
