@@ -28,6 +28,7 @@ io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
         console.log("message in server")
+        // messageController.createMessage(data);
         socket.emit("serverToClientMessage", data);
     });
     // socket.on("createRoom",  )
