@@ -75,7 +75,7 @@ function mapStateToProps(state) {
 }
 
 
-export default requireAuth(withRouter(connect(mapStateToProps, {})(Chat)));
+export default withRouter(requireAuth(connect(mapStateToProps, {})(Chat)));
 
 // export default compose(
 //     requireAuth,

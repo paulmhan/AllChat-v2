@@ -11,7 +11,10 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
 
-
+//for production only
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('./client/build'));
+}
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
