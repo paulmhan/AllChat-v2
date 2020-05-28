@@ -15,6 +15,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: tr
 // 3rd param is any middlwares we want applied to redux
 const store = createStore(
   reducers,
+  //set this as default state because it would go away on refresh because the only routes to get tokens is on sign in and signup
+  //so once you sign in, it goes to local storage which will stay even if you refresh
   { auth: { authenticated: localStorage.getItem('token')}},
   composeEnhancers(applyMiddleware(reduxThunk))
 );

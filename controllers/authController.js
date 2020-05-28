@@ -12,7 +12,7 @@ function tokenForUser(user) {
   const timeStamp = new Date().getTime();
   // This subject will become the payload in our strategy
   // eslint-disable-next-line no-underscore-dangle
-  return jwt.encode({ sub: user._id, iat: timeStamp }, secret);
+  return jwt.encode({ sub: user._id, iat: timeStamp }, process.env.SECRET || secret);
 }
 
 module.exports = {
