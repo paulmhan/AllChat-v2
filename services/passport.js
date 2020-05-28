@@ -8,7 +8,7 @@ const User = require('../models/User');
 const jwtOptions = {
   // Look specifically from the header where it's called authorization
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-  secretOrKey: secret,
+  secretOrKey: process.env.SECRET || secret,
 };
 
 // Create JWT Strategy for handling JWT

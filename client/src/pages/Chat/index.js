@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
+import { compose } from "redux";
 // import moment from "moment";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
 import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
+import requireAuth from "../../hoc/requireAuth";
 
 // import ReactDOM from "react-dom";
 // import { withRouter } from "react-router-dom";
@@ -72,4 +74,10 @@ function mapStateToProps(state) {
     return { user: state.auth.currentUser }
 }
 
-export default withRouter(connect(mapStateToProps, {})(Chat));
+
+export default requireAuth(withRouter(connect(mapStateToProps, {})(Chat)));
+
+// export default compose(
+//     requireAuth,
+//     connect(mapStateToProps, {}),
+// )(Chat)
