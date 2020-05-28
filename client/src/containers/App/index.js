@@ -35,7 +35,7 @@ class App extends Component {
           <Route exact path='/signout' component={SignOut}/>
           <Route exact path='/chat' component={Chat}/>
           <Route exact path='/' component={LandingPage}/>
-          {/* <Route exact path='/rooms' component={ChatRoomSelect} /> */}
+          <Route exact path='/rooms' component={ChatRoomSelect} />
         {/* </Grid.Column>
       </Grid> */}
       </div>
