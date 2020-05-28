@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 export default function(state = INITIAL_STATE, action){
     switch(action.type){
         case NEW_MESSAGE:
-            retrun {...state, someMessages: [...state.someMessages, action.payload ]};
+            return { ...state, someMessages: [...state.someMessages, action.payload ]};
         default:
             return state;
     }
