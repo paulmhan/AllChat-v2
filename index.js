@@ -13,7 +13,7 @@ const io = require('socket.io')(server);
 
 //for production only
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./client/build'));
+    app.use(express.static('client/build'));
 }
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
@@ -27,10 +27,15 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
-        console.log("message in server")
+        console.log("message in server");
         // messageController.createMessage(data);
         socket.emit("serverToClientMessage", data);
     });
+
+    socket.on("createRoom", data => {
+        console.log("creating room in server");
+        socket.emit("serverToClientRoom", data);
+    })
     // socket.on("createRoom",  )
     socket.on("disconnect", () => {
         console.log("Client disconnected.");
