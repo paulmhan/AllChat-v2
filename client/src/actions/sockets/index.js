@@ -26,7 +26,7 @@ export const sendMessage = message => {
     return {
         event: "message",
         payload: message,
-        emit: true,
+        emit: true
     };
 };
 

@@ -13,7 +13,7 @@ const io = require('socket.io')(server);
 
 //for production only
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('./client/build'));
+    app.use(express.static('client/build'));
 }
 // Setup middlewares
 app.use(express.urlencoded({ extended: true }));
