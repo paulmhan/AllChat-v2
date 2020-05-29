@@ -75,8 +75,6 @@ class SignIn extends Component {
               ]
             }
           />
-          <LanguageSelect />
-          <br />
           <Button
             content='Sign In'
             color='teal'
