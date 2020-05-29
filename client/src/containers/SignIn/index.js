@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { Form, Segment, Button } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
+import LanguageSelect from '../../components/LanguageSelect';
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
 
