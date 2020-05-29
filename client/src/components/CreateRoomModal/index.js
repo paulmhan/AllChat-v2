@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Form, Button, Modal } from 'semantic-ui-react';
-import { Field } from 'redux-form';
 import { required } from 'redux-form-validators';
 
 class CreateRoomModal extends Component {
