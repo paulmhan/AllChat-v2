@@ -2,11 +2,20 @@ import { NEW_MESSAGE } from "../socketTypes";
 
 
 export const suscribeToMessageFromServer = () => dispatch => {
-    console.log("message is sending to reducer")
     dispatch({
         event: "serverToClientMessage",
         handle: data => dispatch({
             type: NEW_MESSAGE,
+            payload: data,
+        }),
+    });
+};
+
+export const suscribeToRoomFromServer = () => dispatch => {
+    dispatch({
+        event: "serverToClientRoom",
+        handle: data => dispatch({
+            type: NEW_ROOM,
             payload: data,
         }),
     });
