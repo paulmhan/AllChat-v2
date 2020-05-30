@@ -22,6 +22,8 @@ export const UPDATE_TODO_BY_ID_ERROR = 'UPDATE_TODO_BY_ID_ERROR';
 //  User authentication
 export const AUTH_USER = 'AUTH_USER';
 export const AUTH_USER_ERROR = 'AUTH_USER_ERROR';
+export const GET_USER = "GET_USER";
+export const GET_USER_ERROR = "GET_USER_ERROR";
 
 //creating rooms
 export const CREATE_ROOM = "CREATE_ROOM";
