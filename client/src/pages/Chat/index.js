@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Input } from "semantic-ui-react";
 import { connect } from 'react-redux';
 // import { withRouter } from "react-router-dom";
 import { compose } from "redux";
@@ -18,9 +18,21 @@ import "./style.css";
 
 class Chat extends Component {
 
+    state = {
+        message:""
+    }
+
     componentDidMount(){
         this.props.subscribeToMessageFromServer();
     }
+
+    handleMessageChange = e => {
+        
+        const { value } = e.target;
+        console.log(value);
+        this.setState({ message: value });
+        
+    };
 
 
     render() {
@@ -54,17 +66,21 @@ class Chat extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <MessageInputBar
-                                    // getMessage={this.handleMessageChange}
-                                    // message={this.state.message}
-                                    // error={this.state.messageError}
-                                    // placeholder={this.state.placeholder}
-                                    // handleSend={this.handleSend}
-                                    // handleEnter={this.handleEnter}
+                                    <Input
+                                    fluid
+                                    onChange = {this.handleMessageChange}
+                                    onkeyDown = {this.handleEnter}
+                                    action={{
+                                        color: "blue",
+                                        labelPosition: "right",
+                                        icon: "arrow circle up",
+                                        content: "Send",
+                                        onClick: this.props.sendMessage,
+                                        
+                                        onClick: () => this.props.sendMessage(this.state.message)
+                                    }}
                                     />
-            <div>
-                <button onClick={()=> this.props.sendMessage("hello")}>Button</button>
-            </div>
+            
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
