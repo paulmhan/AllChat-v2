@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Input } from "semantic-ui-react";
+import { Form, Grid, Input } from "semantic-ui-react";
 import { connect } from 'react-redux';
 // import { withRouter } from "react-router-dom";
 import { compose } from "redux";
@@ -66,7 +66,7 @@ class Chat extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <Input
+                                    <Form.Input
                                     fluid
                                     onChange = {this.handleMessageChange}
                                     onkeyDown = {this.handleEnter}
@@ -75,8 +75,6 @@ class Chat extends Component {
                                         labelPosition: "right",
                                         icon: "arrow circle up",
                                         content: "Send",
-                                        onClick: this.props.sendMessage,
-                                        
                                         onClick: () => this.props.sendMessage(this.state.message)
                                     }}
                                     />
