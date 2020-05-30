@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import ChatRoomSelect from "../../components/ChatRoomSelect";
 import CreateRoomModal from '../../components/CreateRoomModal';
+import requireAuth from "../../hoc/requireAuth";
+
 import "./style.css";
 
 class Rooms extends Component {
@@ -21,4 +23,4 @@ class Rooms extends Component {
     }
 };
 
-export default Rooms;
+export default requireAuth(Rooms);

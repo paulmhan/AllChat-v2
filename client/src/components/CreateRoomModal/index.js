@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Form, Button, Modal } from 'semantic-ui-react';
 import { required } from 'redux-form-validators';
+import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
 
 class CreateRoomModal extends Component {
+
+    createRoom = () => {
+        console.log("hello");
+    }
 
     render() {
         return (
@@ -25,6 +30,8 @@ class CreateRoomModal extends Component {
                         content='Create Room'
                         size='large'
                         color='blue'
+                        type="submit"
+                        onClick={() => this.createRoom()}
                     />
                 </Modal.Actions>
             </Modal>

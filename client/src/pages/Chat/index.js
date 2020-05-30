@@ -38,7 +38,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                    //  name={this.props.user.firstName} 
+                                     name={this.props.user?.firstName} 
                                     />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
@@ -84,6 +84,6 @@ function mapStateToProps(state) {
 // export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
-    requireAuth,
     connect(mapStateToProps, { subscribeToMessageFromServer, sendMessage }),
+    requireAuth
 )(Chat)
