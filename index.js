@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require("./routes");
+const roomController = require("./controllers/roomController");
 
 
 const PORT = process.env.PORT || 3001;
@@ -33,7 +34,10 @@ io.on("connection", socket => {
     });
 
     socket.on("createRoom", data => {
+        console.log(data);
         console.log("creating room in server");
+        //data is the room name
+        roomController.createRoom(data);
         socket.emit("serverToClientRoom", data);
     })
     // socket.on("createRoom",  )
