@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import { connect } from 'react-redux';
-// import { withRouter } from "react-router-dom";
 import { compose } from "redux";
-// import moment from "moment";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
 import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
@@ -21,6 +19,8 @@ class Chat extends Component {
     componentDidMount(){
         this.props.subscribeToMessageFromServer();
     }
+
+    
 
 
     render() {

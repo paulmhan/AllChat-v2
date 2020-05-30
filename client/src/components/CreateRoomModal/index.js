@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { Form, Button, Modal } from 'semantic-ui-react';
 import { required } from 'redux-form-validators';
-import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
 
 class CreateRoomModal extends Component {
 
-    createRoom = () => {
-        console.log("hello");
+    state = {
+        roomName:""
     }
+
+    handleRoomNameChange = e => {
+        const { value } = e.target;
+        console.log(value);
+        this.setState({ roomName: value });
+    };
+
 
     render() {
         return (
@@ -16,6 +22,7 @@ class CreateRoomModal extends Component {
                 <Modal.Content>
                         <Form.Input
                             fluid
+                            onChange={this.handleRoomNameChange}
                             autoComplete='off'
                             placeholder='Enter room name...'
                             validate={
@@ -31,7 +38,7 @@ class CreateRoomModal extends Component {
                         size='large'
                         color='blue'
                         type="submit"
-                        onClick={() => this.createRoom()}
+                        onClick={() => this.props.createRoom(this.state.roomName)}
                     />
                 </Modal.Actions>
             </Modal>
@@ -39,5 +46,8 @@ class CreateRoomModal extends Component {
     }
 
 };
+
+
+
 
 export default CreateRoomModal;

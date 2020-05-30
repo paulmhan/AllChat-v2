@@ -40,6 +40,7 @@ export const unsubscribeMessage = message => {
 };
 
 export const createRoom = roomName => {
+    console.log('room sent to server')
     return {
         event: "createRoom",
         payload: roomName,
