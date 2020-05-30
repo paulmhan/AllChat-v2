@@ -1,7 +1,7 @@
 import { NEW_MESSAGE, NEW_ROOM } from "../socketTypes";
 
 
-export const suscribeToMessageFromServer = () => dispatch => {
+export const subscribeToMessageFromServer = () => dispatch => {
     dispatch({
         event: "serverToClientMessage",
         handle: data => dispatch({
@@ -11,7 +11,7 @@ export const suscribeToMessageFromServer = () => dispatch => {
     });
 };
 
-export const suscribeToRoomFromServer = () => dispatch => {
+export const subscribeToRoomFromServer = () => dispatch => {
     dispatch({
         event: "serverToClientRoom",
         handle: data => dispatch({
@@ -31,8 +31,7 @@ export const sendMessage = message => {
 };
 
 
-
-export const unsuscribeMessage = message => {
+export const unsubscribeMessage = message => {
     return {
         event: "message",
         leave: true,
