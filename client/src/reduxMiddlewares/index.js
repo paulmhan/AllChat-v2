@@ -19,16 +19,15 @@ export default function socketMiddleware() {
 
         } = action; 
 
-
-
         if(emit){
             socket.emit(event, payload);
             return;
         }
-
+        
         if(!event){
             return next(action);
         }
+
 
         if(leave){
             socket.removeListener(event);

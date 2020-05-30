@@ -10,7 +10,7 @@ import MessageContainer from "../../components/MessageContainer";
 import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { suscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
 
 // import ReactDOM from "react-dom";
 // import { withRouter } from "react-router-dom";
@@ -19,7 +19,7 @@ import "./style.css";
 class Chat extends Component {
 
     componentDidMount(){
-        this.props.suscribeToMessageFromServer();
+        this.props.subscribeToMessageFromServer();
     }
 
 
@@ -81,9 +81,9 @@ function mapStateToProps(state) {
 }
 
 
-// export default requireAuth(connect(mapStateToProps, { suscribeToMessageFromServer, sendMessage })(Chat));
+// export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
     requireAuth,
-    connect(mapStateToProps, { suscribeToMessageFromServer, sendMessage }),
+    connect(mapStateToProps, { subscribeToMessageFromServer, sendMessage }),
 )(Chat)
