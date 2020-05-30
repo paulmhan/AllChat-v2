@@ -4,6 +4,7 @@ import axios from "axios";
 
 export const signOut = () => {
     localStorage.removeItem("token");
+    console.log("hit sign out");
     return {
         type: AUTH_USER,
         payload: ""
@@ -18,6 +19,7 @@ export const loadUser = () => async dispatch => {
         dispatch({ type: GET_USER, payload: data });
       } catch (error) {
         dispatch({ type: GET_USER_ERROR, payload: error });
+        signOut();
       }
     } else {
         return;

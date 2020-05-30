@@ -34,11 +34,11 @@ io.on("connection", socket => {
     });
 
     socket.on("createRoom", data => {
-        console.log(data);
         console.log("creating room in server");
         //data is the room name
-        roomController.createRoom(data);
-        socket.emit("serverToClientRoom", data);
+        roomController.createRoom(data, newRoom => {
+            socket.emit("serverToClientRoom", newRoom);
+        });
     })
     // socket.on("createRoom",  )
     socket.on("disconnect", () => {

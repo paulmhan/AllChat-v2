@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, ACTIVE_ROOM } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -12,6 +12,13 @@ export const subscribeToMessageFromServer = () => dispatch => {
 };
 
 export const subscribeToRoomFromServer = () => dispatch => {
+    dispatch({
+        event: "serverToClientRoom",
+        handle: data => dispatch({
+            type: ACTIVE_ROOM,
+            payload: data,
+        }),
+    });
     dispatch({
         event: "serverToClientRoom",
         handle: data => dispatch({
@@ -39,11 +46,11 @@ export const unsubscribeMessage = message => {
     
 };
 
-export const createRoom = roomName => {
+export const createRoom = data => {
     console.log('room sent to server')
     return {
         event: "createRoom",
-        payload: roomName,
+        payload: data,
         emit: true,
     };
     

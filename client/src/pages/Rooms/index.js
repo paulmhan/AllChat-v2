@@ -27,6 +27,7 @@ class Rooms extends Component {
                     <Grid.Column width={12} >
                         <CreateRoomModal 
                             createRoom={this.props.createRoom}
+                            userId = {this.props.user?._id}
                         />
                         <ChatRoomSelect />
                     </Grid.Column>

@@ -14,6 +14,14 @@ class CreateRoomModal extends Component {
         this.setState({ roomName: value });
     };
 
+    createRoom = () => {
+        const data = {
+            roomName: this.state.roomName,
+            userId: this.props.userId
+        }
+        this.props.createRoom(data);
+    }
+
 
     render() {
         return (
@@ -38,7 +46,7 @@ class CreateRoomModal extends Component {
                         size='large'
                         color='blue'
                         type="submit"
-                        onClick={() => this.props.createRoom(this.state.roomName)}
+                        onClick={() => this.createRoom()}
                     />
                 </Modal.Actions>
             </Modal>
