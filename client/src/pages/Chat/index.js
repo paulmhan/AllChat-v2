@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import { connect } from 'react-redux';
-// import { withRouter } from "react-router-dom";
 import { compose } from "redux";
-// import moment from "moment";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
 import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
@@ -22,6 +20,8 @@ class Chat extends Component {
         this.props.subscribeToMessageFromServer();
     }
 
+    
+
 
     render() {
         return (
@@ -38,7 +38,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                    //  name={this.props.user.firstName} 
+                                     name={this.props.user?.firstName} 
                                     />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
@@ -84,6 +84,6 @@ function mapStateToProps(state) {
 // export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
-    requireAuth,
     connect(mapStateToProps, { subscribeToMessageFromServer, sendMessage }),
+    requireAuth
 )(Chat)
