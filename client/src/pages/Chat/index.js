@@ -9,7 +9,8 @@ import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
 import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
-
+import { loadUser } from "../../actions/auth";
+import { required } from 'redux-form-validators';
 // import ReactDOM from "react-dom";
 // import { withRouter } from "react-router-dom";
 import "./style.css";
@@ -22,13 +23,17 @@ class Chat extends Component {
 
     componentDidMount(){
         this.props.subscribeToMessageFromServer();
+        this.props.loadUser();
     }
 
     handleMessageChange = e => {
         
         const { value } = e.target;
-        console.log(value);
-        this.setState({ message: value });
+        console.log(this.props.user, "current User");
+        this.setState({ 
+            user:this.props.user,
+            message: value
+         });
         
     };
 
@@ -66,14 +71,20 @@ class Chat extends Component {
                                 <Grid.Column width={16}>
                                     <Form.Input
                                     fluid
+                                    autoComplete='off'
                                     onChange = {this.handleMessageChange}
                                     onkeyDown = {this.handleEnter}
+                                    validate={
+                                        [
+                                            required({ msg: 'Enter a message' })
+                                        ]
+                                    }
                                     action={{
                                         color: "blue",
                                         labelPosition: "right",
                                         icon: "arrow circle up",
                                         content: "Send",
-                                        onClick: () => this.props.sendMessage(this.state.message)
+                                        onClick: () => this.props.sendMessage({user: this.props.user, message: this.state.message})
                                     }}
                                     />
             
@@ -96,6 +107,6 @@ function mapStateToProps(state) {
 // export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
-    connect(mapStateToProps, { subscribeToMessageFromServer, sendMessage }),
+    connect(mapStateToProps, { loadUser, subscribeToMessageFromServer, sendMessage }),
     requireAuth
 )(Chat)
