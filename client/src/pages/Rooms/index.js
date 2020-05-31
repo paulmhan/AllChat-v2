@@ -16,7 +16,8 @@ class Rooms extends Component {
     
     componentDidMount(){
         this.props.subscribeToRoomFromServer();
-        this.props.loadUser();
+      
+        this.props.user || this.props.loadUser();
     }
 
     render() {

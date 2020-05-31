@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require("./routes");
 const roomController = require("./controllers/roomController");
+const messageController = require("./controllers/messageController");
 
 
 const PORT = process.env.PORT || 3001;
@@ -28,9 +29,12 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
-        console.log("message in server");
-        // messageController.createMessage(data);
-        socket.emit("serverToClientMessage", data);
+        console.log(data, "message in server");
+        messageController.createMessage(data, newMessage =>{
+            console.log(newMessage, "from message controller")
+            socket.emit("serverToClientMessage", newMessage);
+        })
+        
     });
 
     socket.on("createRoom", data => {

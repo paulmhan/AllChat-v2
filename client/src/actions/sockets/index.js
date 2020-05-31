@@ -28,11 +28,11 @@ export const subscribeToRoomFromServer = () => dispatch => {
     });
 };
 
-export const sendMessage = message => {
+export const sendMessage = data => {
     console.log("message sent to server")
     return {
         event: "message",
-        payload: message,
+        payload: data,
         emit: true
     };
 };

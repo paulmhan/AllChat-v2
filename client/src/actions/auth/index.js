@@ -12,6 +12,7 @@ export const signOut = () => {
 }
 
 export const loadUser = () => async dispatch => {
+  console.log("loadUser")
     if(localStorage.getItem("token")){
       try {
         const { data } = await axios.get("/api/getuser", { headers: { 'authorization': localStorage.getItem('token')}});
