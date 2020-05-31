@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Form, Grid, Input } from "semantic-ui-react";
+import { Field, reduxForm } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
 import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
-import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, getRoomUsers } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -16,23 +16,41 @@ import "./style.css";
 class Chat extends Component {
 
     state = {
-        message:""
+        message: ""
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
     }
 
     handleMessageChange = e => {
-        
+
         const { value } = e.target;
-        this.setState({ 
+        this.setState({
             message: value
-         });
-        
+        });
+
     };
 
+    renderMessageInput = ({ input, meta }) => {
+        return (
+            <Form.Input
+                {...input}
+                error={ meta.touched && meta.error }
+                fluid
+                autoComplete='off'
+                onKeyDown={this.handleEnter}
+                action={{
+                    color: "blue",
+                    labelPosition: "right",
+                    icon: "arrow circle up",
+                    content: "Send",
+                    onClick: () => this.props.sendMessage({ userId: this.props.user._id, message: this.state.message })
+                }}
+            />
+        );
+    }
 
     render() {
         return (
@@ -41,7 +59,8 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                        //  users={this.state.users} 
+                            // roomUsers={this.props.getRoomUsers()}
+                            // userId={this.props.user?.id}
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>
@@ -49,7 +68,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                     name={this.props.user?.firstName} 
+                                        name={this.props.user?.firstName}
                                     />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
@@ -65,25 +84,18 @@ class Chat extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <Form.Input
-                                    fluid
-                                    autoComplete='off'
-                                    onChange = {this.handleMessageChange}
-                                    onKeyDown = {this.handleEnter}
-                                    validate={
-                                        [
-                                            required({ msg: 'Enter a message' })
-                                        ]
-                                    }
-                                    action={{
-                                        color: "blue",
-                                        labelPosition: "right",
-                                        icon: "arrow circle up",
-                                        content: "Send",
-                                        onClick: () => this.props.sendMessage({userId: this.props.user._id, message: this.state.message})
-                                    }}
-                                    />
-            
+                                    <Form>
+                                        <Field 
+                                        name="messageInputBar"
+                                        component={this.renderMessageInput}
+                                        validate={
+                                            [
+                                                required({ msg: 'Enter a message' })
+                                            ]
+                                        }
+                                        onChange={this.handleMessageChange}
+                                        />
+                                    </Form>
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
@@ -103,6 +115,7 @@ function mapStateToProps(state) {
 // export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
-    connect(mapStateToProps, {  loadUser, subscribeToMessageFromServer, sendMessage }),
+    reduxForm({ form: "chat" }),
+    connect(mapStateToProps, { loadUser, subscribeToMessageFromServer, sendMessage, getRoomUsers }),
     requireAuth
 )(Chat)

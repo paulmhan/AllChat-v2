@@ -81,3 +81,12 @@ export const getAllRooms = () => {
 };
 
 
+// export const getRoomUsers = data => {
+//     console.log("found users in room");
+//     console.log(data);
+//     return {
+//         event: "getRoomUsers",
+//         payload: data,
+//         emit: true
+//     };
+};
