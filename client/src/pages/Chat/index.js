@@ -9,10 +9,8 @@ import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
 import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
-import { loadUser } from "../../actions/auth";
 import { required } from 'redux-form-validators';
-// import ReactDOM from "react-dom";
-// import { withRouter } from "react-router-dom";
+import { loadUser } from "../../actions/auth";
 import "./style.css";
 
 class Chat extends Component {
@@ -23,15 +21,13 @@ class Chat extends Component {
 
     componentDidMount(){
         this.props.subscribeToMessageFromServer();
-        this.props.loadUser();
+        this.props.user || this.props.loadUser();
     }
 
     handleMessageChange = e => {
         
         const { value } = e.target;
-        console.log(this.props.user, "current User");
         this.setState({ 
-            user:this.props.user,
             message: value
          });
         
@@ -73,7 +69,7 @@ class Chat extends Component {
                                     fluid
                                     autoComplete='off'
                                     onChange = {this.handleMessageChange}
-                                    onkeyDown = {this.handleEnter}
+                                    onKeyDown = {this.handleEnter}
                                     validate={
                                         [
                                             required({ msg: 'Enter a message' })
@@ -84,7 +80,7 @@ class Chat extends Component {
                                         labelPosition: "right",
                                         icon: "arrow circle up",
                                         content: "Send",
-                                        onClick: () => this.props.sendMessage({user: this.props.user, message: this.state.message})
+                                        onClick: () => this.props.sendMessage({userId: this.props.user._id, message: this.state.message})
                                     }}
                                     />
             
@@ -107,6 +103,6 @@ function mapStateToProps(state) {
 // export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
-    connect(mapStateToProps, { loadUser, subscribeToMessageFromServer, sendMessage }),
+    connect(mapStateToProps, {  loadUser, subscribeToMessageFromServer, sendMessage }),
     requireAuth
 )(Chat)

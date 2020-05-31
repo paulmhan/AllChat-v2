@@ -29,7 +29,6 @@ export const subscribeToRoomFromServer = () => dispatch => {
 };
 
 export const sendMessage = data => {
-    console.log(data, "this is message")
     console.log("message sent to server")
     return {
         event: "message",
