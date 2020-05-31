@@ -10,7 +10,6 @@ class CreateRoomModal extends Component {
 
     handleRoomNameChange = e => {
         const { value } = e.target;
-        console.log(value);
         this.setState({ roomName: value });
     };
 
@@ -20,6 +19,7 @@ class CreateRoomModal extends Component {
             userId: this.props.userId
         }
         this.props.createRoom(data);
+        // this.props.getAllRooms(data.roomName);
     }
 
 

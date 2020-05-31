@@ -9,13 +9,13 @@ class ChatSideBar extends Component {
         userList: []
     }
 
-    getRoomUsers = () => {
-        const data = {
-            users: this.state.userList,
-            userId: this.props.userId
-        }
-        this.props.getRoomUsers(data);
-    }
+    // getRoomUsers = () => {
+    //     const data = {
+    //         users: this.state.userList,
+    //         userId: this.props.userId
+    //     }
+    //     this.props.getRoomUsers(data);
+    // }
 
     render() {
 

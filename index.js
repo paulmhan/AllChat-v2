@@ -40,24 +40,32 @@ io.on("connection", socket => {
 
     socket.on("createRoom", data => {
         console.log("creating room in server");
-        //data is the room name
+        //data is the room name and userID
         roomController.createRoom(data, newRoom => {
             socket.emit("serverToClientRoom", newRoom);
         });
-    });
+    })
 
-    socket.on("getRoomUsers", data => {
-        console.log("Getting users from room");
-        userController.getRoomUsers(data, roomUsers => {
-            socket.emit("getRoomUsers", roomUsers);
+    socket.on("getAllRooms", () => {
+        console.log("getting rooms in server");
+        roomController.getAllRooms(rooms => {
+            socket.emit("serverToClientRoom", rooms);
         });
-    });
+    })
+
+
+    // socket.on("getRoomUsers", data => {
+    //     console.log("Getting users from room");
+    //     userController.getRoomUsers(data, roomUsers => {
+    //         socket.emit("getRoomUsers", roomUsers);
+    //     });
+    // });
 
     // socket.on("createRoom",  )
     socket.emit("disconnect", () => {
         console.log("Client disconnected.");
         return;
     });
-})
+});
 
 server.listen(PORT, () => console.log(`Server started on port ${PORT}`));

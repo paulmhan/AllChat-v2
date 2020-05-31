@@ -8,7 +8,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, getRoomUsers } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -59,8 +59,8 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                            roomUsers={this.props.getRoomUsers()}
-                            userId={this.props.user?.id}
+                            // roomUsers={this.props.getRoomUsers()}
+                            // userId={this.props.user?.id}
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>
@@ -116,6 +116,6 @@ function mapStateToProps(state) {
 
 export default compose(
     reduxForm({ form: "chat" }),
-    connect(mapStateToProps, { loadUser, subscribeToMessageFromServer, sendMessage, getRoomUsers }),
+    connect(mapStateToProps, { loadUser, subscribeToMessageFromServer, sendMessage }),
     requireAuth
 )(Chat)

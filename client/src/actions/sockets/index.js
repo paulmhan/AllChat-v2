@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, ACTIVE_ROOM } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, ACTIVE_ROOM, GET_ALL_ROOMS } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -12,6 +12,7 @@ export const subscribeToMessageFromServer = () => dispatch => {
 };
 
 export const subscribeToRoomFromServer = () => dispatch => {
+    // console.log(data, "coming from server");
     dispatch({
         event: "serverToClientRoom",
         handle: data => dispatch({
@@ -23,6 +24,13 @@ export const subscribeToRoomFromServer = () => dispatch => {
         event: "serverToClientRoom",
         handle: data => dispatch({
             type: NEW_ROOM,
+            payload: data,
+        }),
+    });
+    dispatch({
+        event: "serverToClientRoom",
+        handle: data => dispatch({
+            type: GET_ALL_ROOMS,
             payload: data,
         }),
     });
@@ -43,25 +51,42 @@ export const unsubscribeMessage = message => {
         event: "message",
         leave: true,
     };
-    
 };
 
 export const createRoom = data => {
-    console.log('room sent to server')
+    console.log('room sent to server');
     return {
         event: "createRoom",
         payload: data,
         emit: true,
     };
-    
 };
 
-export const getRoomUsers = data => {
-    console.log("found users in room");
-    console.log(data);
+// export const createRoom = data => {
+//     console.log('room sent to server');
+//     return {
+//         event: "createRoom",
+//         payload: data,
+//         emit: true,
+//     };
+// };
+
+export const getAllRooms = () => {
+    console.log('getting rooms');
     return {
-        event: "getRoomUsers",
-        payload: data,
-        emit: true
+        event: "getAllRooms",
+        payload: null,
+        emit: true,
     };
-}
+};
+
+
+// export const getRoomUsers = data => {
+//     console.log("found users in room");
+//     console.log(data);
+//     return {
+//         event: "getRoomUsers",
+//         payload: data,
+//         emit: true
+//     };
+// };

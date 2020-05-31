@@ -15,14 +15,22 @@ export default function socketMiddleware() {
             handle,
             payload,
             result,
+            cb,
             ...rest
 
         } = action; 
+
+        // if(emit && cb){
+        //     let handleEvent = handle;
+        //     socket.emit(event, handleEvent);
+        //     return;
+        // }
 
         if(emit){
             socket.emit(event, payload);
             return;
         }
+
         
         if(!event){
             return next(action);
