@@ -14,7 +14,7 @@ class ChatSideBar extends Component {
             users: this.state.userList,
             userId: this.props.userId
         }
-        this.props.getUsers();
+        this.props.getUsers(data);
     }
 
     render() {
@@ -24,7 +24,7 @@ class ChatSideBar extends Component {
                 <h1 id="user-title">Users:</h1>
                 <Segment.Group id="chatroom-interface">
                     <div id="user-list">
-                        {this.props.usersList.map((data, index) =>
+                        {this.usersList.map((data, index) =>
                             <Segment.Group key={index}>
                                 <Segment>{data.users}</Segment>
                             </Segment.Group>)}
