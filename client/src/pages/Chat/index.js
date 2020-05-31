@@ -8,7 +8,7 @@ import MessageContainer from "../../components/MessageContainer";
 import MessageInputBar from "../../components/MessageInputBar";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, getUsers } from "../../actions/sockets";
 
 // import ReactDOM from "react-dom";
 // import { withRouter } from "react-router-dom";
@@ -20,9 +20,6 @@ class Chat extends Component {
         this.props.subscribeToMessageFromServer();
     }
 
-    
-
-
     render() {
         return (
             <Grid container>
@@ -30,7 +27,7 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                        //  users={this.state.users} 
+                         users={this.props.getUsers} 
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>
@@ -84,6 +81,6 @@ function mapStateToProps(state) {
 // export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
-    connect(mapStateToProps, { subscribeToMessageFromServer, sendMessage }),
+    connect(mapStateToProps, { subscribeToMessageFromServer, sendMessage, getUsers }),
     requireAuth
 )(Chat)

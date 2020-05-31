@@ -44,8 +44,8 @@ io.on("connection", socket => {
 
     socket.on("getUsers", data => {
         console.log("Getting users");
-        userController.getUserTodos(data, users => {
-            socket.emit("getUsers", users);
+        userController.getUsers(data, allUsers => {
+            socket.emit("getUsers", allUsers);
         });
     });
 

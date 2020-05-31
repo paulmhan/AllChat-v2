@@ -76,11 +76,11 @@ module.exports = {
   },
   getUsers: async (req, res) => {
     try {
-      const allUsers = await User.find({ users: req.query.firstName && req.query.lastName }, "users");
+      const allUsers = await User.find();
       console.log(allUsers);
-      return res.status(200).json(allUsers);
-    } catch(e) {
-      return res.status(403).json({ e });
+      
+    } catch (error) {
+      throw error;
     }
   },
 };

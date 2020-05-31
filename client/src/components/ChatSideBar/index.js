@@ -6,13 +6,12 @@ import "./style.css";
 class ChatSideBar extends Component {
 
     state = {
-        userList: ""
+        userList: []
     }
 
     getUsers = () => {
         const data = {
-            users: this.state.userList,
-            userId: this.props.userId
+            users: this.state.userList
         }
         this.props.getUsers(data);
     }
@@ -24,10 +23,10 @@ class ChatSideBar extends Component {
                 <h1 id="user-title">Users:</h1>
                 <Segment.Group id="chatroom-interface">
                     <div id="user-list">
-                        {this.usersList.map((data, index) =>
+                        {/* {this.users.map((data, index) =>
                             <Segment.Group key={index}>
                                 <Segment>{data.users}</Segment>
-                            </Segment.Group>)}
+                            </Segment.Group>)} */}
                     </div>
                 </Segment.Group>
 
