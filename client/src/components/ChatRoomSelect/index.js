@@ -39,7 +39,7 @@ const ChatRoom3 = (
 const ChatRooms = [
     { key: "Chatroom 1", title: "Chatroom 1", content: { content: ChatRoom1 } },
     { key: "Chatroom 2", title: "Chatroom 2", content: { content: ChatRoom2 } },
-    { key: "Chatroom 3", title: "Chatroom 3", content: { content: ChatRoom3 } }
+    { key: "Chatroom 3", title: "Chatroom 3", content: {}}
 ];
 
 

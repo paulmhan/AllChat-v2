@@ -1,4 +1,5 @@
 import { NEW_MESSAGE, NEW_ROOM, ACTIVE_ROOM } from "../socketTypes";
+import { combine } from "redux-form-validators";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -12,6 +13,7 @@ export const subscribeToMessageFromServer = () => dispatch => {
 };
 
 export const subscribeToRoomFromServer = () => dispatch => {
+    // console.log(data, "coming from server");
     dispatch({
         event: "serverToClientRoom",
         handle: data => dispatch({
@@ -43,15 +45,21 @@ export const unsubscribeMessage = message => {
         event: "message",
         leave: true,
     };
-    
 };
 
 export const createRoom = data => {
-    console.log('room sent to server')
+    console.log('room sent to server');
     return {
         event: "createRoom",
         payload: data,
         emit: true,
     };
-    
 };
+
+export const getAllRooms = () => {
+    console.log("getting all rooms");
+    return {
+        event: "getAllRooms",
+        emit: true
+    }
+}

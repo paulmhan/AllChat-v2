@@ -16,8 +16,12 @@ class Rooms extends Component {
     
     componentDidMount(){
         this.props.subscribeToRoomFromServer();
-      
         this.props.user || this.props.loadUser();
+        this.getAllRooms();
+    }
+
+    getAllRooms(){
+
     }
 
     render() {
@@ -30,7 +34,9 @@ class Rooms extends Component {
                             createRoom={this.props.createRoom}
                             userId = {this.props.user?._id}
                         />
-                        <ChatRoomSelect />
+                        <ChatRoomSelect 
+                            
+                        />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

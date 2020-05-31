@@ -7,7 +7,8 @@ module.exports = {
         console.log(data);
         try {
             const messageData = await new Message({ text: message, user:userId }).save();
-            const newMessage = await Message.findById(messageData._id).populate("user")
+            const newMessage = await Message.findById(messageData._id).populate("user");
+            console.log(newMessage);
             cb(newMessage);
         } catch (error) {
             throw error;
