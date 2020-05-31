@@ -51,6 +51,27 @@ class Chat extends Component {
             />
         );
     }
+    // handleSend = (e) => {
+    //     e.preventDefault();
+    //     this.checkInputs(e);
+    //     if (this.state.message.length === 0) {
+    //         this.setState({ placeholder: "Cannot be blank!" })
+    //     } else {
+    //         this.sendMessage();
+    //     };
+    // };
+
+    // handleEnter = e => {
+    //     console.log("handleEnter");
+    //     if (e.keyCode === 13) {
+    //         this.handleSend(e);
+    //     } else {
+    //         this.props.socket.emit("onKeyUp", this.state.name, user => {
+    //             console.log(user)
+    //         })
+    //     }
+    // }
+
 
     render() {
         return (
