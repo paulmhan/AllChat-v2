@@ -56,10 +56,10 @@ export const createRoom = data => {
     
 };
 
-export const getUsers = data => {
-    console.log("found users");
+export const getRoomUsers = data => {
+    console.log("found users in room");
     return {
-        event: "getUsers",
+        event: "getRoomUsers",
         payload: data,
         emit: true
     };

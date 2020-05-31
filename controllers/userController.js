@@ -74,7 +74,7 @@ module.exports = {
       return res.status(403).json({ e });
     }
   },
-  getUsers: async (req, res) => {
+  getRoomUsers: async (data, cb) => {
     try {
       const allUsers = await User.find();
       console.log(allUsers);

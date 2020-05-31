@@ -46,10 +46,10 @@ io.on("connection", socket => {
         });
     });
 
-    socket.on("getUsers", data => {
-        console.log("Getting users");
-        userController.getUsers(data, allUsers => {
-            socket.emit("getUsers", allUsers);
+    socket.on("getRoomUsers", data => {
+        console.log("Getting users from room");
+        userController.getRoomUsers(data, allUsers => {
+            socket.emit("getRoomUsers", allUsers);
         });
     });
 
