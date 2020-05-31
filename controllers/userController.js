@@ -1,4 +1,4 @@
-const { User, Todo } = require('../models/index');
+const { User, Room, Todo } = require('../models/index');
 
 module.exports = {
   addTodo: async (req, res) => {
@@ -75,10 +75,13 @@ module.exports = {
     }
   },
   getRoomUsers: async (data, cb) => {
+    const { users, userId } = data;
+    console.log(data);
     try {
-      const allUsers = await User.find();
-      console.log(allUsers);
-      
+      const roomUsers = await Room.find({ users });
+      console.log(roomUsers);
+      roomUsers.users.push(userId);
+      cb(roomUsers);
     } catch (error) {
       throw error;
     }

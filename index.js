@@ -48,13 +48,13 @@ io.on("connection", socket => {
 
     socket.on("getRoomUsers", data => {
         console.log("Getting users from room");
-        userController.getRoomUsers(data, allUsers => {
-            socket.emit("getRoomUsers", allUsers);
+        userController.getRoomUsers(data, roomUsers => {
+            socket.emit("getRoomUsers", roomUsers);
         });
     });
 
     // socket.on("createRoom",  )
-    socket.on("disconnect", () => {
+    socket.emit("disconnect", () => {
         console.log("Client disconnected.");
         return;
     });

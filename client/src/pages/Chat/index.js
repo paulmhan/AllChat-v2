@@ -41,7 +41,8 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                         users={this.props.getRoomUsers} 
+                         roomUsers={this.props.getRoomUsers()}
+                         userId={this.props.user?.id} 
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>

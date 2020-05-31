@@ -11,7 +11,8 @@ class ChatSideBar extends Component {
 
     getRoomUsers = () => {
         const data = {
-            users: this.state.userList
+            users: this.state.userList,
+            userId: this.props.userId
         }
         this.props.getRoomUsers(data);
     }
