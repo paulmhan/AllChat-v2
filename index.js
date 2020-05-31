@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require("./routes");
 const roomController = require("./controllers/roomController");
+const userController = require("./controllers/userController");
 const messageController = require("./controllers/messageController");
 
 
@@ -43,9 +44,17 @@ io.on("connection", socket => {
         roomController.createRoom(data, newRoom => {
             socket.emit("serverToClientRoom", newRoom);
         });
-    })
+    });
+
+    socket.on("getRoomUsers", data => {
+        console.log("Getting users from room");
+        userController.getRoomUsers(data, roomUsers => {
+            socket.emit("getRoomUsers", roomUsers);
+        });
+    });
+
     // socket.on("createRoom",  )
-    socket.on("disconnect", () => {
+    socket.emit("disconnect", () => {
         console.log("Client disconnected.");
         return;
     });
