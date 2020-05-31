@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require("./routes");
 const roomController = require("./controllers/roomController");
+const userController = require("./controllers/userController");
 
 
 const PORT = process.env.PORT || 3001;
@@ -39,7 +40,15 @@ io.on("connection", socket => {
         roomController.createRoom(data, newRoom => {
             socket.emit("serverToClientRoom", newRoom);
         });
-    })
+    });
+
+    socket.on("getUsers", data => {
+        console.log("Getting users");
+        userController.getUserTodos(data, users => {
+            socket.emit("getUsers", users);
+        });
+    });
+
     // socket.on("createRoom",  )
     socket.on("disconnect", () => {
         console.log("Client disconnected.");

@@ -5,6 +5,17 @@ import "./style.css";
 
 class ChatSideBar extends Component {
 
+    state = {
+        userList: ""
+    }
+
+    getUsers = () => {
+        const data = {
+            users: this.state.userList,
+            userId: this.props.userId
+        }
+        this.props.getUsers();
+    }
 
     render() {
 
@@ -13,10 +24,10 @@ class ChatSideBar extends Component {
                 <h1 id="user-title">Users:</h1>
                 <Segment.Group id="chatroom-interface">
                     <div id="user-list">
-                        {/* {this.props.users.map((user, index) =>
+                        {this.props.usersList.map((data, index) =>
                             <Segment.Group key={index}>
-                                <Segment>{user.name}</Segment>
-                            </Segment.Group>)} */}
+                                <Segment>{data.users}</Segment>
+                            </Segment.Group>)}
                     </div>
                 </Segment.Group>
 

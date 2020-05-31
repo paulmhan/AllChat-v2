@@ -55,3 +55,12 @@ export const createRoom = data => {
     };
     
 };
+
+export const getUsers = data => {
+    console.log("found users");
+    return {
+        event: "getUsers",
+        payload: data,
+        emit: true
+    };
+}
