@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, ACTIVE_ROOM } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, ACTIVE_ROOM, GET_ALL_ROOMS } from "../socketTypes";
 import { combine } from "redux-form-validators";
 
 
@@ -25,6 +25,13 @@ export const subscribeToRoomFromServer = () => dispatch => {
         event: "serverToClientRoom",
         handle: data => dispatch({
             type: NEW_ROOM,
+            payload: data,
+        }),
+    });
+    dispatch({
+        event: "serverToClientRoom",
+        handle: data => dispatch({
+            type: GET_ALL_ROOMS,
             payload: data,
         }),
     });
@@ -56,10 +63,10 @@ export const createRoom = data => {
     };
 };
 
-export const getAllRooms = () => {
-    console.log("getting all rooms");
-    return {
-        event: "getAllRooms",
-        emit: true
-    }
-}
+// export const getAllRooms = () => {
+//     console.log("getting all rooms");
+//     return {
+//         event: "getAllRooms",
+//         emit: true
+//     }
+// }
