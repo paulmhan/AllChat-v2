@@ -45,6 +45,13 @@ io.on("connection", socket => {
         });
     })
 
+    socket.on("getAllRooms", () => {
+        console.log("getting rooms in server");
+        roomController.getAllRooms(rooms => {
+            socket.emit("serverToClientRoom", rooms);
+        });
+    })
+
 
     // socket.on("createRoom",  )
     socket.on("disconnect", () => {

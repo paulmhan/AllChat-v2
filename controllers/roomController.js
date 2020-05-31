@@ -16,8 +16,16 @@ module.exports = {
     getRoomById: async () => {
 
     },
-    getAllRooms: async () => {
-
+    getAllRooms: async (cb) => {
+        try {
+            const rooms = await Room.find();
+            if(!rooms){
+                console.log("No Rooms");
+            }
+            cb(rooms);
+        } catch (error) {
+            throw error;
+        }
     },
     
     

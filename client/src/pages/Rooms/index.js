@@ -5,7 +5,7 @@ import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
-import { subscribeToRoomFromServer, createRoom } from "../../actions/sockets";
+import { subscribeToRoomFromServer, createRoom, getAllRooms } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 
 
@@ -17,12 +17,12 @@ class Rooms extends Component {
     componentDidMount(){
         this.props.subscribeToRoomFromServer();
         this.props.user || this.props.loadUser();
-        this.getAllRooms();
+        this.props.getAllRooms();
     }
 
-    getAllRooms(){
-
-    }
+    // getAllRooms(){
+    //     console.log(this.props.rooms);
+    // }
 
     render() {
         return(
@@ -33,6 +33,7 @@ class Rooms extends Component {
                         <CreateRoomModal 
                             createRoom={this.props.createRoom}
                             userId = {this.props.user?._id}
+                            // getAllRooms = {this.getAllRooms}
                         />
                         <ChatRoomSelect 
                             
@@ -47,11 +48,14 @@ class Rooms extends Component {
 
 
 function mapStateToProps(state) {
-    return { user: state.auth.currentUser }
+    return { 
+        user: state.auth.currentUser,
+        // rooms: state.socket.rooms
+    }
 }
 
 
 export default compose(
-    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom }),
+    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms }),
     requireAuth
 )(Rooms)
