@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { Segment } from "semantic-ui-react";
 import moment from 'moment';
-
-
-
 import "./style.css";
 
 class MessageContainer extends Component {
@@ -17,9 +14,8 @@ class MessageContainer extends Component {
             <Segment key={index}>
               <p id="timeStamp">
                 <span>{moment(message.dateCreated).format('MMMM Do YYYY, h:mm a')}</span>
-                
               </p>
-              <p id ="userName"> <strong>{message.user.firstName}:</strong> {message.text}</p>
+              <p id ="userName"> <strong>{message.firstName}&nbsp;{message.lastName}:</strong> {message.text}</p>
             </Segment>)}
         </div>
       </div>

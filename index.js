@@ -45,6 +45,10 @@ io.on("connection", socket => {
         });
     })
 
+    socket.on("userJoin", newUser => {
+        socket.broadcast.emit("userJoined", newUser)
+    })
+
     socket.on("getAllRooms", () => {
         console.log("getting rooms in server");
         roomController.getAllRooms(rooms => {

@@ -8,7 +8,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, userJoinMessage } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -24,11 +24,12 @@ class Chat extends Component {
        
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
+        // this.userJoin();
     }
 
     componentWillUnmount() {
-        this.handleLeave();
-        this.isLive = false;
+        // this.handleLeave();
+        // this.isLive = false;
     }
 
     handleMessageChange = e => {
@@ -38,6 +39,9 @@ class Chat extends Component {
         });
     };
     
+    userJoin = () => {
+        this.userJoinMessage()
+    };
 
     renderMessageInput = ({ input, meta }) => {
        
@@ -53,7 +57,11 @@ class Chat extends Component {
                     labelPosition: "right",
                     icon: "arrow circle up",
                     content: "Send",
-                    onClick: () => this.props.sendMessage({ userId: this.props.user._id, message: this.state.message })
+                    onClick: () => this.props.sendMessage({ 
+                        userId: this.props.user._id, 
+                        firstName: this.props.user.firstName,
+                        lastName: this.props.user.lastName,
+                        message: this.state.message })
                     
                 }}
             />
@@ -129,6 +137,11 @@ function mapStateToProps(state) {
 
 export default compose(
     reduxForm({ form: "chat" }),
-    connect(mapStateToProps, { loadUser, subscribeToMessageFromServer, sendMessage }),
+    connect(mapStateToProps, { 
+        loadUser, 
+        subscribeToMessageFromServer, 
+        sendMessage,
+        userJoinMessage
+    }),
     requireAuth
 )(Chat)

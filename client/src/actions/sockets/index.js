@@ -45,6 +45,15 @@ export const sendMessage = data => {
     };
 };
 
+export const userJoinMessage = data => {
+    console.log("userJoinmessage sent to server")
+    return {
+        event: "userJoinMessage",
+        payload: data,
+        emit: true
+    };
+};
+
 
 export const unsubscribeMessage = message => {
     return {
