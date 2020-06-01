@@ -26,14 +26,16 @@ class Chat extends Component {
         this.props.user || this.props.loadUser();
     }
 
-    handleMessageChange = e => {
+    componentWillUnmount() {
+        this.handleLeave();
+        this.isLive = false;
+    }
 
+    handleMessageChange = e => {
         const { value } = e.target;
         this.setState({
             message: value
         });
-        
-
     };
     
 
