@@ -45,6 +45,20 @@ export const sendMessage = data => {
     };
 };
 
+export const userJoinMessage = () => {
+    console.log("userJoinmessage sent to server")
+    return {
+        event: "userJoinMessage",
+        payload: { 
+            firstName:"AllChatBot", 
+            lastName:"", 
+            message:"Welcome to AllChat!", 
+            userId:"12345678"
+         },
+        emit: true
+    };
+};
+
 
 export const unsubscribeMessage = message => {
     return {
