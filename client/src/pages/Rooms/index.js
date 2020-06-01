@@ -35,9 +35,9 @@ class Rooms extends Component {
                             userId = {this.props.user?._id}
                             // getAllRooms = {this.getAllRooms}
                         />
-                        <ChatRoomSelect 
+                        {/* <ChatRoomSelect 
                             
-                        />
+                        /> */}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
