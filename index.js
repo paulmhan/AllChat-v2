@@ -45,7 +45,7 @@ io.on("connection", socket => {
         });
     })
 
-    socket.on("userJoin", newUser => {
+    socket.on("userJoinMessage", newUser => {
         socket.broadcast.emit("userJoined", newUser)
     })
 
