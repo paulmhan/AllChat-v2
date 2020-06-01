@@ -21,7 +21,6 @@ class Rooms extends Component {
         this.props.getAllRooms();
     }
 
-    
 
     render() {
         return(
