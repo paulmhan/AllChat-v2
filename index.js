@@ -40,6 +40,7 @@ io.on("connection", socket => {
     socket.on("createRoom", data => {
         console.log("creating room in server");
         //data is the room name and userID
+        // socket.join(data.roomName)
         roomController.createRoom(data, newRoom => {
             socket.emit("serverToClientRoom", newRoom);
         });
