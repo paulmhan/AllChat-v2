@@ -5,8 +5,12 @@ import { required } from 'redux-form-validators';
 class CreateRoomModal extends Component {
 
     state = {
-        roomName:""
+        roomName: "",
+        open: false
     }
+
+    open = () => this.setState({ open: true });
+    close = () => this.setState({ open: false });
 
     handleRoomNameChange = e => {
         const { value } = e.target;
@@ -25,23 +29,26 @@ class CreateRoomModal extends Component {
 
     render() {
         return (
-            <Modal trigger={<Button content='Create Room' />}>
+            <Modal
+                onOpen={this.open}
+                onClose={this.close}
+                trigger={<Button content='Create Room' />}>
                 <Modal.Header>Please Enter A Room Name</Modal.Header>
                 <Modal.Content>
-                        <Form.Input
-                            fluid
-                            onChange={this.handleRoomNameChange}
-                            autoComplete='off'
-                            placeholder='Enter room name...'
-                            validate={
-                                [
-                                    required({ msg: 'You must provide a room name' })
-                                ]
-                            }
-                        />
+                    <Form.Input
+                        fluid
+                        onChange={this.handleRoomNameChange}
+                        autoComplete='off'
+                        placeholder='Enter room name...'
+                        validate={
+                            [
+                                required({ msg: 'You must provide a room name' })
+                            ]
+                        }
+                    />
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button 
+                    <Button
                         content='Create Room'
                         size='large'
                         color='blue'
