@@ -16,10 +16,12 @@ import "./style.css";
 class Chat extends Component {
 
     state = {
-        message: ""
+        message: "",
+        messages:[]
     }
 
     componentDidMount() {
+       
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
     }
@@ -30,10 +32,13 @@ class Chat extends Component {
         this.setState({
             message: value
         });
+        
 
     };
+    
 
     renderMessageInput = ({ input, meta }) => {
+       
         return (
             <Form.Input
                 {...input}
@@ -47,30 +52,12 @@ class Chat extends Component {
                     icon: "arrow circle up",
                     content: "Send",
                     onClick: () => this.props.sendMessage({ userId: this.props.user._id, message: this.state.message })
+                    
                 }}
             />
         );
     }
-    // handleSend = (e) => {
-    //     e.preventDefault();
-    //     this.checkInputs(e);
-    //     if (this.state.message.length === 0) {
-    //         this.setState({ placeholder: "Cannot be blank!" })
-    //     } else {
-    //         this.sendMessage();
-    //     };
-    // };
-
-    // handleEnter = e => {
-    //     console.log("handleEnter");
-    //     if (e.keyCode === 13) {
-    //         this.handleSend(e);
-    //     } else {
-    //         this.props.socket.emit("onKeyUp", this.state.name, user => {
-    //             console.log(user)
-    //         })
-    //     }
-    // }
+   
 
 
     render() {
@@ -99,7 +86,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={16}>
                                     <MessageContainer
-                                    //  messages={this.state.messages} 
+                                     messages={this.props.messages} 
                                     />
                                 </Grid.Column>
                             </Grid.Row>
@@ -129,7 +116,10 @@ class Chat extends Component {
 }
 
 function mapStateToProps(state) {
-    return { user: state.auth.currentUser }
+    return { 
+        user: state.auth.currentUser,
+        messages: state.socket.messages
+     }
 }
 
 
