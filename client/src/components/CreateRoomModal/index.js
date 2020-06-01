@@ -37,6 +37,7 @@ class CreateRoomModal extends Component {
                 <Modal.Content>
                     <Form.Input
                         fluid
+                        
                         onChange={this.handleRoomNameChange}
                         autoComplete='off'
                         placeholder='Enter room name...'
@@ -54,6 +55,7 @@ class CreateRoomModal extends Component {
                         color='blue'
                         type="submit"
                         onClick={() => this.createRoom()}
+                        onKeyDown={this.handleEnter}
                     />
                 </Modal.Actions>
             </Modal>
