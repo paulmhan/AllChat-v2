@@ -20,7 +20,7 @@ class CreateRoomModal extends Component {
         }
         this.props.createRoom(data);
         // this.setState({ roomName: "" });
-        // this.props.getAllRooms(data.roomName);
+        this.props.getAllRooms();
     }
 
 

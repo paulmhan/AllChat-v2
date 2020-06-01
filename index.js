@@ -34,7 +34,6 @@ io.on("connection", socket => {
             socket.emit("serverToClientMessage", newMessage)
             socket.broadcast.emit("serverToClientMessage", newMessage);
         })
-        
     });
 
     socket.on("createRoom", data => {

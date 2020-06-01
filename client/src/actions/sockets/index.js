@@ -76,15 +76,6 @@ export const createRoom = data => {
     };
 };
 
-// export const createRoom = data => {
-//     console.log('room sent to server');
-//     return {
-//         event: "createRoom",
-//         payload: data,
-//         emit: true,
-//     };
-// };
-
 export const getAllRooms = () => {
     console.log('getting rooms');
     return {
@@ -93,6 +84,15 @@ export const getAllRooms = () => {
         emit: true,
     };
 };
+
+export const joinRoom = data => {
+    console.log(data);
+    return {
+        event: "joinRoom",
+        payload: data,
+        emit: true,
+    }
+}
 
 
 // export const getRoomUsers = data => {

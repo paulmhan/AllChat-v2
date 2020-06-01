@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Header, List, Button } from 'semantic-ui-react';
 import "./style.css";
+import { PromiseProvider } from 'mongoose';
 
 export default (props) => {
   if (props.rooms.length === 0) {
@@ -20,7 +21,7 @@ export default (props) => {
               size='small'
               onClick={ () => props.handleUpdate(_id, text )}/> */}
             <Link to={`/chat?room=${text}`}>
-              <button className="button" type="submit" >Join Room</button>
+              <button className="button" type="submit" onClick={()=>props.joinRoom(text)}>Join Room</button>
             </Link>
           </List.Content>
         </List.Item>
