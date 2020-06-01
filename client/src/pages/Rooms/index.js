@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { compose } from "redux";
 import { subscribeToRoomFromServer, createRoom, getAllRooms } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
+import RoomListItems from "../../components/RoomListItems";
 
 
 
@@ -20,9 +21,7 @@ class Rooms extends Component {
         this.props.getAllRooms();
     }
 
-    // getAllRooms(){
-    //     console.log(this.props.rooms);
-    // }
+    
 
     render() {
         return(
@@ -35,8 +34,11 @@ class Rooms extends Component {
                             userId = {this.props.user?._id}
                             // getAllRooms = {this.getAllRooms}
                         />
-                        <ChatRoomSelect 
+                        {/* <ChatRoomSelect 
                             
+                        /> */}
+                        <RoomListItems
+                            rooms={this.props.rooms}
                         />
                     </Grid.Column>
                 </Grid.Row>
@@ -50,7 +52,7 @@ class Rooms extends Component {
 function mapStateToProps(state) {
     return { 
         user: state.auth.currentUser,
-        // rooms: state.socket.rooms
+        rooms: state.socket.rooms
     }
 }
 
