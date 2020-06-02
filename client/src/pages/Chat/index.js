@@ -17,7 +17,9 @@ class Chat extends Component {
 
     state = {
         message: "",
-        messages:[]
+        messages:[],
+        messageValid: false,
+        submitDisabled: true
     }
 
     componentDidMount() {
@@ -39,12 +41,19 @@ class Chat extends Component {
         });
     };
     
+    handleMessageSubmit = (formValues, dispatch) => {
+        console.log(formValues);
+        dispatch({ type: 'SEND_MESSAGE'})
+        if(formValues === "") {
+            console.log("You must enter a message");
+        };
+    }
+    
     userJoin = () => {
         this.userJoinMessage()
     };
 
     renderMessageInput = ({ input, meta }) => {
-       
         return (
             <Form.Input
                 {...input}
@@ -61,17 +70,14 @@ class Chat extends Component {
                         userId: this.props.user._id, 
                         firstName: this.props.user.firstName,
                         lastName: this.props.user.lastName,
-                        message: this.state.message })
-                    
+                        message: this.state.message }),
+                    disabled: !this.state.message
                 }}
             />
         );
     }
 
-    handleMessageSubmit = (formValues, dispatch) => {
-        console.log(formValues);
-       dispatch({ type: 'SEND_MESSAGE'})
-    }
+    
 
     render() {
         const { handleSubmit } = this.props;
