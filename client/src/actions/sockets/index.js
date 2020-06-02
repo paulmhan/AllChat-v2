@@ -84,11 +84,11 @@ export const getAllRooms = () => {
         emit: true,
     };
 };
-export const joinRoom = roomName => {
-    console.log(roomName);
+export const joinRoom = data => {
+    console.log(data);
     return {
         event: "joinRoom",
-        payload: roomName,
+        payload: data,
         emit: true,
     }
 }

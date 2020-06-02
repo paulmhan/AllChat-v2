@@ -64,9 +64,9 @@ io.on("connection", socket => {
 
     })
 
-    socket.on("joinRoom", roomName => {
-        console.log(roomName);
-        socket.join(roomName);
+    socket.on("joinRoom", data => {
+        console.log(data.text);
+        socket.join(data.text);
         
         socket.join(data.text);
         socket.emit("WelcomeMessage", { 
