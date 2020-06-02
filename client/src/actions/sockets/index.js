@@ -9,7 +9,6 @@ export const subscribeToMessageFromServer = () => dispatch => {
             payload: data,
         }),
     });
-
     dispatch({
         event: "WelcomeMessage",
         handle: data => dispatch({
@@ -25,7 +24,8 @@ export const subscribeToMessageFromServer = () => dispatch => {
             payload: data,
         }),
     });
-};
+}
+
 
 export const subscribeToRoomFromServer = () => dispatch => {
     // console.log(data, "coming from server");
@@ -53,16 +53,28 @@ export const unsubscribeMessage = message => {
         event: "message",
         leave: true,
     };
+    
 };
 
 export const createRoom = data => {
-    console.log('room sent to server');
+    console.log('room sent to server')
     return {
         event: "createRoom",
         payload: data,
         emit: true,
     };
+    
 };
+
+export const getRoomUsers = data => {
+    console.log("found users in room");
+    console.log(data);
+    return {
+        event: "getRoomUsers",
+        payload: data,
+        emit: true
+    };
+}
 
 export const getAllRooms = () => {
     console.log('getting rooms');
@@ -72,16 +84,14 @@ export const getAllRooms = () => {
         emit: true,
     };
 };
-
-export const joinRoom = data => {
-    console.log(data, "data in joinRoom actions");
+export const joinRoom = roomName => {
+    console.log(roomName);
     return {
         event: "joinRoom",
-        payload: data,
+        payload: roomName,
         emit: true,
     }
 }
-
 export const deleteRoom = id => {
     console.log(id);
     return {
@@ -91,14 +101,3 @@ export const deleteRoom = id => {
         emit: true,
     }
 }
-
-
-// export const getRoomUsers = data => {
-//     console.log("found users in room");
-//     console.log(data);
-//     return {
-//         event: "getRoomUsers",
-//         payload: data,
-//         emit: true
-//     };
-// };

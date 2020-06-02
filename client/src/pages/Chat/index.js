@@ -54,6 +54,8 @@ class Chat extends Component {
     };
 
     renderMessageInput = ({ input, meta }) => {
+        console.log(input, "input");
+        console.log(meta, "meta");
         return (
             <Form.Input
                 {...input}
