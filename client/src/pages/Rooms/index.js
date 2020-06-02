@@ -38,11 +38,8 @@ class Rooms extends Component {
                         <RoomListItems
                             rooms={this.props.rooms}
                             joinRoom={this.props.joinRoom}
-<<<<<<< HEAD
                             user={this.props.user}
-=======
                             deleteRoom ={this.props.deleteRoom}
->>>>>>> 96c28d547726993f28051099781e45e83913afa2
                         />
                     </Grid.Column>
                 </Grid.Row>

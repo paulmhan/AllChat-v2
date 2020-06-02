@@ -77,7 +77,7 @@ export const joinRoom = data => {
     console.log(data, "data in joinRoom actions");
     return {
         event: "joinRoom",
-        payload: roomName,
+        payload: data,
         emit: true,
     }
 }
