@@ -77,7 +77,17 @@ export const joinRoom = data => {
     console.log(data, "data in joinRoom actions");
     return {
         event: "joinRoom",
-        payload: data,
+        payload: roomName,
+        emit: true,
+    }
+}
+
+export const deleteRoom = id => {
+    console.log(id);
+    return {
+        token: localStorage.getItem("token"),
+        event: "deleteRoom",
+        payload: id,
         emit: true,
     }
 }

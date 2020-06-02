@@ -5,6 +5,8 @@ const routes = require("./routes");
 const roomController = require("./controllers/roomController");
 const userController = require("./controllers/userController");
 const messageController = require("./controllers/messageController");
+const { secret } = require("./config");
+const jwt = require("jwt-simple");
 
 
 const PORT = process.env.PORT || 3001;
@@ -52,7 +54,19 @@ io.on("connection", socket => {
         });
     })
 
-    socket.on("joinRoom", data => {
+    socket.on("deleteRoom", data => {
+        //data is { token:"asdasd", payload: "id of room" }
+        let decoded = jwt.decode(data.token, secret);
+        // decoded = { sub: 'asdada', iat: TimeStamp}
+        //decoded.sub is id of user
+        roomController.deleteRoomById(data.payload, decoded.sub);
+        
+
+    })
+
+    socket.on("joinRoom", roomName => {
+        console.log(roomName);
+        socket.join(roomName);
         
         socket.join(data.text);
         socket.emit("WelcomeMessage", { 
