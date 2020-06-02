@@ -13,15 +13,21 @@ module.exports = {
             throw error;
         }
     },
-    deleteRoomById: async (roomId, userId) => {
+    deleteRoomById: async (roomId, userId, cb) => {
         try {
             const roomDelete = await Room.findById(roomId);
-            console.log(typeof roomId);
-            console.log(typeof userId);
-            if(userId !== roomDelete.creator){
+            if(userId != roomDelete.creator){
                 console.log("Cannot delete a room that is not yours.");
+                cb("Error")
+            } else {
+                const deletedRoom = await Room.findByIdAndDelete(roomId);
+                const rooms = await Room.find();
+                if(!rooms){
+                    console.log("No Rooms");
+                    cb("Error");
+                }
+                cb(rooms);
             }
-            const deletedRoom = await Room.findByIdAndDelete(roomId);
         } catch (error) {
             throw error;
         }
@@ -32,6 +38,7 @@ module.exports = {
             const rooms = await Room.find();
             if(!rooms){
                 console.log("No Rooms");
+                cb("Error")
             }
             cb(rooms);
         } catch (error) {

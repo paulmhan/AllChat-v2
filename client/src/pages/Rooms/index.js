@@ -16,7 +16,8 @@ import "./style.css";
 class Rooms extends Component {
     
     componentDidMount(){
-        this.props.subscribeToRoomFromServer();
+        console.log("mount");
+        !this.props.rooms.length && this.props.subscribeToRoomFromServer();
         this.props.user || this.props.loadUser();
         !this.props.rooms.length && this.props.getAllRooms();
     }
@@ -32,9 +33,6 @@ class Rooms extends Component {
                             createRoom={this.props.createRoom}
                             userId = {this.props.user?._id}
                         />
-                        {/* <ChatRoomSelect 
-                            
-                        /> */}
                         <RoomListItems
                             rooms={this.props.rooms}
                             joinRoom={this.props.joinRoom}

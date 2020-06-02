@@ -8,7 +8,7 @@ export default (props) => {
   if (props.rooms.length === 0) {
     return <Header content='No Rooms, Create One and Get Started!' />
   } else {
-    return props.rooms.map(({ text, _id }, index) => {
+    return props.rooms?.map(({ text, _id, creator }, index) => {
       return (
         <List.Item key={index}>
           <List.Content floated='left'>
@@ -22,7 +22,7 @@ export default (props) => {
                 size='small'
                 onClick={() => props.joinRoom({text:text, user:props.user})} />
             </Link>
-            <DeleteRoomModal deleteRoom={props.deleteRoom} id={_id} text={text} />
+            {creator === props.user._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={_id} text={text} />}
           </List.Content>
         </List.Item>
       );
