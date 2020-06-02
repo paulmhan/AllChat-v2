@@ -71,11 +71,21 @@ export const getAllRooms = () => {
     };
 };
 
-export const joinRoom = data => {
-    console.log(data);
+export const joinRoom = roomName => {
+    console.log(roomName);
     return {
         event: "joinRoom",
-        payload: data,
+        payload: roomName,
+        emit: true,
+    }
+}
+
+export const deleteRoom = id => {
+    console.log(id);
+    return {
+        token: localStorage.getItem("token"),
+        event: "deleteRoom",
+        payload: id,
         emit: true,
     }
 }
