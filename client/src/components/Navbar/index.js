@@ -12,6 +12,7 @@ export default (props) => (
       <AllChatTitle />
     </Menu.Item>
     { props.isLoggedIn ? null : <Menu.Item as={Link} to='/signup' position="right" content='Sign Up' id="signup" /> }
+    { props.isLoggedIn ? <Menu.Item as={Link} to="/rooms" position="right" content="Chatrooms" id="chatrooms" /> : null }
     { props.isLoggedIn ? <Menu.Item as={Link} to='/signout' position="right" content='Sign Out'/> : <Menu.Item as={Link} to='/signin' content='Sign In' id="signin" />}
   </Menu>
 );

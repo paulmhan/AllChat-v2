@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Grid, Input } from "semantic-ui-react";
-import { Field, reduxForm } from "redux-form";
+import { Field, reduxForm, reset } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
@@ -17,7 +17,9 @@ class Chat extends Component {
 
     state = {
         message: "",
-        messages:[]
+        messages:[],
+        messageValid: false,
+        submitDisabled: true
     }
 
     componentDidMount() {
@@ -38,9 +40,20 @@ class Chat extends Component {
             message: value
         });
     };
+    
+    handleMessageSubmit = (formValues, dispatch) => {
+        console.log(formValues);
+        dispatch({ type: 'SEND_MESSAGE'})
+        if(formValues === "") {
+            console.log("You must enter a message");
+        };
+    }
+    
+    userJoin = () => {
+        this.userJoinMessage()
+    };
 
     renderMessageInput = ({ input, meta }) => {
-       
         return (
             <Form.Input
                 {...input}
@@ -56,14 +69,17 @@ class Chat extends Component {
                         userId: this.props.user._id, 
                         firstName: this.props.user.firstName,
                         lastName: this.props.user.lastName,
-                        message: this.state.message })
-                    
+                        message: this.state.message }),
+                    disabled: !this.state.message
                 }}
             />
         );
     }
-   
+
+    
+
     render() {
+        const { handleSubmit } = this.props;
         return (
             <Grid container>
                 <Grid.Row
@@ -95,7 +111,7 @@ class Chat extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <Form>
+                                    <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                                         <Field 
                                         name="messageInputBar"
                                         component={this.renderMessageInput}
