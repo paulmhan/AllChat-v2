@@ -22,16 +22,3 @@ export default combineReducers({
   }),
   socket: socketReducer,
 });
-
-
-
-// .plugin({
-//     message: (state, action) => {
-//       switch(action.type) {
-//         case NEW_MESSAGE:
-//           return undefined;
-//         default:
-//           return state;
-//       }
-//     }
-//   })

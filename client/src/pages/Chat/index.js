@@ -67,14 +67,6 @@ class Chat extends Component {
             />
         );
     }
-   
-    // submitMyForm = (data) => {
-    //     const { createRecord, resetForm } = this.props;
-    //     return createRecord(data).then(() => {
-    //         resetForm();
-    //         console.log("Input cleared");
-    //     });
-    // }
 
     handleMessageSubmit = (formValues, dispatch) => {
         console.log(formValues);
@@ -82,7 +74,7 @@ class Chat extends Component {
     }
 
     render() {
-        const { handleSubmit, submitMyForm } = this.props;
+        const { handleSubmit } = this.props;
         return (
             <Grid container>
                 <Grid.Row
@@ -114,7 +106,7 @@ class Chat extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <Form name="message" onSubmit={handleSubmit(this.handleMessageSubmit)}>
+                                    <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                                         <Field 
                                         name="messageInputBar"
                                         component={this.renderMessageInput}
