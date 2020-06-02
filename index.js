@@ -63,7 +63,6 @@ io.on("connection", socket => {
         let decoded = jwt.decode(data.token, secret);
         // decoded = { sub: 'asdada', iat: TimeStamp}
         //decoded.sub is id of user
-        console.log("deleting room", data, decoded);
         roomController.deleteRoomById(data.payload, decoded.sub);
         
 
