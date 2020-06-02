@@ -13,7 +13,7 @@ export default function(state = INITIAL_STATE, action){
         case NEW_MESSAGE:
             return { ...state, messages: [...state.messages, action.payload ]};
         case NEW_ROOM:
-            return { ...state, rooms:[...state.rooms, action.payload]};
+            return { ...state, rooms:[...state.rooms, ...action.payload]};
         case ACTIVE_ROOM:
             return { ...state, activeRoom: action.payload }
         default:

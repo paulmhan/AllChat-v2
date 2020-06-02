@@ -8,9 +8,9 @@ export default (props) => {
   if (props.rooms.length === 0) {
     return <Header content='No Rooms, Create One and Get Started!' />
   } else {
-    return props.rooms[0].map(({ _id, text }) => {
+    return props.rooms.map(({ text }, index) => {
       return (
-        <List.Item key={_id}>
+        <List.Item key={index}>
           <List.Content floated='left'>
             <p>{text}</p>
           </List.Content>

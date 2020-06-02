@@ -56,6 +56,12 @@ io.on("connection", socket => {
         });
     })
 
+    socket.on("joinRoom", roomName => {
+        console.log(roomName);
+        socket.join(roomName);
+        
+    })
+
 
     // socket.on("getRoomUsers", data => {
     //     console.log("Getting users from room");

@@ -18,7 +18,7 @@ class Rooms extends Component {
     componentDidMount(){
         this.props.subscribeToRoomFromServer();
         this.props.user || this.props.loadUser();
-        this.props.getAllRooms();
+        !this.props.rooms.length && this.props.getAllRooms();
     }
 
 
@@ -31,7 +31,6 @@ class Rooms extends Component {
                         <CreateRoomModal 
                             createRoom={this.props.createRoom}
                             userId = {this.props.user?._id}
-                            getAllRooms = {this.props.getAllRooms}
                         />
                         {/* <ChatRoomSelect 
                             

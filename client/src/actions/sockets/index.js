@@ -27,13 +27,13 @@ export const subscribeToRoomFromServer = () => dispatch => {
             payload: data,
         }),
     });
-    dispatch({
-        event: "serverToClientRoom",
-        handle: data => dispatch({
-            type: GET_ALL_ROOMS,
-            payload: data,
-        }),
-    });
+    // dispatch({
+    //     event: "serverToClientRoom",
+    //     handle: data => dispatch({
+    //         type: GET_ALL_ROOMS,
+    //         payload: data,
+    //     }),
+    // });
 };
 
 export const sendMessage = data => {
