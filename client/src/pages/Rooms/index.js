@@ -5,7 +5,7 @@ import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
-import { subscribeToRoomFromServer, createRoom, getAllRooms } from "../../actions/sockets";
+import { subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import RoomListItems from "../../components/RoomListItems";
 
@@ -18,7 +18,7 @@ class Rooms extends Component {
     componentDidMount(){
         this.props.subscribeToRoomFromServer();
         this.props.user || this.props.loadUser();
-        this.props.getAllRooms();
+        !this.props.rooms.length && this.props.getAllRooms();
     }
 
 
@@ -31,13 +31,13 @@ class Rooms extends Component {
                         <CreateRoomModal 
                             createRoom={this.props.createRoom}
                             userId = {this.props.user?._id}
-                            // getAllRooms = {this.getAllRooms}
                         />
                         {/* <ChatRoomSelect 
                             
                         /> */}
                         <RoomListItems
                             rooms={this.props.rooms}
+                            joinRoom={this.props.joinRoom}
                         />
                     </Grid.Column>
                 </Grid.Row>
@@ -57,6 +57,6 @@ function mapStateToProps(state) {
 
 
 export default compose(
-    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms }),
+    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom }),
     requireAuth
 )(Rooms)

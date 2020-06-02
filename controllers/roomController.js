@@ -8,7 +8,7 @@ module.exports = {
             const newRoom = await new Room({ text: roomName })
             newRoom.users.push(userId);
             await newRoom.save();
-            cb(newRoom);
+            cb([newRoom]);
         } catch (error) {
             throw error;
         }
