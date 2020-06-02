@@ -38,10 +38,6 @@ class Chat extends Component {
             message: value
         });
     };
-    
-    userJoin = () => {
-        this.userJoinMessage()
-    };
 
     renderMessageInput = ({ input, meta }) => {
        
@@ -51,7 +47,6 @@ class Chat extends Component {
                 error={ meta.touched && meta.error }
                 fluid
                 autoComplete='off'
-                onKeyDown={this.handleEnter}
                 action={{
                     color: "blue",
                     labelPosition: "right",
@@ -68,8 +63,6 @@ class Chat extends Component {
         );
     }
    
-
-
     render() {
         return (
             <Grid container>
@@ -141,7 +134,6 @@ export default compose(
         loadUser, 
         subscribeToMessageFromServer, 
         sendMessage,
-        userJoinMessage
     }),
     requireAuth
 )(Chat)

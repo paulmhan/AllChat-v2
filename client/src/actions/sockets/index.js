@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, WELCOME_MESSAGE } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -6,6 +6,14 @@ export const subscribeToMessageFromServer = () => dispatch => {
         event: "serverToClientMessage",
         handle: data => dispatch({
             type: NEW_MESSAGE,
+            payload: data,
+        }),
+    });
+
+    dispatch({
+        event: "WelcomeMessage",
+        handle: data => dispatch({
+            type: WELCOME_MESSAGE,
             payload: data,
         }),
     });
@@ -27,20 +35,6 @@ export const sendMessage = data => {
     return {
         event: "message",
         payload: data,
-        emit: true
-    };
-};
-
-export const userJoinMessage = () => {
-    console.log("userJoinmessage sent to server")
-    return {
-        event: "userJoinMessage",
-        payload: { 
-            firstName:"AllChatBot", 
-            lastName:"", 
-            message:"Welcome to AllChat!", 
-            userId:"12345678"
-         },
         emit: true
     };
 };
