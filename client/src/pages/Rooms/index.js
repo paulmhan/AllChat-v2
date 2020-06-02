@@ -38,6 +38,7 @@ class Rooms extends Component {
                         <RoomListItems
                             rooms={this.props.rooms}
                             joinRoom={this.props.joinRoom}
+                            user={this.props.user}
                         />
                     </Grid.Column>
                 </Grid.Row>

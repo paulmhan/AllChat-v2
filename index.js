@@ -52,12 +52,19 @@ io.on("connection", socket => {
         });
     })
 
-    socket.on("joinRoom", roomName => {
-        socket.join(roomName);
+    socket.on("joinRoom", data => {
+        console.log(data, "joinedroom");
+        socket.join(data.text);
         socket.emit("WelcomeMessage", { 
             firstName:"AllChatBot", 
             lastName:"", 
             text:"Welcome to AllChat!", 
+            userId:"12345678"
+         })
+         socket.broadcast.emit("userJoinMessage", { 
+            firstName:"AllChatBot", 
+            lastName:"", 
+            text:"User joined the room!", 
             userId:"12345678"
          })
          
