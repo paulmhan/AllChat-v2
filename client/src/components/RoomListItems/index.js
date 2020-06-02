@@ -8,21 +8,21 @@ export default (props) => {
   if (props.rooms.length === 0) {
     return <Header content='No Rooms, Create One and Get Started!' />
   } else {
-    return props.rooms?.map(({ text, _id, creator }, index) => {
+    return props.rooms?.map(( room, index) => {
       return (
         <List.Item key={index}>
           <List.Content floated='left'>
-            <p>{text}</p>
+            <p>{room.text}</p>
           </List.Content>
           <List.Content floated='right'>
-            <Link to={`/chat?room=${text}`}>
+            <Link to={`/chat?room=${room.text}`}>
               <Button
                 color='blue'
                 content='Join Room'
                 size='small'
-                onClick={() => props.joinRoom({text:text, user:props.user})} />
+                onClick={() => props.joinRoom({text:room.text, user:props.user})} />
             </Link>
-            {creator === props.user._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={_id} text={text} />}
+            {room.creator === props.user._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={room._id} text={room.text} />}
           </List.Content>
         </List.Item>
       );

@@ -63,7 +63,7 @@ io.on("connection", socket => {
         //decoded.sub is id of user
         roomController.deleteRoomById(data.payload, decoded.sub, rooms => {
             if(rooms !== "Error"){
-                socket.emit("loadAllRooms", rooms);
+                io.emit("loadAllRooms", rooms);
             }
         });
 
