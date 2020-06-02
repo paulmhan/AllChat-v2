@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Grid, Input } from "semantic-ui-react";
-import { Field, reduxForm } from "redux-form";
+import { Field, reduxForm, reset } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
@@ -68,9 +68,21 @@ class Chat extends Component {
         );
     }
    
+    // submitMyForm = (data) => {
+    //     const { createRecord, resetForm } = this.props;
+    //     return createRecord(data).then(() => {
+    //         resetForm();
+    //         console.log("Input cleared");
+    //     });
+    // }
 
+    handleMessageSubmit = (formValues, dispatch) => {
+        console.log(formValues);
+       dispatch({ type: 'SEND_MESSAGE'})
+    }
 
     render() {
+        const { handleSubmit, submitMyForm } = this.props;
         return (
             <Grid container>
                 <Grid.Row
@@ -102,7 +114,7 @@ class Chat extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <Form>
+                                    <Form name="message" onSubmit={handleSubmit(this.handleMessageSubmit)}>
                                         <Field 
                                         name="messageInputBar"
                                         component={this.renderMessageInput}
