@@ -5,7 +5,7 @@ module.exports = {
         const { roomName, userId } = data;
         console.log(data);
         try {
-            const newRoom = await new Room({ text: roomName })
+            const newRoom = await new Room({ text: roomName, creator: userId })
             newRoom.users.push(userId);
             await newRoom.save();
             cb([newRoom]);
@@ -13,9 +13,20 @@ module.exports = {
             throw error;
         }
     },
-    getRoomById: async () => {
-
+    deleteRoomById: async (roomId, userId) => {
+        try {
+            const roomDelete = await Room.findById(roomId);
+            console.log(typeof roomId);
+            console.log(typeof userId);
+            if(userId !== roomDelete.creator){
+                console.log("Cannot delete a room that is not yours.");
+            }
+            const deletedRoom = await Room.findByIdAndDelete(roomId);
+        } catch (error) {
+            throw error;
+        }
     },
+
     getAllRooms: async (cb) => {
         try {
             const rooms = await Room.find();
