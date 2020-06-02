@@ -13,9 +13,10 @@ module.exports = {
             throw error;
         }
     },
-    getRoomById: async () => {
-
+    deleteRoomById: async (roomId, userId) => {
+        
     },
+
     getAllRooms: async (cb) => {
         try {
             const rooms = await Room.find();

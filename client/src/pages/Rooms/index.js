@@ -5,7 +5,7 @@ import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
-import { subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom } from "../../actions/sockets";
+import { subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom, deleteRoom } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import RoomListItems from "../../components/RoomListItems";
 
@@ -38,6 +38,7 @@ class Rooms extends Component {
                         <RoomListItems
                             rooms={this.props.rooms}
                             joinRoom={this.props.joinRoom}
+                            deleteRoom ={this.props.deleteRoom}
                         />
                     </Grid.Column>
                 </Grid.Row>
@@ -57,6 +58,6 @@ function mapStateToProps(state) {
 
 
 export default compose(
-    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom }),
+    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom, deleteRoom }),
     requireAuth
 )(Rooms)
