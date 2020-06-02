@@ -34,12 +34,12 @@ io.on("connection", socket => {
             socket.emit("serverToClientMessage", newMessage)
             socket.broadcast.emit("serverToClientMessage", newMessage);
         })
-        
     });
 
     socket.on("createRoom", data => {
         console.log("creating room in server");
         //data is the room name and userID
+        // socket.join(data.roomName)
         roomController.createRoom(data, newRoom => {
             socket.emit("serverToClientRoom", newRoom);
         });
@@ -54,6 +54,12 @@ io.on("connection", socket => {
         roomController.getAllRooms(rooms => {
             socket.emit("serverToClientRoom", rooms);
         });
+    })
+
+    socket.on("joinRoom", roomName => {
+        console.log(roomName);
+        socket.join(roomName);
+        
     })
 
 

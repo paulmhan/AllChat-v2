@@ -23,7 +23,6 @@ class CreateRoomModal extends Component {
             userId: this.props.userId
         }
         this.props.createRoom(data);
-        // this.props.getAllRooms(data.roomName);
     }
 
 

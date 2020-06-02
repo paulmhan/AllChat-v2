@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, ACTIVE_ROOM, GET_ALL_ROOMS } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -16,21 +16,7 @@ export const subscribeToRoomFromServer = () => dispatch => {
     dispatch({
         event: "serverToClientRoom",
         handle: data => dispatch({
-            type: ACTIVE_ROOM,
-            payload: data,
-        }),
-    });
-    dispatch({
-        event: "serverToClientRoom",
-        handle: data => dispatch({
             type: NEW_ROOM,
-            payload: data,
-        }),
-    });
-    dispatch({
-        event: "serverToClientRoom",
-        handle: data => dispatch({
-            type: GET_ALL_ROOMS,
             payload: data,
         }),
     });
@@ -76,15 +62,6 @@ export const createRoom = data => {
     };
 };
 
-// export const createRoom = data => {
-//     console.log('room sent to server');
-//     return {
-//         event: "createRoom",
-//         payload: data,
-//         emit: true,
-//     };
-// };
-
 export const getAllRooms = () => {
     console.log('getting rooms');
     return {
@@ -93,6 +70,15 @@ export const getAllRooms = () => {
         emit: true,
     };
 };
+
+export const joinRoom = data => {
+    console.log(data);
+    return {
+        event: "joinRoom",
+        payload: data,
+        emit: true,
+    }
+}
 
 
 // export const getRoomUsers = data => {
