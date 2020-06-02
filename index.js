@@ -47,10 +47,6 @@ io.on("connection", socket => {
         });
     })
 
-    socket.on("userJoinMessage", newUser => {
-        socket.broadcast.emit("userJoined", newUser)
-    })
-
     socket.on("getAllRooms", () => {
         console.log("getting rooms in server");
         roomController.getAllRooms(rooms => {
@@ -68,10 +64,24 @@ io.on("connection", socket => {
 
     })
 
-    socket.on("joinRoom", roomName => {
-        console.log(roomName);
-        socket.join(roomName);
+    socket.on("joinRoom", data => {
+        console.log(data.text);
+        socket.join(data.text);
         
+        socket.join(data.text);
+        socket.emit("WelcomeMessage", { 
+            firstName:"AllChatBot", 
+            lastName:"", 
+            text:"Welcome to AllChat!", 
+            userId:"12345678"
+         })
+         socket.broadcast.emit("userJoinMessage", { 
+            firstName:"AllChatBot", 
+            lastName:"", 
+            text:`${data.user.firstName}\u00A0${data.user.lastName} joined the chat`, 
+            userId:"123456789"
+         })
+         
     })
 
 

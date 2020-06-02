@@ -54,13 +54,14 @@ class Chat extends Component {
     };
 
     renderMessageInput = ({ input, meta }) => {
+        console.log(input, "input");
+        console.log(meta, "meta");
         return (
             <Form.Input
                 {...input}
                 error={ meta.touched && meta.error }
                 fluid
                 autoComplete='off'
-                onKeyDown={this.handleEnter}
                 action={{
                     color: "blue",
                     labelPosition: "right",
@@ -151,7 +152,6 @@ export default compose(
         loadUser, 
         subscribeToMessageFromServer, 
         sendMessage,
-        userJoinMessage
     }),
     requireAuth
 )(Chat)

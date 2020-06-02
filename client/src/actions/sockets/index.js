@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, WELCOME_MESSAGE, USERJOIN_MESSAGE } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -9,7 +9,23 @@ export const subscribeToMessageFromServer = () => dispatch => {
             payload: data,
         }),
     });
-};
+    dispatch({
+        event: "WelcomeMessage",
+        handle: data => dispatch({
+            type: WELCOME_MESSAGE,
+            payload: data,
+        }),
+    });
+
+    dispatch({
+        event: "userJoinMessage",
+        handle: data => dispatch({
+            type: USERJOIN_MESSAGE,
+            payload: data,
+        }),
+    });
+}
+
 
 export const subscribeToRoomFromServer = () => dispatch => {
     // console.log(data, "coming from server");
@@ -31,36 +47,34 @@ export const sendMessage = data => {
     };
 };
 
-export const userJoinMessage = () => {
-    console.log("userJoinmessage sent to server")
-    return {
-        event: "userJoinMessage",
-        payload: { 
-            firstName:"AllChatBot", 
-            lastName:"", 
-            message:"Welcome to AllChat!", 
-            userId:"12345678"
-         },
-        emit: true
-    };
-};
-
 
 export const unsubscribeMessage = message => {
     return {
         event: "message",
         leave: true,
     };
+    
 };
 
 export const createRoom = data => {
-    console.log('room sent to server');
+    console.log('room sent to server')
     return {
         event: "createRoom",
         payload: data,
         emit: true,
     };
+    
 };
+
+export const getRoomUsers = data => {
+    console.log("found users in room");
+    console.log(data);
+    return {
+        event: "getRoomUsers",
+        payload: data,
+        emit: true
+    };
+}
 
 export const getAllRooms = () => {
     console.log('getting rooms');
@@ -70,16 +84,14 @@ export const getAllRooms = () => {
         emit: true,
     };
 };
-
-export const joinRoom = roomName => {
-    console.log(roomName);
+export const joinRoom = data => {
+    console.log(data);
     return {
         event: "joinRoom",
-        payload: roomName,
+        payload: data,
         emit: true,
     }
 }
-
 export const deleteRoom = id => {
     console.log(id);
     return {
@@ -89,14 +101,3 @@ export const deleteRoom = id => {
         emit: true,
     }
 }
-
-
-// export const getRoomUsers = data => {
-//     console.log("found users in room");
-//     console.log(data);
-//     return {
-//         event: "getRoomUsers",
-//         payload: data,
-//         emit: true
-//     };
-// };

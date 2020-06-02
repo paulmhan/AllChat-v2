@@ -20,7 +20,7 @@ export default (props) => {
                 color='blue'
                 content='Join Room'
                 size='small'
-                onClick={() => props.joinRoom(text)} />
+                onClick={() => props.joinRoom({text:text, user:props.user})} />
             </Link>
             <DeleteRoomModal deleteRoom={props.deleteRoom} id={_id} text={text} />
           </List.Content>
