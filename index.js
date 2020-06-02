@@ -53,7 +53,7 @@ io.on("connection", socket => {
     })
 
     socket.on("joinRoom", data => {
-        console.log(data, "joinedroom");
+        
         socket.join(data.text);
         socket.emit("WelcomeMessage", { 
             firstName:"AllChatBot", 
@@ -64,8 +64,8 @@ io.on("connection", socket => {
          socket.broadcast.emit("userJoinMessage", { 
             firstName:"AllChatBot", 
             lastName:"", 
-            text:"User joined the room!", 
-            userId:"12345678"
+            text:`${data.user.firstName}\u00A0${data.user.lastName} joined the chat`, 
+            userId:"123456789"
          })
          
     })

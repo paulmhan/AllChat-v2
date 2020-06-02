@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, WELCOME_MESSAGE } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, WELCOME_MESSAGE, USERJOIN_MESSAGE } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -14,6 +14,14 @@ export const subscribeToMessageFromServer = () => dispatch => {
         event: "WelcomeMessage",
         handle: data => dispatch({
             type: WELCOME_MESSAGE,
+            payload: data,
+        }),
+    });
+
+    dispatch({
+        event: "userJoinMessage",
+        handle: data => dispatch({
+            type: USERJOIN_MESSAGE,
             payload: data,
         }),
     });
@@ -66,7 +74,7 @@ export const getAllRooms = () => {
 };
 
 export const joinRoom = data => {
-    console.log(data);
+    console.log(data, "data in joinRoom actions");
     return {
         event: "joinRoom",
         payload: data,

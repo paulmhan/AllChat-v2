@@ -21,7 +21,7 @@ export default (props) => {
               size='small'
               onClick={ () => props.handleUpdate(_id, text )}/> */}
             <Link to={`/chat?room=${text}`}>
-              <button className="button" type="submit" onClick={()=>props.joinRoom(text, props.user)}>Join Room</button>
+              <button className="button" type="submit" onClick={()=>props.joinRoom({text:text, user:props.user})}>Join Room</button>
             </Link>
           </List.Content>
         </List.Item>
