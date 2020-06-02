@@ -9,7 +9,11 @@ class CreateRoomModal extends Component {
         open: false
     }
 
-    open = () => this.setState({ open: true });
+    closeConfigShow = (closeOnEscape) => () => {
+        this.setState({ closeOnEscape, open: true });
+    }
+
+    // open = () => this.setState({ open: true });
     close = () => this.setState({ open: false });
 
     handleRoomNameChange = e => {
@@ -25,18 +29,38 @@ class CreateRoomModal extends Component {
         this.props.createRoom(data);
     }
 
+    createRoomAndClose = () => {
+        this.createRoom(); 
+        this.close();
+    }
+
+    keyPressed = (event) => {
+        if(event.key === "Enter") {
+            this.createRoomAndClose();
+        }
+    }
 
     render() {
+        
+        const { open, closeOnEscape } = this.state;
+
         return (
             <Modal
-                onOpen={this.open}
+                trigger={
+                    <Button
+                        content='Create Room'
+                        onClick={this.closeConfigShow(false, true)}
+                    />
+                }
+                open={open}
+                closeOnEscape={closeOnEscape}
                 onClose={this.close}
-                trigger={<Button content='Create Room' />}>
+                >
                 <Modal.Header>Please Enter A Room Name</Modal.Header>
                 <Modal.Content>
                     <Form.Input
                         fluid
-                        
+                        onKeyPress={this.keyPressed}
                         onChange={this.handleRoomNameChange}
                         autoComplete='off'
                         placeholder='Enter room name...'
@@ -53,8 +77,8 @@ class CreateRoomModal extends Component {
                         size='large'
                         color='blue'
                         type="submit"
-                        onClick={() => this.createRoom()}
-                        onKeyDown={this.handleEnter}
+                        onClick={() => this.createRoomAndClose()}
+                        
                     />
                 </Modal.Actions>
             </Modal>
