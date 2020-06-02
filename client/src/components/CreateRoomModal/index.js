@@ -5,8 +5,16 @@ import { required } from 'redux-form-validators';
 class CreateRoomModal extends Component {
 
     state = {
-        roomName:""
+        roomName: "",
+        open: false
     }
+
+    closeConfigShow = (closeOnEscape) => () => {
+        this.setState({ closeOnEscape, open: true });
+    }
+
+    // open = () => this.setState({ open: true });
+    close = () => this.setState({ open: false });
 
     handleRoomNameChange = e => {
         const { value } = e.target;
@@ -21,31 +29,56 @@ class CreateRoomModal extends Component {
         this.props.createRoom(data);
     }
 
+    createRoomAndClose = () => {
+        this.createRoom(); 
+        this.close();
+    }
+
+    keyPressed = (event) => {
+        if(event.key === "Enter") {
+            this.createRoomAndClose();
+        }
+    }
 
     render() {
+        
+        const { open, closeOnEscape } = this.state;
+
         return (
-            <Modal trigger={<Button content='Create Room' />}>
+            <Modal
+                trigger={
+                    <Button
+                        content='Create Room'
+                        onClick={this.closeConfigShow(false, true)}
+                    />
+                }
+                open={open}
+                closeOnEscape={closeOnEscape}
+                onClose={this.close}
+                >
                 <Modal.Header>Please Enter A Room Name</Modal.Header>
                 <Modal.Content>
-                        <Form.Input
-                            fluid
-                            onChange={this.handleRoomNameChange}
-                            autoComplete='off'
-                            placeholder='Enter room name...'
-                            validate={
-                                [
-                                    required({ msg: 'You must provide a room name' })
-                                ]
-                            }
-                        />
+                    <Form.Input
+                        fluid
+                        onKeyPress={this.keyPressed}
+                        onChange={this.handleRoomNameChange}
+                        autoComplete='off'
+                        placeholder='Enter room name...'
+                        validate={
+                            [
+                                required({ msg: 'You must provide a room name' })
+                            ]
+                        }
+                    />
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button 
+                    <Button
                         content='Create Room'
                         size='large'
                         color='blue'
                         type="submit"
-                        onClick={() => this.createRoom()}
+                        onClick={() => this.createRoomAndClose()}
+                        
                     />
                 </Modal.Actions>
             </Modal>

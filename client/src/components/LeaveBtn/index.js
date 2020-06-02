@@ -7,7 +7,7 @@ const LeaveBtn = props => {
 
     return(
         <div>
-            <Button id="LeaveBtn" onClick={() => props.history.push("/")}>Leave</Button>
+            <Button id="LeaveBtn" onClick={() => props.history.push("/rooms")}>Leave</Button>
         </div>
     )
 }
