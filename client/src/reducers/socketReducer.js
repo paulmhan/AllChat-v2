@@ -11,14 +11,15 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case NEW_MESSAGE:
+            console.log(action.payload.messages);
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
-        case WELCOME_MESSAGE:
-            console.log(state);
-            const messages1 = state.activeRoom.messages;
-            return { ...state, activeRoom: { ...state.activeRoom, messages: [...messages1, action.payload] }};
-        case USERJOIN_MESSAGE:
-            const messages2 = state.activeRoom.messages;
-            return { ...state, activeRoom: { ...state.activeRoom, messages: [...messages2, action.payload] }};
+        // case WELCOME_MESSAGE:
+        //     console.log(state);
+        //     const messages1 = state.activeRoom.messages;
+        //     return { ...state, activeRoom: { ...state.activeRoom, messages: [...messages1, action.payload] }};
+        // case USERJOIN_MESSAGE:
+        //     const messages2 = state.activeRoom.messages;
+        //     return { ...state, activeRoom: { ...state.activeRoom, messages: [...messages2, action.payload] }};
         case NEW_ROOM:
             return { ...state, rooms: [...state.rooms, ...action.payload] };
         case LOAD_ROOMS:
