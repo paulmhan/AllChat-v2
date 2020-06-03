@@ -32,25 +32,26 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
-        messageController.createMessage(data, newMessage =>{
-            socket.emit("serverToClientMessage", newMessage)
-            socket.broadcast.emit("serverToClientMessage", newMessage);
+        messageController.createMessage(data, newMessage => {
+            io.to(data.room.text).emit("serverToClientMessage", newMessage)
         })
     });
 
     socket.on("createRoom", data => {
-        console.log("creating room in server");
+        console.log("CREATING ROOM");
         //data is the room name and userID
         // socket.join(data.roomName)
         roomController.createRoom(data, newRoom => {
-            socket.emit("serverToClientRoom", newRoom);
+            io.emit("serverToClientRoom", newRoom);
         });
     })
 
     socket.on("getAllRooms", () => {
-        console.log("getting rooms in server");
+        console.log("GETTING ROOM");
         roomController.getAllRooms(rooms => {
-            socket.emit("serverToClientRoom", rooms);
+            if (rooms !== "Error") {
+                socket.emit("serverToClientRoom", rooms);
+            }
         });
     })
 
@@ -59,29 +60,32 @@ io.on("connection", socket => {
         let decoded = jwt.decode(data.token, secret);
         // decoded = { sub: 'asdada', iat: TimeStamp}
         //decoded.sub is id of user
-        roomController.deleteRoomById(data.payload, decoded.sub);
-        
+        roomController.deleteRoomById(data.payload, decoded.sub, rooms => {
+            if (rooms !== "Error") {
+                io.emit("loadAllRooms", rooms);
+            }
+        });
 
     })
 
     socket.on("joinRoom", data => {
-        console.log(data.text);
-        socket.join(data.text);
-        
-        socket.join(data.text);
-        socket.emit("WelcomeMessage", { 
-            firstName:"AllChatBot", 
-            lastName:"", 
-            text:"Welcome to AllChat!", 
-            userId:"12345678"
-         })
-         socket.broadcast.emit("userJoinMessage", { 
-            firstName:"AllChatBot", 
-            lastName:"", 
-            text:`${data.user.firstName}\u00A0${data.user.lastName} joined the chat`, 
-            userId:"123456789"
-         })
-         
+
+        socket.join(data.room.text);
+        roomController.getCurrentRoom(data.room, currentRoom => {
+            socket.emit("activeRoom", currentRoom);
+        })
+        // socket.emit("WelcomeMessage", {
+        //     firstName: "AllChatBot",
+        //     lastName: "",
+        //     text: "Welcome to AllChat!",
+        //     userId: "12345678"
+        // });
+        // socket.broadcast.emit("userJoinMessage", {
+        //     firstName: "AllChatBot",
+        //     lastName: "",
+        //     text: `${data.user.firstName}\u00A0${data.user.lastName} joined the chat`,
+        //     userId: "123456789"
+        // });
     })
 
 

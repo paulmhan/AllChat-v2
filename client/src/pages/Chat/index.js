@@ -71,8 +71,11 @@ class Chat extends Component {
                         userId: this.props.user._id, 
                         firstName: this.props.user.firstName,
                         lastName: this.props.user.lastName,
-                        message: this.state.message }),
-                    disabled: !this.state.message
+                        message: this.state.message,
+                        room: this.props.room
+                    }),
+                    disabled: !this.state.message,
+                    
                 }}
             />
         );
@@ -97,7 +100,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                        name={this.props.user?.firstName}
+                                        name={this.props.room.text}
                                     />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
@@ -107,7 +110,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={16}>
                                     <MessageContainer
-                                     messages={this.props.messages} 
+                                     messages={this.props.room.messages} 
                                     />
                                 </Grid.Column>
                             </Grid.Row>
@@ -139,7 +142,8 @@ class Chat extends Component {
 function mapStateToProps(state) {
     return { 
         user: state.auth.currentUser,
-        messages: state.socket.messages
+        // messages: state.socket.activeRoom.messages,
+        room: state.socket.activeRoom
      }
 }
 

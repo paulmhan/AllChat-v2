@@ -5,23 +5,30 @@ module.exports = {
         const { roomName, userId } = data;
         console.log(data);
         try {
-            const newRoom = await new Room({ text: roomName, creator: userId })
+            const newRoom = await new Room({ text: roomName, creator: userId });
             newRoom.users.push(userId);
             await newRoom.save();
-            cb([newRoom]);
+            const room = await Room.findById(newRoom._id).populate("messages");
+            cb([room]);
         } catch (error) {
             throw error;
         }
     },
-    deleteRoomById: async (roomId, userId) => {
+    deleteRoomById: async (roomId, userId, cb) => {
         try {
             const roomDelete = await Room.findById(roomId);
-            console.log(typeof roomId);
-            console.log(typeof userId);
-            if(userId !== roomDelete.creator){
+            if(userId != roomDelete.creator){
                 console.log("Cannot delete a room that is not yours.");
+                cb("Error")
+            } else {
+                const deletedRoom = await Room.findByIdAndDelete(roomId);
+                const rooms = await Room.find().populate("messages");
+                if(!rooms){
+                    console.log("No Rooms");
+                    cb("Error");
+                }
+                cb(rooms);
             }
-            const deletedRoom = await Room.findByIdAndDelete(roomId);
         } catch (error) {
             throw error;
         }
@@ -29,15 +36,25 @@ module.exports = {
 
     getAllRooms: async (cb) => {
         try {
-            const rooms = await Room.find();
+            const rooms = await Room.find().populate("messages");
             if(!rooms){
                 console.log("No Rooms");
+                cb("Error")
             }
             cb(rooms);
         } catch (error) {
             throw error;
         }
     },
+
+    getCurrentRoom: async (room, cb) => {
+        try {
+            const currentRoom = await Room.findById(room._id).populate("messages");
+            cb(currentRoom)
+        } catch (error) {
+            throw error
+        }
+    }
     
     
 }
