@@ -68,7 +68,8 @@ class Chat extends Component {
                     icon: "arrow circle up",
                     content: "Send",
                     onClick: () => this.props.sendMessage({ 
-                        userId: this.props.user._id, 
+                        userId: this.props.user._id,
+                        // roomName: 
                         firstName: this.props.user.firstName,
                         lastName: this.props.user.lastName,
                         message: this.state.message,

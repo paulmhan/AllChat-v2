@@ -36,7 +36,6 @@ io.on("connection", socket => {
             io.to(data.room.text).emit("serverToClientMessage", newMessage)
         })
     });
-
     socket.on("createRoom", data => {
         console.log("CREATING ROOM");
         //data is the room name and userID
