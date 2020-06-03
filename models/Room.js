@@ -6,8 +6,8 @@ const RoomSchema = new Schema({
         required: true,
     },
     creator: {
-        type: String,
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     },
     users: [{
         type: Schema.Types.ObjectId,
