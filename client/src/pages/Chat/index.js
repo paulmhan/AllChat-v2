@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { Form, Grid, Input } from "semantic-ui-react";
 import { Field, reduxForm, reset } from "redux-form";
 import { connect } from 'react-redux';
@@ -40,13 +41,19 @@ class Chat extends Component {
             message: value
         });
     };
-    
+
+    scrollToBottom = () => {
+        let chatTextArea = document.getElementById("message-container");
+        const scrollHeight = chatTextArea.scrollHeight;
+        const height = chatTextArea.clientHeight;
+        const maxScrollTop = scrollHeight - height;
+        ReactDOM.findDOMNode(chatTextArea).scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+      };
+
     handleMessageSubmit = (formValues, dispatch) => {
         console.log(formValues);
         dispatch({ type: 'SEND_MESSAGE'})
-        if(formValues === "") {
-            console.log("You must enter a message");
-        };
+        this.scrollToBottom();
     }
     
     userJoin = () => {
