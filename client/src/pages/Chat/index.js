@@ -117,7 +117,8 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={16}>
                                     <MessageContainer
-                                     messages={this.props.room.messages} 
+                                     messages={this.props.room.messages}
+                                    //  onSubmit={handleSubmit(this.scrollToBottom)} 
                                     />
                                 </Grid.Column>
                             </Grid.Row>
