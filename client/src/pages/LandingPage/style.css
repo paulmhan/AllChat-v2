@@ -6,5 +6,58 @@
 #welcome {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
-    color: white;
+    color: black;
+    text-align: center;
+}
+
+#landing-container {
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    /* height: 800px; */
+}
+
+#signup {
+    width: 200px;
+}
+
+#landing-page-image {
+    margin: 0 auto;
+}
+
+#inner-landing-container {
+    padding-top: 100px;
+}
+
+#body-text-grid {
+    background-color: transparent;
+}
+
+#text1 {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color: black;
+    font-size: 24px;
+}
+
+#text2 {
+    text-align: center;
+}
+
+#header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+#together {
+    color: black;
+}
+
+#paragraph {
+    font-size: 18px;
 }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { Form, Segment, Button } from 'semantic-ui-react';
+import { Grid, Form, Segment, Button } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
-import LanguageSelect from '../../components/LanguageSelect';
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
+
+import "./style.css";
 
 class SignIn extends Component {
 
@@ -53,7 +54,12 @@ class SignIn extends Component {
   render() {
     const { invalid, submitting, submitFailed, handleSubmit } = this.props;
     return (
-      <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
+      <Grid id="signin-container">
+        <Grid.Column width={8}>
+
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Form id="signin-form" size='large' onSubmit={handleSubmit(this.onSubmit)}>
         <Segment stacked>
           <Field
             name='email'
@@ -85,6 +91,8 @@ class SignIn extends Component {
           />
         </Segment>
       </Form>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

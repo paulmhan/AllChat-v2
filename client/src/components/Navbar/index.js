@@ -1,19 +1,19 @@
 import React from 'react';
 import AllChatTitle from "../AllChatTitle";
 import { Link } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Button } from 'semantic-ui-react';
 import "./style.css";
 
 
 
 export default (props) => (
   <Menu secondary widths={12} id="navbar">
-    <Menu.Item position="left">
+    <Menu.Item id="allchat-icon" position="left">
       <AllChatTitle />
     </Menu.Item>
-    { props.isLoggedIn ? null : <Menu.Item as={Link} to='/signup' position="right" content='Sign Up' id="signup" /> }
+    <Menu.Item position="right" content="Already a user?"/>
     { props.isLoggedIn ? <Menu.Item as={Link} to="/rooms" position="right" content="Chatrooms" id="room-select" /> : null }
-    { props.isLoggedIn ? <Menu.Item as={Link} to='/signout' position="right" content='Sign Out'/> : <Menu.Item as={Link} to='/signin' content='Sign In' id="signin" />}
+    { props.isLoggedIn ? <Menu.Item as={Link} to='/signout' position="right" content='Sign Out' id="signout"/> : <Menu.Item><Button as={Link} to='/signin' content='Sign In' id="signin" /></Menu.Item>}
   </Menu>
 );
 
