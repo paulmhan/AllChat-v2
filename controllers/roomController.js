@@ -5,10 +5,11 @@ module.exports = {
         const { roomName, userId } = data;
         console.log(data);
         try {
-            const newRoom = await new Room({ text: roomName, creator: userId })
+            const newRoom = await new Room({ text: roomName, creator: userId });
             newRoom.users.push(userId);
             await newRoom.save();
-            cb([newRoom]);
+            const room = await Room.findById(newRoom._id).populate("messages");
+            cb([room]);
         } catch (error) {
             throw error;
         }
@@ -21,7 +22,7 @@ module.exports = {
                 cb("Error")
             } else {
                 const deletedRoom = await Room.findByIdAndDelete(roomId);
-                const rooms = await Room.find();
+                const rooms = await Room.find().populate("messages");
                 if(!rooms){
                     console.log("No Rooms");
                     cb("Error");
@@ -35,7 +36,7 @@ module.exports = {
 
     getAllRooms: async (cb) => {
         try {
-            const rooms = await Room.find();
+            const rooms = await Room.find().populate("messages");
             if(!rooms){
                 console.log("No Rooms");
                 cb("Error")

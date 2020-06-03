@@ -71,8 +71,11 @@ class Chat extends Component {
                         userId: this.props.user._id, 
                         firstName: this.props.user.firstName,
                         lastName: this.props.user.lastName,
-                        message: this.state.message }),
-                    disabled: !this.state.message
+                        message: this.state.message,
+                        room: this.props.room
+                    }),
+                    disabled: !this.state.message,
+                    
                 }}
             />
         );
@@ -139,7 +142,8 @@ class Chat extends Component {
 function mapStateToProps(state) {
     return { 
         user: state.auth.currentUser,
-        messages: state.socket.messages
+        messages: state.socket.messages,
+        room: state.socket.activeRoom
      }
 }
 

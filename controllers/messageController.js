@@ -6,8 +6,11 @@ module.exports = {
         const { firstName, lastName, message, userId } = data;
         console.log(data, "messagecontroller log");
         try {
-            const messageData = await new Message({ text: message, user:userId, firstName:firstName, lastName:lastName }).save();
-            const newMessage = await Message.findById(messageData._id);
+            const newMessage = await new Message({ text: message, user:userId, firstName:firstName, lastName:lastName }).save();
+            // const newMessage = await Room.findById(messageData._id);
+            const room = await Room.findById()
+
+
             console.log(newMessage, "message from messagecontroller");
             cb(newMessage);
         } catch (error) {

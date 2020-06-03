@@ -16,7 +16,6 @@ import "./style.css";
 class Rooms extends Component {
     
     componentDidMount(){
-        console.log("mount");
         !this.props.rooms.length && this.props.subscribeToRoomFromServer();
         this.props.user || this.props.loadUser();
         !this.props.rooms.length && this.props.getAllRooms();
