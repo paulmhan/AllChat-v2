@@ -16,11 +16,6 @@ import "./style.css";
 
 class Chat extends Component {
 
-    state = {
-        messageValid: false,
-        submitDisabled: true
-    }
-
     componentDidMount() {
 
         this.props.subscribeToMessageFromServer();
@@ -33,20 +28,13 @@ class Chat extends Component {
         // this.isLive = false;
     }
 
-    handleMessageChange = e => {
-        const { value } = e.target;
-        this.setState({
-            message: value
-        });
-    };
-
     scrollToBottom = () => {
         let chatTextArea = document.getElementById("message-container");
         const scrollHeight = chatTextArea.scrollHeight;
         const height = chatTextArea.clientHeight;
         const maxScrollTop = scrollHeight - height;
         ReactDOM.findDOMNode(chatTextArea).scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
-      };
+    };
 
     handleMessageSubmit = (formValues, dispatch) => {
         console.log(formValues);
@@ -82,15 +70,6 @@ class Chat extends Component {
                     labelPosition: "right",
                     icon: "arrow circle up",
                     content: "Send",
-                    // onClick: () => this.props.sendMessage({
-                    //     userId: this.props.user._id,
-                    //     firstName: this.props.user.firstName,
-                    //     lastName: this.props.user.lastName,
-                    //     message: this.state.message,
-                    //     room: this.props.room
-                    // }),
-                    disabled: !this.state.message,
-
                 }}
             />
         );
@@ -125,7 +104,7 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={16}>
                                     <MessageContainer
-                                     messages={this.props.room.messages}
+                                        messages={this.props.room.messages}
                                     //  onSubmit={handleSubmit(this.scrollToBottom)} 
                                     />
                                 </Grid.Column>
