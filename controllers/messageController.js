@@ -8,11 +8,14 @@ module.exports = {
         try {
             const newMessage = await new Message({ text: message, user:userId, firstName:firstName, lastName:lastName }).save();
             // const newMessage = await Room.findById(messageData._id);
-            const room = await Room.findById()
 
-
-            console.log(newMessage, "message from messagecontroller");
-            cb(newMessage);
+            const room = await Room.findById(data.room._id);
+            console.log(room);
+            room.messages.push(newMessage._id);
+            await room.save();
+            const room2 = await Room.findById(data.room._id).populate("messages");
+            // console.log(newMessage, "message from messagecontroller");
+            cb(room2);
         } catch (error) {
             throw error;
         }

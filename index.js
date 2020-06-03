@@ -32,9 +32,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
-        messageController.createMessage(data, newMessage =>{
-            socket.emit("serverToClientMessage", newMessage)
-            socket.broadcast.emit("serverToClientMessage", newMessage);
+        messageController.createMessage(data, newMessage => {
+            io.to(data.room.text).emit("serverToClientMessage", newMessage)
         })
     });
 
@@ -50,8 +49,8 @@ io.on("connection", socket => {
     socket.on("getAllRooms", () => {
         console.log("GETTING ROOM");
         roomController.getAllRooms(rooms => {
-            if(rooms !== "Error"){
-            socket.emit("serverToClientRoom", rooms);
+            if (rooms !== "Error") {
+                socket.emit("serverToClientRoom", rooms);
             }
         });
     })
@@ -62,7 +61,7 @@ io.on("connection", socket => {
         // decoded = { sub: 'asdada', iat: TimeStamp}
         //decoded.sub is id of user
         roomController.deleteRoomById(data.payload, decoded.sub, rooms => {
-            if(rooms !== "Error"){
+            if (rooms !== "Error") {
                 io.emit("loadAllRooms", rooms);
             }
         });
@@ -70,20 +69,23 @@ io.on("connection", socket => {
     })
 
     socket.on("joinRoom", data => {
+
         socket.join(data.room.text);
-        socket.emit("WelcomeMessage", { 
-            firstName:"AllChatBot", 
-            lastName:"", 
-            text:"Welcome to AllChat!", 
-            userId:"12345678"
-         })
-         socket.broadcast.emit("userJoinMessage", { 
-            firstName:"AllChatBot", 
-            lastName:"", 
-            text:`${data.user.firstName}\u00A0${data.user.lastName} joined the chat`, 
-            userId:"123456789"
-         })
-         socket.emit("activeRoom", data.room);
+        roomController.getCurrentRoom(data.room, currentRoom => {
+            socket.emit("activeRoom", currentRoom);
+        })
+        // socket.emit("WelcomeMessage", {
+        //     firstName: "AllChatBot",
+        //     lastName: "",
+        //     text: "Welcome to AllChat!",
+        //     userId: "12345678"
+        // });
+        // socket.broadcast.emit("userJoinMessage", {
+        //     firstName: "AllChatBot",
+        //     lastName: "",
+        //     text: `${data.user.firstName}\u00A0${data.user.lastName} joined the chat`,
+        //     userId: "123456789"
+        // });
     })
 
 
