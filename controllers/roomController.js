@@ -5,11 +5,11 @@ module.exports = {
         const { roomName, userId } = data;
         console.log(data);
         try {
-            const newRoom = await new Room({ text: roomName, creator: userId });
-            newRoom.users.push(userId);
-            await newRoom.save();
-            const room = await Room.findById(newRoom._id).populate("messages");
-            cb([room]);
+            const newRoom = await new Room({ text: roomName, creator: userId }).save();
+            // newRoom.users.push(userId);
+            // await newRoom.save();
+            // const room = await Room.findById(newRoom._id).populate("messages");
+            cb([newRoom]);
         } catch (error) {
             throw error;
         }
