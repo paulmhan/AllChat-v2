@@ -32,8 +32,10 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
-        messageController.createMessage(data, newMessage => {
-            io.to(data.room.text).emit("serverToClientMessage", newMessage)
+        console.log(data, "DATA");
+        messageController.createMessage(data, activeRoom => {
+            console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
+            io.to(data.room._id).emit("serverToClientMessage", activeRoom)
         })
     });
 
@@ -70,7 +72,7 @@ io.on("connection", socket => {
 
     socket.on("joinRoom", data => {
 
-        socket.join(data.room.text);
+        socket.join(data.room._id);
         roomController.getCurrentRoom(data.room, currentRoom => {
             socket.emit("activeRoom", currentRoom);
         })
