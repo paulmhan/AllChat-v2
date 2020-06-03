@@ -11,9 +11,10 @@ export default (props) => (
     <Menu.Item id="allchat-icon" position="left">
       <AllChatTitle />
     </Menu.Item>
-    <Menu.Item position="right" content="Already a user?"/>
-    { props.isLoggedIn ? <Menu.Item as={Link} to="/rooms" position="right" content="Chatrooms" id="room-select" /> : null }
-    { props.isLoggedIn ? <Menu.Item as={Link} to='/signout' position="right" content='Sign Out' id="signout"/> : <Menu.Item><Button as={Link} to='/signin' content='Sign In' id="signin" /></Menu.Item>}
+    { props.isLoggedIn ? <Menu.Item as={Link} to="/rooms" position="right" content="Chatrooms" id="room-select" /> : <Menu.Item position="right" content="Already a user?"/> }
+    { props.isLoggedIn 
+    ? <Menu.Item as={Link} to='/signout' position="right" content='Sign Out' id="signout"/> 
+    : <Menu.Item><Button as={Link} to='/signin' id="signin">Sign In</Button></Menu.Item>}
   </Menu>
 );
 

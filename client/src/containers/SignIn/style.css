@@ -1,3 +1,15 @@
 #signin-container {
     width: 98%;
 }
+
+#signin-form {
+    background-color: #f7f7f7;
+}
+
+#signin-btn {
+    background-color:  #32CD33;
+}
+
+#signin-btn-text {
+    color: white;
+}

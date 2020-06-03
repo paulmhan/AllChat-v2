@@ -63,6 +63,10 @@ class Chat extends Component {
     renderMessageInput = ({ input, meta }) => {
         console.log(input, "input");
         console.log(meta, "meta");
+        const btnStyle = {
+            backgroundColor: "#32CD33",
+            color: "white"
+        };
         return (
             <Form.Input
                 {...input}
@@ -70,7 +74,7 @@ class Chat extends Component {
                 fluid
                 autoComplete='off'
                 action={{
-                    color: "blue",
+                    style: btnStyle,
                     labelPosition: "right",
                     icon: "arrow circle up",
                     content: "Send",

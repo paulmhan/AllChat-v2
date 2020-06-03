@@ -6,7 +6,7 @@
 #welcome {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
-    color: black;
+    color:black;
     text-align: center;
 }
 
@@ -18,9 +18,23 @@
     /* height: 800px; */
 }
 
-#signup {
+#get-started {
     width: 200px;
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
 }
+
+#get-started:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+/* #get-started-text {
+    color: white;
+} */
 
 #landing-page-image {
     margin: 0 auto;
@@ -37,7 +51,7 @@
 #text1 {
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    color: black;
+    color:black;
     font-size: 24px;
 }
 
@@ -55,7 +69,7 @@ h1 {
 }
 
 #together {
-    color: black;
+    color:black;
 }
 
 #paragraph {

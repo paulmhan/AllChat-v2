@@ -2,6 +2,14 @@
     width: 98%;
 }
 
-/* #signup-form {
-    height: 500px;
-} */
+#signup-form {
+    background-color: #f7f7f7;
+}
+
+#signup-btn {
+    background-color:  #32CD33;
+}
+
+#signup-btn-text {
+    color: white;
+}

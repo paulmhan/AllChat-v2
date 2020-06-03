@@ -59,8 +59,8 @@ class SignIn extends Component {
 
         </Grid.Column>
         <Grid.Column width={8}>
-          <Form id="signin-form" size='large' onSubmit={handleSubmit(this.onSubmit)}>
-        <Segment stacked>
+          <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
+        <Segment id="signin-form" stacked>
           <Field
             name='email'
             iscool='mannyiscool'
@@ -82,13 +82,14 @@ class SignIn extends Component {
             }
           />
           <Button
-            content='Sign In'
-            color='teal'
+            id="signin-btn"
             fluid
             size='large'
             type='submit'
             disabled={ submitting }
-          />
+          >
+            <div id="signin-btn-text">Sign In</div>
+          </Button>
         </Segment>
       </Form>
         </Grid.Column>

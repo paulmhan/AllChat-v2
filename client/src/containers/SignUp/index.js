@@ -119,13 +119,14 @@ class SignUp extends Component {
               <LanguageSelect />
               <br />
               <Button
-                content='Sign up'
-                color='teal'
+                id="signup-btn"
                 fluid
                 size='large'
                 type='submit'
                 disabled={invalid || submitting || submitFailed}
-              />
+              >
+                <div id="signup-btn-text">Sign Up</div>
+              </Button>
             </Segment>
           </Form>
         </Grid.Column>

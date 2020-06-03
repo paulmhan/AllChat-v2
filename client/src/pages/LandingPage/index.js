@@ -30,7 +30,7 @@ class LandingPage extends Component {
                         </Grid.Row>
                         <Grid.Row centered>
                             <Grid.Column width={4}>
-                                <Button as={Link} to='/signup' size="massive" content='Get Started' id="signup" />
+                                <Button as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
