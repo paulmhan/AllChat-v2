@@ -4,7 +4,7 @@ import counterReducer from './counterReducer';
 import todosReducer from './todosReducer';
 import authReducer from './authReducer';
 import socketReducer from "./socketReducer";
-import { NEW_MESSAGE } from "../actions/socketTypes";
+
 
 export default combineReducers({
   auth: authReducer,

@@ -15,7 +15,7 @@ export default (props) => {
             <p>{room.text}</p>
           </List.Content>
           <List.Content floated='right'>
-            <Link to={`/chat?room=${room.text}`}>
+            <Link to={`/chat?room=${room._id}`}>
               <Button
                 color='blue'
                 content='Join Room'

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { Form, Grid, Input } from "semantic-ui-react";
+import { Form, Grid, Input, Button, Icon } from "semantic-ui-react";
 import { Field, reduxForm, reset } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
@@ -17,14 +17,12 @@ import "./style.css";
 class Chat extends Component {
 
     state = {
-        message: "",
-        messages:[],
         messageValid: false,
         submitDisabled: true
     }
 
     componentDidMount() {
-       
+
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
         // this.userJoin();
@@ -52,17 +50,23 @@ class Chat extends Component {
 
     handleMessageSubmit = (formValues, dispatch) => {
         console.log(formValues);
-        dispatch({ type: 'SEND_MESSAGE'})
+        const user = this.props.user;
+        const room = this.props.room;
+        this.props.sendMessage({ formValues, user, room });
+        dispatch({ type: 'SEND_MESSAGE' })
+        if (formValues === "") {
+            console.log("You must enter a message");
+        };
         this.scrollToBottom();
     }
-    
+
     userJoin = () => {
         this.userJoinMessage()
     };
 
     renderMessageInput = ({ input, meta }) => {
-        console.log(input, "input");
-        console.log(meta, "meta");
+        // console.log(input, "input");
+        // console.log(meta, "meta");
         const btnStyle = {
             backgroundColor: "#32CD33",
             color: "white"
@@ -70,7 +74,7 @@ class Chat extends Component {
         return (
             <Form.Input
                 {...input}
-                error={ meta.touched && meta.error }
+                error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
                 action={{
@@ -78,21 +82,21 @@ class Chat extends Component {
                     labelPosition: "right",
                     icon: "arrow circle up",
                     content: "Send",
-                    onClick: () => this.props.sendMessage({ 
-                        userId: this.props.user._id, 
-                        firstName: this.props.user.firstName,
-                        lastName: this.props.user.lastName,
-                        message: this.state.message,
-                        room: this.props.room
-                    }),
+                    // onClick: () => this.props.sendMessage({
+                    //     userId: this.props.user._id,
+                    //     firstName: this.props.user.firstName,
+                    //     lastName: this.props.user.lastName,
+                    //     message: this.state.message,
+                    //     room: this.props.room
+                    // }),
                     disabled: !this.state.message,
-                    
+
                 }}
             />
         );
     }
 
-    
+
 
     render() {
         const { handleSubmit } = this.props;
@@ -102,8 +106,8 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                            // roomUsers={this.props.getRoomUsers()}
-                            // userId={this.props.user?.id}
+                        // roomUsers={this.props.getRoomUsers()}
+                        // userId={this.props.user?.id}
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>
@@ -129,16 +133,21 @@ class Chat extends Component {
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
                                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
-                                        <Field 
-                                        name="messageInputBar"
-                                        component={this.renderMessageInput}
-                                        validate={
-                                            [
-                                                required({ msg: 'Enter a message' })
-                                            ]
-                                        }
-                                        onChange={this.handleMessageChange}
+                                        <Field
+                                            name="message"
+                                            component={this.renderMessageInput}
+                                        // validate={
+                                        //     [
+                                        //         required({ msg: 'Enter a message' })
+                                        //     ]
+                                        // }
                                         />
+                                        <Button
+                                            type="submit"
+
+                                            color="teal">
+                                            <Icon name='arrow circle up' /> Send
+      </Button>
                                     </Form>
                                 </Grid.Column>
                             </Grid.Row>
@@ -152,11 +161,11 @@ class Chat extends Component {
 }
 
 function mapStateToProps(state) {
-    return { 
+    return {
         user: state.auth.currentUser,
         // messages: state.socket.activeRoom.messages,
         room: state.socket.activeRoom
-     }
+    }
 }
 
 
@@ -164,9 +173,9 @@ function mapStateToProps(state) {
 
 export default compose(
     reduxForm({ form: "chat" }),
-    connect(mapStateToProps, { 
-        loadUser, 
-        subscribeToMessageFromServer, 
+    connect(mapStateToProps, {
+        loadUser,
+        subscribeToMessageFromServer,
         sendMessage,
     }),
     requireAuth
