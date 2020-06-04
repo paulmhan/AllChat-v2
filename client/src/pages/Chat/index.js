@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Form, Grid, Input, Button, Icon } from "semantic-ui-react";
-import { Field, reduxForm, reset } from "redux-form";
+import { Form, Grid, Button, Icon } from "semantic-ui-react";
+import { Field, reduxForm, } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
