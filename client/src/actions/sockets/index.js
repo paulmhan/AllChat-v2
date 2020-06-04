@@ -2,25 +2,22 @@ import { NEW_MESSAGE, NEW_ROOM, WELCOME_MESSAGE, USERJOIN_MESSAGE, LOAD_ROOMS, A
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
+    console.log("listening");
+    
     dispatch({
         event: "serverToClientMessage",
-        handle: data => dispatch({
-            type: NEW_MESSAGE,
-            payload: data,
-        }),
-    });
-    dispatch({
-        event: "WelcomeMessage",
-        handle: data => dispatch({
-            type: WELCOME_MESSAGE,
-            payload: data,
-        }),
+        handle: data => {
+            dispatch({
+                type: NEW_MESSAGE,
+                payload: data,
+            })
+        },
     });
 
     dispatch({
-        event: "userJoinMessage",
+        event: "activeRoom",
         handle: data => dispatch({
-            type: USERJOIN_MESSAGE,
+            type: ACTIVE_ROOM,
             payload: data,
         }),
     });
@@ -39,13 +36,6 @@ export const subscribeToRoomFromServer = () => dispatch => {
         event: "loadAllRooms",
         handle: data => dispatch({
             type: LOAD_ROOMS,
-            payload: data,
-        }),
-    });
-    dispatch({
-        event: "activeRoom",
-        handle: data => dispatch({
-            type: ACTIVE_ROOM,
             payload: data,
         }),
     });
