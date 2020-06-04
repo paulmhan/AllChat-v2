@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, WELCOME_MESSAGE, USERJOIN_MESSAGE, LOAD_ROOMS, ACTIVE_ROOM } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { Grid, Form, Segment, Button } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
+<<<<<<< HEAD
+=======
+// import LanguageSelect from '../../components/LanguageSelect';
+>>>>>>> 5192614920b9236c25afcb14941c06457f7c21f2
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
 
@@ -52,7 +56,7 @@ class SignIn extends Component {
     );
   }
   render() {
-    const { invalid, submitting, submitFailed, handleSubmit } = this.props;
+    const { submitting, handleSubmit } = this.props;
     return (
       <Grid id="signin-container">
         <Grid.Column width={8}>
