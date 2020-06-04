@@ -9,6 +9,7 @@ class LandingPage extends Component {
 
     render() {
         return (
+<<<<<<< HEAD
 
             <Grid id="landing-container">
                 <Grid.Column width={8}>
@@ -42,6 +43,20 @@ class LandingPage extends Component {
                         </Grid.Row>
                     </Grid>
                 </Grid.Column>
+=======
+            <Grid container id="landing-container">
+                <Grid.Row
+                    // centered
+                    columns={1}>
+                    <h1 id="welcome">Welcome to AllChat!</h1>
+                </Grid.Row>
+                <Grid.Row
+                    // centered
+                    columns={1}>
+                    <LandingBodyText />
+                </Grid.Row>
+                
+>>>>>>> 9ef2f7b8f1ed7ffe69b1fc953607b947684b8417
             </Grid>
 
         )

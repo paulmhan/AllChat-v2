@@ -9,7 +9,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -29,6 +29,9 @@ class Chat extends Component {
 
     componentWillUnmount() {
         this.props.unsubscribeMessage();
+        const user = this.props.user;
+        const room = this.props.room;
+        this.props.leaveRoom({room, user});
     }
 
     scrollToBottom = () => {
@@ -161,6 +164,7 @@ export default compose(
         sendMessage,
         getActiveRoom,
         unsubscribeMessage,
+        leaveRoom,
     }),
     requireAuth
 )(Chat)
