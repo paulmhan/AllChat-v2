@@ -9,7 +9,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -17,20 +17,18 @@ import "./style.css";
 class Chat extends Component {
 
     componentDidMount() {
-
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
         // this.userJoin();
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        console.log(roomId);
+        console.log(roomId, "did mount");
         this.props.getActiveRoom(roomId);
     }
 
     componentWillUnmount() {
-        // this.handleLeave();
-        // this.isLive = false;
+        this.props.unsubscribeMessage();
     }
 
     scrollToBottom = () => {
@@ -60,23 +58,22 @@ class Chat extends Component {
     renderMessageInput = ({ input, meta }) => {
         // console.log(input, "input");
         // console.log(meta, "meta");
-        const btnStyle = {
-            backgroundColor: "#32CD33",
-            color: "white"
-        };
+        // const btnStyle = {
+        //     backgroundColor: "#32CD33",
+        //     color: "white"
+        // };
         return (
             <Form.Input
                 {...input}
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-                action={{
-                    style: btnStyle,
-                    labelPosition: "right",
-                    icon: "arrow circle up",
-                    content: "Send",
-                    type: "submit"
-                }}
+                // action={{
+                //     style: btnStyle,
+                //     labelPosition: "right",
+                //     icon: "arrow circle up",
+                //     content: "Send",
+                // }}
             />
         );
     }
@@ -163,6 +160,7 @@ export default compose(
         subscribeToMessageFromServer,
         sendMessage,
         getActiveRoom,
+        unsubscribeMessage,
     }),
     requireAuth
 )(Chat)

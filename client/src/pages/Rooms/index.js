@@ -21,6 +21,7 @@ class Rooms extends Component {
         !this.props.rooms.length && this.props.getAllRooms();
     }
 
+    
 
     render() {
         return(
@@ -32,12 +33,13 @@ class Rooms extends Component {
                             createRoom={this.props.createRoom}
                             userId = {this.props.user?._id}
                         />
+                        {this.props.rooms && 
                         <RoomListItems
                             rooms={this.props.rooms}
                             joinRoom={this.props.joinRoom}
                             user={this.props.user}
                             deleteRoom ={this.props.deleteRoom}
-                        />
+                        />}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
