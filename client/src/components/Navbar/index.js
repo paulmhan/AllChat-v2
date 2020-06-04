@@ -7,9 +7,9 @@ import "./style.css";
 export default (props) => {
   
   const page = window.location.pathname;
-  console.log(page);
-  
+
   if(page === "/") {
+    console.log(page, "Mount");
     return (
         <Menu secondary widths={12} id="navbar">
           <Menu.Item id="allchat-icon" position="left">
@@ -22,6 +22,7 @@ export default (props) => {
         </Menu>
       );
   } else if(page === "/signup" || page === "/signin" || page === "/signout") {
+    console.log(page, "Mount 2");
     return (
         <Menu secondary widths={12} id="navbar">
           <Menu.Item id="allchat-icon" position="left">
@@ -30,6 +31,7 @@ export default (props) => {
         </Menu>
       );
   } else if(page === "/rooms" || page === "/chat") {
+    console.log(page, "Mount 3")
     return (
       <Menu secondary widths={12} id="navbar">
         <Menu.Item id="allchat-icon" position="left">

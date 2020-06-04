@@ -75,6 +75,7 @@ class Chat extends Component {
                     labelPosition: "right",
                     icon: "arrow circle up",
                     content: "Send",
+                    type: "submit"
                 }}
             />
         );
