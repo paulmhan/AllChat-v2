@@ -112,3 +112,12 @@ export const getActiveRoom = roomId => {
         emit: true,
     };
 };
+
+export const leaveRoom = data => {
+    console.log('Leave room');
+    return {
+        event: "leaveRoom",
+        payload: data,
+        emit: true,
+    };
+};

@@ -8,7 +8,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -33,6 +33,9 @@ class Chat extends Component {
 
     componentWillUnmount() {
         this.props.unsubscribeMessage();
+        const user = this.props.user;
+        const room = this.props.room;
+        this.props.leaveRoom({room, user});
     }
 
 
@@ -60,21 +63,7 @@ class Chat extends Component {
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-                // action={{
-                //     color: "blue",
-                //     labelPosition: "right",
-                //     icon: "arrow circle up",
-                //     content: "Send",
-                //     // onClick: () => this.props.sendMessage({
-                //     //     userId: this.props.user._id,
-                //     //     firstName: this.props.user.firstName,
-                //     //     lastName: this.props.user.lastName,
-                //     //     message: this.state.message,
-                //     //     room: this.props.room
-                //     // }),
-                //     disabled: !this.state.message,
-
-                // }}
+    
             />
         );
     }
@@ -161,6 +150,7 @@ export default compose(
         sendMessage,
         getActiveRoom,
         unsubscribeMessage,
+        leaveRoom,
     }),
     requireAuth
 )(Chat)

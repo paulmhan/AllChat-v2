@@ -39,7 +39,6 @@ io.on("connection", socket => {
             io.to(data.room._id).emit("serverToClientMessage", activeRoom)
         })
     });
-
     socket.on("createRoom", data => {
         console.log("CREATING ROOM");
         //data is the room name and userID
@@ -88,8 +87,13 @@ io.on("connection", socket => {
     //         socket.emit("getRoomUsers", roomUsers);
     //     });
     // });
-
-    // socket.on("createRoom",  )
+    socket.on("leaveRoom", data => {
+       
+        socket.leave(data.room._id);
+        console.log(data, "user Left");
+    
+    })
+    
     socket.emit("disconnect", () => {
         console.log("Client disconnected.");
         return;
