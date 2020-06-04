@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Header, List, Button } from 'semantic-ui-react';
 import DeleteRoomModal from "../../components/DeleteRoomModal";
-import { PromiseProvider } from 'mongoose';
 
 
 
