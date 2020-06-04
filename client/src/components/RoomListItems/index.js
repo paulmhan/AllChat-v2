@@ -4,12 +4,15 @@ import { Header, List, Button } from 'semantic-ui-react';
 import DeleteRoomModal from "../../components/DeleteRoomModal";
 import { PromiseProvider } from 'mongoose';
 
+
+
 export default (props) => {
   if (props.rooms.length === 0) {
     return <Header content='No Rooms, Create One and Get Started!' />
   } else {
-    return props.rooms?.map((room, index) => {
-      return (
+    console.log(props.rooms);
+    return props.rooms?.map((room, index) => (
+      room && 
         <List.Item key={index}>
           <List.Content floated='left'>
             <p>{room.text}</p>
@@ -20,12 +23,13 @@ export default (props) => {
                 color='blue'
                 content='Join Room'
                 size='small'
-                onClick={() => props.joinRoom({ user:props.user, room})} />
+                // onClick={() => props.joinRoom({ user:props.user, room})} 
+                />
             </Link>
-            {room.creator === props.user._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={room._id} text={room.text} />}
+            {room.creator === props.user?._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={room._id} text={room.text} />}
           </List.Content>
         </List.Item>
-      );
-    });
+      
+    ));
   }
 };
