@@ -88,10 +88,8 @@ io.on("connection", socket => {
     //     });
     // });
     socket.on("leaveRoom", data => {
-       
         socket.leave(data.room._id);
         console.log(data, "user Left");
-    
     })
     
     socket.emit("disconnect", () => {

@@ -14,10 +14,9 @@ export default function socketMiddleware() {
             leave,
             handle,
             payload,
-            result,
+            // result,
             token,
-            ...rest
-
+            // ...rest
         } = action; 
 
         if(emit && token){

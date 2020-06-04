@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Form, Grid, Input, Button, Icon } from "semantic-ui-react";
-import { Field, reduxForm, reset } from "redux-form";
+import { Form, Grid, Button, Icon } from "semantic-ui-react";
+import { Field, reduxForm, } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatRoomHeader from "../../components/ChatRoomHeader";
@@ -8,8 +8,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
-import { required } from 'redux-form-validators';
+import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import "./style.css";
 

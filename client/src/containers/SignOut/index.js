@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Grid, Container, Message, Button } from 'semantic-ui-react';
+import { Grid, Message, Button } from 'semantic-ui-react';
 
 import { signOut } from '../../actions/auth';
 

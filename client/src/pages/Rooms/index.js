@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
-import ChatRoomSelect from "../../components/ChatRoomSelect";
+// import ChatRoomSelect from "../../components/ChatRoomSelect";
 import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
