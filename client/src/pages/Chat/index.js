@@ -9,7 +9,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, userJoinMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -21,6 +21,11 @@ class Chat extends Component {
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
         // this.userJoin();
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const roomId = urlParams.get('room');
+        console.log(roomId);
+        this.props.getActiveRoom(roomId);
     }
 
     componentWillUnmount() {
@@ -156,6 +161,7 @@ export default compose(
         loadUser,
         subscribeToMessageFromServer,
         sendMessage,
+        getActiveRoom,
     }),
     requireAuth
 )(Chat)
