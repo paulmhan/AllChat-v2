@@ -8,7 +8,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage } from "../../actions/sockets";
 import { required } from 'redux-form-validators';
 import { loadUser } from "../../actions/auth";
 import "./style.css";
@@ -21,20 +21,18 @@ class Chat extends Component {
     }
 
     componentDidMount() {
-
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
         // this.userJoin();
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        console.log(roomId);
+        console.log(roomId, "did mount");
         this.props.getActiveRoom(roomId);
     }
 
     componentWillUnmount() {
-        // this.handleLeave();
-        // this.isLive = false;
+        this.props.unsubscribeMessage();
     }
 
 
@@ -62,21 +60,21 @@ class Chat extends Component {
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-                action={{
-                    color: "blue",
-                    labelPosition: "right",
-                    icon: "arrow circle up",
-                    content: "Send",
-                    // onClick: () => this.props.sendMessage({
-                    //     userId: this.props.user._id,
-                    //     firstName: this.props.user.firstName,
-                    //     lastName: this.props.user.lastName,
-                    //     message: this.state.message,
-                    //     room: this.props.room
-                    // }),
-                    disabled: !this.state.message,
+                // action={{
+                //     color: "blue",
+                //     labelPosition: "right",
+                //     icon: "arrow circle up",
+                //     content: "Send",
+                //     // onClick: () => this.props.sendMessage({
+                //     //     userId: this.props.user._id,
+                //     //     firstName: this.props.user.firstName,
+                //     //     lastName: this.props.user.lastName,
+                //     //     message: this.state.message,
+                //     //     room: this.props.room
+                //     // }),
+                //     disabled: !this.state.message,
 
-                }}
+                // }}
             />
         );
     }
@@ -162,6 +160,7 @@ export default compose(
         subscribeToMessageFromServer,
         sendMessage,
         getActiveRoom,
+        unsubscribeMessage,
     }),
     requireAuth
 )(Chat)

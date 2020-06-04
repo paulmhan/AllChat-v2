@@ -34,7 +34,8 @@ io.on("connection", socket => {
     socket.on("message", data => {
         console.log(data, "DATA");
         messageController.createMessage(data, activeRoom => {
-            console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
+            // console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
+            console.log(data.room._id);
             io.to(data.room._id).emit("serverToClientMessage", activeRoom)
         })
     });
@@ -69,23 +70,12 @@ io.on("connection", socket => {
         });
     })
 
-    socket.on("joinRoom", data => {
-        socket.join(data.room._id);
-        // socket.emit("WelcomeMessage", {
-        //     firstName: "AllChatBot",
-        //     lastName: "",
-        //     text: "Welcome to AllChat!",
-        //     userId: "12345678"
-        // });
-        // socket.broadcast.emit("userJoinMessage", {
-        //     firstName: "AllChatBot",
-        //     lastName: "",
-        //     text: `${data.user.firstName}\u00A0${data.user.lastName} joined the chat`,
-        //     userId: "123456789"
-        // });
-    })
+    // socket.on("joinRoom", data => {
+    //     socket.join(data.room._id);
+    // })
     
     socket.on("getActiveRoom", roomId => {
+        socket.join(roomId);
         roomController.getCurrentRoom(roomId, currentRoom => {
             socket.emit("activeRoom", currentRoom);
         })
