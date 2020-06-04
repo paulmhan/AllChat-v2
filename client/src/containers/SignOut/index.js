@@ -16,13 +16,13 @@ class SignOut extends Component {
       <Grid container>
         <Grid.Row>
           <Grid.Column width={6}></Grid.Column>
-          <Grid.Column width={4} centered>
+          <Grid.Column width={4} >
             <Message negative header="We're sorry to see you go :("/>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
           <Grid.Column width={6}></Grid.Column>
-          <Grid.Column width={8} centered>
+          <Grid.Column width={8} >
             <Button as={Link} to='/' size='huge' content='Go back to homepage'/>
           </Grid.Column>
         </Grid.Row> 

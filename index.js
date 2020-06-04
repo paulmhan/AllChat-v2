@@ -87,8 +87,13 @@ io.on("connection", socket => {
     //         socket.emit("getRoomUsers", roomUsers);
     //     });
     // });
-
-    // socket.on("createRoom",  )
+    socket.on("leaveRoom", data => {
+       
+        socket.leave(data.room._id);
+        console.log(data, "user Left");
+    
+    })
+    
     socket.emit("disconnect", () => {
         console.log("Client disconnected.");
         return;
