@@ -5,6 +5,7 @@ import { Menu, Button } from 'semantic-ui-react';
 import "./style.css";
 
 export default (props) => {
+  
   const page = window.location.pathname;
   console.log(page);
   
