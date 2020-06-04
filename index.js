@@ -32,10 +32,10 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
-        console.log(data, "DATA");
+        // console.log(data, "DATA");
         messageController.createMessage(data, activeRoom => {
             // console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
-            console.log(data.room._id);
+            // console.log(data.room._id);
             io.to(data.room._id).emit("serverToClientMessage", activeRoom)
         })
     });
@@ -69,10 +69,6 @@ io.on("connection", socket => {
         });
     })
 
-    // socket.on("joinRoom", data => {
-    //     socket.join(data.room._id);
-    // })
-    
     socket.on("getActiveRoom", roomId => {
         socket.join(roomId);
         roomController.getCurrentRoom(roomId, currentRoom => {
@@ -80,13 +76,6 @@ io.on("connection", socket => {
         })
     })
 
-
-    // socket.on("getRoomUsers", data => {
-    //     console.log("Getting users from room");
-    //     userController.getRoomUsers(data, roomUsers => {
-    //         socket.emit("getRoomUsers", roomUsers);
-    //     });
-    // });
     socket.on("leaveRoom", data => {
         socket.leave(data.room._id);
         console.log(data, "user Left");

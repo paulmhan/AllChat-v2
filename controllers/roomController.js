@@ -3,7 +3,7 @@ const { Room,User } = require('../models/index');
 module.exports = {
     createRoom: async (data, cb) => {
         const { roomName, userId } = data;
-        console.log(data);
+        // console.log(data);
         try {
             const newRoom = await new Room({ text: roomName, creator: userId }).save();
             // newRoom.users.push(userId);
@@ -18,7 +18,6 @@ module.exports = {
         try {
             const roomDelete = await Room.findById(roomId);
             if(userId != roomDelete.creator){
-                console.log("Cannot delete a room that is not yours.");
                 cb("Error")
             } else {
                 const deletedRoom = await Room.findByIdAndDelete(roomId);
@@ -49,7 +48,6 @@ module.exports = {
 
     getCurrentRoom: async (roomId, cb) => {
         try {
-             console.log(roomId);
             const currentRoom = await Room.findById(roomId).populate("messages");
             cb(currentRoom)
         } catch (error) {
