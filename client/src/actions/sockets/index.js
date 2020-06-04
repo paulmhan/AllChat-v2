@@ -26,7 +26,6 @@ export const subscribeToMessageFromServer = () => dispatch => {
     });
 }
 
-
 export const subscribeToRoomFromServer = () => dispatch => {
     console.log("coming from server");
     dispatch({
@@ -115,3 +114,11 @@ export const deleteRoom = id => {
         emit: true,
     }
 }
+
+export const getActiveRoom = roomId => {
+    return {
+        event: "getActiveRoom",
+        payload: roomId,
+        emit: true,
+    };
+};

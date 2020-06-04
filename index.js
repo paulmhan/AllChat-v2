@@ -66,15 +66,10 @@ io.on("connection", socket => {
                 io.emit("loadAllRooms", rooms);
             }
         });
-
     })
 
     socket.on("joinRoom", data => {
-
         socket.join(data.room._id);
-        roomController.getCurrentRoom(data.room, currentRoom => {
-            socket.emit("activeRoom", currentRoom);
-        })
         // socket.emit("WelcomeMessage", {
         //     firstName: "AllChatBot",
         //     lastName: "",
@@ -87,6 +82,12 @@ io.on("connection", socket => {
         //     text: `${data.user.firstName}\u00A0${data.user.lastName} joined the chat`,
         //     userId: "123456789"
         // });
+    })
+    
+    socket.on("getActiveRoom", roomId => {
+        roomController.getCurrentRoom(roomId, currentRoom => {
+            socket.emit("activeRoom", currentRoom);
+        })
     })
 
 
