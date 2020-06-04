@@ -8,8 +8,7 @@ import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, userJoinMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
-import { required } from 'redux-form-validators';
+import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import "./style.css";
 
