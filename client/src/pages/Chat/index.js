@@ -66,12 +66,6 @@ class Chat extends Component {
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-            // action={{
-            //     style: btnStyle,
-            //     labelPosition: "right",
-            //     icon: "arrow circle up",
-            //     content: "Send",
-            // }}
             />
         );
     }
@@ -86,8 +80,7 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                        // roomUsers={this.props.getRoomUsers()}
-                        // userId={this.props.user?.id}
+                            activeUsers={this.props.room.users}
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>

@@ -1,9 +1,9 @@
-const { Room,User } = require('../models/index');
+const { Room, User } = require('../models/index');
 
 module.exports = {
     createRoom: async (data, cb) => {
         const { roomName, userId } = data;
-        console.log(data);
+        // console.log(data);
         try {
             const newRoom = await new Room({ text: roomName, creator: userId }).save();
             // newRoom.users.push(userId);
@@ -17,13 +17,12 @@ module.exports = {
     deleteRoomById: async (roomId, userId, cb) => {
         try {
             const roomDelete = await Room.findById(roomId);
-            if(userId != roomDelete.creator){
-                console.log("Cannot delete a room that is not yours.");
+            if (userId != roomDelete.creator) {
                 cb("Error")
             } else {
                 const deletedRoom = await Room.findByIdAndDelete(roomId);
                 const rooms = await Room.find().populate("messages");
-                if(!rooms){
+                if (!rooms) {
                     console.log("No Rooms");
                     cb("Error");
                 }
@@ -37,7 +36,7 @@ module.exports = {
     getAllRooms: async (cb) => {
         try {
             const rooms = await Room.find().populate("messages");
-            if(!rooms){
+            if (!rooms) {
                 console.log("No Rooms");
                 cb("Error")
             }
@@ -47,15 +46,28 @@ module.exports = {
         }
     },
 
-    getCurrentRoom: async (roomId, cb) => {
+    getActiveRoom: async (data, cb) => {
         try {
-             console.log(roomId);
-            const currentRoom = await Room.findById(roomId).populate("messages");
-            cb(currentRoom)
+            const activeRoom = await Room.findById(data.roomId).populate("messages");
+            activeRoom.users.push(data.user);
+            await activeRoom.save();
+            console.log(activeRoom, "when joining")
+            cb(activeRoom)
         } catch (error) {
             throw error
         }
+    },
+
+    getActiveRoomAfterDelete: async (data, cb) => {
+        try {
+            const activeRoom = await Room.findById(data.room._id).populate("messages");
+            activeRoom.users.pull(data.user);
+            await activeRoom.save();
+            console.log(activeRoom, "when leaving");
+            cb(activeRoom)
+        } catch (error) {
+            throw error
+
+        }
     }
-    
-    
 }

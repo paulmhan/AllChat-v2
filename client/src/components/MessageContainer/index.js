@@ -12,10 +12,7 @@ class MessageContainer extends Component {
       document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
-      // const node = ReactDOM.findDOMNode(this)
-      // console.log(node);
       document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
-
     }
 
   }

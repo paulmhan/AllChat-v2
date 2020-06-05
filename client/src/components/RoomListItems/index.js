@@ -9,7 +9,6 @@ export default (props) => {
   if (props.rooms.length === 0) {
     return <Header content='No Rooms, Create One and Get Started!' />
   } else {
-    console.log(props.rooms);
     return props.rooms?.map((room, index) => (
       room &&
       <Segment id="room-segment">

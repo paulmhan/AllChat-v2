@@ -41,8 +41,6 @@ module.exports = {
       if (existingUser) { return res.status(403).json({ error: 'User already exists' }); }
       const user = await new User({ email, password, firstName, lastName }).save();
       const currentUser = await User.findById(user._id).select('-password');
-      console.log(user);
-      console.log(currentUser);
       //get user without password
       // Eventually we will send a token
       return res.json({ token: tokenForUser(user), user: currentUser});
