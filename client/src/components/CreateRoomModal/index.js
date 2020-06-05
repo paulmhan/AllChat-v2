@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Form, Button, Modal } from 'semantic-ui-react';
 import { required } from 'redux-form-validators';
 
+import "./style.css";
+
 class CreateRoomModal extends Component {
 
     state = {
@@ -13,7 +15,6 @@ class CreateRoomModal extends Component {
         this.setState({ closeOnEscape, open: true });
     }
 
-    // open = () => this.setState({ open: true });
     close = () => this.setState({ open: false });
 
     handleRoomNameChange = e => {
@@ -48,8 +49,10 @@ class CreateRoomModal extends Component {
             <Modal
                 trigger={
                     <Button
+                        id="CreateRoomBtn-Outer"
                         content='Create Room'
                         onClick={this.closeConfigShow(false, true)}
+                        size="massive"
                     />
                 }
                 open={open}
@@ -73,6 +76,7 @@ class CreateRoomModal extends Component {
                 </Modal.Content>
                 <Modal.Actions>
                     <Button
+                        id="CreateRoomBtn-Inner"
                         content='Create Room'
                         size='large'
                         color='blue'

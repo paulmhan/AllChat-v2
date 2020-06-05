@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Form, Segment, Button } from 'semantic-ui-react';
+import { Grid, Form, Segment, Button } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import LanguageSelect from '../../components/LanguageSelect';
 import axios from 'axios';
 
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
+import "./style.css";
 
 class SignUp extends Component {
 
@@ -25,7 +26,7 @@ class SignUp extends Component {
     return (
       <Form.Input
         {...input}
-        error={ meta.touched && meta.error }
+        error={meta.touched && meta.error}
         fluid
         icon='user'
         iconPosition='left'
@@ -38,21 +39,21 @@ class SignUp extends Component {
     return (
       <Form.Input
         {...input}
-        error={ meta.touched && meta.error }
+        error={meta.touched && meta.error}
         fluid
         autoComplete='off'
         placeholder={placeholder}
       />
     );
   }
-  
+
 
 
   renderPassword = ({ input, meta }) => {
     return (
       <Form.Input
         {...input}
-        error={  meta.touched && meta.error }
+        error={meta.touched && meta.error}
         fluid
         type='password'
         icon='lock'
@@ -66,62 +67,73 @@ class SignUp extends Component {
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
-      <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
-        <Segment stacked>
-        <Field
-            name='firstName'
-            component={ this.renderNames }
-            placeholder = "First Name"
-            validate={
-              [
-                required({ msg: 'First name is required' })
-              ]
-            }
-          />
-          <Field
-            name='lastName'
-            component={ this.renderNames }
-            placeholder = "Last Name"
-            validate={
-              [
-                required({ msg: 'Last name is required' })
-              ]
-            }
-          />
-        
-          <Field
-            name='email'
-            component={ this.renderEmail }
-            validate={
-              [
-                required({ msg: 'Email is required' }),
-                email({ msg: 'You must provide a valid email address' })
-              ]
-            }
-          />
-          <Field
-            name='password'
-            component={this.renderPassword}
-            validate={
-              [
-                required({ msg: 'You must provide a password' }),
-                length({ min: 6, msg: 'Your password must be at least 6 characters long' })
-              ]
-            }
-          />
-          <LanguageSelect />
-          <br />
-          <Button
-            content='Sign up'
-            color='teal'
-            fluid
-            size='large'
-            type='submit'
-            disabled={ invalid || submitting || submitFailed }
-          />
-        </Segment>
-      </Form>
+      <Grid id="signup-container">
+        <Grid.Column width={8}>
+        <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
+            <Segment id="signup-form" stacked>
+              <Field
+                name='firstName'
+                component={this.renderNames}
+                placeholder="First Name"
+                validate={
+                  [
+                    required({ msg: 'First name is required' })
+                  ]
+                }
+              />
+              <Field
+                name='lastName'
+                component={this.renderNames}
+                placeholder="Last Name"
+                validate={
+                  [
+                    required({ msg: 'Last name is required' })
+                  ]
+                }
+              />
+
+              <Field
+                name='email'
+                component={this.renderEmail}
+                validate={
+                  [
+                    required({ msg: 'Email is required' }),
+                    email({ msg: 'You must provide a valid email address' })
+                  ]
+                }
+              />
+              <Field
+                name='password'
+                component={this.renderPassword}
+                validate={
+                  [
+                    required({ msg: 'You must provide a password' }),
+                    length({ min: 6, msg: 'Your password must be at least 6 characters long' })
+                  ]
+                }
+              />
+              <LanguageSelect />
+              <br />
+              <Button
+                id="signup-btn"
+                fluid
+                size='large'
+                type='submit'
+                disabled={invalid || submitting || submitFailed}
+              >
+                <div id="signup-btn-text">Sign Up</div>
+              </Button>
+            </Segment>
+          </Form>
+        </Grid.Column>
+
+      </Grid>
     );
+
+
   }
 }
 
@@ -137,4 +149,4 @@ const asyncValidate = async formValues => {
   }
 }
 
-export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: [ 'email' ] })(SignUp);
+export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: ['email'] })(SignUp);

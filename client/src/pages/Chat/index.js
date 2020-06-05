@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { Form, Grid, Button, Icon } from "semantic-ui-react";
 import { Field, reduxForm, } from "redux-form";
 import { connect } from 'react-redux';
@@ -13,11 +14,6 @@ import { loadUser } from "../../actions/auth";
 import "./style.css";
 
 class Chat extends Component {
-
-    state = {
-        messageValid: false,
-        submitDisabled: true
-    }
 
     componentDidMount() {
         this.props.subscribeToMessageFromServer();
@@ -37,6 +33,13 @@ class Chat extends Component {
         this.props.leaveRoom({ room, user });
     }
 
+    scrollToBottom = () => {
+        let chatTextArea = document.getElementById("message-container");
+        const scrollHeight = chatTextArea.scrollHeight;
+        const height = chatTextArea.clientHeight;
+        const maxScrollTop = scrollHeight - height;
+        ReactDOM.findDOMNode(chatTextArea).scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+    };
 
     handleMessageSubmit = (formValues, dispatch) => {
         console.log(formValues);
@@ -47,18 +50,22 @@ class Chat extends Component {
         if (formValues === "") {
             console.log("You must enter a message");
         };
+        this.scrollToBottom();
     }
 
     renderMessageInput = ({ input, meta }) => {
         // console.log(input, "input");
         // console.log(meta, "meta");
+        // const btnStyle = {
+        //     backgroundColor: "#32CD33",
+        //     color: "white"
+        // };
         return (
             <Form.Input
                 {...input}
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-
             />
         );
     }
@@ -103,16 +110,27 @@ class Chat extends Component {
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
                                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
-                                        <Field
-                                            name="message"
-                                            component={this.renderMessageInput}
-                                        />
-                                        <Button
-                                            type="submit"
+                                        <Grid>
+                                            <Grid.Column width={13}>
+                                                <Field
+                                                    name="message"
+                                                    component={this.renderMessageInput}
+                                                    fluid
+                                                />
+                                            </Grid.Column>
+                                            <Grid.Column width={3}>
+                                                <Button
+                                                    fluid
+                                                    id="SendBtn"
+                                                    type="submit"
+                                                    color="teal">
+                                                    <Icon name='arrow circle up' />
+                                                    Send
+                                                </Button>
+                                            </Grid.Column>
+                                        </Grid>
 
-                                            color="teal">
-                                            <Icon name='arrow circle up' /> Send
-      </Button>
+
                                     </Form>
                                 </Grid.Column>
                             </Grid.Row>

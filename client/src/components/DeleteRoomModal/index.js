@@ -1,24 +1,55 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 
-export default (props) => (
-  <Modal
-    trigger={ <Button color='red' icon='archive' size='small'/> }
-    basic
-  >
-    <Header content='Delete Room'/> 
-    <Modal.Content>
-      <p>Are you sure you want to delete this room?</p>
-      <p>{props.text}</p>
-    </Modal.Content>
-    <Modal.Actions>
-      <Button
-        fluid
-        negative
-        onClick={ () => props.deleteRoom(props.id)}>
-        <Icon name='remove'/> Delete
+import "./style.css";
+
+class DeleteRoomModal extends Component {
+
+  state = {
+    open: false
+  }
+
+  closeConfigShow = (closeOnEscape) => () => {
+    this.setState({ closeOnEscape, open: true });
+  }
+
+  close = () => this.setState({ open: false });
+
+  deleteRoomAndClose = () => {
+    this.props.deleteRoom(this.props.id);
+    this.close();
+  }
+
+  render() {
+    const { open, closeOnEscape } = this.state;
+    return (
+      <Modal
+        trigger={<Button id="DeleteRoomBtn-Outer" onClick={this.closeConfigShow(false, true)} icon='archive' size='small' />}
+        basic
+        open={open}
+        closeOnEscape={closeOnEscape}
+        onClose={this.close}
+      >
+        <Header content='Delete Room' />
+        <Modal.Content>
+          <p>Are you sure you want to delete this room?</p>
+          <p>{this.props.text}</p>
+        </Modal.Content>
+        <Modal.Actions>
+          <Button
+            fluid
+            negative
+            onClick={() => this.deleteRoomAndClose()}>
+            <Icon name='remove' /> Delete
       </Button>
-    </Modal.Actions>
-  </Modal>
-);
+        </Modal.Actions>
+      </Modal>
+    );
+  }
+}
+
+export default DeleteRoomModal;
+
+
+
 
