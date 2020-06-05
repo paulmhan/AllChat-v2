@@ -1,4 +1,4 @@
-const { Room,User } = require('../models/index');
+const { Room, User } = require('../models/index');
 
 module.exports = {
     createRoom: async (data, cb) => {
@@ -17,12 +17,12 @@ module.exports = {
     deleteRoomById: async (roomId, userId, cb) => {
         try {
             const roomDelete = await Room.findById(roomId);
-            if(userId != roomDelete.creator){
+            if (userId != roomDelete.creator) {
                 cb("Error")
             } else {
                 const deletedRoom = await Room.findByIdAndDelete(roomId);
                 const rooms = await Room.find().populate("messages");
-                if(!rooms){
+                if (!rooms) {
                     console.log("No Rooms");
                     cb("Error");
                 }
@@ -36,7 +36,7 @@ module.exports = {
     getAllRooms: async (cb) => {
         try {
             const rooms = await Room.find().populate("messages");
-            if(!rooms){
+            if (!rooms) {
                 console.log("No Rooms");
                 cb("Error")
             }
@@ -51,10 +51,23 @@ module.exports = {
             const activeRoom = await Room.findById(data.roomId).populate("messages");
             activeRoom.users.push(data.user._id);
             await activeRoom.save();
-            console.log(activeRoom, "lalalalala;a");
+            console.log(activeRoom, "when joining")
             cb(activeRoom)
         } catch (error) {
             throw error
+        }
+    },
+
+    getActiveRoomAfterDelete: async (data, cb) => {
+        try {
+            const activeRoom = await Room.findById(data.room._id).populate("messages");
+            activeRoom.users.pull(data.user._id);
+            await activeRoom.save();
+            console.log(activeRoom, "when leaving");
+            cb(activeRoom)
+        } catch (error) {
+            throw error
+
         }
     }
 }

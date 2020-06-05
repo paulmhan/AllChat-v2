@@ -82,7 +82,9 @@ io.on("connection", socket => {
         // const { room, user} = data;
         socket.leave(data.room._id);
         socket.broadcast.to(data.room._id).emit("userLeftMessage", {message: `${data.user.firstName}\u00A0${data.user.lastName} has left the chat`});
-        // roomController.getActiveRoom(data, activeRoom)
+        roomController.getActiveRoomAfterDelete(data, activeRoom => {
+            socket.broadcast.to(data.room._id).emit("activeRoom", activeRoom);
+        })
         // console.log("left message sent");
     })
     
