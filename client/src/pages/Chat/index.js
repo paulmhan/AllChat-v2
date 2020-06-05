@@ -26,7 +26,6 @@ class Chat extends Component {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        console.log(roomId, "did mount");
         this.props.getActiveRoom(roomId);
     }
 
@@ -77,8 +76,7 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                        // roomUsers={this.props.getRoomUsers()}
-                        // userId={this.props.user?.id}
+                        
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>
