@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import { Segment, Message } from "semantic-ui-react";
+import { Message } from "semantic-ui-react";
 import moment from 'moment';
 import "./style.css";
 
