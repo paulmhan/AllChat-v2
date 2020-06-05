@@ -1,7 +1,9 @@
-import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM } from "../actions/socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../actions/socketTypes";
 
 const INITIAL_STATE = {
     messages: [],
+    userJoin: "",
+    userLeft:"",
     rooms: [],
     activeRoom: {},
 };
@@ -13,6 +15,11 @@ export default function (state = INITIAL_STATE, action) {
         case NEW_MESSAGE:
             console.log(action.payload.messages);
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
+        case USER_JOIN:
+            return { ...state, userJoin:action.payload.message };
+        case USER_LEFT:
+            console.log(action.payload.message, "reducer");
+            return { ...state, userLeft:action.payload.message };
         case NEW_ROOM:
             return { ...state, rooms: [...state.rooms, ...action.payload] };
         case LOAD_ROOMS:
