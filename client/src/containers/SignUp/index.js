@@ -65,7 +65,6 @@ class SignUp extends Component {
   }
 
   render() {
-    console.log("Inside of signup render", this.props);
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
       <Grid id="signup-container">

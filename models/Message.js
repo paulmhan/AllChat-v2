@@ -23,6 +23,10 @@ const MessageSchema = new Schema({
     type: String, 
     ref: 'lastName' 
   },
+  line: {
+    type:Boolean,
+    default:false
+  }
 });
 
 const Message = model('Message', MessageSchema);

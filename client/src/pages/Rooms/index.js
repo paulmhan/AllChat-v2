@@ -5,7 +5,7 @@ import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
-import { subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom, deleteRoom } from "../../actions/sockets";
+import { subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import RoomListItems from "../../components/RoomListItems";
 
@@ -80,8 +80,7 @@ function mapStateToProps(state) {
     }
 }
 
-
 export default compose(
-    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms, joinRoom, deleteRoom }),
+    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom }),
     requireAuth
 )(Rooms)
