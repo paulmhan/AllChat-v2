@@ -49,7 +49,7 @@ module.exports = {
     getActiveRoom: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.roomId).populate("messages");
-            activeRoom.users.push(data.user._id);
+            activeRoom.users.push(data.user);
             await activeRoom.save();
             console.log(activeRoom, "when joining")
             cb(activeRoom)
@@ -61,7 +61,7 @@ module.exports = {
     getActiveRoomAfterDelete: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.room._id).populate("messages");
-            activeRoom.users.pull(data.user._id);
+            activeRoom.users.pull(data.user);
             await activeRoom.save();
             console.log(activeRoom, "when leaving");
             cb(activeRoom)
