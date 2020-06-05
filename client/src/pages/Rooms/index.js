@@ -54,11 +54,15 @@ class Rooms extends Component {
                                 user={this.props.user}
                                 deleteRoom={this.props.deleteRoom}
                             />}
-                        <Pagination
-                            totalPages={Math.ceil(this.props.rooms.length / 10)}
-                            onPageChange={(event, data) => this.handlePageChange(event, data)}
-                            activePage={this.state.activePage}
-                        />
+                        {
+                            this.props.rooms.length <= 9 ?
+                                null
+                                : <Pagination
+                                    totalPages={Math.ceil(this.props.rooms.length / 10)}
+                                    onPageChange={(event, data) => this.handlePageChange(event, data)}
+                                    activePage={this.state.activePage}
+                                />
+                        }
                     </Grid.Column>
                 </Grid.Row>
 
