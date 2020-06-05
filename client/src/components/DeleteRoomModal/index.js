@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
 
+import "./style.css";
+
 class DeleteRoomModal extends Component {
 
   state = {
@@ -22,7 +24,7 @@ class DeleteRoomModal extends Component {
     const { open, closeOnEscape } = this.state;
     return (
       <Modal
-        trigger={<Button onClick={this.closeConfigShow(false, true)} color='red' icon='archive' size='small' />}
+        trigger={<Button id="DeleteRoomBtn-Outer" onClick={this.closeConfigShow(false, true)} icon='archive' size='small' />}
         basic
         open={open}
         closeOnEscape={closeOnEscape}

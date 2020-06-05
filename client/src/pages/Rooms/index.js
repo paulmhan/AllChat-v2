@@ -40,22 +40,28 @@ class Rooms extends Component {
     render() {
         return (
             <Grid container id="roomselect-container">
-                <Grid.Row>
-                    <Grid.Column width={2}></Grid.Column>
+                <Grid.Row centered>
+                    <CreateRoomModal
+                        createRoom={this.props.createRoom}
+                        userId={this.props.user?._id}
+                    />
+                </Grid.Row>
+                <Grid.Row centered>
                     <Grid.Column width={12} >
-                        <CreateRoomModal
-                            createRoom={this.props.createRoom}
-                            userId={this.props.user?._id}
-                        />
                         <Segment.Group>
-                        {this.props.rooms &&
-                            <RoomListItems
-                                rooms={this.props.rooms}
-                                joinRoom={this.props.joinRoom}
-                                user={this.props.user}
-                                deleteRoom={this.props.deleteRoom}
-                            />}
+                            {this.props.rooms &&
+                                <RoomListItems
+                                    rooms={this.props.rooms}
+                                    joinRoom={this.props.joinRoom}
+                                    user={this.props.user}
+                                    deleteRoom={this.props.deleteRoom}
+                                />}
                         </Segment.Group>
+
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row centered>
+                    <Grid.Column width={7}>
                         {
                             this.props.rooms.length <= 9 ?
                                 null
@@ -67,7 +73,6 @@ class Rooms extends Component {
                         }
                     </Grid.Column>
                 </Grid.Row>
-
             </Grid>
 
         )

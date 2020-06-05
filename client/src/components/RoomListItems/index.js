@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Header, List, Button, Segment } from 'semantic-ui-react';
+import { Grid, Header, List, Button, Segment } from 'semantic-ui-react';
 import DeleteRoomModal from "../../components/DeleteRoomModal";
+
+import "./style.css";
 
 export default (props) => {
   if (props.rooms.length === 0) {
@@ -10,25 +12,37 @@ export default (props) => {
     console.log(props.rooms);
     return props.rooms?.map((room, index) => (
       room &&
-      <Segment>
+      <Segment id="room-segment">
         <List.Item key={index}>
-          <List.Content floated='left'>
-            <p>{room.text}</p>
-          </List.Content>
-          <List.Content floated='right'>
-            <Link to={`/chat?room=${room._id}`}>
-              <Button
-                color='blue'
-                content='Join Room'
-                size='small'
-                // onClick={() => props.joinRoom({ user:props.user, room})} 
-                />
-            </Link>
-            {room.creator === props.user?._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={room._id} text={room.text} />}
-          </List.Content>
+          <Grid>
+            <Grid.Column width={12}>
+              <List.Content>
+                <p id="room-text">{room.text}</p>
+              </List.Content>
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <List.Content>
+                <Link to={`/chat?room=${room._id}`}>
+                  <Button
+                    fluid
+                    id="JoinRoomBtn"
+                    color='blue'
+                    content='Join Room'
+                    size='small'
+                  // onClick={() => props.joinRoom({ user:props.user, room})} 
+                  />
+                </Link>
+              </List.Content>
+            </Grid.Column>
+            <Grid.Column width={1}>
+              <List.Content>
+              {room.creator === props.user?._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={room._id} text={room.text} />}
+              </List.Content>
+            </Grid.Column>
+          </Grid>
         </List.Item>
-      </Segment> 
-      
+      </Segment>
+
     ));
   }
 };

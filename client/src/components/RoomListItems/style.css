@@ -1,0 +1,21 @@
+#JoinRoomBtn {
+    width: 143px;
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#JoinRoomBtn:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+#room-segment {
+    padding-right: 25px;
+}
+
+#room-text {
+    font-size: 24px;
+}
