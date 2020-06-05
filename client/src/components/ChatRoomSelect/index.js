@@ -1,45 +1,38 @@
 import React from "react";
-import { List, Accordion, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { List, Header, Accordion, Button } from "semantic-ui-react";
+import DeleteRoomModal from "../DeleteRoomModal";
 
+const ChatRoom = (props) => {
+    if(props.rooms.length === 0) {
+        return <Header content="No Rooms, Create One and Get Started" />
+    } else {
+        console.log(props.rooms);
+        return props.rooms?.map((room, index) => (
+            room && 
+              <List.Item key={index}>
+                <List.Content floated='left'>
+                  <p>{room.text}</p>
+                </List.Content>
+                <List.Content floated='right'>
+                  <Link to={`/chat?room=${room._id}`}>
+                    <Button
+                      color='blue'
+                      content='Join Room'
+                      size='small'
+                      // onClick={() => props.joinRoom({ user:props.user, room})} 
+                      />
+                  </Link>
+                  {room.creator === props.user?._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={room._id} text={room.text} />}
+                </List.Content>
+              </List.Item>
+            
+          ));
+    }
+}
 
-
-const ChatRoom1 = (
-    <div>
-        <List>
-            <List.Item>User 1</List.Item>
-            <List.Item>User 2</List.Item>
-            <List.Item>User 3</List.Item>
-        </List>
-        <Button content="Join Chat" />
-    </div>
-);
-
-const ChatRoom2 = (
-    <div>
-        <List>
-            <List.Item>User 1</List.Item>
-            <List.Item>User 2</List.Item>
-            <List.Item>User 3</List.Item>
-        </List>
-        <Button content="Join Chat" />
-    </div>
-);
-
-const ChatRoom3 = (
-    <div>
-        <List>
-            <List.Item>User 1</List.Item>
-            <List.Item>User 2</List.Item>
-            <List.Item>User 3</List.Item>
-        </List>
-        <Button content="Join Chat" />
-    </div>
-);
-
-const ChatRooms = [
-    { key: "Chatroom 1", title: "Chatroom 1", content: { content: ChatRoom1 } },
-    { key: "Chatroom 2", title: "Chatroom 2", content: { content: ChatRoom2 } },
-    { key: "Chatroom 3", title: "Chatroom 3", content: {}}
+const ChatRoomList = [
+    { key: "Chatroom", title: "Chatroom", content: { content: ChatRoom } },
 ];
 
 
@@ -47,7 +40,7 @@ const ChatRoomSelect = () => {
     return(
         <Accordion 
             defaultActiveIndex={[0]}
-            panels={ChatRooms}
+            panels={ChatRoomList}
             exclusive={false}
             fluid
             styled

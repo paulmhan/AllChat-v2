@@ -1,0 +1,25 @@
+#CreateRoomBtn-Outer {
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#CreateRoomBtn-Outer:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+#CreateRoomBtn-Inner {
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#CreateRoomBtn-Inner:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}

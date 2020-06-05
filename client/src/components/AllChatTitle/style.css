@@ -1,7 +1,8 @@
 #allchat-icon {
-    margin: 10px 20px;
+    position: relative;
+    left: 20px;
 }
 
 #main-header {
-    color: white;
+    color: black;
 }
