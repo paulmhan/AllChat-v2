@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Grid, Pagination } from "semantic-ui-react";
-// import ChatRoomSelect from "../../components/ChatRoomSelect";
+import { Grid, Pagination, Segment } from "semantic-ui-react";
+import ChatRoomSelect from "../../components/ChatRoomSelect";
 import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
@@ -47,6 +47,7 @@ class Rooms extends Component {
                             createRoom={this.props.createRoom}
                             userId={this.props.user?._id}
                         />
+                        <Segment.Group>
                         {this.props.rooms &&
                             <RoomListItems
                                 rooms={this.props.rooms}
@@ -54,6 +55,7 @@ class Rooms extends Component {
                                 user={this.props.user}
                                 deleteRoom={this.props.deleteRoom}
                             />}
+                        </Segment.Group>
                         {
                             this.props.rooms.length <= 9 ?
                                 null

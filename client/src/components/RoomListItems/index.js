@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Header, List, Button } from 'semantic-ui-react';
+import { Header, List, Button, Segment } from 'semantic-ui-react';
 import DeleteRoomModal from "../../components/DeleteRoomModal";
-
-
 
 export default (props) => {
   if (props.rooms.length === 0) {
@@ -11,7 +9,8 @@ export default (props) => {
   } else {
     console.log(props.rooms);
     return props.rooms?.map((room, index) => (
-      room && 
+      room &&
+      <Segment>
         <List.Item key={index}>
           <List.Content floated='left'>
             <p>{room.text}</p>
@@ -28,6 +27,7 @@ export default (props) => {
             {room.creator === props.user?._id && <DeleteRoomModal deleteRoom={props.deleteRoom} id={room._id} text={room.text} />}
           </List.Content>
         </List.Item>
+      </Segment> 
       
     ));
   }
