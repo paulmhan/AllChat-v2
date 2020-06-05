@@ -69,16 +69,17 @@ io.on("connection", socket => {
         });
     })
 
-    socket.on("getActiveRoom", roomId => {
-        socket.join(roomId);
-        roomController.getCurrentRoom(roomId, currentRoom => {
+    socket.on("getActiveRoom", data => {
+        console.log(data, "datataatatatatata");
+        socket.join(data.roomId);
+        roomController.getActiveRoom(data, currentRoom => {
             socket.emit("activeRoom", currentRoom);
         })
     })
 
     socket.on("leaveRoom", data => {
         socket.leave(data.room._id);
-        console.log(data, "user Left");
+        console.log("user Left");
     })
     
     socket.emit("disconnect", () => {

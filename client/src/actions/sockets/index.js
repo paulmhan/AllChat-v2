@@ -56,7 +56,6 @@ export const unsubscribeMessage = message => {
         event: "message",
         leave: true,
     };
-    
 };
 
 export const createRoom = data => {
@@ -95,10 +94,10 @@ export const deleteRoom = id => {
     }
 }
 
-export const getActiveRoom = roomId => {
+export const getActiveRoom = data => {
     return {
         event: "getActiveRoom",
-        payload: roomId,
+        payload: data,
         emit: true,
     };
 };

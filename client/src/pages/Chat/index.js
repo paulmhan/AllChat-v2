@@ -26,7 +26,8 @@ class Chat extends Component {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        this.props.getActiveRoom(roomId);
+        const user = this.props.user;
+        this.props.getActiveRoom({ roomId, user });
     }
 
     componentWillUnmount() {

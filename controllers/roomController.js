@@ -46,9 +46,9 @@ module.exports = {
         }
     },
 
-    getCurrentRoom: async (roomId, cb) => {
+    getActiveRoom: async (data, cb) => {
         try {
-            const currentRoom = await Room.findById(roomId).populate("messages");
+            const currentRoom = await Room.findById(data.roomId).populate("messages");
             cb(currentRoom)
         } catch (error) {
             throw error
