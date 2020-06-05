@@ -32,15 +32,13 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { use
 io.on("connection", socket => {
     console.log("New client connected.");
     socket.on("message", data => {
-        console.log(data, "DATA");
+        //data is {formvalues, user, room}
         messageController.createMessage(data, activeRoom => {
             // console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
-            console.log(data.room._id);
             io.to(data.room._id).emit("serverToClientMessage", activeRoom)
         })
     });
     socket.on("createRoom", data => {
-        console.log("CREATING ROOM");
         //data is the room name and userID
         // socket.join(data.roomName)
         roomController.createRoom(data, newRoom => {
@@ -49,7 +47,6 @@ io.on("connection", socket => {
     })
 
     socket.on("getAllRooms", () => {
-        console.log("GETTING ROOM");
         roomController.getAllRooms(rooms => {
             if (rooms !== "Error") {
                 socket.emit("serverToClientRoom", rooms);
@@ -69,14 +66,27 @@ io.on("connection", socket => {
         });
     })
 
-    // socket.on("joinRoom", data => {
-    //     socket.join(data.room._id);
+    // socket.on("joinRoom", userJoindata => {
+    //     //data is user and room
+    //     const formValues = {message: `${userJoindata.user.firstName}\u00A0${userJoindata.user.lastName} has joined the chat`};
+    //     userJoindata.user.firstName = "AllChatBot";
+    //     userJoindata.user.lastName = "";
+    //     const data = {...userJoindata, formValues}
+    //     console.log(data, "server joinroom")
+    //     messageController.createMessage(data, activeRoom => {
+    //         // console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
+    //         console.log(data.room._id);
+    //         socket.broadcast.to(data.room._id).emit("serverToClientMessage", activeRoom);
+    //     })
     // })
     
-    socket.on("getActiveRoom", roomId => {
+    socket.on("getActiveRoom", data => {
+        const {roomId, user} = data;
         socket.join(roomId);
         roomController.getCurrentRoom(roomId, currentRoom => {
             socket.emit("activeRoom", currentRoom);
+            socket.broadcast.to(roomId).emit("userJoinMessage", {message: `${user.firstName}\u00A0${user.lastName} has joined the chat`});
+
         })
     })
 
@@ -88,8 +98,10 @@ io.on("connection", socket => {
     //     });
     // });
     socket.on("leaveRoom", data => {
-        socket.leave(data.room._id);
-        console.log(data, "user Left");
+        const { room, user} = data;
+        socket.leave(room._id);
+        socket.broadcast.to(room._id).emit("userLeftMessage", {message: `${user.firstName}\u00A0${user.lastName} has left the chat`});
+        console.log("left message sent");
     })
     
     socket.emit("disconnect", () => {

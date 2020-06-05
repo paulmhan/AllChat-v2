@@ -22,13 +22,13 @@ class Chat extends Component {
     componentDidMount() {
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
-        // this.userJoin();
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        console.log(roomId, "did mount");
-        this.props.getActiveRoom(roomId);
+        const data = {roomId, user:this.props.user}
+        this.props.getActiveRoom(data);
     }
+
 
     componentWillUnmount() {
         this.props.unsubscribeMessage();
@@ -48,10 +48,6 @@ class Chat extends Component {
             console.log("You must enter a message");
         };
     }
-
-    userJoin = () => {
-        this.userJoinMessage()
-    };
 
     renderMessageInput = ({ input, meta }) => {
         // console.log(input, "input");
@@ -86,7 +82,9 @@ class Chat extends Component {
                             <Grid.Row>
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
-                                        name={this.props.room.text}
+                                        roomName={this.props.room.text}
+                                        firstName={this.props.user?.firstName} 
+                                        lastName = {this.props.user?.lastName}
                                     />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
@@ -97,6 +95,9 @@ class Chat extends Component {
                                 <Grid.Column width={16}>
                                     <MessageContainer
                                         messages={this.props.room.messages}
+                                        activeUsers={this.props.room.users}
+                                        userJoin={this.props.userJoin}
+                                        userLeft={this.props.userLeft}
                                     />
                                 </Grid.Column>
                             </Grid.Row>
@@ -106,11 +107,6 @@ class Chat extends Component {
                                         <Field
                                             name="message"
                                             component={this.renderMessageInput}
-                                        // validate={
-                                        //     [
-                                        //         required({ msg: 'Enter a message' })
-                                        //     ]
-                                        // }
                                         />
                                         <Button
                                             type="submit"
@@ -133,8 +129,9 @@ class Chat extends Component {
 function mapStateToProps(state) {
     return {
         user: state.auth.currentUser,
-        // messages: state.socket.activeRoom.messages,
-        room: state.socket.activeRoom
+        room: state.socket.activeRoom,
+        userJoin: state.socket.userJoin,
+        userLeft: state.socket.userLeft,
     }
 }
 

@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM } from "../socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {
@@ -9,6 +9,26 @@ export const subscribeToMessageFromServer = () => dispatch => {
         handle: data => {
             dispatch({
                 type: NEW_MESSAGE,
+                payload: data,
+            })
+        },
+    });
+
+    dispatch({
+        event: "userJoinMessage",
+        handle: data => {
+            dispatch({
+                type: USER_JOIN,
+                payload: data,
+            })
+        },
+    });
+
+    dispatch({
+        event: "userLeftMessage",
+        handle: data => {
+            dispatch({
+                type: USER_LEFT,
                 payload: data,
             })
         },
@@ -87,14 +107,14 @@ export const getAllRooms = () => {
         emit: true,
     };
 };
-export const joinRoom = data => {
-    console.log(data);
-    return {
-        event: "joinRoom",
-        payload: data,
-        emit: true,
-    }
-}
+// export const joinRoom = data => {
+//     console.log(data, "actions");
+//     return {
+//         event: "joinRoom",
+//         payload: data,
+//         emit: true,
+//     }
+// }
 export const deleteRoom = id => {
     console.log(id);
     return {

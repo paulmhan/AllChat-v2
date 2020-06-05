@@ -1,23 +1,39 @@
 import React, { Component } from "react";
-import { Segment } from "semantic-ui-react";
+import ReactDOM from 'react-dom';
+import { Segment, Message } from "semantic-ui-react";
 import moment from 'moment';
 import "./style.css";
 
 class MessageContainer extends Component {
 
+  componentDidUpdate(prevProps) {
+
+    if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
+      document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
+    }
+    if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
+      // const node = ReactDOM.findDOMNode(this)
+      // console.log(node);
+      document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
+
+    }
+
+  }
 
   render() {
     return (
       <div className="message-outline">
         <div className="ui message" id="message-container">
-            {this.props.messages?.map((message, index) =>
-            <Segment key={index}>
+          {this.props.messages?.map((message, index) =>
+            <Message key={index}>
               <p id="timeStamp">
                 <span>{moment(message.dateCreated).format('MMMM Do YYYY, h:mm a')}</span>
               </p>
-              <p id ="userName"> <strong>{message.firstName}&nbsp;{message.lastName}:</strong> {message.text}</p>
-            </Segment>)}
+              <Message.Header> <strong>{message.firstName}&nbsp;{message.lastName}:</strong><p>{message.text}</p></Message.Header>
+            </Message>)}
+
         </div>
+
       </div>
     )
   }
