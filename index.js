@@ -71,18 +71,19 @@ io.on("connection", socket => {
     socket.on("getActiveRoom", data => {
         // const {roomId, user} = data;
         socket.join(data.roomId);
-        roomController.getActiveRoom(data, currentRoom => {
-            socket.emit("activeRoom", currentRoom);
+        roomController.getActiveRoom(data, activeRoom => {
+            socket.emit("activeRoom", activeRoom);
             socket.broadcast.to(data.roomId).emit("userJoinMessage", {message: `${data.user.firstName}\u00A0${data.user.lastName} has joined the chat`});
 
         })
     })
 
     socket.on("leaveRoom", data => {
-        const { room, user} = data;
-        socket.leave(room._id);
-        socket.broadcast.to(room._id).emit("userLeftMessage", {message: `${user.firstName}\u00A0${user.lastName} has left the chat`});
-        console.log("left message sent");
+        // const { room, user} = data;
+        socket.leave(data.room._id);
+        socket.broadcast.to(data.room._id).emit("userLeftMessage", {message: `${data.user.firstName}\u00A0${data.user.lastName} has left the chat`});
+        // roomController.getActiveRoom(data, activeRoom)
+        // console.log("left message sent");
     })
     
     socket.emit("disconnect", () => {

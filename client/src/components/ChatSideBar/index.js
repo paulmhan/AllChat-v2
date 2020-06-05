@@ -5,12 +5,8 @@ import "./style.css";
 
 class ChatSideBar extends Component {
 
-    state = {
-        userList: []
-    }
 
     render() {
-
         return (
             <div>
                 <h1 id="user-title">Users:</h1>
