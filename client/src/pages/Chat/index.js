@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { Form, Grid, Button, Icon } from "semantic-ui-react";
 import { Field, reduxForm, } from "redux-form";
 import { connect } from 'react-redux';

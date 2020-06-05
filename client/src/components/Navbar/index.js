@@ -12,25 +12,23 @@ class Navbar extends Component {
 
   handleCurrentPage = () => {
     const page = window.location.pathname;
-    switch (page) {
-      case page === "/":
-        return this.setState({ currentPage: "/" });
-      case page === "/signup":
-        return this.setState({ currentPage: "/signup" });
-      case page === "/signin":
-        return this.setState({ currentPage: "/signin" });
-      case page === "/signout":
-        return this.setState({ currentPage: "/signout" });
-      case page === "/rooms":
-        return this.setState({ currentPage: "/rooms" });
-      case page === "/chat":
-        return this.setState({ currentPage: "/chat" });
-      default:
-        return this.state;
-    }
+    if(page === "/") {
+      return this.setState({ currentPage: "/" });
+    } else if(page === "/signup") {
+      return this.setState({ currentPage: "/signup" });
+    } else if(page === "/signin") {
+      return this.setState({ currentPage: "/signin" });
+    } else if( page === "/signout") {
+      return this.setState({ currentPage: "/signout" });
+    } else if(page === "/rooms") {
+      return this.setState({ currentPage: "/rooms" });
+    } else if(page === "/chat") {
+      return this.setState({ currentPage: "/chat" });
+    }   
   }
-
+  
   render() {
+    console.log("Current Page: ", this.state.currentPage );
     switch (this.state) {
       case this.state.currentPage === "/":
         return (
@@ -95,7 +93,7 @@ class Navbar extends Component {
           </Menu>
         );
       default:
-        return (
+        return(
           <Menu secondary widths={12} id="navbar">
             <Menu.Item id="allchat-icon" position="left">
               <AllChatTitle />
