@@ -1,27 +1,27 @@
-#signin-container {
+#signout-container {
+    background-color: #f7f7f7;
+    border-radius: 10px;
     width: 90%;
     margin: 0 auto;
-    border-radius: 10px;
-    background-color: #f7f7f7;
 }
 
-#signin-form-container {
+#right-inner-container {
     padding-top: 200px;
 }
 
-#signin-form {
-    background-color: white;
+#button-row {
+    padding-top: 20px;
 }
 
-#signin-btn {
+#HomeBtn {
     background-color: #32CD33;
     color: white;
     border: solid #32CD33 1px;
     transition: 0.5s;
 }
 
-#signin-btn:hover {
+#HomeBtn:hover {
     background-color: transparent;
-    color:  #32CD33 ;
+    color:  #32CD33;
     transition: 0.8s;
 }

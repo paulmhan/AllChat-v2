@@ -69,10 +69,10 @@ class SignUp extends Component {
     return (
       <Grid id="signup-container">
         <Grid.Column width={8}>
-
+        <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
         </Grid.Column>
         <Grid.Column width={8}>
-          <Form  size='large' onSubmit={handleSubmit(this.onSubmit)}>
+          <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
             <Segment id="signup-form" stacked>
               <Field
                 name='firstName'

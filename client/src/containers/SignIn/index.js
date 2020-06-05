@@ -28,7 +28,7 @@ class SignIn extends Component {
     return (
       <Form.Input
         {...input}
-        error={ meta.touched && meta.error }
+        error={meta.touched && meta.error}
         fluid
         icon='user'
         iconPosition='left'
@@ -41,7 +41,7 @@ class SignIn extends Component {
     return (
       <Form.Input
         {...input}
-        error={  meta.touched && meta.error }
+        error={meta.touched && meta.error}
         fluid
         type='password'
         icon='lock'
@@ -56,42 +56,42 @@ class SignIn extends Component {
     return (
       <Grid id="signin-container">
         <Grid.Column width={8}>
-
+          <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
         </Grid.Column>
         <Grid.Column width={8}>
-          <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
-        <Segment id="signin-form" stacked>
-          <Field
-            name='email'
-            iscool='mannyiscool'
-            component={ this.renderEmail }
-            validate={
-              [
-                required({ msg: 'Email is required' }),
-                email({ msg: 'You must provide a valid email address' })
-              ]
-            }
-          />
-          <Field
-            name='password'
-            component={this.renderPassword}
-            validate={
-              [
-                required({ msg: 'You must provide a password' })
-              ]
-            }
-          />
-          <Button
-            id="signin-btn"
-            fluid
-            size='large'
-            type='submit'
-            disabled={ submitting }
-          >
-            <div id="signin-btn-text">Sign In</div>
-          </Button>
-        </Segment>
-      </Form>
+          <Form id="signin-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
+            <Segment id="signin-form" stacked>
+              <Field
+                name='email'
+                iscool='mannyiscool'
+                component={this.renderEmail}
+                validate={
+                  [
+                    required({ msg: 'Email is required' }),
+                    email({ msg: 'You must provide a valid email address' })
+                  ]
+                }
+              />
+              <Field
+                name='password'
+                component={this.renderPassword}
+                validate={
+                  [
+                    required({ msg: 'You must provide a password' })
+                  ]
+                }
+              />
+              <Button
+                id="signin-btn"
+                fluid
+                size='large'
+                type='submit'
+                disabled={submitting}
+              >
+                <div id="signin-btn-text">Sign In</div>
+              </Button>
+            </Segment>
+          </Form>
         </Grid.Column>
       </Grid>
     );

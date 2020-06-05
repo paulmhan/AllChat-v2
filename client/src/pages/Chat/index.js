@@ -21,7 +21,7 @@ class Chat extends Component {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        const data = {roomId, user:this.props.user}
+        const data = { roomId, user: this.props.user }
         this.props.getActiveRoom(data);
     }
 
@@ -30,7 +30,7 @@ class Chat extends Component {
         this.props.unsubscribeMessage();
         const user = this.props.user;
         const room = this.props.room;
-        this.props.leaveRoom({room, user});
+        this.props.leaveRoom({ room, user });
     }
 
     scrollToBottom = () => {
@@ -66,12 +66,12 @@ class Chat extends Component {
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-                // action={{
-                //     style: btnStyle,
-                //     labelPosition: "right",
-                //     icon: "arrow circle up",
-                //     content: "Send",
-                // }}
+            // action={{
+            //     style: btnStyle,
+            //     labelPosition: "right",
+            //     icon: "arrow circle up",
+            //     content: "Send",
+            // }}
             />
         );
     }
@@ -96,8 +96,8 @@ class Chat extends Component {
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
                                         roomName={this.props.room.text}
-                                        firstName={this.props.user?.firstName} 
-                                        lastName = {this.props.user?.lastName}
+                                        firstName={this.props.user?.firstName}
+                                        lastName={this.props.user?.lastName}
                                     />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
@@ -117,16 +117,27 @@ class Chat extends Component {
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
                                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
-                                        <Field
-                                            name="message"
-                                            component={this.renderMessageInput}
-                                        />
-                                        <Button
-                                            type="submit"
+                                        <Grid>
+                                            <Grid.Column width={13}>
+                                                <Field
+                                                    name="message"
+                                                    component={this.renderMessageInput}
+                                                    fluid
+                                                />
+                                            </Grid.Column>
+                                            <Grid.Column width={3}>
+                                                <Button
+                                                    fluid
+                                                    id="SendBtn"
+                                                    type="submit"
+                                                    color="teal">
+                                                    <Icon name='arrow circle up' />
+                                                    Send
+                                                </Button>
+                                            </Grid.Column>
+                                        </Grid>
 
-                                            color="teal">
-                                            <Icon name='arrow circle up' /> Send
-      </Button>
+
                                     </Form>
                                 </Grid.Column>
                             </Grid.Row>

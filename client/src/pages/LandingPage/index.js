@@ -38,7 +38,7 @@ class LandingPage extends Component {
                 <Grid.Column width={8}>
                     <Grid container>
                         <Grid.Row centered>
-                            <img id="landing-page-image" src={require("../../assets/images/people-chatting.png")} />
+                            <img id="landing-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
                         </Grid.Row>
                     </Grid>
                 </Grid.Column>
