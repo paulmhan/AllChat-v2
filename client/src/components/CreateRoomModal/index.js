@@ -13,7 +13,6 @@ class CreateRoomModal extends Component {
         this.setState({ closeOnEscape, open: true });
     }
 
-    // open = () => this.setState({ open: true });
     close = () => this.setState({ open: false });
 
     handleRoomNameChange = e => {
