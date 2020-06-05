@@ -49,11 +49,12 @@ module.exports = {
     getActiveRoom: async (data, cb) => {
         try {
             const currentRoom = await Room.findById(data.roomId).populate("messages");
+            currentRoom.users.push(data.user);
+            await currentRoom.save();
+            console.log(currentRoom, "lalalalala;a");
             cb(currentRoom)
         } catch (error) {
             throw error
         }
     }
-    
-    
 }
