@@ -25,7 +25,7 @@ class Chat extends Component {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        const data = {roomId, user:this.props.user}
+        const data = { roomId, user: this.props.user }
         this.props.getActiveRoom(data);
     }
 
@@ -58,7 +58,7 @@ class Chat extends Component {
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-    
+
             />
         );
     }
@@ -73,7 +73,7 @@ class Chat extends Component {
                     stretched>
                     <Grid.Column width={4}>
                         <ChatSideBar
-                        
+                            activeUsers={this.props.room.users}
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>
@@ -82,8 +82,8 @@ class Chat extends Component {
                                 <Grid.Column width={13}>
                                     <ChatRoomHeader
                                         roomName={this.props.room.text}
-                                        firstName={this.props.user?.firstName} 
-                                        lastName = {this.props.user?.lastName}
+                                        firstName={this.props.user?.firstName}
+                                        lastName={this.props.user?.lastName}
                                     />
                                 </Grid.Column>
                                 <Grid.Column width={3}>

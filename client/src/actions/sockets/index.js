@@ -1,9 +1,7 @@
 import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../socketTypes";
 
 
-export const subscribeToMessageFromServer = () => dispatch => {
-    console.log("listening");
-    
+export const subscribeToMessageFromServer = () => dispatch => {    
     dispatch({
         event: "serverToClientMessage",
         handle: data => {
