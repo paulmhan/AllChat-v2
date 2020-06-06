@@ -4,16 +4,13 @@ import moment from 'moment';
 import "./style.css";
 
 class MessageContainer extends Component {
-
   componentDidUpdate(prevProps) {
-
     if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
       document.getElementById('message-container').append(`-----${this.props.userJoin}----`)
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
       document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
     }
-
   }
 
   render() {
