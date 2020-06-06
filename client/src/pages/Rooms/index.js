@@ -4,11 +4,16 @@ import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
-import { subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom } from "../../actions/sockets";
+import { subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom, unsubscribeMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import RoomListItems from "../../components/RoomListItems";
+<<<<<<< HEAD
 
 import "./style.css";
+=======
+import "./style.css";
+
+>>>>>>> 59fcf32ce07ef400b9abb387861a930555a43736
 
 class Rooms extends Component {
 
@@ -23,6 +28,11 @@ class Rooms extends Component {
         this.props.user || this.props.loadUser();
         !this.props.rooms.length && this.props.getAllRooms();
     }
+
+    componentWillUnmount() {
+        this.props.unsubscribeMessage();
+    }
+
 
     handlePageChange = (event, data) => {
         this.setState({
@@ -84,6 +94,6 @@ function mapStateToProps(state) {
 }
 
 export default compose(
-    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom }),
+    connect(mapStateToProps, { loadUser, subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom, unsubscribeMessage }),
     requireAuth
 )(Rooms)

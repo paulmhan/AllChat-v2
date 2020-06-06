@@ -15,13 +15,16 @@ import "./style.css";
 
 class Chat extends Component {
 
+    
     componentDidMount() {
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
+        // window.addEventListener('beforeunload', this.props.leaveRoom, false);
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        const data = { roomId, user: this.props.user }
+        console.log(this.props.user);
+        const data = { roomId, user: this.props.user };
         this.props.getActiveRoom(data);
     }
 
@@ -29,6 +32,7 @@ class Chat extends Component {
         this.props.unsubscribeMessage();
         const user = this.props.user;
         const room = this.props.room;
+        // window.removeEventListener('beforeunload', this.props.leaveRoom, false);
         this.props.leaveRoom({ room, user });
     }
 
@@ -65,12 +69,6 @@ class Chat extends Component {
                 error={meta.touched && meta.error}
                 fluid
                 autoComplete='off'
-            // action={{
-            //     style: btnStyle,
-            //     labelPosition: "right",
-            //     icon: "arrow circle up",
-            //     content: "Send",
-            // }}
             />
         );
     }
@@ -78,10 +76,13 @@ class Chat extends Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-            <Grid>
-                {/* <Grid.Row centered> */}
-                    <Grid.Column width={2}>
-                        <ChatSideBar />
+            <Grid container>
+                <Grid.Row
+                    stretched>
+                    <Grid.Column width={4}>
+                        <ChatSideBar
+                            activeUsers={this.props.room.users}
+                        />
                     </Grid.Column>
                     <Grid.Column width={12}>
                         <Grid>
@@ -140,6 +141,7 @@ class Chat extends Component {
                         </Grid>
                     </Grid.Column>
                 {/* </Grid.Row> */}
+            </Grid.Row>
             </Grid>
         )
     }

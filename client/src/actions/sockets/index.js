@@ -1,9 +1,7 @@
 import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../socketTypes";
 
 
-export const subscribeToMessageFromServer = () => dispatch => {
-    console.log("listening");
-    
+export const subscribeToMessageFromServer = () => dispatch => {    
     dispatch({
         event: "serverToClientMessage",
         handle: data => {
@@ -76,7 +74,6 @@ export const unsubscribeMessage = message => {
         event: "message",
         leave: true,
     };
-    
 };
 
 export const createRoom = data => {
@@ -88,16 +85,6 @@ export const createRoom = data => {
     };
     
 };
-
-export const getRoomUsers = data => {
-    console.log("found users in room");
-    console.log(data);
-    return {
-        event: "getRoomUsers",
-        payload: data,
-        emit: true
-    };
-}
 
 export const getAllRooms = () => {
     console.log('getting rooms');
@@ -125,10 +112,10 @@ export const deleteRoom = id => {
     }
 }
 
-export const getActiveRoom = roomId => {
+export const getActiveRoom = data => {
     return {
         event: "getActiveRoom",
-        payload: roomId,
+        payload: data,
         emit: true,
     };
 };

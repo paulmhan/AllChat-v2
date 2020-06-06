@@ -66,42 +66,27 @@ io.on("connection", socket => {
         });
     })
 
-    // socket.on("joinRoom", userJoindata => {
-    //     //data is user and room
-    //     const formValues = {message: `${userJoindata.user.firstName}\u00A0${userJoindata.user.lastName} has joined the chat`};
-    //     userJoindata.user.firstName = "AllChatBot";
-    //     userJoindata.user.lastName = "";
-    //     const data = {...userJoindata, formValues}
-    //     console.log(data, "server joinroom")
-    //     messageController.createMessage(data, activeRoom => {
-    //         // console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
-    //         console.log(data.room._id);
-    //         socket.broadcast.to(data.room._id).emit("serverToClientMessage", activeRoom);
-    //     })
-    // })
+  
     
     socket.on("getActiveRoom", data => {
-        const {roomId, user} = data;
-        socket.join(roomId);
-        roomController.getCurrentRoom(roomId, currentRoom => {
-            socket.emit("activeRoom", currentRoom);
-            socket.broadcast.to(roomId).emit("userJoinMessage", {message: `${user.firstName}\u00A0${user.lastName} has joined the chat`});
+        // const {roomId, user} = data;
+        socket.join(data.roomId);
+        roomController.getActiveRoom(data, activeRoom => {
+            io.to(data.roomId).emit("activeRoom", activeRoom);
+            // socket.broadcast.to(data.roomId).emit("activeRoom", activeRoom);
+            io.to(data.roomId).emit("userJoinMessage", {message: `${data.user.firstName}\u00A0${data.user.lastName} has joined the chat`});
 
         })
     })
 
-
-    // socket.on("getRoomUsers", data => {
-    //     console.log("Getting users from room");
-    //     userController.getRoomUsers(data, roomUsers => {
-    //         socket.emit("getRoomUsers", roomUsers);
-    //     });
-    // });
     socket.on("leaveRoom", data => {
-        const { room, user} = data;
-        socket.leave(room._id);
-        socket.broadcast.to(room._id).emit("userLeftMessage", {message: `${user.firstName}\u00A0${user.lastName} has left the chat`});
-        console.log("left message sent");
+        // const { room, user} = data;
+        socket.leave(data.room._id);
+        io.to(data.room._id).emit("userLeftMessage", {message: `${data.user.firstName}\u00A0${data.user.lastName} has left the chat`});
+        roomController.getActiveRoomAfterDelete(data, activeRoom => {
+            socket.broadcast.to(data.room._id).emit("activeRoom", activeRoom);
+        })
+        // console.log("left message sent");
     })
     
     socket.emit("disconnect", () => {
