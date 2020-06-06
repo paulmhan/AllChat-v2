@@ -2,9 +2,9 @@ import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 
 const LanguageOptions = [
+    { key: 'english', value: 'english', flag: 'us', text: 'English' },
     { key: 'arabic', value: 'arabic', flag: 'sa', text: 'Arabic' },
     { key: 'chinese', value: 'chinese', flag: 'cn', text: 'Chinese (Mandarin)' },
-    { key: 'english', value: 'english', flag: 'us', text: 'English' },
     { key: 'french', value: 'french', flag: 'fr', text: 'French' },
     { key: 'german', value: 'german', flag: 'de', text: 'German' },
     { key: 'hindi', value: 'hindi', flag: 'in', text: 'Hindi' },
@@ -17,15 +17,19 @@ const LanguageOptions = [
     { key: 'vietnamese', value: 'vietnamese', flag: 'vn', text: 'Vietnamese' },  
 ];
 
+
 const LanguageSelect = () => {
     return(
-        <Dropdown
-        placeholder='Select your language'
-        fluid
-        search
-        selection
-        options={LanguageOptions}
-        />
+        <div>
+            <p style={{fontStyle:"italic"}}>Select Your Language (Optional)</p>
+            <Dropdown
+            placeholder='English'
+            fluid
+            search
+            selection
+            options={LanguageOptions}
+            />
+        </div>
     )
 };
 

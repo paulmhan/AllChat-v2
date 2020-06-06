@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Grid, Pagination, Segment } from "semantic-ui-react";
-import ChatRoomSelect from "../../components/ChatRoomSelect";
 import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
@@ -8,11 +7,8 @@ import { compose } from "redux";
 import { subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom, unsubscribeMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import RoomListItems from "../../components/RoomListItems";
-
-
-
 import "./style.css";
-import { date } from "redux-form-validators";
+
 
 class Rooms extends Component {
 

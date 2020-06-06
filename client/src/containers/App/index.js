@@ -20,7 +20,6 @@ class App extends Component {
     return (
       <div>
           <Navbar isLoggedIn={this.props.authenticated}/>
-          <br />
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
           <Route exact path='/signout' component={SignOut}/>
