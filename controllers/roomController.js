@@ -49,7 +49,11 @@ module.exports = {
     getActiveRoom: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.roomId).populate("messages");
-            activeRoom.users.push(data.user);
+            console.log("----------------------");
+            console.log(data.user);
+            console.log(data.user.firstName);
+            console.log("----------------------");
+            activeRoom.users.push(data.user.firstName);
             await activeRoom.save();
             console.log(activeRoom, "when joining")
             cb(activeRoom)

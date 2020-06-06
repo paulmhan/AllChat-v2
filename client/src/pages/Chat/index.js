@@ -24,7 +24,7 @@ class Chat extends Component {
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
         console.log(this.props.user);
-        const data = { roomId, user: this.props.user }
+        const data = { roomId, user: this.props.user };
         this.props.getActiveRoom(data);
     }
 
