@@ -19,8 +19,6 @@ const LanguageOptions = [
 
 
 const LanguageSelect = () => {
-
-
     return(
         <div>
             <p style={{fontStyle:"italic"}}>Select Your Language (Optional)</p>
