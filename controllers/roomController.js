@@ -49,14 +49,13 @@ module.exports = {
     getActiveRoom: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.roomId).populate("messages");
-            console.log("----------------------");
-            console.log(data.user);
-            console.log(data.user.firstName);
-            console.log("----------------------");
-            activeRoom.users.push(data.user.firstName);
+            const userName = data.user.firstName.concat(data.user.lastName);
+            activeRoom.users.push(userName);
             await activeRoom.save();
-            console.log(activeRoom, "when joining")
-            cb(activeRoom)
+            console.log("--------------------");
+            console.log(activeRoom, "when joining");
+            console.log("--------------------");
+            cb(activeRoom);
         } catch (error) {
             throw error
         }
@@ -65,9 +64,12 @@ module.exports = {
     getActiveRoomAfterDelete: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.room._id).populate("messages");
-            activeRoom.users.pull(data.user);
+            const userName = data.user.firstName.concat(data.user.lastName);
+            activeRoom.users.pull(userName);
             await activeRoom.save();
+            console.log("--------------------");
             console.log(activeRoom, "when leaving");
+            console.log("--------------------");
             cb(activeRoom)
         } catch (error) {
             throw error
