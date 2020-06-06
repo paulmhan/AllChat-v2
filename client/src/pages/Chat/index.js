@@ -25,7 +25,6 @@ class Chat extends Component {
         this.props.getActiveRoom(data);
     }
 
-
     componentWillUnmount() {
         this.props.unsubscribeMessage();
         const user = this.props.user;
