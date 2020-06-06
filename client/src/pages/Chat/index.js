@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Form, Grid, Button, Icon } from "semantic-ui-react";
-import { Field, reduxForm, } from "redux-form";
+import { Field, reduxForm, GenericForm, } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
+import ChatSideBar from "../../components/ChatSideBar"
 import ChatRoomHeader from "../../components/ChatRoomHeader";
-import ChatSideBar from "../../components/ChatSideBar";
 import MessageContainer from "../../components/MessageContainer";
 import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
@@ -75,31 +75,28 @@ class Chat extends Component {
         );
     }
 
-
-
     render() {
         const { handleSubmit } = this.props;
         return (
-            <Grid container>
-                <Grid.Row
-                    stretched>
-                    <Grid.Column width={4}>
-                        <ChatSideBar
-                        // roomUsers={this.props.getRoomUsers()}
-                        // userId={this.props.user?.id}
-                        />
+            <Grid>
+                {/* <Grid.Row centered> */}
+                    <Grid.Column width={2}>
+                        <ChatSideBar />
                     </Grid.Column>
                     <Grid.Column width={12}>
-                        <Grid container>
+                        <Grid>
                             <Grid.Row>
-                                <Grid.Column width={13}>
+                                <Grid.Column width={4}>
+
+                                </Grid.Column>
+                                <Grid.Column width={8}>
                                     <ChatRoomHeader
                                         roomName={this.props.room.text}
                                         firstName={this.props.user?.firstName}
                                         lastName={this.props.user?.lastName}
                                     />
                                 </Grid.Column>
-                                <Grid.Column width={3}>
+                                <Grid.Column width={4}>
                                     <LeaveBtn />
                                 </Grid.Column>
                             </Grid.Row>
@@ -142,7 +139,7 @@ class Chat extends Component {
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
-                </Grid.Row>
+                {/* </Grid.Row> */}
             </Grid>
         )
     }
@@ -173,3 +170,10 @@ export default compose(
     }),
     requireAuth
 )(Chat)
+
+
+{/* <ChatSideBar */ }
+{/* //     // roomUsers={this.props.getRoomUsers()}
+            //     // userId={this.props.user?.id}
+            //     /> */}
+

@@ -1,5 +1,6 @@
 #chatroom-interface {
     height: 100%;
+    width: 20%;
     background-color: #f7f7f7;
     max-height: 614px;
     overflow-y: auto;

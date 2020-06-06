@@ -10,3 +10,11 @@
     color:  #32CD33 ;
     transition: 0.8s;
 }
+
+#sidebar {
+    height: 100%
+}
+
+#chatroom-container {
+    height: 100%;
+}
