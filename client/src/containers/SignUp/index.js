@@ -29,7 +29,7 @@ class SignUp extends Component {
 
   onSubmit = async (formValues, dispatch) => {
     try {
-      console.log(this.languages);
+      // console.log(this.languages);
       console.log(formValues);
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
@@ -134,7 +134,7 @@ class SignUp extends Component {
                 }
               />
               {/* <LanguageSelect/> */}
-              <div>
+              {/* <div>
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
                 <div>
                   <Field name="Language" component="select">
@@ -145,7 +145,7 @@ class SignUp extends Component {
                   </Field>
                 </div>
               </div>
-              <br />
+              <br /> */}
               <Button
                 id="signup-btn"
                 fluid

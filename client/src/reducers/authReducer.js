@@ -1,4 +1,4 @@
-import { AUTH_USER, AUTH_USER_ERROR,GET_USER,GET_USER_ERROR } from '../actions/types';
+import { AUTH_USER, AUTH_USER_ERROR,GET_USER,GET_USER_ERROR,LEAVE_USER } from '../actions/types';
 
 
 const INITIAL_STATE = {
@@ -19,6 +19,8 @@ export default function (state = INITIAL_STATE, action) {
       return {...state, currentUser: action.payload.user, getUserError: "" };
     case GET_USER_ERROR:
       return {...state, getUserError: action.payload }
+    case LEAVE_USER:
+      return {...state, currentUser:""}
     default:
       return state;
   }
