@@ -15,7 +15,7 @@ import "./style.css";
 
 class Chat extends Component {
 
-    
+
     componentDidMount() {
         this.props.subscribeToMessageFromServer();
         this.props.user || this.props.loadUser();
@@ -76,72 +76,43 @@ class Chat extends Component {
     render() {
         const { handleSubmit } = this.props;
         return (
-            <Grid container>
-                <Grid.Row
-                    stretched>
-                    <Grid.Column width={4}>
-                        <ChatSideBar
-                            activeUsers={this.props.room.users}
-                        />
-                    </Grid.Column>
-                    <Grid.Column width={12}>
+            <Grid id="chatroom-container">
+                <Grid.Column width={3}>
+                    <ChatSideBar
+                        activeUsers={this.props.room.users}
+                    />
+                </Grid.Column>
+                <Grid.Column width={13}>
+                    <MessageContainer
+                        messages={this.props.room.messages}
+                        activeUsers={this.props.room.users}
+                        userJoin={this.props.userJoin}
+                        userLeft={this.props.userLeft}
+                    />
+                    <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
-                            <Grid.Row>
-                                <Grid.Column width={4}>
-
-                                </Grid.Column>
-                                <Grid.Column width={8}>
-                                    <ChatRoomHeader
-                                        roomName={this.props.room.text}
-                                        firstName={this.props.user?.firstName}
-                                        lastName={this.props.user?.lastName}
-                                    />
-                                </Grid.Column>
-                                <Grid.Column width={4}>
-                                    <LeaveBtn />
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <Grid.Column width={16}>
-                                    <MessageContainer
-                                        messages={this.props.room.messages}
-                                        activeUsers={this.props.room.users}
-                                        userJoin={this.props.userJoin}
-                                        userLeft={this.props.userLeft}
-                                    />
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Grid.Column width={16}>
-                                    <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
-                                        <Grid>
-                                            <Grid.Column width={13}>
-                                                <Field
-                                                    name="message"
-                                                    component={this.renderMessageInput}
-                                                    fluid
-                                                />
-                                            </Grid.Column>
-                                            <Grid.Column width={3}>
-                                                <Button
-                                                    fluid
-                                                    id="SendBtn"
-                                                    type="submit"
-                                                    color="teal">
-                                                    <Icon name='arrow circle up' />
-                                                    Send
-                                                </Button>
-                                            </Grid.Column>
-                                        </Grid>
-
-
-                                    </Form>
-                                </Grid.Column>
-                            </Grid.Row>
+                            <Grid.Column width={14}>
+                                <Field
+                                    name="message"
+                                    component={this.renderMessageInput}
+                                    fluid
+                                />
+                            </Grid.Column>
+                            <Grid.Column width={2}>
+                                <Button
+                                    fluid
+                                    id="SendBtn"
+                                    type="submit"
+                                >
+                                    <Icon name='arrow circle up' />
+                                    Send
+                                 </Button>
+                            </Grid.Column>
                         </Grid>
-                    </Grid.Column>
-                {/* </Grid.Row> */}
-            </Grid.Row>
+
+
+                    </Form>
+                </Grid.Column>
             </Grid>
         )
     }
@@ -174,8 +145,50 @@ export default compose(
 )(Chat)
 
 
-{/* <ChatSideBar */ }
-{/* //     // roomUsers={this.props.getRoomUsers()}
-            //     // userId={this.props.user?.id}
-            //     /> */}
+// // {/* <Grid.Row>
+//                                 <Grid.Column width={4}>
 
+//                                 </Grid.Column>
+//                                 <Grid.Column width={8}>
+//                                     <ChatRoomHeader
+//                                         roomName={this.props.room.text}
+//                                         firstName={this.props.user?.firstName}
+//                                         lastName={this.props.user?.lastName}
+//                                     />
+//                                 </Grid.Column>
+//                                 <Grid.Column width={4}>
+//                                     <LeaveBtn />
+// //                                 </Grid.Column><Grid>
+//                             <Grid.Row>
+//                                 <Grid.Column width={16}>
+//                                     
+//                                 </Grid.Column>
+//                             </Grid.Row>
+//                             <Grid.Row centered>
+//                                 <Grid.Column width={16}>
+//                                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
+//                                         <Grid>
+//                                             <Grid.Column width={15}>
+//                                                 <Field
+//                                                     name="message"
+//                                                     component={this.renderMessageInput}
+//                                                     fluid
+//                                                 />
+//                                             </Grid.Column>
+//                                             <Grid.Column width={1}>
+//                                                 <Button
+//                                                     fluid
+//                                                     id="SendBtn"
+//                                                     type="submit"
+//                                                     color="teal">
+//                                                     <Icon name='arrow circle up' />
+//                                                     Send
+//                                                 </Button>
+//                                             </Grid.Column>
+//                                         </Grid>
+
+
+//                                     </Form>
+//                                 </Grid.Column>
+//                             </Grid.Row>
+//                         </Grid>

@@ -8,7 +8,7 @@ const LeaveBtn = props => {
     return (
         <div>
             <Link to={"/rooms"}>
-                <Button fluid id="LeaveBtn">Leave</Button>
+                <Button id="LeaveBtn">Leave</Button>
             </Link>
         </div>
     )
