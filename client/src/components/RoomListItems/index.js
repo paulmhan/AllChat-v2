@@ -11,14 +11,9 @@ export default (props) => {
   } else {
     return props.rooms?.map((room, index) => (
       room &&
-<<<<<<< HEAD
     <List.Item key={index}>
       <Segment id="room-segment">
         
-=======
-        <List.Item key={index}>
-      <Segment id="room-segment">
->>>>>>> 59fcf32ce07ef400b9abb387861a930555a43736
           <Grid>
             <Grid.Column width={12}>
               <List.Content>
@@ -45,14 +40,9 @@ export default (props) => {
               </List.Content>
             </Grid.Column>
           </Grid>
-<<<<<<< HEAD
         </Segment>
       </List.Item>
       
-=======
-      </Segment>
-        </List.Item>
->>>>>>> 59fcf32ce07ef400b9abb387861a930555a43736
 
     ));
   }

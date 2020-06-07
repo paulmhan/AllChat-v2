@@ -7,13 +7,8 @@ import { compose } from "redux";
 import { subscribeToRoomFromServer, createRoom, getAllRooms, deleteRoom, unsubscribeMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import RoomListItems from "../../components/RoomListItems";
-<<<<<<< HEAD
-
-import "./style.css";
-=======
 import "./style.css";
 
->>>>>>> 59fcf32ce07ef400b9abb387861a930555a43736
 
 class Rooms extends Component {
 
