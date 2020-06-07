@@ -1,16 +1,15 @@
 import React from 'react';
 import AllChatTitle from "../AllChatTitle";
 import { Link } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Grid } from 'semantic-ui-react';
 import "./style.css";
 export default (props) => (
-  <Menu secondary widths={12} id="navbar">
+  <Menu secondary id="navbar">
     <Menu.Item position="left">
       <AllChatTitle />
     </Menu.Item>
-    { props.isLoggedIn ? null : <Menu.Item as={Link} to='/signup' position="right" content='Sign Up' id="signup" /> }
-    { props.isLoggedIn ? <Menu.Item as={Link} to="/rooms" position="right" content="Chatrooms" id="chatrooms" /> : null }
-    { props.isLoggedIn ? <Menu.Item as={Link} to='/signout' position="right" content='Sign Out'/> : <Menu.Item as={Link} to='/signin' content='Sign In' id="signin" />}
+    {props.isLoggedIn ? <Menu.Item as={Link} to="/rooms" content="Chatrooms" id="chatrooms" /> : <Menu.Item position="right" id="already-user" content="Already a user?"></Menu.Item>}
+    {props.isLoggedIn ? <Menu.Item as={Link} to='/signout' content='Sign Out' /> : <Menu.Item as={Link} to='/signin' content='Sign In' id="signin" />}
   </Menu>
 );
 
