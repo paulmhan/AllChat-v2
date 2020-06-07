@@ -4,7 +4,7 @@ import { AUTH_USER, AUTH_USER_ERROR,GET_USER,GET_USER_ERROR,LEAVE_USER } from '.
 const INITIAL_STATE = {
   authenticated: '',
   authError: '',
-  currentUser: {},
+  currentUser: "",
   getUserError: "",
 
 };

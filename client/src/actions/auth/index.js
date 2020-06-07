@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const signOut = () => async dispatch => {
   localStorage.removeItem("token");
-  console.log("hit sign out");
+  console.log("SIGNED OUT");
   dispatch({ type: AUTH_USER, payload: "" });
   dispatch({ type: LEAVE_USER, payload:"" });
 }

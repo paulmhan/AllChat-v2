@@ -6,9 +6,9 @@ module.exports = {
         // console.log(data);
         try {
             const newRoom = await new Room({ text: roomName, creator: userId }).save();
-            // newRoom.users.push(userId);
-            // await newRoom.save();
-            // const room = await Room.findById(newRoom._id).populate("messages");
+            console.log("---------------------------------------");
+            console.log("ROOM CREATED");
+            console.log("---------------------------------------");
             cb([newRoom]);
         } catch (error) {
             throw error;
@@ -26,6 +26,9 @@ module.exports = {
                     console.log("No Rooms");
                     cb("Error");
                 }
+                console.log("---------------------------------------");
+                console.log("ROOM DELETED");
+                console.log("---------------------------------------");
                 cb(rooms);
             }
         } catch (error) {
@@ -52,9 +55,9 @@ module.exports = {
             const userName = data.user.firstName.concat(data.user.lastName);
             activeRoom.users.push(userName);
             await activeRoom.save();
-            console.log("--------------------");
-            console.log(activeRoom, "when joining");
-            console.log("--------------------");
+            // console.log("--------------------");
+            // console.log(activeRoom, "when joining");
+            // console.log("--------------------");
             cb(activeRoom);
         } catch (error) {
             throw error
@@ -67,9 +70,9 @@ module.exports = {
             const userName = data.user.firstName.concat(data.user.lastName);
             activeRoom.users.pull(userName);
             await activeRoom.save();
-            console.log("--------------------");
-            console.log(activeRoom, "when leaving");
-            console.log("--------------------");
+            // console.log("--------------------");
+            // console.log(activeRoom, "when leaving");
+            // console.log("--------------------");
             cb(activeRoom)
         } catch (error) {
             throw error

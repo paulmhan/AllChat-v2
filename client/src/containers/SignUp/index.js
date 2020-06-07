@@ -30,7 +30,7 @@ class SignUp extends Component {
   onSubmit = async (formValues, dispatch) => {
     try {
       // console.log(this.languages);
-      console.log(formValues);
+      // console.log(formValues);
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
       // console.log(data.user);
