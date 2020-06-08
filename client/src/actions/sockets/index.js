@@ -42,7 +42,6 @@ export const subscribeToMessageFromServer = () => dispatch => {
 }
 
 export const subscribeToRoomFromServer = () => dispatch => {
-    console.log("coming from server");
     dispatch({
         event: "serverToClientRoom",
         handle: data => dispatch({
@@ -77,7 +76,9 @@ export const unsubscribeMessage = message => {
 };
 
 export const createRoom = data => {
-    console.log('room sent to server')
+    console.log("-------------------------");
+    console.log("CREATING ROOM")
+    console.log("-------------------------");
     return {
         event: "createRoom",
         payload: data,
@@ -87,7 +88,7 @@ export const createRoom = data => {
 };
 
 export const getAllRooms = () => {
-    console.log('getting rooms');
+    // console.log('getting rooms');
     return {
         event: "getAllRooms",
         payload: null,
@@ -103,7 +104,10 @@ export const getAllRooms = () => {
 //     }
 // }
 export const deleteRoom = id => {
-    console.log(id);
+    console.log("-------------------------");
+    console.log("DELETING ROOM");
+    console.log("-------------------------");
+
     return {
         token: localStorage.getItem("token"),
         event: "deleteRoom",
@@ -113,6 +117,8 @@ export const deleteRoom = id => {
 }
 
 export const getActiveRoom = data => {
+    console.log("-------------------------");
+    console.log('JOINING ROOM');
     return {
         event: "getActiveRoom",
         payload: data,
@@ -121,7 +127,8 @@ export const getActiveRoom = data => {
 };
 
 export const leaveRoom = data => {
-    console.log('Leave room');
+    console.log("-------------------------");
+    console.log('LEAVING ROOM');
     return {
         event: "leaveRoom",
         payload: data,

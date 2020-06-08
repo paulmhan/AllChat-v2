@@ -13,12 +13,12 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case NEW_MESSAGE:
-            console.log(action.payload.messages);
+            // console.log(action.payload.messages);
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
         case USER_JOIN:
             return { ...state, userJoin:action.payload.message };
         case USER_LEFT:
-            console.log(action.payload.message, "reducer");
+            // console.log(action.payload.message, "reducer");
             return { ...state, userLeft:action.payload.message };
         case NEW_ROOM:
             return { ...state, rooms: [...state.rooms, ...action.payload] };

@@ -4,7 +4,6 @@ import { Grid, Form, Segment, Button } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 // import LanguageSelect from '../../components/LanguageSelect';
 import axios from 'axios';
-
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
 import "./style.css";
 
@@ -95,7 +94,6 @@ class SignUp extends Component {
                   ]
                 }
               />
-
               <Field
                 name='email'
                 component={this.renderEmail}
@@ -121,16 +119,16 @@ class SignUp extends Component {
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
                 <div>
                   <Field name="language" component="select">
-                    <option value="English" flag = "us">English</option>
-                    <option value="Chinese" flag = "us">Chinese</option>
-                    <option value="French" flag = "us">French</option>
-                    <option value="German" flag = "us">German</option>
-                    <option value="Hindi" flag = "us">Hindi</option>
-                    <option value="Japanese" flag = "us">Japanese</option>
-                    <option value="Korean" flag = "us">Korean</option>
-                    <option value="Portuguese" flag = "us">Portuguese</option>
-                    <option value="Russian" flag = "us">Russian</option>
-                    <option value="Spanish" flag = "us">Spanish</option>
+                    <option value="English" flag="us">English</option>
+                    <option value="Chinese" flag="us">Chinese</option>
+                    <option value="French" flag="us">French</option>
+                    <option value="German" flag="us">German</option>
+                    <option value="Hindi" flag="us">Hindi</option>
+                    <option value="Japanese" flag="us">Japanese</option>
+                    <option value="Korean" flag="us">Korean</option>
+                    <option value="Portuguese" flag="us">Portuguese</option>
+                    <option value="Russian" flag="us">Russian</option>
+                    <option value="Spanish" flag="us">Spanish</option>
                   </Field>
                 </div>
               </div>
@@ -149,11 +147,8 @@ class SignUp extends Component {
         </Grid.Column>
       </Grid>
     );
-
-
   }
 }
-
 
 const asyncValidate = async formValues => {
   try {
