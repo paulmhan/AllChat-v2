@@ -9,22 +9,6 @@ import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
 import "./style.css";
 
 class SignUp extends Component {
-
-    languages = [
-      { key: 'english', value: 'English', flag: 'us', text: 'English' },
-      { key: 'arabic', value: 'Arabic', flag: 'sa', text: 'Arabic' },
-      { key: 'chinese', value: 'Chinese', flag: 'cn', text: 'Chinese (Mandarin)' },
-      { key: 'french', value: 'French', flag: 'fr', text: 'French' },
-      { key: 'german', value: 'German', flag: 'de', text: 'German' },
-      { key: 'hindi', value: 'Hindi', flag: 'in', text: 'Hindi' },
-      { key: 'japanese', value: 'Japanese', flag: 'jp', text: 'Japanese' },
-      { key: 'korean', value: 'Korean', flag: 'kr', text: 'Korean' },
-      { key: 'portuguese', value: 'Portuguese', flag: 'pt', text: 'Portuguese' },
-      { key: 'russian', value: 'Russian', flag: 'ru', text: 'Russian' },
-      { key: 'spanish', value: 'Spanish', flag: 'es', text: 'Spanish' },
-      { key: 'turkish', value: 'Turkish', flag: 'tr', text: 'Turkish' },
-      { key: 'vietnamese', value: 'Vietnamese', flag: 'vn', text: 'Vietnamese' },
-    ]
   
 
   onSubmit = async (formValues, dispatch) => {
