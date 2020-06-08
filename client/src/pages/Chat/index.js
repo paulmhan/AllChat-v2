@@ -13,6 +13,7 @@ import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMe
 import { loadUser } from "../../actions/auth";
 import "./style.css";
 
+
 class Chat extends Component {
 
 
@@ -57,12 +58,6 @@ class Chat extends Component {
     }
 
     renderMessageInput = ({ input, meta }) => {
-        // console.log(input, "input");
-        // console.log(meta, "meta");
-        // const btnStyle = {
-        //     backgroundColor: "#32CD33",
-        //     color: "white"
-        // };
         return (
             <Form.Input
                 {...input}

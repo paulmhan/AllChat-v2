@@ -24,6 +24,9 @@ const UserSchema = new Schema({
     type: String,
     required: [true, 'You must provide a last name'],
   },
+  language: {
+    type: String,
+  },
   room: {
     type: Schema.Types.ObjectId,
     ref: 'Room',
