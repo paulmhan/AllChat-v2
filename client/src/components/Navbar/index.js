@@ -1,7 +1,7 @@
 import React from 'react';
 import AllChatTitle from "../AllChatTitle";
 import { Link } from 'react-router-dom';
-import { Menu, Grid } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import "./style.css";
 export default (props) => (
   <Menu secondary id="navbar">

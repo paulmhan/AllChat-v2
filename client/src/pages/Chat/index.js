@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { Form, Grid, Button, Icon } from "semantic-ui-react";
-import { Field, reduxForm, GenericForm, } from "redux-form";
+import { Field, reduxForm } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatSideBar from "../../components/ChatSideBar"
-import ChatRoomHeader from "../../components/ChatRoomHeader";
+// import ChatRoomHeader from "../../components/ChatRoomHeader";
 import MessageContainer from "../../components/MessageContainer";
-import LeaveBtn from "../../components/LeaveBtn";
+// import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
 import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";

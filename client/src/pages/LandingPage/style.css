@@ -1,24 +1,74 @@
-/* #landing-container {
-    position: relative;
-    top: 150px;
-} */
+/* Mobile styling */
 
-#welcome {
+#welcome-mobile {
+    text-align: center;
+}
+
+#together-mobile {
+    text-align: center;
+}
+
+#paragraph-mobile {
+    text-align: center;
+}
+
+#get-started-mobile {
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#get-started-mobile:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+/* iPad styling */
+
+#welcome-tablet {
+    text-align: center;
+}
+
+#together-tablet {
+    text-align: center;
+}
+
+#paragraph-tablet {
+    text-align: center;
+}
+
+#get-started-tablet {
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#get-started-tablet:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+/* Computer styling */
+
+#welcome-computer {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
 }
 
-#landing-container {
+#landing-container-computer {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    /* height: 800px; */
 }
 
-#get-started {
+#get-started-computer {
     width: 200px;
     background-color: #32CD33;
     color: white;
@@ -26,52 +76,46 @@
     transition: 0.5s;
 }
 
-#get-started:hover {
+#get-started-computer:hover {
     background-color: transparent;
     color:  #32CD33;
     transition: 0.8s;
 }
 
-/* #get-started-text {
-    color: white;
-} */
-
-#landing-page-image {
+#landing-page-image-computer {
     margin: 0 auto;
 }
 
-#inner-landing-container {
+#inner-landing-container-computer {
     padding-top: 100px;
 }
 
-#body-text-grid {
+#body-text-grid-computer {
     background-color: transparent;
 }
 
-#text1 {
+#text1-computer {
     text-align: center;
     font-family: 'Rubik', sans-serif;
     color:black;
     font-size: 24px;
 }
 
-#text2 {
+#text2-computer {
     text-align: center;
 }
 
-#header {
+#header-computer {
     text-align: center;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 36px;
-}
-
-#together {
+#together-computer {
     color:black;
+    font-size: 36px;
+    text-align: center;
 }
 
-#paragraph {
+#paragraph-computer {
     font-size: 18px;
 }
