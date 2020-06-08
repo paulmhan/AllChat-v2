@@ -36,6 +36,7 @@ export default function socketMiddleware() {
 
 
         if(leave){
+            
             socket.removeListener(event);
         }
 

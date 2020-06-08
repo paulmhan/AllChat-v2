@@ -63,7 +63,6 @@ class SignIn extends Component {
             <Segment id="signin-form" stacked>
               <Field
                 name='email'
-                iscool='mannyiscool'
                 component={this.renderEmail}
                 validate={
                   [
