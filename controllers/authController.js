@@ -17,7 +17,7 @@ function tokenForUser(user) {
 
 module.exports = {
   signUp: async (req, res) => {
-    const { email, password, firstName, lastName } = req.body;
+    const { email, password, firstName, lastName, language } = req.body;
     console.log(req.body);
     if (!firstName || !lastName) {
       return res.status(422).json({ error: 'You must provide a first and last name.' });
@@ -39,7 +39,7 @@ module.exports = {
       // See if a user with the given email exists
       const existingUser = await User.findOne({ email });
       if (existingUser) { return res.status(403).json({ error: 'User already exists' }); }
-      const user = await new User({ email, password, firstName, lastName }).save();
+      const user = await new User({ email, password, firstName, lastName, language }).save();
       const currentUser = await User.findById(user._id).select('-password');
       //get user without password
       // Eventually we will send a token

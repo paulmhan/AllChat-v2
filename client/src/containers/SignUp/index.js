@@ -29,11 +29,10 @@ class SignUp extends Component {
 
   onSubmit = async (formValues, dispatch) => {
     try {
-      console.log(this.languages);
       console.log(formValues);
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
-      // console.log(data.user);
+      console.log(data.user, "signup");
       dispatch({ type: AUTH_USER, payload: data });
       this.props.history.push('/rooms');
     } catch (e) {
@@ -137,11 +136,17 @@ class SignUp extends Component {
               <div>
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
                 <div>
-                  <Field name="Language" component="select">
-                    {this.languages.map(language => (
-                      <option key={language.key} value={language.value}>{language.value}</option>
-                    )
-                    )}
+                  <Field name="language" component="select">
+                    <option value="English" flag = "us">English</option>
+                    <option value="Chinese" flag = "us">Chinese</option>
+                    <option value="French" flag = "us">French</option>
+                    <option value="German" flag = "us">German</option>
+                    <option value="Hindi" flag = "us">Hindi</option>
+                    <option value="Japanese" flag = "us">Japanese</option>
+                    <option value="Korean" flag = "us">Korean</option>
+                    <option value="Portuguese" flag = "us">Portuguese</option>
+                    <option value="Russian" flag = "us">Russian</option>
+                    <option value="Spanish" flag = "us">Spanish</option>
                   </Field>
                 </div>
               </div>
