@@ -18,11 +18,11 @@ class MessageContainer extends Component {
       <div className="message-outline">
         <div className="ui message" id="message-container">
           {this.props.messages?.map((message, index) =>
-            <Message key={index}>
+            <Message  key={index}>
               <p id="timeStamp">
-                <span>{moment(message.dateCreated).format('MMMM Do YYYY, h:mm a')}</span>
+                <span>{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
-              <Message.Header> <strong>{message.firstName}&nbsp;{message.lastName}:</strong><p>{message.text}</p></Message.Header>
+              <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
             </Message>)}
 
         </div>
