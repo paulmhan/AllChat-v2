@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Pagination, Segment } from "semantic-ui-react";
+import { Responsive, Grid, Pagination, Segment } from "semantic-ui-react";
 import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
@@ -40,15 +40,27 @@ class Rooms extends Component {
 
     render() {
         return (
-            <Grid container id="roomselect-container">
-                <Grid.Row centered>
+            <Responsive 
+                {...Responsive.onlyComputer} 
+                as={Grid} container 
+                id="roomselect-container-computer">
+                <Responsive 
+                    {...Responsive.onlyComputer} 
+                    as={Grid.Row} 
+                    centered>
                     <CreateRoomModal
                         createRoom={this.props.createRoom}
                         userId={this.props.user?._id}
                     />
-                </Grid.Row>
-                <Grid.Row centered>
-                    <Grid.Column width={12} >
+                </Responsive>
+                <Responsive 
+                    {...Responsive.onlyComputer} 
+                    as={Grid.Row} 
+                    centered>
+                    <Responsive 
+                        {...Responsive.onlyComputer} 
+                        as={Grid.Column} 
+                        width={12} >
                         <Segment.Group>
                             {this.props.rooms &&
                                 <RoomListItems
@@ -58,11 +70,14 @@ class Rooms extends Component {
                                     deleteRoom={this.props.deleteRoom}
                                 />}
                         </Segment.Group>
-
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row centered>
-                    <Grid.Column width={7}>
+                    </Responsive>
+                </Responsive>
+                <Responsive 
+                    {...Responsive.onlyComputer} as={Grid.Row} centered>
+                    <Responsive 
+                        {...Responsive.onlyComputer} 
+                        as={Grid.Column} 
+                        width={7}>
                         {
                             this.props.rooms.length <= 9 ?
                                 null
@@ -72,9 +87,9 @@ class Rooms extends Component {
                                     activePage={this.state.activePage}
                                 />
                         }
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+                    </Responsive>
+                </Responsive>
+            </Responsive>
 
         )
     }
