@@ -1,14 +1,16 @@
 #message-container {
-    height: 500px;
-    max-height: 500px;
+    height: 840px;
+    width: 100%;
+    max-height: 1000px;
     overflow-y: auto;
+    margin-bottom: 20px;
 }
 
-.message-outline {
+/* .message-outline {
     padding: 20px;
     background-color: #f7f7f7;
     border-radius: 25px;
-}
+} */
 
 #timeStamp {
     font-size: 10px;

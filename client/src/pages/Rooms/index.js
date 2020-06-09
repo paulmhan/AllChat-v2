@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Pagination, Segment } from "semantic-ui-react";
+import { Responsive, Grid, Pagination, Segment } from "semantic-ui-react";
 import CreateRoomModal from '../../components/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
@@ -40,7 +40,7 @@ class Rooms extends Component {
 
     render() {
         return (
-            <Grid container id="roomselect-container">
+            <Grid container id="roomselect-container-computer">
                 <Grid.Row centered>
                     <CreateRoomModal
                         createRoom={this.props.createRoom}
@@ -58,7 +58,6 @@ class Rooms extends Component {
                                     deleteRoom={this.props.deleteRoom}
                                 />}
                         </Segment.Group>
-
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row centered>
