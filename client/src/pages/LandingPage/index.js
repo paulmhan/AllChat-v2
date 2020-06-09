@@ -25,10 +25,12 @@ class LandingPage extends Component {
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row centered>
-                            <Grid.Column width={4}>
-                                {this.props.isLoggedIn ? null : <Button as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
+                            <Grid.Column width={5}>
+                                {this.props.isLoggedIn ? null : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
                             </Grid.Column>
                         </Grid.Row>
+
+
                     </Grid>
                 </Grid.Column>
                 <Grid.Column width={8}>
