@@ -16,10 +16,10 @@ export default function (state = INITIAL_STATE, action) {
             // console.log(action.payload.messages);
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
         case USER_JOIN:
-            return { ...state, userJoin:action.payload.message };
+            return { ...state, userJoin:action.payload.message, userLeft: "" };
         case USER_LEFT:
             // console.log(action.payload.message, "reducer");
-            return { ...state, userLeft:action.payload.message };
+            return { ...state, userLeft:action.payload.message, userJoin:"" };
         case NEW_ROOM:
             return { ...state, rooms: [...state.rooms, ...action.payload] };
         case LOAD_ROOMS:
