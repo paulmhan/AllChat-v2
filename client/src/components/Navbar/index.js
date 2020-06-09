@@ -16,5 +16,3 @@ const Navbar = props => (
   </Menu>
 );
 export default connect(null, { signOut })(Navbar);
-
-
