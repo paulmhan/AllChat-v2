@@ -17,9 +17,9 @@ import "./style.css";
 class Chat extends Component {
 
 
-    componentDidMount() {
+    async componentDidMount() {
         this.props.subscribeToMessageFromServer();
-        this.props.user || this.props.loadUser();
+        this.props.user || await this.props.loadUser();
         // window.addEventListener('beforeunload', this.props.leaveRoom, false);
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -28,7 +28,7 @@ class Chat extends Component {
         console.log("GETTING USER");
         console.log(this.props.user);
         const data = { roomId, user: this.props.user };
-        this.props.getActiveRoom(data);
+        await this.props.getActiveRoom(data);
     }
 
     componentWillUnmount() {
