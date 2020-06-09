@@ -5,3 +5,7 @@
     max-height: 898px;
     overflow-y: auto;
 }
+
+#room-name {
+    text-align: center;
+}
