@@ -4,11 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
-<<<<<<< HEAD
-    "@brianmcallister/react-auto-scroll": "^1.0.5",
-=======
     "@google-cloud/translate": "^6.0.0",
->>>>>>> 534a11fb6dc2d05ac08d13d7de4600af5807cdfd
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
