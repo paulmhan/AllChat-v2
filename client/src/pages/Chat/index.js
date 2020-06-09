@@ -56,7 +56,7 @@ class Chat extends Component {
         if (formValues === "") {
             console.log("You must enter a message");
         };
-        this.scrollToBottom();
+        // this.scrollToBottom();
     }
 
     renderMessageInput = ({ input, meta }) => {
