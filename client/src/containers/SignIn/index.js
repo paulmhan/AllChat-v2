@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { Grid, Form, Segment, Button } from 'semantic-ui-react';
+import { Responsive, Grid, Form, Segment, Button } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
@@ -54,6 +54,7 @@ class SignIn extends Component {
   render() {
     const { submitting, handleSubmit } = this.props;
     return (
+      
       <Grid id="signin-container">
         <Grid.Column width={8}>
           <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
@@ -97,3 +98,122 @@ class SignIn extends Component {
   }
 }
 export default reduxForm({ form: 'signin' })(SignIn);
+
+// <>
+      //   <Responsive {...Responsive.onlyMobile} as={Grid} id="signin-container-mobile">
+      //     <Responsive {...Responsive.onlyMobile} as={Grid.Column} width={16}>
+      //       <Form id="signin-form-container-mobile" size='large' onSubmit={handleSubmit(this.onSubmit)}>
+      //         <Segment id="signin-form-mobile" stacked>
+      //           <Field
+      //             name='email'
+      //             iscool='mannyiscool'
+      //             component={this.renderEmail}
+      //             validate={
+      //               [
+      //                 required({ msg: 'Email is required' }),
+      //                 email({ msg: 'You must provide a valid email address' })
+      //               ]
+      //             }
+      //           />
+      //           <Field
+      //             name='password'
+      //             component={this.renderPassword}
+      //             validate={
+      //               [
+      //                 required({ msg: 'You must provide a password' })
+      //               ]
+      //             }
+      //           />
+      //           <Button
+      //             id="signin-btn-mobile"
+      //             fluid
+      //             size='large'
+      //             type='submit'
+      //             disabled={submitting}
+      //           >
+      //             <div id="signin-btn-text-mobile">Sign In</div>
+      //           </Button>
+      //         </Segment>
+      //       </Form>
+      //     </Responsive>
+      //   </Responsive>
+
+      //   <Responsive {...Responsive.onlyTablet} as={Grid} id="signin-container-tablet">
+      //     <Responsive {...Responsive.onlyTablet} as={Grid.Column} width={16}>
+      //       <Form id="signin-form-container-tablet" size='large' onSubmit={handleSubmit(this.onSubmit)}>
+      //         <Segment id="signin-form-tablet" stacked>
+      //           <Field
+      //             name='email'
+      //             iscool='mannyiscool'
+      //             component={this.renderEmail}
+      //             validate={
+      //               [
+      //                 required({ msg: 'Email is required' }),
+      //                 email({ msg: 'You must provide a valid email address' })
+      //               ]
+      //             }
+      //           />
+      //           <Field
+      //             name='password'
+      //             component={this.renderPassword}
+      //             validate={
+      //               [
+      //                 required({ msg: 'You must provide a password' })
+      //               ]
+      //             }
+      //           />
+      //           <Button
+      //             id="signin-btn-tablet"
+      //             fluid
+      //             size='large'
+      //             type='submit'
+      //             disabled={submitting}
+      //           >
+      //             <div id="signin-btn-text-tablet">Sign In</div>
+      //           </Button>
+      //         </Segment>
+      //       </Form>
+      //     </Responsive>
+      //   </Responsive>
+
+      //   <Responsive {...Responsive.onlyComputer} as={Grid} id="signin-container-computer">
+      //     <Responsive {...Responsive.onlyComputer} as={Grid.Column} width={8}>
+      //       <img id="signin-page-image-computer" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
+      //     </Responsive>
+      //     <Responsive {...Responsive.onlyComputer} as={Grid.Column} width={8}>
+      //       <Form id="signin-form-container-computer" size='large' onSubmit={handleSubmit(this.onSubmit)}>
+      //         <Segment id="signin-form" stacked>
+      //           <Field
+      //             name='email'
+      //             iscool='mannyiscool'
+      //             component={this.renderEmail}
+      //             validate={
+      //               [
+      //                 required({ msg: 'Email is required' }),
+      //                 email({ msg: 'You must provide a valid email address' })
+      //               ]
+      //             }
+      //           />
+      //           <Field
+      //             name='password'
+      //             component={this.renderPassword}
+      //             validate={
+      //               [
+      //                 required({ msg: 'You must provide a password' })
+      //               ]
+      //             }
+      //           />
+      //           <Button
+      //             id="signin-btn-computer"
+      //             fluid
+      //             size='large'
+      //             type='submit'
+      //             disabled={submitting}
+      //           >
+      //             <div id="signin-btn-text-computer">Sign In</div>
+      //           </Button>
+      //         </Segment>
+      //       </Form>
+      //     </Responsive>
+      //   </Responsive>
+      // </>

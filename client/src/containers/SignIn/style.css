@@ -25,3 +25,49 @@
     color:  #32CD33 ;
     transition: 0.8s;
 }
+
+/* Mobile styling */
+
+/* #signin-container-mobile {
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f7f7f7
+}
+
+#signin-btn-mobile {
+    background-color:  #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#signin-btn-mobile:hover {
+    background-color: transparent;
+    color:  #32CD33 ;
+    transition: 0.8s;
+} */
+
+/* Tablet styling */
+
+/* #signin-container-tablet {
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f7f7f7
+}
+
+#signin-btn-tablet {
+    background-color:  #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#signin-btn-tablet:hover {
+    background-color: transparent;
+    color:  #32CD33 ;
+    transition: 0.8s;
+} */
+
+/* Computer styling */
