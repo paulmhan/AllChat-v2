@@ -48,7 +48,7 @@ class Chat extends Component {
     };
 
     handleMessageSubmit = (formValues, dispatch) => {
-        console.log(formValues);
+        // console.log(formValues);
         const user = this.props.user;
         const room = this.props.room;
         this.props.sendMessage({ formValues, user, room });
