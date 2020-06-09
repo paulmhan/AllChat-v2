@@ -1,8 +1,20 @@
 import React, { Component } from "react";
-import { Message } from "semantic-ui-react";
+import { Message, Button } from "semantic-ui-react";
 import moment from 'moment';
-// import ReactAutoScroll from "react-to-target-auto-scroll";
+import { connect } from 'react-redux';
 import "./style.css";
+require("dotenv").config()
+const { Translate } = require('@google-cloud/translate').v2;
+
+const projectId = process.env.GOOGLE_PROJECT_ID;
+console.log(projectId);
+
+// Instantiates a client
+const translate = new Translate({
+  projectId,
+  keyFilename:  "./AllChatKey.json",
+
+});
 
 class MessageContainer extends Component {
   componentDidUpdate(prevProps) {
@@ -12,6 +24,17 @@ class MessageContainer extends Component {
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
       document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
     }
+  }
+
+
+  translateText =  async (message, language) => {
+
+    console.log(message.text)
+    console.log(language);
+    
+    // const [translation] =  await translate.translate(message.text, language);
+    
+    // console.log(translation);
   }
 
   render() {
@@ -32,6 +55,7 @@ class MessageContainer extends Component {
                 <span>{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
               <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
+              <Button size='mini' onClick={() => this.translateText(message, this.props.user.language)}>See translation</Button>
             </Message>)}
         </div>
       // </ReactAutoScroll>
@@ -39,4 +63,12 @@ class MessageContainer extends Component {
   }
 };
 
-export default MessageContainer;
+function mapStateToProps(state) {
+  return {
+    user: state.auth.currentUser,
+
+  }
+}
+
+export default connect(mapStateToProps, {})(MessageContainer)
+// export default MessageContainer;
