@@ -12,7 +12,7 @@ console.log(projectId);
 // Instantiates a client
 const translate = new Translate({
   projectId,
-  keyFilename: './../../../../AllChatKey.json',
+  keyFilename:  "./AllChatKey.json",
 
 });
 
@@ -27,12 +27,12 @@ class MessageContainer extends Component {
   }
 
 
-  translateText = async (message, language) => {
+  translateText =  async (message, language) => {
 
     console.log(message.text)
-    console.log(language)
+    console.log(language);
     
-    const [translation] = await translate.translate(message.text, language);
+    // const [translation] =  await translate.translate(message.text, language);
     
     // console.log(translation);
   }
