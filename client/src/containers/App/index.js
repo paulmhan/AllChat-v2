@@ -10,9 +10,6 @@ import SignIn from '../SignIn';
 import { connect } from 'react-redux';
 import Navbar from './../../components/Navbar';
 
-
-
-
 class App extends Component {
 
   render () {
@@ -24,7 +21,7 @@ class App extends Component {
           <Route exact path='/signup' component={SignUp}/>
           {/* <Route exact path='/signout' component={SignOut}/> */}
           <Route exact path='/chat' component={Chat}/>
-          <Route isLoggedIn={this.props.authenticated} exact path='/' component={LandingPage} />
+          <Route exact path='/' render={ () => <LandingPage isLoggedIn={this.props.authenticated} />} />
           <Route exact path='/rooms' component={Rooms} />
       </div>
     );
