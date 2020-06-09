@@ -3,17 +3,17 @@ import { Message, Button } from "semantic-ui-react";
 import moment from 'moment';
 import { connect } from 'react-redux';
 import "./style.css";
-require ("dotenv").config()
-const {Translate} = require('@google-cloud/translate').v2;
+require("dotenv").config()
+const { Translate } = require('@google-cloud/translate').v2;
 
 const projectId = process.env.GOOGLE_PROJECT_ID;
 console.log(projectId);
 
- 
 // Instantiates a client
 const translate = new Translate({
-    projectId,
-    keyFilename: __dirname+"/AllChatKey.json"
+  projectId,
+  keyFilename: './../../../../AllChatKey.json',
+
 });
 
 class MessageContainer extends Component {
@@ -26,17 +26,15 @@ class MessageContainer extends Component {
     }
   }
 
-  translate = async (message, language) => {
-    console.log(message)
-    // const text = 'Hello, world!';
- 
-  // The target language
-  // const target = 'es';
- 
-  // Translates some text into Russian
-  const translation = await translate.translate(message.text, language);
-  // console.log(`Text: ${text}`);
-  console.log(translation);
+
+  translateText = async (message, language) => {
+
+    console.log(message.text)
+    console.log(language)
+    
+    const [translation] = await translate.translate(message.text, language);
+    
+    // console.log(translation);
   }
 
   render() {
@@ -44,12 +42,12 @@ class MessageContainer extends Component {
       <div className="message-outline">
         <div className="ui message" id="message-container">
           {this.props.messages?.map((message, index) =>
-            <Message  key={index}>
+            <Message key={index}>
               <p id="timeStamp">
                 <span>{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
               <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
-              <Button size='mini' onClick = {() => this.translate(message, this.props.user.language)}>See translation</Button>
+              <Button size='mini' onClick={() => this.translateText(message, this.props.user.language)}>See translation</Button>
             </Message>)}
 
         </div>
@@ -61,8 +59,8 @@ class MessageContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-      user: state.auth.currentUser,
-      
+    user: state.auth.currentUser,
+
   }
 }
 
