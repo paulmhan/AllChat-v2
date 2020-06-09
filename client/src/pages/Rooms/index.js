@@ -18,10 +18,10 @@ class Rooms extends Component {
         end: 10
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         !this.props.rooms.length && this.props.subscribeToRoomFromServer();
-        this.props.user || this.props.loadUser();
-        !this.props.rooms.length && this.props.getAllRooms();
+        this.props.user || await this.props.loadUser();
+        !this.props.rooms.length && await this.props.getAllRooms();
     }
 
     componentWillUnmount() {

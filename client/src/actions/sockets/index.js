@@ -84,7 +84,6 @@ export const createRoom = data => {
         payload: data,
         emit: true,
     };
-    
 };
 
 export const getAllRooms = () => {
