@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 class LandingPage extends Component {
     render() {
+        console.log(this.props.isLoggedIn);
         return (
             <Grid id="landing-container">
                 <Grid.Column width={8}>
@@ -25,7 +26,7 @@ class LandingPage extends Component {
                         </Grid.Row>
                         <Grid.Row centered>
                             <Grid.Column width={4}>
-                                <Button as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>
+                                {this.props.isLoggedIn ? null : <Button as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>

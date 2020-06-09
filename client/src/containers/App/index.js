@@ -7,7 +7,6 @@ import SignUp from '../SignUp';
 // import SignOut from '../SignOut';
 import SignIn from '../SignIn';
 
-
 import { connect } from 'react-redux';
 import Navbar from './../../components/Navbar';
 
@@ -17,6 +16,7 @@ import Navbar from './../../components/Navbar';
 class App extends Component {
 
   render () {
+    console.log(this.props.authenticated);
     return (
       <div>
           <Navbar isLoggedIn={this.props.authenticated}/>
@@ -24,7 +24,7 @@ class App extends Component {
           <Route exact path='/signup' component={SignUp}/>
           {/* <Route exact path='/signout' component={SignOut}/> */}
           <Route exact path='/chat' component={Chat}/>
-          <Route exact path='/' component={LandingPage}/>
+          <Route isLoggedIn={this.props.authenticated} exact path='/' component={LandingPage} />
           <Route exact path='/rooms' component={Rooms} />
       </div>
     );

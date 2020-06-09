@@ -40,7 +40,7 @@ class Rooms extends Component {
 
     render() {
         return (
-            <Grid container id="roomselect-container-computer">
+            <Grid container id="roomselect-container">
                 <Grid.Row centered>
                     <CreateRoomModal
                         createRoom={this.props.createRoom}

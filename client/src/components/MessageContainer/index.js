@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Message } from "semantic-ui-react";
 import moment from 'moment';
+// import { css } from "glamor";
+// import ScrollToBottom from "react-scroll-to-bottom";
 import "./style.css";
 
 class MessageContainer extends Component {
@@ -14,19 +16,22 @@ class MessageContainer extends Component {
   }
 
   render() {
+    // const ROOT_CSS = css({
+    //   height: 840,
+    //   width: "100%"
+    // })
     return (
-      <div className="message-outline">
-        <div className="ui message" id="message-container">
-          {this.props.messages?.map((message, index) =>
-            <Message  key={index}>
-              <p id="timeStamp">
-                <span>{moment(message.dateCreated).format('l, h:mm a')}</span>
-              </p>
-              <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
-            </Message>)}
 
-        </div>
-
+      <div className="ui message" id="message-container">
+        {/* <ScrollToBottom className={ ROOT_CSS }> */}
+        {this.props.messages?.map((message, index) =>
+          <Message key={index}>
+            <p id="timeStamp">
+              <span>{moment(message.dateCreated).format('l, h:mm a')}</span>
+            </p>
+            <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
+          </Message>)}
+        {/* </ScrollToBottom> */}
       </div>
     )
   }
