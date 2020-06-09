@@ -56,7 +56,7 @@ class Chat extends Component {
         if (formValues === "") {
             console.log("You must enter a message");
         };
-        // this.scrollToBottom();
+        this.scrollToBottom();
     }
 
     renderMessageInput = ({ input, meta }) => {
@@ -77,6 +77,7 @@ class Chat extends Component {
                 <Grid.Column width={3}>
                     <ChatSideBar
                         activeUsers={this.props.room.users}
+                        roomName={this.props.room.text}
                     />
                 </Grid.Column>
                 <Grid.Column width={13}>

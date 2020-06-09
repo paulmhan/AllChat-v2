@@ -8,9 +8,8 @@ class ChatSideBar extends Component {
     render() {
         return (
             <div>
-                
                 <Segment.Group id="chatroom-interface">
-                    <h1 id="user-title">Users:</h1>
+                    <h1 id="room-name">{this.props.roomName}</h1>
                     <div id="user-list">
                         {this.props.activeUsers?.map((user, index) =>                     
                             <Segment.Group key={index}>

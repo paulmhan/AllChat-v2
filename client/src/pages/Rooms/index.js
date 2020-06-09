@@ -39,10 +39,6 @@ class Rooms extends Component {
     }
 
     render() {
-        console.log(this.props.rooms.length);
-        console.log(this.state.activePage);
-        console.log(this.state.start);
-        console.log(this.state.end);
         return (
             <Grid container id="roomselect-container">
                 <Grid.Row centered>
