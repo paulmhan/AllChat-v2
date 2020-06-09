@@ -4,10 +4,12 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
+    "@google-cloud/translate": "^6.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "faker": "^4.1.0",
     "lodash": "^4.17.15",
     "moment": "^2.25.3",
@@ -23,7 +25,8 @@
     "redux-form-validators": "^3.3.2",
     "redux-thunk": "^2.3.0",
     "semantic-ui-react": "^0.88.2",
-    "socket.io-client": "^2.3.0"
+    "socket.io-client": "^2.3.0",
+    "typescript": "^3.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
