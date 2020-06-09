@@ -26,7 +26,7 @@ const UserSchema = new Schema({
   },
   language: {
     type: String,
-    default: "English",
+    default: "en",
   },
   room: {
     type: Schema.Types.ObjectId,
