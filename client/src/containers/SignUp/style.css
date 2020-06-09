@@ -1,4 +1,36 @@
-/* Mobile styling */
+#signup-container {
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f7f7f7
+}
+
+#signup-form-container {
+    padding-top: 100px;
+}
+
+#signup-form {
+    background-color: white;
+}
+
+#signup-btn {
+    background-color:  #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#signup-btn:hover {
+    background-color: transparent;
+    color:  #32CD33 ;
+    transition: 0.8s;
+}
+
+#signup-page-image {
+    margin: 0 auto;
+}
+
+/* Mobile styling
 
 #signup-container-mobile {
     border-radius: 10px;
@@ -22,7 +54,7 @@
 
 /* Tablet styling */
 
-#signup-container-tablet {
+/* #signup-container-tablet {
     border-radius: 10px;
     width: 90%;
     margin: 0 auto;
@@ -40,39 +72,6 @@
     background-color: transparent;
     color:  #32CD33 ;
     transition: 0.8s;
-}
+} */ 
 
 /* Computer styling */
-
-#signup-container-computer {
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    background-color: #f7f7f7
-}
-
-#signup-form-container-computer {
-    padding-top: 100px;
-}
-
-#signup-form-computer {
-    background-color: white;
-}
-
-#signup-btn-computer {
-    background-color:  #32CD33;
-    color: white;
-    border: solid #32CD33 1px;
-    transition: 0.5s;
-}
-
-#signup-btn-computer:hover {
-    background-color: transparent;
-    color:  #32CD33 ;
-    transition: 0.8s;
-}
-
-#signup-page-image-computer {
-    margin: 0 auto;
-}
-

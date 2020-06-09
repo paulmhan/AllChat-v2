@@ -1,4 +1,74 @@
-/* Mobile styling */
+#welcome {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+}
+
+#landing-container {
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+}
+
+#get-started {
+    width: 200px;
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#get-started:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+#landing-page-image {
+    margin: 0 auto;
+}
+
+#inner-landing-container {
+    padding-top: 100px;
+}
+
+#body-text-grid {
+    background-color: transparent;
+}
+
+#text1 {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    font-size: 24px;
+}
+
+#text2 {
+    text-align: center;
+}
+
+#header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#together {
+    color:black;
+    font-size: 36px;
+    text-align: center;
+}
+
+#paragraph {
+    font-size: 18px;
+}
+
+
+
+
+
+/* Mobile styling
 
 #welcome-mobile {
     text-align: center;
@@ -27,7 +97,7 @@
 
 /* iPad styling */
 
-#welcome-tablet {
+/* #welcome-tablet {
     text-align: center;
 }
 
@@ -51,72 +121,6 @@
     background-color: transparent;
     color:  #32CD33;
     transition: 0.8s;
-}
+} */ 
 
 /* Computer styling */
-
-#welcome-computer {
-    font-size: 54px;
-    font-family: 'Rubik', sans-serif;
-    color:black;
-    text-align: center;
-}
-
-#landing-container-computer {
-    background-color: #F7F7F7;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto; /*This will automatically center anything*/
-}
-
-#get-started-computer {
-    width: 200px;
-    background-color: #32CD33;
-    color: white;
-    border: solid #32CD33 1px;
-    transition: 0.5s;
-}
-
-#get-started-computer:hover {
-    background-color: transparent;
-    color:  #32CD33;
-    transition: 0.8s;
-}
-
-#landing-page-image-computer {
-    margin: 0 auto;
-}
-
-#inner-landing-container-computer {
-    padding-top: 100px;
-}
-
-#body-text-grid-computer {
-    background-color: transparent;
-}
-
-#text1-computer {
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-    color:black;
-    font-size: 24px;
-}
-
-#text2-computer {
-    text-align: center;
-}
-
-#header-computer {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#together-computer {
-    color:black;
-    font-size: 36px;
-    text-align: center;
-}
-
-#paragraph-computer {
-    font-size: 18px;
-}

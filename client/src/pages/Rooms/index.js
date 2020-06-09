@@ -40,27 +40,15 @@ class Rooms extends Component {
 
     render() {
         return (
-            <Responsive 
-                {...Responsive.onlyComputer} 
-                as={Grid} container 
-                id="roomselect-container-computer">
-                <Responsive 
-                    {...Responsive.onlyComputer} 
-                    as={Grid.Row} 
-                    centered>
+            <Grid container id="roomselect-container-computer">
+                <Grid.Row centered>
                     <CreateRoomModal
                         createRoom={this.props.createRoom}
                         userId={this.props.user?._id}
                     />
-                </Responsive>
-                <Responsive 
-                    {...Responsive.onlyComputer} 
-                    as={Grid.Row} 
-                    centered>
-                    <Responsive 
-                        {...Responsive.onlyComputer} 
-                        as={Grid.Column} 
-                        width={12} >
+                </Grid.Row>
+                <Grid.Row centered>
+                    <Grid.Column width={12} >
                         <Segment.Group>
                             {this.props.rooms &&
                                 <RoomListItems
@@ -70,14 +58,10 @@ class Rooms extends Component {
                                     deleteRoom={this.props.deleteRoom}
                                 />}
                         </Segment.Group>
-                    </Responsive>
-                </Responsive>
-                <Responsive 
-                    {...Responsive.onlyComputer} as={Grid.Row} centered>
-                    <Responsive 
-                        {...Responsive.onlyComputer} 
-                        as={Grid.Column} 
-                        width={7}>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row centered>
+                    <Grid.Column width={7}>
                         {
                             this.props.rooms.length <= 9 ?
                                 null
@@ -87,9 +71,9 @@ class Rooms extends Component {
                                     activePage={this.state.activePage}
                                 />
                         }
-                    </Responsive>
-                </Responsive>
-            </Responsive>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
 
         )
     }

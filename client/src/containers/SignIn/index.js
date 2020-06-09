@@ -54,7 +54,52 @@ class SignIn extends Component {
   render() {
     const { submitting, handleSubmit } = this.props;
     return (
-      // <>
+      
+      <Grid id="signin-container">
+        <Grid.Column width={8}>
+          <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
+        </Grid.Column>
+        <Grid.Column width={8}>
+          <Form id="signin-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
+            <Segment id="signin-form" stacked>
+              <Field
+                name='email'
+                component={this.renderEmail}
+                validate={
+                  [
+                    required({ msg: 'Email is required' }),
+                    email({ msg: 'You must provide a valid email address' })
+                  ]
+                }
+              />
+              <Field
+                name='password'
+                component={this.renderPassword}
+                validate={
+                  [
+                    required({ msg: 'You must provide a password' })
+                  ]
+                }
+              />
+              <Button
+                id="signin-btn"
+                fluid
+                size='large'
+                type='submit'
+                disabled={submitting}
+              >
+                <div id="signin-btn-text">Sign In</div>
+              </Button>
+            </Segment>
+          </Form>
+        </Grid.Column>
+      </Grid>
+    );
+  }
+}
+export default reduxForm({ form: 'signin' })(SignIn);
+
+// <>
       //   <Responsive {...Responsive.onlyMobile} as={Grid} id="signin-container-mobile">
       //     <Responsive {...Responsive.onlyMobile} as={Grid.Column} width={16}>
       //       <Form id="signin-form-container-mobile" size='large' onSubmit={handleSubmit(this.onSubmit)}>
@@ -172,46 +217,3 @@ class SignIn extends Component {
       //     </Responsive>
       //   </Responsive>
       // </>
-      <Grid id="signin-container">
-        <Grid.Column width={8}>
-          <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
-        </Grid.Column>
-        <Grid.Column width={8}>
-          <Form id="signin-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
-            <Segment id="signin-form" stacked>
-              <Field
-                name='email'
-                component={this.renderEmail}
-                validate={
-                  [
-                    required({ msg: 'Email is required' }),
-                    email({ msg: 'You must provide a valid email address' })
-                  ]
-                }
-              />
-              <Field
-                name='password'
-                component={this.renderPassword}
-                validate={
-                  [
-                    required({ msg: 'You must provide a password' })
-                  ]
-                }
-              />
-              <Button
-                id="signin-btn"
-                fluid
-                size='large'
-                type='submit'
-                disabled={submitting}
-              >
-                <div id="signin-btn-text">Sign In</div>
-              </Button>
-            </Segment>
-          </Form>
-        </Grid.Column>
-      </Grid>
-    );
-  }
-}
-export default reduxForm({ form: 'signin' })(SignIn);
