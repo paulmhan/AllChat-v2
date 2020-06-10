@@ -15,6 +15,7 @@ export default function (state = INITIAL_STATE, action) {
         case NEW_MESSAGE:
             // console.log(action.payload.messages);
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
+            // return { ...state, activeRoom: { ...state.activeRoom, messages: [...state.activeRoom.messages, action.payload.newMessage] }};
         case USER_JOIN:
             return { ...state, userJoin:action.payload.message, userLeft: "" };
         case USER_LEFT:

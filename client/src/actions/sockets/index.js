@@ -68,7 +68,7 @@ export const sendMessage = data => {
 };
 
 
-export const unsubscribeMessage = message => {
+export const unsubscribeMessage = (message) => {
     return {
         event: "message",
         leave: true,

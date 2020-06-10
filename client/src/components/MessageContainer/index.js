@@ -19,6 +19,8 @@ class MessageContainer extends Component {
   
   componentDidUpdate(prevProps) {
     if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
+      //margin auto
+      const div = document.createElement("div").setAttribute;
       document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
