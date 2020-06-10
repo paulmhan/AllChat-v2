@@ -3,15 +3,12 @@ import { Message, Button } from "semantic-ui-react";
 import moment from 'moment';
 import { connect } from 'react-redux';
 import "./style.css";
-import axios from 'axios';
-import {translateMessage} from "./../../actions/api";
-
-require("dotenv").config()
+import { translateMessage } from "../../actions/api";
+require("dotenv").config();
 const { Translate } = require('@google-cloud/translate').v2;
 
 
 const projectId = process.env.GOOGLE_PROJECT_ID;
-console.log(projectId);
 
 // Instantiates a client
 const translate = new Translate({
@@ -25,42 +22,13 @@ class MessageContainer extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
       //margin auto
-      const div = document.createElement("div").setAttribute;
+      // const div = document.createElement("div").setAttribute;
       document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
       document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
     }
   }
-
-
-  // translateText =  async (message, language) => {
-  //   console.log(message.text)
-  //   console.log(language);
-  //   try {
-
-  //     const res = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${language}&q=${message.text}&key=AIzaSyCcKOjOcmviD6AZXTd9qHT19MPK3xULnNg`)
-  //     console.log(res, "res");
-      
-  //     const translation = res.data.data.translations[0].translatedText;
-     
-  //     const newMessage = message;
-  //     newMessage.text = translation;
-  //      //translateMessage(newMessage)
-      
-  //     // const [translation] =  await translate.translate(message.text, language);
-  //     console.log(translation);
-  //     // "data": {
-  //     //   "translations": [
-  //     //     {
-  //     //       "translatedText": "Hola",
-  //     //       "detectedSourceLanguage": "en"
-  //   } catch (error) {
-  //     throw error;
-  //   }
-    
-    
-  // }
 
   render() {
     return (
@@ -73,6 +41,7 @@ class MessageContainer extends Component {
               </p>
               <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
               <Button size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
+              <Button size='mini' onClick={() => this.props.deleteMessage(message, this.props.activeRoom)}>Delete Message</Button>
             </Message>)}
 
         </div>

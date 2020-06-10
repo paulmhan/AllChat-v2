@@ -24,12 +24,19 @@ module.exports = {
             throw error;
         }
     },
-    getRoomById: async () => {
-
-    },
-    getAllRooms: async () => {
-
-    },
+    deleteMessage: async (data, cb) => {
+        try {
+            console.log(data, "++++++++++++++");
+            const currentMessage = await Message.findById(data._id);
+            currentMessage.pull(data.message.text);
+            await currentRoom.save();
+            const activeRoom = await Room.findById(data.room._id).populate("messages");
+            console.log(activeRoom);
+            cb(activeRoom);
+        } catch (error) {
+            throw error;
+        }
+    }
 
 
 }
