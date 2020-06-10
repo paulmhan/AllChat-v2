@@ -50,13 +50,13 @@ class MessageContainer extends Component {
       // >
         <div ref="autoScroll" className="ui message" id="message-container">
           {this.props.messages?.map((message, index) =>
-            <Message key={index}>
+            <div id="message" key={index}>
               <p id="timeStamp">
                 <span>{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
               <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
               <Button size='mini' onClick={() => this.translateText(message, this.props.user.language)}>See translation</Button>
-            </Message>)}
+            </div>)}
         </div>
       // </ReactAutoScroll>
     )

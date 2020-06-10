@@ -10,3 +10,10 @@
     font-size: 10px;
 }
 
+#message {
+    background-color: white;
+    /* border: solid black 2px; */
+    padding: 10px;
+    border-radius: 10px;
+}
+
