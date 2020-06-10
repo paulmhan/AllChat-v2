@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AllChatTitle from "../AllChatTitle";
 import { Link } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Dropdown, Icon } from 'semantic-ui-react';
 import { signOut } from '../../actions/auth';
 import { connect } from 'react-redux';
 import "./style.css";
@@ -13,7 +13,14 @@ const Navbar = props => (
     </Menu.Item>
     { props.isLoggedIn ? null : <Menu.Item as={Link} to='/signup'  content='Sign Up' id="signup" /> }
     { props.isLoggedIn ? <Menu.Item as={Link} to="/rooms"  content="Chatrooms" id="chatrooms" /> : null }
-    { props.isLoggedIn ? <Menu.Item as={Link} to='/' onClick={props.signOut} content='Sign Out'/> : <Menu.Item as={Link} to='/signin' content='Sign In' id="signin" />}
+    { props.isLoggedIn ? 
+      <Dropdown item>
+        <Dropdown.Menu>
+          <Dropdown.Item as={Link} to="/profile" icon content="Edit Profile" id="profile" />
+          <Dropdown.Item as={Link} to='/' onClick={props.signOut} content='Sign Out'/> 
+        </Dropdown.Menu>
+      </Dropdown>
+      : <Menu.Item as={Link} to='/signin' content='Sign In' id="signin" />}
   </Menu>
 );
 
