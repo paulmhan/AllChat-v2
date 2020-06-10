@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Message, Button } from "semantic-ui-react";
+import { Message, Button, Icon } from "semantic-ui-react";
 import moment from 'moment';
 import { connect } from 'react-redux';
 import "./style.css";
@@ -13,12 +13,12 @@ const projectId = process.env.GOOGLE_PROJECT_ID;
 // Instantiates a client
 const translate = new Translate({
   projectId,
-  keyFilename:  "./AllChatKey.json",
+  keyFilename: "./AllChatKey.json",
 });
 
 
 class MessageContainer extends Component {
-  
+
   componentDidUpdate(prevProps) {
     if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
       //margin auto
@@ -41,7 +41,11 @@ class MessageContainer extends Component {
               </p>
               <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
               <Button size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
-              <Button size='mini' onClick={() => this.props.deleteMessage({ message, roomId:this.props.room._id })}>Delete Message</Button>
+              <Button
+                size='mini'
+                onClick={() => this.props.deleteMessage({ message, roomId: this.props.room._id })}>
+                <Icon name='trash alternate' /> 
+              </Button>
             </Message>)}
 
         </div>
@@ -58,5 +62,5 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, {translateMessage})(MessageContainer)
+export default connect(mapStateToProps, { translateMessage })(MessageContainer)
 // export default MessageContainer;

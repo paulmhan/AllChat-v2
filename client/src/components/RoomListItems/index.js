@@ -13,7 +13,6 @@ export default (props) => {
       room &&
     <List.Item key={index}>
       <Segment id="room-segment">
-        
           <Grid>
             <Grid.Column width={12}>
               <List.Content>
@@ -42,8 +41,6 @@ export default (props) => {
           </Grid>
         </Segment>
       </List.Item>
-      
-
     ));
   }
 };

@@ -26,12 +26,12 @@ module.exports = {
     },
     deleteMessage: async (data, cb) => {
         try {
-            console.log(data, "++++++++++++++");
+            // console.log(data, "++++++++++++++");
             const currentRoom = await Room.findById(data.roomId);
             currentRoom.messages.pull(data.message);
             await currentRoom.save();
             const activeRoom = await Room.findById(data.roomId).populate("messages");
-            console.log(activeRoom);
+            // console.log(activeRoom);
             cb(activeRoom);
         } catch (error) {
             throw error;
