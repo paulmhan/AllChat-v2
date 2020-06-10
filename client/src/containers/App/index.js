@@ -14,13 +14,12 @@ import Navbar from './../../components/Navbar';
 class App extends Component {
 
   render () {
-    console.log(this.props.authenticated);
     return (
       <div>
           <Navbar isLoggedIn={this.props.authenticated}/>
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
-          <Route exact path='/profile' component={UserProfile}/>
+          {/* <Route exact path='/profile' component={UserProfile}/> */}
           {/* <Route exact path='/signout' component={SignOut}/> */}
           <Route exact path='/chat' component={Chat}/>
           <Route exact path='/' render={ () => <LandingPage isLoggedIn={this.props.authenticated} />} />
