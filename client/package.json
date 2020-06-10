@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
+    "emailjs-com": "^2.4.1",
     "faker": "^4.1.0",
     "glamor": "^2.20.40",
     "lodash": "^4.17.15",

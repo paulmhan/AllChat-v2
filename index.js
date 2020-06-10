@@ -75,7 +75,6 @@ io.on("connection", socket => {
             io.to(data.roomId).emit("activeRoom", activeRoom);
             // socket.broadcast.to(data.roomId).emit("activeRoom", activeRoom);
             io.to(data.roomId).emit("userJoinMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has joined the chat` });
-
         })
     })
 

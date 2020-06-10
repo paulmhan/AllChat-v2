@@ -4,7 +4,7 @@ import LandingPage from "../../pages/LandingPage";
 import Chat from "../../pages/Chat";
 import Rooms from "../../pages/Rooms";
 import SignUp from '../SignUp';
-// import SignOut from '../SignOut';
+import Contact from "../../pages/Contact";
 import SignIn from '../SignIn';
 import UserProfile from '../../pages/UserProfile';
 
@@ -25,6 +25,7 @@ class App extends Component {
           <Route exact path='/chat' component={Chat}/>
           <Route exact path='/' render={ () => <LandingPage isLoggedIn={this.props.authenticated} />} />
           <Route exact path='/rooms' component={Rooms} />
+          <Route exact path='/contact' component={Contact}/>
       </div>
     );
   }

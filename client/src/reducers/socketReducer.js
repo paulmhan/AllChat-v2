@@ -14,7 +14,8 @@ export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case NEW_MESSAGE:
             // console.log(action.payload.messages);
-            return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages } };
+            return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
+            // return { ...state, activeRoom: { ...state.activeRoom, messages: [...state.activeRoom.messages, action.payload.newMessage] }};
         case TRANSLATE_MESSAGE:
             const  newMessage   = action.payload
             return {
