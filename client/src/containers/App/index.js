@@ -4,7 +4,7 @@ import LandingPage from "../../pages/LandingPage";
 import Chat from "../../pages/Chat";
 import Rooms from "../../pages/Rooms";
 import SignUp from '../SignUp';
-// import SignOut from '../SignOut';
+import Contact from "../../pages/Contact";
 import SignIn from '../SignIn';
 
 
@@ -20,12 +20,12 @@ class App extends Component {
     return (
       <div>
           <Navbar isLoggedIn={this.props.authenticated}/>
+          <Route exact path='/' component={LandingPage}/>
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
-          {/* <Route exact path='/signout' component={SignOut}/> */}
-          <Route exact path='/chat' component={Chat}/>
-          <Route exact path='/' component={LandingPage}/>
           <Route exact path='/rooms' component={Rooms} />
+          <Route exact path='/chat' component={Chat}/>
+          <Route exact path='/contact' component={Contact}/>
       </div>
     );
   }
