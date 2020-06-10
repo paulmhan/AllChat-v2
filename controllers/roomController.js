@@ -52,7 +52,7 @@ module.exports = {
     getActiveRoom: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.roomId).populate("messages");
-            const userName = data.user.firstName.concat(data.user.lastName);
+            const userName = data.user.firstName.concat(" ", data.user.lastName);
             activeRoom.users.push(userName);
             await activeRoom.save();
             // console.log("--------------------");
@@ -67,7 +67,7 @@ module.exports = {
     getActiveRoomAfterDelete: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.room._id).populate("messages");
-            const userName = data.user.firstName.concat(data.user.lastName);
+            const userName = data.user.firstName.concat(" ",data.user.lastName);
             activeRoom.users.pull(userName);
             await activeRoom.save();
             // console.log("--------------------");
