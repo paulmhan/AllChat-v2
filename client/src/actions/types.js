@@ -4,4 +4,5 @@ export const AUTH_USER_ERROR = 'AUTH_USER_ERROR';
 export const GET_USER = "GET_USER";
 export const GET_USER_ERROR = "GET_USER_ERROR";
 export const LEAVE_USER = "LEAVE_USER";
+export const TRANSLATE_MESSAGE = "TRANSLATE_MESSAGE";
 
