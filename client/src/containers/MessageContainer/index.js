@@ -34,7 +34,7 @@ class MessageContainer extends Component {
     return (
       <div className="message-outline">
         <div className="ui message" id="message-container">
-          {this.props.messages?.map((message, index) =>
+          {this.props.room.messages?.map((message, index) =>
             <Message key={index}>
               <p id="timeStamp">
                 <span>{moment(message.dateCreated).format('l, h:mm a')}</span>

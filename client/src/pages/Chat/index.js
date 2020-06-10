@@ -81,12 +81,12 @@ class Chat extends Component {
                 </Grid.Column>
                 <Grid.Column width={13}>
                     <MessageContainer
-                        messages={this.props.room.messages}
-                        activeUsers={this.props.room.users}
+                        // messages={this.props.room.messages}
+                        room={this.props.room}
                         userJoin={this.props.userJoin}
                         userLeft={this.props.userLeft}
                         deleteMessage={this.props.deleteMessage}
-                        activeRoom={this.props.room}
+                        
                     />
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
