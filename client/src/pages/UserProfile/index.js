@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Grid, Image } from "semantic-ui-react";
 
 class UserProfile extends Component {
     render() {
         return (
             <div>
-                <h1>This is the User Profile page</h1>
+                <Image />
             </div>
         );
 
