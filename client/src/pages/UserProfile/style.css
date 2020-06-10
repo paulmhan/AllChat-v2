@@ -1,0 +1,6 @@
+#profile-container {
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    width: 70%;
+    margin: 0 auto; /*This will automatically center anything*/
+}
