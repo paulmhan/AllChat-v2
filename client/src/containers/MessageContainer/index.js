@@ -41,7 +41,7 @@ class MessageContainer extends Component {
               </p>
               <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
               <Button size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
-              <Button size='mini' onClick={() => this.props.deleteMessage(message, this.props.activeRoom)}>Delete Message</Button>
+              <Button size='mini' onClick={() => this.props.deleteMessage({ message, roomId:this.props.room._id })}>Delete Message</Button>
             </Message>)}
 
         </div>

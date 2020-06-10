@@ -40,7 +40,7 @@ io.on("connection", socket => {
     });
     socket.on("deleteMessage", data => {
         messageController.deleteMessage(data, activeRoom => {
-            io.to(data.room._id).emit("serverToClientMessage", activeRoom);
+            io.to(data.roomId).emit("serverToClientMessage", activeRoom);
         })
     })
     socket.on("createRoom", data => {
