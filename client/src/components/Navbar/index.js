@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import AllChatTitle from "../AllChatTitle";
 import { Link } from 'react-router-dom';
-import { Menu, Dropdown, Icon } from 'semantic-ui-react';
+import { Menu, Dropdown, Image, Icon } from 'semantic-ui-react';
 import { signOut } from '../../actions/auth';
 import { connect } from 'react-redux';
+import ProfilePic from "../../assets/images/Tim_Allen_headshot.jpg";
 import "./style.css";
 
 const Navbar = props => (
@@ -13,6 +14,7 @@ const Navbar = props => (
     </Menu.Item>
     { props.isLoggedIn ? null : <Menu.Item as={Link} to='/signup'  content='Sign Up' id="signup" /> }
     { props.isLoggedIn ? <Menu.Item as={Link} to="/rooms"  content="Chatrooms" id="chatrooms" /> : null }
+    <Image item avatar src={ProfilePic}/>
     { props.isLoggedIn ? 
       <Dropdown item>
         <Dropdown.Menu>
