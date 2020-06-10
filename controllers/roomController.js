@@ -18,7 +18,7 @@ module.exports = {
         try {
             const roomDelete = await Room.findById(roomId);
             if (userId != roomDelete.creator) {
-                cb("Error")
+                cb("Error");
             } else {
                 const deletedRoom = await Room.findByIdAndDelete(roomId);
                 const rooms = await Room.find().populate("messages");
@@ -41,7 +41,7 @@ module.exports = {
             const rooms = await Room.find().populate("messages");
             if (!rooms) {
                 console.log("No Rooms");
-                cb("Error")
+                cb("Error");
             }
             cb(rooms);
         } catch (error) {
@@ -55,12 +55,9 @@ module.exports = {
             const userName = data.user.firstName.concat(" ", data.user.lastName);
             activeRoom.users.push(userName);
             await activeRoom.save();
-            // console.log("--------------------");
-            // console.log(activeRoom, "when joining");
-            // console.log("--------------------");
             cb(activeRoom);
         } catch (error) {
-            throw error
+            throw error;
         }
     },
 
@@ -70,12 +67,9 @@ module.exports = {
             const userName = data.user.firstName.concat(" ",data.user.lastName);
             activeRoom.users.pull(userName);
             await activeRoom.save();
-            // console.log("--------------------");
-            // console.log(activeRoom, "when leaving");
-            // console.log("--------------------");
-            cb(activeRoom)
+            cb(activeRoom);
         } catch (error) {
-            throw error
+            throw error;
 
         }
     }
