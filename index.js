@@ -35,9 +35,14 @@ io.on("connection", socket => {
         //data is {formvalues, user, room}
         messageController.createMessage(data, activeRoom => {
             // console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
-            io.to(data.room._id).emit("serverToClientMessage", activeRoom)
+            io.to(data.room._id).emit("serverToClientMessage", activeRoom);
         })
     });
+    socket.on("deleteMessage", data => {
+        messageController.deleteMessage(data, activeRoom => {
+            io.to(data.roomId).emit("serverToClientMessage", activeRoom);
+        })
+    })
     socket.on("createRoom", data => {
         //data is the room name and userID
         // socket.join(data.roomName)

@@ -103,9 +103,9 @@ export const getAllRooms = () => {
 //     }
 // }
 export const deleteRoom = id => {
-    console.log("-------------------------");
-    console.log("DELETING ROOM");
-    console.log("-------------------------");
+    // console.log("-------------------------");
+    // console.log("DELETING ROOM");
+    // console.log("-------------------------");
 
     return {
         token: localStorage.getItem("token"),
@@ -116,8 +116,8 @@ export const deleteRoom = id => {
 }
 
 export const getActiveRoom = data => {
-    console.log("-------------------------");
-    console.log('JOINING ROOM');
+    // console.log("-------------------------");
+    // console.log('JOINING ROOM');
     return {
         event: "getActiveRoom",
         payload: data,
@@ -126,11 +126,21 @@ export const getActiveRoom = data => {
 };
 
 export const leaveRoom = data => {
-    console.log("-------------------------");
-    console.log('LEAVING ROOM');
+    // console.log("-------------------------");
+    // console.log('LEAVING ROOM');
     return {
         event: "leaveRoom",
         payload: data,
         emit: true,
     };
 };
+
+export const deleteMessage = data => {
+    console.log("-------------------------");
+    console.log('DELETING MESSAGE');
+    return {
+        event: "deleteMessage",
+        payload: data,
+        emit: true,
+    }
+}

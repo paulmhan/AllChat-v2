@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatSideBar from "../../components/ChatSideBar"
 // import ChatRoomHeader from "../../components/ChatRoomHeader";
-import MessageContainer from "../../components/MessageContainer";
+import MessageContainer from "../../containers/MessageContainer";
 // import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import "./style.css";
 
@@ -81,10 +81,12 @@ class Chat extends Component {
                 </Grid.Column>
                 <Grid.Column width={13}>
                     <MessageContainer
-                        messages={this.props.room.messages}
-                        activeUsers={this.props.room.users}
+                        // messages={this.props.room.messages}
+                        room={this.props.room}
                         userJoin={this.props.userJoin}
                         userLeft={this.props.userLeft}
+                        deleteMessage={this.props.deleteMessage}
+                        
                     />
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
@@ -137,6 +139,7 @@ export default compose(
         getActiveRoom,
         unsubscribeMessage,
         leaveRoom,
+        deleteMessage
     }),
     requireAuth
 )(Chat)
