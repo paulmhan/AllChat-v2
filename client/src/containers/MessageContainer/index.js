@@ -25,10 +25,10 @@ class MessageContainer extends Component {
     if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
       //margin auto
       // const div = document.createElement("div").setAttribute;
-      document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
+      document.getElementById('message-container').append(`-----${this.props.userJoin}-----`);
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
-      document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
+      document.getElementById('message-container').append(`-----${this.props.userLeft}-----`);
     }
   }
 
@@ -40,9 +40,10 @@ class MessageContainer extends Component {
               <p id="timeStamp">
                 <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
-              
               <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
               <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
+              <Button onClick={()=>console.log(message, this.props.user)}>hi</Button>
+              {/* {message.userId === this.props.user._id && <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />} */}
               <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />
               </div>)}
         </div>
@@ -53,7 +54,6 @@ class MessageContainer extends Component {
 function mapStateToProps(state) {
   return {
     user: state.auth.currentUser,
-
   }
 }
 

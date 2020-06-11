@@ -8,11 +8,12 @@ module.exports = {
         try {
             const newMessage = await new Message({
                 text: data.formValues.message,
-                user: data.user._id,
+                userId: data.user._id,
                 firstName: data.user.firstName,
                 lastName: data.user.lastName
             }).save();
             // const newMessage = await Room.findById(messageData._id);
+            // console.log(newMessage);
 
             const currentRoom = await Room.findById(data.room._id);
             currentRoom.messages.push(newMessage._id);
