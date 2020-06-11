@@ -21,9 +21,8 @@ export default (props) => {
   } else {
     return props.rooms?.map((room, index) => (
       room &&
-      <List.Item key={index}>
-        <Segment id="room-segment">
-
+    <List.Item key={index}>
+      <Segment id="room-segment">
           <Grid>
             <Grid.Column width={12}>
               <List.Content>
@@ -52,8 +51,6 @@ export default (props) => {
           </Grid>
         </Segment>
       </List.Item>
-
-
     ));
   }
 };
