@@ -29,6 +29,7 @@
     "@google-cloud/translate": "^6.0.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
+    "emailjs-com": "^2.4.1",
     "express": "^4.17.1",
     "google-translate": "^3.0.0",
     "if-env": "^1.0.4",

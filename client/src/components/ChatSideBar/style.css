@@ -1,11 +1,15 @@
 #chatroom-interface {
     height: 898px;
-    /* width: 20%; */
+    /* width: 260px; */
     background-color: #f7f7f7;
     max-height: 898px;
     overflow-y: auto;
 }
 
-#user-title {
-    color: black;
+/* #chat-grid {
+    
+} */
+
+#room-name {
+    text-align: center;
 }

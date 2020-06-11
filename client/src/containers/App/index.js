@@ -6,13 +6,10 @@ import Rooms from "../../pages/Rooms";
 import SignUp from '../SignUp';
 import Contact from "../../pages/Contact";
 import SignIn from '../SignIn';
-
+import UserProfile from '../../pages/UserProfile';
 
 import { connect } from 'react-redux';
 import Navbar from './../../components/Navbar';
-
-
-
 
 class App extends Component {
 
@@ -20,11 +17,13 @@ class App extends Component {
     return (
       <div>
           <Navbar isLoggedIn={this.props.authenticated}/>
-          <Route exact path='/' component={LandingPage}/>
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
-          <Route exact path='/rooms' component={Rooms} />
+          {/* <Route exact path='/profile' component={UserProfile}/> */}
+          {/* <Route exact path='/signout' component={SignOut}/> */}
           <Route exact path='/chat' component={Chat}/>
+          <Route exact path='/' render={ () => <LandingPage isLoggedIn={this.props.authenticated} />} />
+          <Route exact path='/rooms' component={Rooms} />
           <Route exact path='/contact' component={Contact}/>
       </div>
     );

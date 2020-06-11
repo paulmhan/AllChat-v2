@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import Developers from "../../components/Developers";
+
 class LandingPage extends Component {
     render() {
+        console.log(this.props.isLoggedIn);
         return (
+        <>
             <Grid id="landing-container">
                 <Grid.Column width={8}>
                     <Grid container id="inner-landing-container">
@@ -24,10 +28,12 @@ class LandingPage extends Component {
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row centered>
-                            <Grid.Column width={4}>
-                                <Button as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>
+                            <Grid.Column width={5}>
+                                {this.props.isLoggedIn ? null : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
                             </Grid.Column>
                         </Grid.Row>
+
+
                     </Grid>
                 </Grid.Column>
                 <Grid.Column width={8}>
@@ -38,6 +44,11 @@ class LandingPage extends Component {
                     </Grid>
                 </Grid.Column>
             </Grid>
+
+            <footer id="developers-footer">
+                <Developers />
+            </footer>
+        </>
         )
     }
 }

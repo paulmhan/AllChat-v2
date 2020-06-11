@@ -35,12 +35,12 @@ class Rooms extends Component {
             start: data.activePage === 1 ? 0 : data.activePage * 10 - 10,
             end: data.activePage * 10
         });
-        console.log(this.props.rooms.length);
+        
     }
 
     render() {
         return (
-            <Grid container id="roomselect-container-computer">
+            <Grid container id="roomselect-container">
                 <Grid.Row centered>
                     <CreateRoomModal
                         createRoom={this.props.createRoom}
@@ -52,7 +52,7 @@ class Rooms extends Component {
                         <Segment.Group>
                             {this.props.rooms &&
                                 <RoomListItems
-                                    rooms={this.props.rooms}
+                                    rooms={this.props.rooms.slice(this.state.start, this.state.end)}
                                     joinRoom={this.props.joinRoom}
                                     user={this.props.user}
                                     deleteRoom={this.props.deleteRoom}
