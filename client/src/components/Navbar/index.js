@@ -12,7 +12,7 @@ const Navbar = props => (
     <Menu.Item position="left">
       <AllChatTitle />
     </Menu.Item>
-    { !props.isLoggedIn && <Menu.Item as={Link} to='/signup'  content='Sign Up' id="signup" /> }
+    { !props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup"><Icon name="signup" />Sign Up</Menu.Item> }
     { props.isLoggedIn && props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content="Chatrooms" id="chatrooms" /> }
     { props.isLoggedIn ? <Menu.Item as={Link} to='/' onClick={props.signOut}><Icon name="sign-out" />Sign Out</Menu.Item> : <Menu.Item as={Link} to='/signin' id="signin"><Icon name="sign-in" />Sign In</Menu.Item>}
   </Menu>
