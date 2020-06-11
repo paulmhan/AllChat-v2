@@ -42,9 +42,9 @@ class MessageContainer extends Component {
               </p>
               <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
               <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
-              <Button onClick={()=>console.log(message, this.props.user)}>hi</Button>
-              {/* {message.userId === this.props.user._id && <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />} */}
-              <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />
+              {/* <Button onClick={()=>console.log(message, this.props.user)}>hi</Button> */}
+              {message.userId === this.props.user._id && <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />}
+              {/* <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} /> */}
               </div>)}
         </div>
     )
