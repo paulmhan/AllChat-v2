@@ -4,6 +4,8 @@
 
 #signup {
     color: black;
+    position: relative;
+    right: 30px;
 }
 
 #signin {
@@ -30,10 +32,10 @@
 #room-select {
     color: black;
     position: relative;
-    right: 20px;
+    right: 30px;
 }
 
 #already-user {
     position: relative;
-    right: 20px;
+    right: 30px;
 }

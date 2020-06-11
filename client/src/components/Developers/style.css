@@ -1,19 +1,34 @@
-/* #developers-container {
-    background-color: #B5B5B5;
-} */
+#developers-container {
+    padding: 10px;
+}
 
 #developers-list {
     margin-left: 20px;
 }
 
-#paul-header {
-    font-size: 24px;
+#contact {
+   margin-left: 10px;
+   margin-bottom: 10px;
 }
 
-#suneetha-header {
-    font-size: 24px;
+#feedback {
+    margin: 10px;
+    margin-top: 20px;
 }
 
-#james-header {
-    font-size: 24px;
+#developed {
+    margin-top: 20px;
+    margin: 10px;
+}
+
+#paul {
+    margin: 10px;
+}
+
+#suneetha {
+    margin: 10px;
+}
+
+#james {
+    margin: 10px;
 }
