@@ -20,6 +20,8 @@
 
 #owner {
     text-align: right;
+    border: solid blue 1px;
+
 }
 
 #message-text {
