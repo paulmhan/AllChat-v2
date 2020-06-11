@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import Developers from "../../components/Developers";
+
 class LandingPage extends Component {
     render() {
         console.log(this.props.isLoggedIn);
         return (
+        <>
             <Grid id="landing-container">
                 <Grid.Column width={8}>
                     <Grid container id="inner-landing-container">
@@ -41,6 +44,11 @@ class LandingPage extends Component {
                     </Grid>
                 </Grid.Column>
             </Grid>
+
+            <footer id="developers-footer">
+                <Developers />
+            </footer>
+        </>
         )
     }
 }
