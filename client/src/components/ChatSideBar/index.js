@@ -9,7 +9,7 @@ class ChatSideBar extends Component {
     render() {
         return (
             <div id="chatroom-interface">
-                <Segment.Group>
+                <Segment.Group id="outer-segment-group">
                     <h1 id="room-name">{this.props.roomName}</h1>
                         <LeaveBtn />
                         <br />

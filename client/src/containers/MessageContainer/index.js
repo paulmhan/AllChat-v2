@@ -22,11 +22,16 @@ class MessageContainer extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
       //margin auto
-      // const div = document.createElement("div").setAttribute;
-      document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
+      const div = document.createElement("div");
+      div.className = "joined";
+      div.textContent = `-----${this.props.userJoin}-----`;
+      document.getElementById('message-container').append(div);
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
-      document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
+      const div = document.createElement("div");
+      div.className = "left";
+      div.textContent = `-----${this.props.userLeft}-----`;
+      document.getElementById('message-container').append(div);
     }
   }
 

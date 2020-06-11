@@ -39,6 +39,22 @@ class Chat extends Component {
         this.props.leaveRoom({ room, user });
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.room?.messages?.length !== prevProps.room?.messages?.length) {
+          this.scrollToBottom();
+        }
+        if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
+            //margin auto
+            // const div = document.createElement("div").setAttribute;
+            // document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
+            this.scrollToBottom();
+          }
+          if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
+            // document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
+            this.scrollToBottom();
+          }
+      }
+
     scrollToBottom = () => {
         let chatTextArea = document.getElementById("message-container");
         const scrollHeight = chatTextArea.scrollHeight;
@@ -56,7 +72,7 @@ class Chat extends Component {
         if (formValues === "") {
             console.log("You must enter a message");
         };
-        this.scrollToBottom();
+        // this.scrollToBottom();
     }
 
     renderMessageInput = ({ input, meta }) => {
