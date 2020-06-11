@@ -25,6 +25,21 @@ module.exports = {
             throw error;
         }
     },
+
+    translateMessage: async (req, res) => {
+        const {}
+        try {
+        const res = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${data.language}&q=${data.message.text}&key=AIzaSyCcKOjOcmviD6AZXTd9qHT19MPK3xULnNg`);
+        console.log(res, "res");
+        const translation = res.data.data.translations[0].translatedText;
+        const newMessage = message;
+        newMessage.text = translation;
+        cb(newMessage);
+            
+        } catch (error) {
+            throw error;
+        }
+    },
     deleteMessage: async (data, cb) => {
         try {
             // console.log(data, "++++++++++++++");

@@ -6,17 +6,6 @@ import DeleteMessageModal from "../../containers/DeleteMessageModal";
 
 import "./style.css";
 import { translateMessage } from "../../actions/api";
-require("dotenv").config();
-const { Translate } = require('@google-cloud/translate').v2;
-
-
-const projectId = process.env.GOOGLE_PROJECT_ID;
-
-// Instantiates a client
-const translate = new Translate({
-  projectId,
-  keyFilename: "./AllChatKey.json",
-});
 
 
 class MessageContainer extends Component {
@@ -41,10 +30,11 @@ class MessageContainer extends Component {
                 <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
               <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
-              <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
+              <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage({message, language:this.props.user.language})}>See translation</Button>
               {/* <Button onClick={()=>console.log(message, this.props.user)}>hi</Button> */}
               {message.userId === this.props.user._id && <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />}
               {/* <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} /> */}
+             
               </div>)}
         </div>
     )
