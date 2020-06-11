@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Grid, Header, List, Button, Segment } from 'semantic-ui-react';
-import DeleteRoomModal from "../../components/DeleteRoomModal";
+import DeleteRoomModal from "../../containers/DeleteRoomModal";
 
 import "./style.css";
 
