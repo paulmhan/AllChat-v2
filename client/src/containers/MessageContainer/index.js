@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Message, Button, Icon } from "semantic-ui-react";
 import moment from 'moment';
 import { connect } from 'react-redux';
+import DeleteMessageModal from "../../containers/DeleteMessageModal";
+
 import "./style.css";
 import { translateMessage } from "../../actions/api";
 require("dotenv").config();
@@ -41,12 +43,7 @@ class MessageContainer extends Component {
               
               <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
               <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
-              <Button
-                id="delete-message-btn"
-                size='mini'
-                onClick={() => this.props.deleteMessage({ message, roomId: this.props.room._id })}>
-                <Icon name='trash alternate' /> 
-              </Button>
+              <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />
               </div>)}
         </div>
     )
