@@ -39,9 +39,10 @@ class MessageContainer extends Component {
                 <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
               
-              <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
-              <Button size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
+              <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
+              <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
               <Button
+                id="delete-message-btn"
                 size='mini'
                 onClick={() => this.props.deleteMessage({ message, roomId: this.props.room._id })}>
                 <Icon name='trash alternate' /> 

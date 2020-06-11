@@ -41,3 +41,16 @@
     transition: 0.8s;
 }
 
+#delete-message-btn {
+    background-color: #F22225;
+    color: white;
+    border: solid #F22225 1px;
+    transition: 0.5s;
+}
+
+#delete-message-btn:hover {
+    background-color: transparent;
+    color: #F22225;
+    transition: 0.8s;
+}
+
