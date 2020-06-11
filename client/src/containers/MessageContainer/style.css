@@ -18,6 +18,10 @@
     margin: 20px 0;
 }
 
+#owner {
+    text-align: right;
+}
+
 #message-text {
     font-size: 25px;
     margin-left: 10px;
