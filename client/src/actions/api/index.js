@@ -2,9 +2,11 @@ import { TRANSLATE_MESSAGE } from "../types";
 import axios from "axios";
 
 
-export const translateMessage = (message, language) => async dispatch => {
+export const translateMessage = (messageData) => async dispatch => {
     try {
-        const { data } = await axios.post("/api/translate");
+        // console.log(messageData.message, "message")
+        // console.log(messageData.language,"language")
+        const {data}  = await axios.post('/api/translate/message', messageData);
         console.log(data, "translated message");
         dispatch({ type: TRANSLATE_MESSAGE, payload: data });
     } catch (error) {

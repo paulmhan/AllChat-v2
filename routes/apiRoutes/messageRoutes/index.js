@@ -2,6 +2,6 @@ const router = require('express').Router();
 
 const { translateMessage } = require('./../../../controllers/messageController')
 
-router.get('/message', translateMessage)
+router.post('/message', translateMessage)
 
 module.exports = router;

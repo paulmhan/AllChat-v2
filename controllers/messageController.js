@@ -1,4 +1,7 @@
 const { Room, User, Message } = require('../models/index');
+const axios = require('axios');
+require('dotenv').config();
+const apiKey = process.env.REACT_APP_API_KEY;
 
 module.exports = {
     createMessage: async (data, cb) => {
@@ -27,14 +30,15 @@ module.exports = {
     },
 
     translateMessage: async (req, res) => {
-        const {}
+        const {message, language} = req.body;
+        // console.log(req.body);
         try {
-        const res = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${data.language}&q=${data.message.text}&key=AIzaSyCcKOjOcmviD6AZXTd9qHT19MPK3xULnNg`);
-        console.log(res, "res");
-        const translation = res.data.data.translations[0].translatedText;
+        const apiRes = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${language}&q=${message.text}&key=${apiKey}`);
+        // console.log(apiRes, "res");
+        const translation = apiRes.data.data.translations[0].translatedText;
         const newMessage = message;
         newMessage.text = translation;
-        cb(newMessage);
+        return res.json({newMessage})
             
         } catch (error) {
             throw error;

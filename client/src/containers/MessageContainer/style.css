@@ -19,7 +19,7 @@
 }
 
 #message-text {
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 10px;
 }
 
@@ -27,11 +27,13 @@
     margin-left: 10px;
 }
 
-#translate-btn {
+#translate {
     margin-left: 10px;
-    background-color: #32CD33;
-    color: white;
-    border: solid #32CD33 1px;
+    margin-right: 10px;
+    font-size: 10px;
+    /* background-color: #32CD33; */
+    color: #32CD33;
+    /* border: solid #32CD33 1px; */
     transition: 0.5s;
 }
 
