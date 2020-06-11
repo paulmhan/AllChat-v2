@@ -17,7 +17,7 @@ const Developers = props => (
                         <List.Description>Back-end development, Socket.IO, MongoDB</List.Description>
                         <List.Description>
                             <Icon name="github"/>
-                            <Link>https://github.com/paulmhan</Link>
+                            {/* <Link>https://github.com/paulmhan</Link> */}
                         </List.Description>
                     </List.Content>
                 </List.Item>
@@ -29,7 +29,7 @@ const Developers = props => (
                         <List.Description>Back-end development, Socket.IO, MongoDB</List.Description>
                         <List.Description>
                             <Icon name="github"/>
-                            <Link>https://github.com/suneethaburla</Link>
+                            {/* <Link>https://github.com/suneethaburla</Link> */}
                         </List.Description>
                     </List.Content>
                 </List.Item>
@@ -41,11 +41,11 @@ const Developers = props => (
                         <List.Description>Front-end development</List.Description>
                         <List.Description>
                             <Icon name="github"/>
-                            <Link>https://github.com/jpgeib</Link>
+                            {/* <Link>https://github.com/jpgeib</Link> */}
                         </List.Description>
                         <List.Description>
                             <Icon name="linkedin"/>
-                            <Link>https://linkedin.com/in/james-geib-0b6493160</Link>
+                            {/* <Link>https://linkedin.com/in/james-geib-0b6493160</Link> */}
                         </List.Description>
                     </List.Content>
                 </List.Item>

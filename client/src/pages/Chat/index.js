@@ -24,9 +24,9 @@ class Chat extends Component {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        console.log("----------------------------");
-        console.log("GETTING USER");
-        console.log(this.props.user);
+        // console.log("----------------------------");
+        // console.log("GETTING USER");
+        // console.log(this.props.user);
         const data = { roomId, user: this.props.user };
         await this.props.getActiveRoom(data);
     }
@@ -68,7 +68,7 @@ class Chat extends Component {
         const user = this.props.user;
         const room = this.props.room;
         this.props.sendMessage({ formValues, user, room });
-        dispatch({ type: 'SEND_MESSAGE' })
+        dispatch({ type: 'SEND_MESSAGE' });
         if (formValues === "") {
             console.log("You must enter a message");
         };
@@ -103,6 +103,7 @@ class Chat extends Component {
                         userJoin={this.props.userJoin}
                         userLeft={this.props.userLeft}
                         deleteMessage={this.props.deleteMessage}
+                        user={this.props.user}
                         
                     />
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
