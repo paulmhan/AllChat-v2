@@ -77,10 +77,10 @@ class MessageContainer extends Component {
           {this.props.messages?.map((message, index) =>
             <div id="message" key={index}>
               <p id="timeStamp">
-                <span>{moment(message.dateCreated).format('l, h:mm a')}</span>
+                <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
               </p>
-              <Message.Header> <p><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
-              <Button size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
+              <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
+              <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
             </div>)}
 
         </div>

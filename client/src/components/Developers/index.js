@@ -10,7 +10,7 @@ const Developers = props => (
         <Grid.Column width={6}>
             <List id="developers-list">
                 <List.Item>
-                    <Image circular size="small" src={ProfilePlaceholder}/>
+                    <Image avatar circular size="small" src={ProfilePlaceholder}/>
                     <List.Content>
                         <List.Header id="paul-header">Paul Han</List.Header>
                         <br />
@@ -22,7 +22,7 @@ const Developers = props => (
                     </List.Content>
                 </List.Item>
                 <List.Item>
-                    <Image circular size="small" src={ProfilePlaceholder}/>
+                    <Image avatar circular size="small" src={ProfilePlaceholder}/>
                     <List.Content>
                         <List.Header id="suneetha-header">Suneetha Burla</List.Header>
                         <br />
@@ -34,7 +34,7 @@ const Developers = props => (
                     </List.Content>
                 </List.Item>
                 <List.Item>
-                    <Image circular size="small" src={ProfilePlaceholder}/>
+                    <Image avatar circular size="small" src={ProfilePlaceholder}/>
                     <List.Content>
                         <List.Header id="james-header">James Geib</List.Header>
                         <br />
