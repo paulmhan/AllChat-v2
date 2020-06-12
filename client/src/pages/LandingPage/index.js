@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import Content from "../../content.js";
+import content from "../../content.js";
 import "./style.css";
 import Developers from "../../components/Developers";
 import { loadUser } from "../../actions/auth";
@@ -13,6 +13,15 @@ class LandingPage extends Component {
 
     async componentDidMount() {
         this.props.user || await this.props.loadUser();
+    }
+
+    renderSwitch(language){
+        switch(language){
+            case "es":
+                return content.landingpage.es;
+            default:
+                return content.landingpage.en;
+        }
     }
 
     render() {
@@ -32,7 +41,7 @@ class LandingPage extends Component {
                         <Grid.Row centered>
                             <Grid.Column id="text1" width={16}>
                                 <h5 id="paragraph">
-                                    {Content.landingpage.es}
+                                    {this.renderSwitch(this.props.user?.language)}
                                 </h5>
                             </Grid.Column>
                         </Grid.Row>
@@ -62,8 +71,14 @@ class LandingPage extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        user: state.auth.currentUser
+    }
+}
+
 export default compose(
-    connect(null, { loadUser }),
+    connect(mapStateToProps, { loadUser }),
 )(LandingPage)
 
 
