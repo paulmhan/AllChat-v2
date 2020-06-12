@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { Responsive, Grid, Form, Segment, Button } from 'semantic-ui-react';
+import { Responsive, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
@@ -54,7 +54,7 @@ class SignIn extends Component {
   render() {
     const { submitting, handleSubmit } = this.props;
     return (
-      
+
       <Grid id="signin-container">
         <Grid.Column width={8}>
           <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
@@ -62,6 +62,8 @@ class SignIn extends Component {
         <Grid.Column width={8}>
           <Form id="signin-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
             <Segment id="signin-form" stacked>
+              <Header id="signin-header" as="h1">Sign In and Continue Chatting!</Header>
+              <Header id="signin-form-directions" as="h4">Please provide your credentials:</Header>
               <Field
                 name='email'
                 component={this.renderEmail}

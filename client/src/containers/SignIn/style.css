@@ -26,6 +26,16 @@
     transition: 0.8s;
 }
 
+#signin-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#signin-form-directions {
+    font-weight: lighter;
+    font-style: italic;
+}
+
 /* Mobile styling */
 
 /* #signin-container-mobile {

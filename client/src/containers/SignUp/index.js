@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Grid, Form, Segment, Button } from 'semantic-ui-react';
+import { Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 // import LanguageSelect from '../../components/LanguageSelect';
 import axios from 'axios';
@@ -67,6 +67,8 @@ class SignUp extends Component {
         <Grid.Column width={8}>
           <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
             <Segment id="signup-form" stacked>
+              <Header id="signup-header" as="h1">Sign Up and Start Chatting!</Header>
+              <Header id="signup-form-directions" as="h4">Please fill out the following information:</Header>
               <Field
                 name='firstName'
                 component={this.renderNames}
