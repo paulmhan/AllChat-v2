@@ -13,28 +13,36 @@ const Developers = props => (
 
         </Grid.Column>
         <Grid.Column width={8}>
-            <Grid.Row>
-                <Grid.Column>
-                    <Header id="contact" as="h1">Contact Us</Header>
-                </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-                <Grid.Column>
-                    <Link to="/contact"><Header id="feedback" as="h3"><Icon name="envelope" />Send Feedback</Header></Link>
-                </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-                <Grid.Column>
-                    <Header id="developed" as="h1">Developed By</Header>
-                </Grid.Column>
-            </Grid.Row>
-            <Grid.Row>
-                <Grid.Column>
-                    <Image id="paul" avatar circular size="tiny" src={Paul} />
-                    <Image id="suneetha" avatar circular size="tiny" src={Suneetha} />
-                    <Image id="james" avatar circular size="tiny" src={ProfilePlaceholder} />
-                </Grid.Column>
-            </Grid.Row>
+            <Grid>
+                <Grid.Row>
+                    <Grid.Column width={8}>
+                        <Grid.Row>
+                            <Grid.Column>
+                                <Header id="contact" as="h1">Contact Us</Header>
+                            </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row>
+                            <Grid.Column>
+                                <Link to="/contact"><Header id="feedback" as="h3"><Icon name="envelope" />Send Feedback</Header></Link>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid.Row>
+                            <Grid.Column>
+                                <Header id="developed" as="h1">Developers</Header>
+                            </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row>
+                            <Grid.Column>
+                                <Image href="https://github.com/paulmhan" target=":blank" id="paul" circular size="tiny" src={Paul} />
+                                <Image href="https://github.com/suneethaburla" target=":blank" id="suneetha" circular size="tiny" src={Suneetha} />
+                                <Image href="https://github.com/jpgeib" target=":blank" id="james" circular size="tiny" src={ProfilePlaceholder} />
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
         </Grid.Column>
     </Grid>
 );
