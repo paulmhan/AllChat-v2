@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import Content from "../../content.js";
 import "./style.css";
 import Developers from "../../components/Developers";
 import { loadUser } from "../../actions/auth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
+
 
 class LandingPage extends Component {
 
@@ -29,8 +31,8 @@ class LandingPage extends Component {
                         </Grid.Row>
                         <Grid.Row centered>
                             <Grid.Column id="text1" width={16}>
-                                <h5 id="paragraph">As communication continues to increase on a global scale, so too does the demand for quick, reliable translation.
-                                With AllChat, you can talk to anyone across the world, even if you don't speak their language!
+                                <h5 id="paragraph">
+                                    {Content.landingpage.es}
                                 </h5>
                             </Grid.Column>
                         </Grid.Row>
