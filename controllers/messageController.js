@@ -1,6 +1,5 @@
 const { Room, User, Message } = require('../models/index');
 const axios = require('axios');
-require('dotenv').config();
 const apiKey = process.env.REACT_APP_API_KEY;
 
 module.exports = {
