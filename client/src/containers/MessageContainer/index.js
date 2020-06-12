@@ -61,5 +61,5 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { translateMessage})(MessageContainer)
+export default connect(mapStateToProps, { translateMessage })(MessageContainer)
 // export default MessageContainer;
