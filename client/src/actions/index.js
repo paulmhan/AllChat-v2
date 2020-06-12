@@ -1,4 +1,4 @@
-import { TRANSLATE_MESSAGE } from "../types";
+import { TRANSLATE_MESSAGE } from "./types";
 import axios from "axios";
 
 

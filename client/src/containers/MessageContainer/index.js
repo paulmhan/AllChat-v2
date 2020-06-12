@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Message, Button, Icon } from "semantic-ui-react";
-import moment from 'moment';
 import { connect } from 'react-redux';
-import DeleteMessageModal from "../../containers/DeleteMessageModal";
+import moment from 'moment';
+import MessageItem from "../../components/MessageItem";
 import "./style.css";
-import { translateMessage } from "../../actions/api";
+import { translateMessage } from "../../actions";
 
 
 class MessageContainer extends Component {
@@ -29,33 +28,24 @@ class MessageContainer extends Component {
   render() {
     return (
       <div className="ui message" id="message-container">
-        {this.props.room.messages?.map((message, index) =>
-          message.userId === this.props.user._id ?
-          <div id="owner" key={index}>
-            <p id="timeStamp">
-              <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
-            </p>
-            <Message.Header> <p id="message-text"><small>{message.text}</small></p></Message.Header>
-            <a id="translate" size='mini' href="#" onClick={() => this.props.translateMessage({message, language:this.props.user.language})}><span>See translation</span></a>
-            <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />
-          </div> 
-          : 
-          <div id="message" key={index}>
-            <p id="timeStamp">
-              <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
-            </p>
-            <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
-            <a id="translate" size='mini' href="#" onClick={() => this.props.translateMessage({message, language:this.props.user.language})}><span>See translation</span></a>
-</div>
-          )}
-        </div>
+        {this.props.room.messages?.map((message, index) => 
+        <MessageItem 
+          message={message} 
+          key={index} 
+          user={this.props.user} 
+          translateMessage={this.props.translateMessage} 
+          deleteMessage={this.props.deleteMessage} 
+          roomId={this.props.room._id}
+        /> 
+        )}
+      </div>
     )
-        }
+  }
 };
 
 function mapStateToProps(state) {
   return {
-          user: state.auth.currentUser,
+    user: state.auth.currentUser,
   }
 }
 
