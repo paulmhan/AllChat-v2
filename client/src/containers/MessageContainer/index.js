@@ -35,10 +35,10 @@ class MessageContainer extends Component {
           message.userId === this.props.user._id ?
           <div id="owner" key={index}>
             <p id="timeStamp">
-              <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
+              <span id="owner-date">{moment(message.dateCreated).format('l, h:mm a')}</span>
             </p>
-            <Message.Header> <p id="message-text"><small>{message.text}</small></p></Message.Header>
-            <a id="translate" size='mini' href="#" onClick={() => this.props.translateMessage({message, language:this.props.user.language})}><span>See translation</span></a>
+            <Message.Header> <p id="owner-text"><small>{message.text}</small></p></Message.Header>
+            <a id="owner-translate" size='mini' href="#" onClick={() => this.props.translateMessage({message, language:this.props.user.language})}><span>See translation</span></a>
             <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />
           </div> 
           : 

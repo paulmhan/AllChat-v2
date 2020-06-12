@@ -12,16 +12,20 @@
 
 #message {
     background-color: white;
-    /* border: solid black 2px; */
     padding: 10px;
     border-radius: 10px;
     margin: 20px 0;
+    width: 50%;
+    max-width: 50%;
 }
 
 #owner {
     text-align: right;
-    border: solid blue 1px;
-
+    background-color: #32CD33;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0;
+    
 }
 
 #message-text {
@@ -29,6 +33,13 @@
     margin-left: 10px;
     margin-right: 10px;
 
+}
+
+#owner-text {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
 }
 
 #date {
@@ -40,12 +51,19 @@
     margin-left: 10px;
     margin-right: 10px;
     font-size: 10px;
-    /* background-color: #32CD33; */
     color: #32CD33;
-    /* border: solid #32CD33 1px; */
-    transition: 0.5s;
 }
 
+#owner-translate {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 10px;
+    color: white
+}
+
+#owner-date {
+    color: white;
+}
 
 #delete-message-btn {
     background-color: #F22225;
