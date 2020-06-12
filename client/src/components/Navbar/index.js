@@ -15,7 +15,7 @@ const Navbar = props => (
     {!props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup"><Icon name="signup" />Sign Up</Menu.Item>}
     {props.isLoggedIn && props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content="Chatrooms" id="chatrooms" />}
     {props.isLoggedIn ?
-      <Dropdown item text={`Logged in: ${props.currentUser}`}>
+      <Dropdown item text={`Logged in: ${props.user}`}>
         <Dropdown.Menu>
           <Dropdown.Item as={Link} to='/' onClick={props.signOut}>
             <Icon name="sign-out" />Sign Out

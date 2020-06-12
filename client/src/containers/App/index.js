@@ -15,7 +15,7 @@ class App extends Component {
   render () {
     return (
       <div>
-          <Navbar isLoggedIn={this.props.authenticated}/>
+          <Navbar user={this.props.user} isLoggedIn={this.props.authenticated}/>
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
           <Route exact path='/chat' component={Chat}/>
@@ -28,7 +28,10 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return { authenticated: state.auth.authenticated };
+  return { 
+    authenticated: state.auth.authenticated,
+    user: state.auth.currentUser
+  };
 }
 
 export default connect(mapStateToProps,  {})(App);
