@@ -25,15 +25,15 @@ const Developers = props => (
                 
                 <Grid.Column width={16}>
                     <Header id="powered" as="h1">Powered by:</Header>
-                    <Image href="https://socket.io/" target=":blank" size="tiny" src={SocketLogo} />
-                    <Image href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
+                    <Image id="socket" href="https://socket.io/" target=":blank" size="tiny" src={SocketLogo} />
+                    <Image id="semantic" href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
                 </Grid.Column>
             </Grid>
         </Grid.Column>
         <Grid.Column width={4}>
             <Grid.Row>
                 <Grid.Column>
-                    <Header id="contact" as="h1">Contact Us</Header>
+                    <Header id="contact" as="h1">Contact</Header>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
