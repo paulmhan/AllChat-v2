@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../actions/socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "./../actions/socketTypes";
 import{ TRANSLATE_MESSAGE} from "./../actions/types";
 const INITIAL_STATE = {
     messages: [],
@@ -14,13 +14,20 @@ export default function (state = INITIAL_STATE, action) {
         case NEW_MESSAGE:
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
         case TRANSLATE_MESSAGE:
-            const  newMessage   = action.payload;
+            const  {newMessage}   = action.payload
+            console.log(newMessage, "reducer newMessage")
+            // return { ...state, activeRoom: { ...state.activeRoom, messages: [...state.activeRoom.messages, newMessage] }};
             return {
                 ...state, activeRoom: {
                     ...state.activeRoom, messages: state.activeRoom.messages.filter(message => {
-                        return message._id === newMessage._id
-                            ? newMessage
-                            : message
+                        console.log(message._id);
+                        console.log(newMessage._id)
+                       if(message._id == newMessage._id) {
+                        message.text =  newMessage.text
+                       }
+                       return message;
+                            // ? newMessage
+                            // : message
                             
                     })
                 }
