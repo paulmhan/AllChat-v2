@@ -1,14 +1,13 @@
 const passport = require('passport');
 const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt');
 const LocalStrategy = require('passport-local');
-const { secret } = require('../config');
 const User = require('../models/User');
 
 // Setup options for JwT
 const jwtOptions = {
   // Look specifically from the header where it's called authorization
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-  secretOrKey: process.env.SECRET || secret,
+  secretOrKey: process.env.SECRET,
 };
 
 // Create JWT Strategy for handling JWT
