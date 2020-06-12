@@ -10,7 +10,6 @@ const MessageSchema = new Schema({
     type: Date,
     default: moment().format()
   },
-    // Make Mongoose use Unix time (seconds since Jan 1, 1970)
   userId: { 
     type: Schema.Types.ObjectId, 
     ref: 'UserId' 

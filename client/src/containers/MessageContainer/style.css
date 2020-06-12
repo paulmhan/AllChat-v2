@@ -60,3 +60,6 @@
     transition: 0.8s;
 }
 
+.cursor{
+    cursor: pointer ;
+}

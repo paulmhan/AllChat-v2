@@ -73,24 +73,20 @@ io.on("connection", socket => {
 
 
     socket.on("getActiveRoom", data => {
-        // const {roomId, user} = data;
         socket.join(data.roomId);
         roomController.getActiveRoom(data, activeRoom => {
             io.to(data.roomId).emit("activeRoom", activeRoom);
-            // socket.broadcast.to(data.roomId).emit("activeRoom", activeRoom);
-            io.to(data.roomId).emit("userJoinMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has joined the chat` });
+            io.to(data.roomId).emit("userJoinMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} Has Joined the Chat at` });
         })
     })
 
     socket.on("leaveRoom", data => {
-        // const { room, user} = data;
         socket.leave(data.room._id);
-        io.to(data.room._id).emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has left the chat` });
-        socket.emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has left the chat` });
+        io.to(data.room._id).emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName}Has Left the Chat at` });
+        socket.emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} Has Left the Chat at` });
         roomController.getActiveRoomAfterDelete(data, activeRoom => {
             socket.broadcast.to(data.room._id).emit("activeRoom", activeRoom);
         })
-        // console.log("left message sent");
     })
 
     socket.emit("disconnect", () => {

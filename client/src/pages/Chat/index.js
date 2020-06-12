@@ -20,13 +20,9 @@ class Chat extends Component {
     async componentDidMount() {
         this.props.subscribeToMessageFromServer();
         this.props.user || await this.props.loadUser();
-        // window.addEventListener('beforeunload', this.props.leaveRoom, false);
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const roomId = urlParams.get('room');
-        // console.log("----------------------------");
-        // console.log("GETTING USER");
-        // console.log(this.props.user);
         const data = { roomId, user: this.props.user };
         await this.props.getActiveRoom(data);
     }
@@ -35,25 +31,20 @@ class Chat extends Component {
         this.props.unsubscribeMessage();
         const user = this.props.user;
         const room = this.props.room;
-        // window.removeEventListener('beforeunload', this.props.leaveRoom, false);
         this.props.leaveRoom({ room, user });
     }
 
     componentDidUpdate(prevProps) {
         if (this.props.room?.messages?.length !== prevProps.room?.messages?.length) {
-          this.scrollToBottom();
+            this.scrollToBottom();
         }
         if (this.props.userJoin !== prevProps.userJoin && this.props.userJoin !== "") {
-            //margin auto
-            // const div = document.createElement("div").setAttribute;
-            // document.getElementById('message-container').append(`-----${this.props.userJoin}-----`)
             this.scrollToBottom();
-          }
-          if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
-            // document.getElementById('message-container').append(`-----${this.props.userLeft}-----`)
+        }
+        if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
             this.scrollToBottom();
-          }
-      }
+        }
+    }
 
     scrollToBottom = () => {
         let chatTextArea = document.getElementById("message-container");
@@ -64,7 +55,6 @@ class Chat extends Component {
     };
 
     handleMessageSubmit = (formValues, dispatch) => {
-        // console.log(formValues);
         const user = this.props.user;
         const room = this.props.room;
         this.props.sendMessage({ formValues, user, room });
@@ -72,7 +62,6 @@ class Chat extends Component {
         if (formValues === "") {
             console.log("You must enter a message");
         };
-        // this.scrollToBottom();
     }
 
     renderMessageInput = ({ input, meta }) => {
@@ -103,13 +92,12 @@ class Chat extends Component {
                 </Grid.Column>
                 <Grid.Column width={13}>
                     <MessageContainer
-                        // messages={this.props.room.messages}
                         room={this.props.room}
                         userJoin={this.props.userJoin}
                         userLeft={this.props.userLeft}
                         deleteMessage={this.props.deleteMessage}
                         user={this.props.user}
-                        
+
                     />
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
@@ -117,7 +105,7 @@ class Chat extends Component {
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
-                                    onKeyPress={this.handleKeyUp} 
+                                    onKeyPress={this.handleKeyUp}
                                     fluid
                                 />
                             </Grid.Column>
@@ -150,9 +138,6 @@ function mapStateToProps(state) {
         userLeft: state.socket.userLeft,
     }
 }
-
-
-// export default requireAuth(connect(mapStateToProps, { subcribeToMessageFromServer, sendMessage })(Chat));
 
 export default compose(
     reduxForm({ form: "chat" }),

@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
-// import LanguageSelect from '../../components/LanguageSelect';
 import axios from 'axios';
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
 import "./style.css";
+
 class SignUp extends Component {
   onSubmit = async (formValues, dispatch) => {
     try {

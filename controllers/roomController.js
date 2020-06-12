@@ -3,12 +3,8 @@ const { Room, User } = require('../models/index');
 module.exports = {
     createRoom: async (data, cb) => {
         const { roomName, userId } = data;
-        // console.log(data);
         try {
             const newRoom = await new Room({ text: roomName, creator: userId }).save();
-            console.log("---------------------------------------");
-            console.log("ROOM CREATED");
-            console.log("---------------------------------------");
             cb([newRoom]);
         } catch (error) {
             throw error;
@@ -26,9 +22,6 @@ module.exports = {
                     console.log("No Rooms");
                     cb("Error");
                 }
-                console.log("---------------------------------------");
-                console.log("ROOM DELETED");
-                console.log("---------------------------------------");
                 cb(rooms);
             }
         } catch (error) {

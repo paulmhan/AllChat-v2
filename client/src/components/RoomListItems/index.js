@@ -38,7 +38,6 @@ export default (props) => {
                     color='blue'
                     content='Join Room'
                     size='small'
-                  // onClick={() => props.joinRoom({ user:props.user, room})} 
                   />
                 </Link>
               </List.Content>
