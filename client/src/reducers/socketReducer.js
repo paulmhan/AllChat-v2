@@ -8,14 +8,11 @@ const INITIAL_STATE = {
     activeRoom: {},
 };
 
-//have case on leave room, empty out the messages
 
 export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case NEW_MESSAGE:
-            // console.log(action.payload.messages);
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
-            // return { ...state, activeRoom: { ...state.activeRoom, messages: [...state.activeRoom.messages, action.payload.newMessage] }};
         case TRANSLATE_MESSAGE:
             const  {newMessage}   = action.payload
             console.log(newMessage, "reducer newMessage")
@@ -27,6 +24,7 @@ export default function (state = INITIAL_STATE, action) {
                         console.log(newMessage._id)
                        if(message._id == newMessage._id) {
                         message.text =  newMessage.text
+                        message.originLanguage = newMessage.originLanguage
                        }
                        return message;
                             // ? newMessage
