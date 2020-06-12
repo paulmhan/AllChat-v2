@@ -18,7 +18,7 @@ function tokenForUser(user) {
 module.exports = {
   signUp: async (req, res) => {
     const { email, password, firstName, lastName, language } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     if (!firstName || !lastName) {
       return res.status(422).json({ error: 'You must provide a first and last name.' });
     }

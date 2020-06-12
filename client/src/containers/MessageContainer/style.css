@@ -18,13 +18,22 @@
     margin: 20px 0;
 }
 
+#owner {
+    text-align: right;
+    border: solid blue 1px;
+
+}
+
 #message-text {
     font-size: 20px;
     margin-left: 10px;
+    margin-right: 10px;
+
 }
 
 #date {
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 #translate {
@@ -37,11 +46,6 @@
     transition: 0.5s;
 }
 
-#translate-btn:hover {
-    background-color: transparent;
-    color:  #32CD33;
-    transition: 0.8s;
-}
 
 #delete-message-btn {
     background-color: #F22225;
