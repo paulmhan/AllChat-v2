@@ -26,8 +26,6 @@ class MessageContainer extends Component {
   }
 
 
-
-
   render() {
     return (
       <div className="ui message" id="message-container">

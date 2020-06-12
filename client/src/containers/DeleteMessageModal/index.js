@@ -24,7 +24,6 @@ class DeleteMessageModal extends Component {
     const { open, closeOnEscape } = this.state;
     return (
       <Modal
-        // trigger={<Button id="DeleteMessageBtn-Outer" onClick={this.closeConfigShow(false, true)} icon='archive' size='small' />}
         trigger={<a id="delete" href="#" onClick={this.closeConfigShow(false, true)}>Delete</a>}
         basic
         open={open}
