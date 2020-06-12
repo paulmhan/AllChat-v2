@@ -1,10 +1,16 @@
-.contact-header{
-    text-align:center;
-    font-size: 60px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
+#contact-container{
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto; /*This will automatically center anything*/
 }
 
-#header{
-    font-size:60px;
+#contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#contact-form-directions {
+    font-weight: lighter;
+    font-style: italic;
 }

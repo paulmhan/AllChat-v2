@@ -27,10 +27,10 @@ class MessageItem extends Component {
                 {this.props.message.userId === this.props.user._id
             ? <div id="owner">
                     <p id="timeStamp">
-                        <span id="date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
+                        <span id="owner-date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
                     </p>
-                    <Message.Header> <p id="message-text"><small>{this.props.message.text}</small></p></Message.Header>
-                    <span id="translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
+                    <Message.Header> <p id="owner-text"><small>{this.props.message.text}</small></p></Message.Header>
+                    <span id="owner-translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
                         <span className="cursor">{this.state.translated ? "See Original" : "See Translation"}</span>
                     </span>
                     <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={this.props.message} roomId={this.props.roomId} />

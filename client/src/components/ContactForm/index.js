@@ -50,7 +50,6 @@ class ContactForm extends Component {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
       <>
-        <Grid id="contact-container">
           <Form id="contact-form" onSubmit={this.props.submit} method="POST">
             <Field
               onChange={this.props.handleInputChange}
@@ -108,9 +107,6 @@ class ContactForm extends Component {
             </Button>
             <p>{this.props.success}</p>
           </Form>
-        </Grid>
-
-        
       </>
     );
   }
