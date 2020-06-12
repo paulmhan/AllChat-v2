@@ -8,7 +8,7 @@ import reduxThunk from 'redux-thunk';
 import socketMiddleware from "./reduxMiddlewares";
 import App from './containers/App';
 import reducers from './reducers';
-// require('dotenv').config();
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true }) || compose;
 // 1st param is our reducers

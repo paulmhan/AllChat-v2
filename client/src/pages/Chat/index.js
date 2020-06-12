@@ -86,6 +86,11 @@ class Chat extends Component {
         );
     }
 
+    handleKeyUp = (event) => {
+        console.log("hello");
+        console.log(event.keyCode)
+    }
+
     render() {
         const { handleSubmit } = this.props;
         return (
@@ -112,6 +117,7 @@ class Chat extends Component {
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
+                                    onKeyPress={this.handleKeyUp} 
                                     fluid
                                 />
                             </Grid.Column>

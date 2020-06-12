@@ -10,3 +10,9 @@
     color: #F22225;
     transition: 0.8s;
 }
+
+#delete {
+    margin-left: 1px;
+    color:red;
+    font-size: 10px;
+}

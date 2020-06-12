@@ -18,12 +18,14 @@ export default function (state = INITIAL_STATE, action) {
             // return { ...state, activeRoom: { ...state.activeRoom, messages: [...state.activeRoom.messages, action.payload.newMessage] }};
         case TRANSLATE_MESSAGE:
             const  newMessage   = action.payload
+            // console.log(newMessage, "reducer newMessage")
             return {
                 ...state, activeRoom: {
                     ...state.activeRoom, messages: state.activeRoom.messages.filter(message => {
                         return message._id === newMessage._id
                             ? newMessage
                             : message
+                            
                     })
                 }
             }

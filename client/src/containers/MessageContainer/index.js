@@ -5,17 +5,6 @@ import { connect } from 'react-redux';
 import DeleteMessageModal from "../../containers/DeleteMessageModal";
 import "./style.css";
 import { translateMessage } from "../../actions/api";
-require("dotenv").config();
-const { Translate } = require('@google-cloud/translate').v2;
-
-
-const projectId = process.env.GOOGLE_PROJECT_ID;
-
-// Instantiates a client
-const translate = new Translate({
-  projectId,
-  keyFilename: "./AllChatKey.json",
-});
 
 
 class MessageContainer extends Component {
@@ -25,7 +14,7 @@ class MessageContainer extends Component {
       //margin auto
       const div = document.createElement("div");
       div.className = "joined";
-      div.textContent = `-----${this.props.userJoin}-----`;
+      div.textContent = `-----${this.props.userJoin}${moment().format('l, h:mm a')}-----`;
       document.getElementById('message-container').append(div);
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
@@ -35,6 +24,9 @@ class MessageContainer extends Component {
       document.getElementById('message-container').append(div);
     }
   }
+
+
+
 
   render() {
     return (
@@ -46,7 +38,7 @@ class MessageContainer extends Component {
               <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
             </p>
             <Message.Header> <p id="message-text"><small>{message.text}</small></p></Message.Header>
-            <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
+            <a id="translate" size='mini' href="#" onClick={() => this.props.translateMessage({message, language:this.props.user.language})}><span>See translation</span></a>
             <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={message} roomId={this.props.room._id} />
           </div> 
           : 
@@ -55,7 +47,7 @@ class MessageContainer extends Component {
               <span id="date">{moment(message.dateCreated).format('l, h:mm a')}</span>
             </p>
             <Message.Header> <p id="message-text"><small>{message.firstName}&nbsp;{message.lastName}:&nbsp;{message.text}</small></p></Message.Header>
-            <Button id="translate-btn" size='mini' onClick={() => this.props.translateMessage(message, this.props.user.language)}>See translation</Button>
+            <a id="translate" size='mini' href="#" onClick={() => this.props.translateMessage({message, language:this.props.user.language})}><span>See translation</span></a>
 </div>
           )}
         </div>
