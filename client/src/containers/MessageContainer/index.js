@@ -15,7 +15,7 @@ class MessageContainer extends Component {
       //margin auto
       const div = document.createElement("div");
       div.className = "joined";
-      div.textContent = `-----${this.props.userJoin}-----`;
+      div.textContent = `-----${this.props.userJoin}${moment().format('l, h:mm a')}-----`;
       document.getElementById('message-container').append(div);
     }
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
@@ -25,6 +25,9 @@ class MessageContainer extends Component {
       document.getElementById('message-container').append(div);
     }
   }
+
+
+
 
   render() {
     return (
