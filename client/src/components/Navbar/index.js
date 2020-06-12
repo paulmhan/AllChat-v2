@@ -7,7 +7,10 @@ import { connect } from 'react-redux';
 import { compose } from "redux";
 import "./style.css";
 
-const Navbar = props => (
+
+const Navbar = props => {
+  console.log(props.user);
+  return(
   <Menu secondary widths={12} id="navbar">
     <Menu.Item position="left">
       <AllChatTitle />
@@ -15,7 +18,7 @@ const Navbar = props => (
     {!props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup"><Icon name="signup" />Sign Up</Menu.Item>}
     {props.isLoggedIn && props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content="Chatrooms" id="chatrooms" />}
     {props.isLoggedIn ?
-      <Dropdown item text={`Logged in: ${props.currentUser}`}>
+      <Dropdown item text={`Logged in: ${props.user?.firstName} ${props.user?.lastName}`}>
         <Dropdown.Menu>
           <Dropdown.Item as={Link} to='/' onClick={props.signOut}>
             <Icon name="sign-out" />Sign Out
@@ -25,6 +28,8 @@ const Navbar = props => (
       : <Menu.Item as={Link} to='/signin' id="signin"><Icon name="sign-in" />Sign In</Menu.Item>}
   </Menu>
 );
+    }
+
 
 export default compose(
   withRouter,

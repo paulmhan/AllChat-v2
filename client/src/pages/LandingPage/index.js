@@ -3,10 +3,17 @@ import { Grid, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Developers from "../../components/Developers";
+import { loadUser } from "../../actions/auth";
+import { connect } from 'react-redux';
+import { compose } from "redux";
 
 class LandingPage extends Component {
+
+    async componentDidMount() {
+        this.props.user || await this.props.loadUser();
+    }
+
     render() {
-        console.log(this.props.isLoggedIn);
         return (
         <>
             <Grid id="landing-container">
@@ -52,7 +59,11 @@ class LandingPage extends Component {
         )
     }
 }
-export default LandingPage;
+
+export default compose(
+    connect(null, { loadUser }),
+)(LandingPage)
+
 
 // import React, { Component } from "react";
 // import { Responsive, Grid, Button } from "semantic-ui-react";
