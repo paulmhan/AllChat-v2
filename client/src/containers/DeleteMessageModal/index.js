@@ -41,7 +41,7 @@ class DeleteMessageModal extends Component {
             onClick={() => this.deleteMessageAndClose()}>
             <Icon name='remove' /> Delete
       </Button>
-      <a id="delete" href="#" onClick={() => this.deleteMessageAndClose()}>Delete</a>
+      <a id="delete" href="#" onClick={() => this.deleteMessageAndClose()}></a>
         </Modal.Actions>
         
       </Modal>
