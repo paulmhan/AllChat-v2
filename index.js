@@ -5,7 +5,6 @@ const routes = require("./routes");
 const roomController = require("./controllers/roomController");
 const userController = require("./controllers/userController");
 const messageController = require("./controllers/messageController");
-const { secret } = require("./config");
 const jwt = require("jwt-simple");
 
 
@@ -61,7 +60,7 @@ io.on("connection", socket => {
 
     socket.on("deleteRoom", data => {
         //data is { token:"asdasd", payload: "id of room" }
-        let decoded = jwt.decode(data.token, secret);
+        let decoded = jwt.decode(data.token, process.env.SECRET);
         // decoded = { sub: 'asdada', iat: TimeStamp}
         //decoded.sub is id of user
         roomController.deleteRoomById(data.payload, decoded.sub, rooms => {
