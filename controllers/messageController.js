@@ -23,18 +23,18 @@ module.exports = {
     translateMessage: async (req, res) => {
         const {message, language} = req.body;
         try {
-        const apiRes = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${language}&q=${message.text}&key=${process.env.REACT_APP_API_KEY}`);
-        // console.log(apiRes, "res");
-        const translation = apiRes.data.data.translations[0].translatedText;
-        const newMessage = message;
-        newMessage.text = translation;
-        console.log(newMessage)  
-        return res.json({newMessage})
-        
+            const apiRes = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${language}&q=${encodeURIComponent(message.text)}&key=${process.env.REACT_APP_API_KEY}`);
+            const translation = apiRes.data.data.translations[0].translatedText;
+            const newMessage = message;
+            newMessage.text = translation;
+            newMessage.originLanguage = apiRes.data.data.translations[0].detectedSourceLanguage;
+            console.log(newMessage)  
+            return res.json({newMessage})
         } catch (error) {
             throw error;
         }
     },
+
     deleteMessage: async (data, cb) => {
         try {
             const currentRoom = await Room.findById(data.roomId);

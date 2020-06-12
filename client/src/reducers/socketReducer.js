@@ -24,6 +24,7 @@ export default function (state = INITIAL_STATE, action) {
                         console.log(newMessage._id)
                        if(message._id == newMessage._id) {
                         message.text =  newMessage.text
+                        message.originLanguage = newMessage.originLanguage
                        }
                        return message;
                             // ? newMessage

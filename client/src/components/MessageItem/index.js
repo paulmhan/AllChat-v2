@@ -12,7 +12,11 @@ class MessageItem extends Component {
     }
 
     runTranslate = (message, language) => {
-        this.props.translateMessage({ message, language });
+        if(this.state.translated){
+        this.props.translateMessage({ message, language: message.originLanguage });
+        } else {
+            this.props.translateMessage({ message, language });
+        }
         this.setState({ translated: !this.state.translated });
     }
 
@@ -27,7 +31,7 @@ class MessageItem extends Component {
                     </p>
                     <Message.Header> <p id="message-text"><small>{this.props.message.text}</small></p></Message.Header>
                     <span id="translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
-                        <span>{this.state.translated ? "See Original" : "See Translation"}</span>
+                        <span className="cursor">{this.state.translated ? "See Original" : "See Translation"}</span>
                     </span>
                     <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={this.props.message} roomId={this.props.roomId} />
                 </div>
@@ -37,7 +41,7 @@ class MessageItem extends Component {
                     </p>
                     <Message.Header> <p id="message-text"><small>{this.props.message.firstName}&nbsp;{this.props.message.lastName}:&nbsp;{this.props.message.text}</small></p></Message.Header>
                     <span id="translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
-                        <span>{this.state.translated ? "See Original" : "See Translation"}</span>
+                        <span className="cursor">{this.state.translated ? "See Original" : "See Translation"}</span>
                     </span>
                 </div>
     }</div>

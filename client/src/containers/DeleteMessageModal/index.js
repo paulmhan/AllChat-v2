@@ -24,7 +24,7 @@ class DeleteMessageModal extends Component {
     const { open, closeOnEscape } = this.state;
     return (
       <Modal
-        trigger={<span id="delete" onClick={this.closeConfigShow(false, true)}>Delete</span>}
+        trigger={<span className="cursor" id="delete" onClick={this.closeConfigShow(false, true)}>Delete</span>}
         basic
         open={open}
         closeOnEscape={closeOnEscape}
@@ -41,7 +41,7 @@ class DeleteMessageModal extends Component {
             onClick={() => this.deleteMessageAndClose()}>
             <Icon name='remove' /> Delete
       </Button>
-      <span id="delete" onClick={() => this.deleteMessageAndClose()}></span>
+      <span className="cursor" id="delete" onClick={() => this.deleteMessageAndClose()}></span>
         </Modal.Actions>
         
       </Modal>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import MessageItem from "../../components/MessageItem";
 import "./style.css";
-import { translateMessage } from "../../actions";
+import { translateMessage } from "../../actions/api";
 
 
 class MessageContainer extends Component {
