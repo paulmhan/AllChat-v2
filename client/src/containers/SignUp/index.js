@@ -14,7 +14,7 @@ class SignUp extends Component {
       localStorage.setItem('token', data.token);
       console.log(data.user, "signup");
       dispatch({ type: AUTH_USER, payload: data });
-      this.props.history.push('/rooms');
+      this.props.history.push('/');
     } catch (e) {
       dispatch({ type: AUTH_USER_ERROR, payload: e });
     }
