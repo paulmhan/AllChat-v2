@@ -98,4 +98,18 @@ export default
             tl: "Nakalog-in",
             vi: "Đăng nhập"
         },
+        norooms: {
+            en: "No Rooms, Create One and Get Started!",
+            es: "Conectado",
+            zh: "登录",
+            ar: "تم تسجيل الدخول",
+            fr: "Connecté",
+            de: "Eingeloggt",
+            hi: "पमें लॉग इन",
+            ja: "ログインしました",
+            ko: "방 없음, 하나 만들기 및 시작!",
+            ru: "Войти в систему",
+            tl: "Nakalog-in",
+            vi: "Đăng nhập"
+        },
     }

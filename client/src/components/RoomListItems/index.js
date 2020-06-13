@@ -1,11 +1,43 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { Grid, Header, List, Button, Segment } from 'semantic-ui-react';
+import content from "../../content.js";
 import DeleteRoomModal from "../../containers/DeleteRoomModal";
 
 import "./style.css";
 
 class RoomListItems extends Component {
+
+  renderNoRooms(language){
+    switch(language){
+        case "es":
+            return content.norooms.es;
+        case "zh":
+            return content.norooms.zh;
+        case "ar":
+            return content.norooms.ar;
+        case "fr":
+            return content.norooms.fr;
+        case "de":
+            return content.norooms.de;
+        case "hi":
+            return content.norooms.hi;
+        case "ja":
+            return content.norooms.ja;
+        case "ko":
+            return content.norooms.ko;
+        case "ru":
+            return content.norooms.ru;
+        case "tl":
+            return content.norooms.tl;
+        case "vi":
+            return content.norooms.vi;
+        default:
+            return content.norooms.en;
+    }
+}
+
+
   render(){
       if (this.props.rooms.length === 0) {
         return (
@@ -13,7 +45,7 @@ class RoomListItems extends Component {
             <Grid>
               <Grid.Row centered>
                 <Grid.Column width={7}>
-                  <Header id="no-roooms-header" content='No Rooms, Create One and Get Started!' />
+                  <Header id="no-roooms-header" content= {this.renderNoRooms(this.props.user?.language)} />
                 </Grid.Column>
               </Grid.Row>
             </Grid>
