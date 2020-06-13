@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Grid, Button, Image } from "semantic-ui-react";
+import { Grid, Button, Image, Header, List } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Developers from "../../components/Developers";
-import PeopleChatting from "../../assets/images/people-chatting.png"
+import PeopleChatting from "../../assets/images/people-chatting.png";
+import PlaceholderGif from "../../assets/gifs/placeholder.gif";
 import { loadUser } from "../../actions/auth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
@@ -54,12 +55,33 @@ class LandingPage extends Component {
                 <Grid id="demo-container">
                     <Grid.Column width={8}>
                         <Grid container>
-
+                            <Grid.Row centered>
+                                <Image fluid id="landing-gif" alt="landing-gif" src={PlaceholderGif} />
+                            </Grid.Row>
                         </Grid>
                     </Grid.Column>
                     <Grid.Column width={8}>
                         <Grid container>
-
+                            <Grid.Row centered>
+                                <Header as="h1" id="demo-header">How AllChat Works</Header>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Grid.Column width={16}>
+                                    <List bulleted>
+                                    <List.Item className="demo-list-item">
+                                        When signing up, you can select your preferred language from the dropdown menu. (English will be selected by default if no choice is made.)
+                                    </List.Item>
+                                    <List.Item className="demo-list-item">
+                                        Then, choose which room you want to join on the room selection page. Different flags will appear for different languages.
+                                    </List.Item>
+                                    <List.Item className="demo-list-item">
+                                        After selecting a room, you can start chatting with people across the world! 
+                                        And if someone sends a message in a language you're not familiar with, you can click the
+                                        "See Translation" toggle to view a translated version of the message in your chosen language.
+                                    </List.Item>
+                                </List>
+                                </Grid.Column>
+                            </Grid.Row>
                         </Grid>
                     </Grid.Column>
                 </Grid>

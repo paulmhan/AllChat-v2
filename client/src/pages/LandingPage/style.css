@@ -78,7 +78,17 @@
     margin-top: 40px;
 }
 
+#demo-header {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+}
 
+.demo-list-item {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
 /* Mobile styling
 
