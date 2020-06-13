@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import Developers from "../../components/Developers";
 import PeopleChatting from "../../assets/images/people-chatting.png";
-import PlaceholderGif from "../../assets/gifs/placeholder.gif";
+import PlaceholderGif from "../../assets/gifs/placeholder2.gif";
 import { loadUser } from "../../actions/auth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
