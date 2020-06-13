@@ -3,9 +3,10 @@ import { Grid, Header, List, Image, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import SocketLogo from "../../assets/images/Socket-IO-Logo.svg"
 import SemanticLogo from "../../assets/images/semantic-ui-logo.png"
-import ProfilePlaceholder from "../../assets/images/Tim_Allen_headshot.jpg"
 import Paul from "../../assets/images/paul-profile.jpg";
 import Suneetha from "../../assets/images/suneetha-profile.jpg";
+import James from "../../assets/images/james-profile.jpg";
+
 
 import "./style.css";
 
@@ -63,7 +64,7 @@ const Developers = props => (
                     <Grid.Column>
                         <Image href="https://github.com/paulmhan" target=":blank" id="paul" circular size="tiny" src={Paul} />
                         <Image href="https://github.com/suneethaburla" target=":blank" id="suneetha" circular size="tiny" src={Suneetha} />
-                        <Image href="https://github.com/jpgeib" target=":blank" id="james" circular size="tiny" src={ProfilePlaceholder} />
+                        <Image href="https://github.com/jpgeib" target=":blank" id="james" circular size="tiny" src={James} />
                     </Grid.Column>
                 </Grid.Row>
             </Grid.Column>
