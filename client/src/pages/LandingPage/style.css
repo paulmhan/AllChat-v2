@@ -83,10 +83,19 @@
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
 
-.demo-list-item {
+#demo-subheader1 {
     font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#demo-subheader2 {
+    font-size: 24px;
+    text-align: center;
     margin-bottom: 10px;
 }
 

@@ -13,21 +13,6 @@ import "./style.css";
 const Developers = props => (
     <>
         <Grid id="developers-container" divided>
-            <Grid.Column width={6}>
-                <Grid.Row>
-                    <Grid.Column>
-                        <Header id="about-header" as="h1">About AllChat</Header>
-                    </Grid.Column>
-                </Grid.Row>
-                <br />
-                <Grid.Row>
-                    <Grid.Column>
-                        <p id="about-text">AllChat is a messaging app powered by Socket.IO and Semantic UI React.
-                        Utilizing the Google Translate API, you can send messages to people all over the world,
-                        and even if you don't speak the same language, you can translate their message on the spot!</p>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid.Column>
             <Grid.Column width={2}>
                 <Grid.Row>
                     <Grid.Column>
@@ -39,6 +24,20 @@ const Developers = props => (
                     <Grid.Column>
                         <Image id="socket" href="https://socket.io/" target=":blank" size="tiny" src={SocketLogo} />
                         <Image id="semantic" href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid.Column>
+            <Grid.Column width={6}>
+                <Grid.Row>
+                    <Grid.Column>
+                        <Header id="about-header" as="h1">About AllChat</Header>
+                    </Grid.Column>
+                </Grid.Row>
+                <br />
+                <Grid.Row>
+                    <Grid.Column>
+                        <p id="about-text">AllChat is a messaging app built with React/Redux and powered by Socket.IO and Semantic UI React,
+                        and Google Translate API. If you have any suggestions for improvement, feel free to send us your feedback through our contact form.</p>
                     </Grid.Column>
                 </Grid.Row>
             </Grid.Column>

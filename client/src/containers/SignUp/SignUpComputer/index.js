@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
-import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Responsive, Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
 import PeopleChatting from "../../../assets/images/people-chatting.png";
@@ -66,11 +66,11 @@ class SignUpComputer extends Component {
     render() {
         const { handleSubmit, invalid, submitting, submitFailed } = this.props;
         return (
-            <Grid id="signup-container-computer">
-                <Grid.Column width={8}>
+            <Responsive as={Grid} {...Responsive.onlyComputer} maxWidth={1199} id="signup-container-computer">
+                <Responsive as={Grid.Column} {...Responsive.onlyComputer} maxWidth={1199} width={8}>
                 <Image fluid id="signup-page-image-computer" alt="people-chatting" src={PeopleChatting} />
-                </Grid.Column>
-                <Grid.Column width={8}>
+                </Responsive>
+                <Responsive as={Grid.Column} {...Responsive.onlyComputer} maxWidth={1199} width={8}>
                     <Form id="signup-form-container-computer" size='large' onSubmit={handleSubmit(this.onSubmit)}>
                         <Segment id="signup-form-computer" stacked>
                             <Header id="signup-header-computer" as="h1">Sign Up and Start Chatting!</Header>
@@ -164,8 +164,8 @@ class SignUpComputer extends Component {
                             </Button>
                         </Segment>
                     </Form>
-                </Grid.Column>
-            </Grid>
+                </Responsive>
+            </Responsive>
         );
     }
 }
