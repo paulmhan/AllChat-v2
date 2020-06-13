@@ -69,6 +69,35 @@ class Navbar extends Component {
     }
   }
 
+  renderLoggedIn(language) {
+    switch (language) {
+      case "es":
+        return content.logged.es;
+      case "zh":
+        return content.logged.zh;
+      case "ar":
+        return content.logged.ar;
+      case "fr":
+        return content.logged.fr;
+      case "de":
+        return content.logged.de;
+      case "hi":
+        return content.logged.hi;
+      case "ja":
+        return content.logged.ja;
+      case "ko":
+        return content.logged.ko;
+      case "ru":
+        return content.logged.ru;
+      case "tl":
+        return content.logged.tl;
+      case "vi":
+        return content.logged.vi;
+      default:
+        return content.logged.en;
+    }
+  }
+
 
   render() {
     return (
@@ -79,7 +108,7 @@ class Navbar extends Component {
         {!this.props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup"><Icon name="signup" />Sign Up</Menu.Item>}
         {this.props.isLoggedIn && this.props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content={this.renderRooms(this.props.user?.language)} id="chatrooms" />}
         {this.props.isLoggedIn ?
-          <Dropdown id="user-dropdown" item text={`Logged in: ${this.props.user?.firstName} ${this.props.user?.lastName}`}>
+          <Dropdown id="user-dropdown" item text={`${this.renderLoggedIn(this.props.user?.language)}: ${this.props.user?.firstName} ${this.props.user?.lastName}`}>
             <Dropdown.Menu>
               <Dropdown.Item as={Link} to='/' onClick={this.props.signOut}>
                 <Icon name="sign-out" />

@@ -84,4 +84,18 @@ export default
             tl: "Mag-sign Out",
             vi: "Đăng xuất"
         },
+        logged: {
+            en: "Logged In",
+            es: "Conectado",
+            zh: "登录",
+            ar: "تم تسجيل الدخول",
+            fr: "Connecté",
+            de: "Eingeloggt",
+            hi: "पमें लॉग इन",
+            ja: "ログインしました",
+            ko: "로그인",
+            ru: "Войти в систему",
+            tl: "Nakalog-in",
+            vi: "Đăng nhập"
+        },
     }
