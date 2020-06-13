@@ -57,12 +57,26 @@ module.exports = {
     getActiveRoomAfterDelete: async (data, cb) => {
         try {
             const activeRoom = await Room.findById(data.room._id).populate("messages");
-            const userName = data.user.firstName.concat(" ",data.user.lastName);
+            const userName = data.user.firstName.concat(" ", data.user.lastName);
             activeRoom.users.pull(userName);
             await activeRoom.save();
             cb(activeRoom);
         } catch (error) {
             throw error;
+
+        }
+    },
+
+    getActiveRoomAfterLeave: async (data, cb) => {
+        try {
+            const activeRoom = await Room.findById(data.roomId).populate("messages");
+            const userName = data.firstName.concat(" ", data.lastName);
+            activeRoom.users.pull(userName);
+            await activeRoom.save();
+            cb(activeRoom);
+        } catch (error) {
+            throw error;
+
 
         }
     }
