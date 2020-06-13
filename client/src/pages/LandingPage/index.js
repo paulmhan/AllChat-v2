@@ -19,6 +19,26 @@ class LandingPage extends Component {
         switch(language){
             case "es":
                 return content.landingpage.es;
+            case "zh":
+                return content.landingpage.zh;
+            case "ar":
+                return content.landingpage.ar;
+            case "nl":
+                return content.landingpage.nl;
+            case "fr":
+                return content.landingpage.fr;
+            case "de":
+                return content.landingpage.de;
+            case "hi":
+                return content.landingpage.hi;
+            case "ja":
+                return content.landingpage.ja;
+            case "ko":
+                return content.landingpage.ko;
+            case "ru":
+                return content.landingpage.ru;
+            case "vi":
+                return content.landingpage.vi;
             default:
                 return content.landingpage.en;
         }
