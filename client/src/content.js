@@ -70,4 +70,18 @@ export default
             tl: "Mga silid",
             vi: "Phòng"
         },
+        signout: {
+            en: "Sign Out",
+            es: "Desconectar",
+            zh: "登出",
+            ar: "خروج",
+            fr: "Déconnexion",
+            de: "Ausloggen",
+            hi: "प्रस्थान करें",
+            ja: "サインアウト",
+            ko: "로그 아웃",
+            ru: "Выход",
+            tl: "Mag-sign Out",
+            vi: "Đăng xuất"
+        },
     }
