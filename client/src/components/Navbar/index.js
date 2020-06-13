@@ -9,7 +9,6 @@ import "./style.css";
 
 
 const Navbar = props => {
-  console.log(props.user);
   return(
   <Menu secondary widths={12} id="navbar">
     <Menu.Item position="left">

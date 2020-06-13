@@ -29,7 +29,7 @@ require('./services/passport');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
 
 io.on("connection", socket => {
-    console.log("New client connected.");
+    console.log("New client connected.", socket.id);
     socket.on("message", data => {
         //data is {formvalues, user, room}
         messageController.createMessage(data, activeRoom => {
@@ -70,29 +70,36 @@ io.on("connection", socket => {
         });
     })
 
-
-
     socket.on("getActiveRoom", data => {
         socket.join(data.roomId);
         roomController.getActiveRoom(data, activeRoom => {
             io.to(data.roomId).emit("activeRoom", activeRoom);
-            io.to(data.roomId).emit("userJoinMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} Has Joined the Chat at` });
+            io.to(data.roomId).emit("userJoinMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has joined the Chat at` });
+            socket.room = activeRoom;
+            socket.user = data.user;
         })
     })
 
     socket.on("leaveRoom", data => {
         socket.leave(data.room._id);
-        io.to(data.room._id).emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName}Has Left the Chat at` });
-        socket.emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} Has Left the Chat at` });
+        io.to(data.room._id).emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName}has left the Chat at` });
+        socket.emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has left the Chat at` });
         roomController.getActiveRoomAfterDelete(data, activeRoom => {
             socket.broadcast.to(data.room._id).emit("activeRoom", activeRoom);
         })
     })
 
-    socket.emit("disconnect", () => {
-        console.log("Client disconnected.");
-        return;
+    socket.on("disconnect", () => {
+        console.log("Client disconnected.", socket.id);
+        io.to(socket.room._id).emit("userLeftMessage", { message: `${socket.user.firstName}\u00A0${socket.user.lastName}has left the Chat at` });
+        roomController.getActiveRoomAfterDelete(socket,  activeRoom => { 
+            io.to( socket.room._id ).emit("activeRoom", activeRoom);
+            socket.leave(socket.room._id);
+        })
     });
+
+
 });
 
 server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+

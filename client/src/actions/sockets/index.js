@@ -56,6 +56,14 @@ export const subscribeToRoomFromServer = () => dispatch => {
             payload: data,
         }),
     });
+
+    dispatch({
+        event: "activeRoom",
+        handle: data => dispatch({
+            type: ACTIVE_ROOM,
+            payload: data,
+        }),
+    });
 };
 
 export const sendMessage = data => {

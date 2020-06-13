@@ -25,14 +25,27 @@ class Chat extends Component {
         const roomId = urlParams.get('room');
         const data = { roomId, user: this.props.user };
         await this.props.getActiveRoom(data);
+        // window.addEventListener('beforeunload', function (e) {
+        //     // Cancel the event
+        //     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
+        //     // Chrome requires returnValue to be set
+        //     e.returnValue = '';
+        //     console.log("mounted")
+        //   });
     }
 
     componentWillUnmount() {
         this.props.unsubscribeMessage();
         const user = this.props.user;
         const room = this.props.room;
+        console.log("closed")
         this.props.leaveRoom({ room, user });
+        // window.removeEventListener('beforeunload', function (e) {
+        //     delete e['returnValue'];
+        //     console.log("unmounted")
+        //   });
     }
+
 
     componentDidUpdate(prevProps) {
         if (this.props.room?.messages?.length !== prevProps.room?.messages?.length) {
