@@ -1,10 +1,9 @@
 // import React, { Component } from 'react';
 // import { Field, reduxForm } from 'redux-form';
-// import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+// import { Responsive, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 // import { email, length, required } from 'redux-form-validators';
 // import axios from 'axios';
 // import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
-// import PeopleChatting from "../../assets/images/people-chatting.png";
 // import "./style.css";
 
 // class SignUp extends Component {
@@ -63,7 +62,7 @@
 //     return (
 //       <Grid id="signup-container">
 //         <Grid.Column width={8}>
-//           <Image fluid id="signup-page-image" alt="people-chatting" src={PeopleChatting} />
+//           <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
 //         </Grid.Column>
 //         <Grid.Column width={8}>
 //           <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
@@ -115,7 +114,7 @@
 //                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
 //                 <div>
 //                   <Field name="language" component="select">
-//                     <option value="en" flag="en">English</option>
+//                     <option value="en" class="ae flag">English</option>
 //                     <option value="ar" flag="cn">Arabic</option>
 //                     <option value="hy" flag="cn">Armanian</option>
 //                     <option value="bn" flag="cn">Bengali</option>
@@ -177,6 +176,7 @@
 // }
 
 // export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: ['email'] })(SignUp);
+
 
 import React, { Component } from "react";
 import SignUpComputer from "./SignUpComputer";

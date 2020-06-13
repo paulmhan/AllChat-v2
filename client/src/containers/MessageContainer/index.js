@@ -19,7 +19,7 @@ class MessageContainer extends Component {
     if (this.props.userLeft !== prevProps.userLeft && this.props.userLeft !== "") {
       const div = document.createElement("div");
       div.className = "left";
-      div.textContent = `-----${this.props.userLeft}-----`;
+      div.textContent = `-----${this.props.userLeft} ${moment().format('l, h:mm a')}-----`;
       document.getElementById('message-container').append(div);
     }
   }
