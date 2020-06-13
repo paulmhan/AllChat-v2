@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { Grid, Button } from "semantic-ui-react";
+import { Grid, Button, Image, Header, List } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import content from "../../content.js";
 import "./style.css";
 import Developers from "../../components/Developers";
+import PeopleChatting from "../../assets/images/people-chatting.png";
+import PlaceholderGif from "../../assets/gifs/placeholder2.gif";
 import { loadUser } from "../../actions/auth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
@@ -63,30 +65,62 @@ class LandingPage extends Component {
                                 <h5 id="paragraph">
                                     {this.renderSwitch(this.props.user?.language)}
                                 </h5>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row centered>
-                            <Grid.Column width={5}>
-                                {this.props.isLoggedIn ? null : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
-                            </Grid.Column>
-                        </Grid.Row>
+                                </Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Grid.Column width={5}>
+                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">Start Chatting</Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Image fluid id="landing-page-image" alt="people-chatting" src={PeopleChatting} />
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                </Grid>
 
+                <Grid id="demo-container">
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Image fluid id="landing-gif" alt="landing-gif" src={PlaceholderGif} />
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Header as="h1" id="demo-header">How AllChat Works</Header>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Grid.Column width={16}>
+                                    <List bulleted>
+                                    <List.Item className="demo-list-item">
+                                        When signing up, you can select your preferred language from the dropdown menu. (English will be selected by default if no choice is made.)
+                                    </List.Item>
+                                    <List.Item className="demo-list-item">
+                                        Then, choose which room you want to join on the room selection page. Different flags will appear for different languages.
+                                    </List.Item>
+                                    <List.Item className="demo-list-item">
+                                        After selecting a room, you can start chatting with people across the world! 
+                                        And if someone sends a message in a language you're not familiar with, you can click the
+                                        "See Translation" toggle to view a translated version of the message in your chosen language.
+                                    </List.Item>
+                                </List>
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                </Grid>
 
-                    </Grid>
-                </Grid.Column>
-                <Grid.Column width={8}>
-                    <Grid container>
-                        <Grid.Row centered>
-                            <img id="landing-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
-                        </Grid.Row>
-                    </Grid>
-                </Grid.Column>
-            </Grid>
-
-            <footer id="developers-footer">
-                <Developers />
-            </footer>
-        </>
+                <footer id="developers-footer">
+                    <Developers />
+                </footer>
+            </>
         )
     }
 }
