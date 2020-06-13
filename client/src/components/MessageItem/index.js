@@ -21,7 +21,6 @@ class MessageItem extends Component {
     }
 
     render() {
-        console.log(this.props.user);
         return (
             <Grid>
                 {this.props.message.userId === this.props.user._id

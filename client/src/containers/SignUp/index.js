@@ -114,7 +114,7 @@ class SignUp extends Component {
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
                 <div>
                   <Field name="language" component="select">
-                    <option value="en" flag="en">English</option>
+                    <option value="en" class="ae flag">English</option>
                     <option value="ar" flag="cn">Arabic</option>
                     <option value="zh" flag="zh">Chinese</option>
                     <option value="fr" flag="fr">French</option>
