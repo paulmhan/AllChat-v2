@@ -1,33 +1,56 @@
 #developers-container {
     padding: 10px;
+    width: 100%;
+    margin-top: 140px;
 }
 
-#developers-list {
-    margin-left: 20px;
+#about-header {
+    color: white;
+}
+
+#about-text {
+    color: white;
+    font-size: 18px;
 }
 
 #contact {
    margin-left: 10px;
    margin-bottom: 10px;
+   color: white;
 }
 
 #feedback {
     margin: 10px;
     margin-top: 20px;
+    color: white;
 }
 
 #developed {
-    margin: 10px;
+    color: white;
+}
+
+#powered {
+    color: white;
 }
 
 #paul {
-    margin: 10px;
+    margin-top: 10px;
+    margin-right:10px;
 }
 
 #suneetha {
-    margin: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 #james {
-    margin: 10px;
+    margin-top: 10px;
 }
+
+#socket {
+    margin-right: 10px;
+}
+
+/* #semantic {
+
+} */

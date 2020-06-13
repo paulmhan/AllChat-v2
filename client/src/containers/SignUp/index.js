@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Grid, Form, Segment, Button, Header, Flag } from 'semantic-ui-react';
+import { Responsive, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
@@ -14,7 +14,7 @@ class SignUp extends Component {
       localStorage.setItem('token', data.token);
       console.log(data.user, "signup");
       dispatch({ type: AUTH_USER, payload: data });
-      this.props.history.push('/rooms');
+      this.props.history.push('/');
     } catch (e) {
       dispatch({ type: AUTH_USER_ERROR, payload: e });
     }

@@ -12,16 +12,21 @@
 
 #message {
     background-color: white;
-    /* border: solid black 2px; */
+    border: solid 1px #c8c8c9;
     padding: 10px;
     border-radius: 10px;
-    margin: 20px 0;
+    /* margin: 20px 0; */
+    width: 50%;
+    max-width: 50%;
 }
 
 #owner {
     text-align: right;
-    border: solid blue 1px;
-
+    border: solid 1px #00b03c;
+    background-color: #dcf7e5;
+    padding: 10px;
+    border-radius: 10px;
+    
 }
 
 #message-text {
@@ -29,6 +34,13 @@
     margin-left: 10px;
     margin-right: 10px;
 
+}
+
+#owner-text {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: black;
 }
 
 #date {
@@ -40,12 +52,20 @@
     margin-left: 10px;
     margin-right: 10px;
     font-size: 10px;
-    /* background-color: #32CD33; */
-    color: #32CD33;
-    /* border: solid #32CD33 1px; */
-    transition: 0.5s;
+    color: black;
+    font-weight: lighter;
 }
 
+#owner-translate {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 10px;
+    color: black
+}
+
+#owner-date {
+    color: black;
+}
 
 #delete-message-btn {
     background-color: #F22225;
@@ -62,4 +82,12 @@
 
 .cursor{
     cursor: pointer ;
+}
+
+.left {
+    margin: 20px 0;
+}
+
+.joined {
+    margin: 20px 0;
 }

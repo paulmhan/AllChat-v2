@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DeleteMessageModal from "../../containers/DeleteMessageModal";
-import { Message  } from "semantic-ui-react";
+import { Grid, Message } from "semantic-ui-react";
 import moment from 'moment';
 
 
@@ -22,19 +22,26 @@ class MessageItem extends Component {
 
     render() {
         return (
-            <div>
+            <Grid>
                 {this.props.message.userId === this.props.user._id
-            ? <div id="owner">
+            ? <>
+            <Grid.Row>
+            <Grid.Column width={8}></Grid.Column>
+            <Grid.Column width={8} id="owner">
                     <p id="timeStamp">
-                        <span id="date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
+                        <span id="owner-date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
                     </p>
-                    <Message.Header> <p id="message-text"><small>{this.props.message.text}</small></p></Message.Header>
-                    <span id="translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
+                    <Message.Header> <p id="owner-text"><small>{this.props.message.text}</small></p></Message.Header>
+                    <span id="owner-translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
                         <span className="cursor">{this.state.translated ? "See Original" : "See Translation"}</span>
                     </span>
                     <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={this.props.message} roomId={this.props.roomId} />
-                </div>
-            : <div id="message">
+                </Grid.Column>
+                </Grid.Row>
+                </>
+            : <>
+                <Grid.Row>
+                <Grid.Column width={8} id="message">
                     <p id="timeStamp">
                         <span id="date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
                     </p>
@@ -42,8 +49,9 @@ class MessageItem extends Component {
                     <span id="translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
                         <span className="cursor">{this.state.translated ? "See Original" : "See Translation"}</span>
                     </span>
-                </div>
-    }</div>
+                </Grid.Column><Grid.Column width={8}></Grid.Column>
+                </Grid.Row></>}
+            </Grid>
         )
     }
 }

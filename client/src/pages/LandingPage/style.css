@@ -10,6 +10,7 @@
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
+    margin-top: 40px;
 }
 
 #get-started {
@@ -66,12 +67,28 @@
 
 #developers-footer {
     margin-top: 50px;
-    background-color: #B5B5B5;
+    background-color: #32CD33;
 }
 
+#demo-container {
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    margin-top: 40px;
+}
 
+#demo-header {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+}
 
-
+.demo-list-item {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
 /* Mobile styling
 

@@ -1,6 +1,12 @@
-#contact-container{
-    background-color: #F7F7F7;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto; /*This will automatically center anything*/
+#contact-submit-btn {
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#contact-submit-btn:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
 }

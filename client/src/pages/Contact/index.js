@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Grid, Header } from "semantic-ui-react";
 import ContactForm from "../../components/ContactForm";
 import emailjs from 'emailjs-com';
 import "./style.css";
@@ -6,9 +7,9 @@ import "./style.css";
 class Contact extends Component {
 
   state = {
-    name:"",
-    email:"",
-    text:"",
+    name: "",
+    email: "",
+    text: "",
     success: ""
   }
 
@@ -16,14 +17,14 @@ class Contact extends Component {
     event.preventDefault();
     emailjs.sendForm('default_service', 'template_8ThKxTDq', "#contact-form", "user_UQ5mLuD7ryVQD1fmgdrQX")
       .then(() => {
-          this.setState({
-            name:"",
-            email:"",
-            text:"",
-            success: "Message Sent Successfully"
-          })
+        this.setState({
+          name: "",
+          email: "",
+          text: "",
+          success: "Message Sent Successfully"
+        })
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
   }
 
@@ -34,34 +35,28 @@ class Contact extends Component {
 
   render() {
     return (
-      <div className="container mt-2">
-        <div className="row header">
-          <div className="col-12">
-            <h1 className="contact-header">Contact Us</h1>
-          </div>
-        </div>
-        <div className="row" align="center">
-          <div className="col-4 mx-auto">
-            <p>
-              We value all input and continously strive to make this a better application. Please feel free to contact us with suggestions and/or comments!
-            </p>
-          </div>
-        </div>
-        <ContactForm 
-        submit = { this.sendEmail }
-        handleInputChange = { this.handleInputChange }
-        username = { this.state.name }
-        useremail = { this.state.email }
-        message = { this.state.text }
-        success = { this.state.success }
-        />
-      </div>
+      <Grid id="contact-container">
+        <Grid.Column width={16}>
+          <Header id="contact-header" as="h1">Tell us what you think of our app! Any improvements we can make?</Header>
+        </Grid.Column>
+        <Grid.Column  width={16}>
+          <Header id="contact-form-directions" as="h4">Please fill out the following fields:</Header>
+        </Grid.Column>
+        <Grid.Column width={16}>
+          <ContactForm
+            submit={this.sendEmail}
+            handleInputChange={this.handleInputChange}
+            username={this.state.name}
+            useremail={this.state.email}
+            message={this.state.text}
+            success={this.state.success}
+          />
+        </Grid.Column>
 
+      </Grid>
     );
   }
 }
 
 
 export default Contact;
-
-
