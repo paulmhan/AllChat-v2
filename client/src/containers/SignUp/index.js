@@ -117,7 +117,6 @@ class SignUp extends Component {
                     <option value="en" flag="en">English</option>
                     <option value="ar" flag="cn">Arabic</option>
                     <option value="zh" flag="zh">Chinese</option>
-                    <option value="nl" flag="cn">Dutch</option>
                     <option value="fr" flag="fr">French</option>
                     <option value="de" flag="de">German</option>
                     <option value="hi" flag="in">Hindi</option>

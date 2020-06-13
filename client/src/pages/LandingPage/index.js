@@ -25,8 +25,6 @@ class LandingPage extends Component {
                 return content.welcome.zh;
             case "ar":
                 return content.welcome.ar;
-            case "nl":
-                return content.welcome.nl;
             case "fr":
                 return content.welcome.fr;
             case "de":
@@ -54,8 +52,6 @@ class LandingPage extends Component {
                 return content.bring.zh;
             case "ar":
                 return content.bring.ar;
-            case "nl":
-                return content.bring.nl;
             case "fr":
                 return content.bring.fr;
             case "de":
@@ -84,8 +80,6 @@ class LandingPage extends Component {
                 return content.landingpage.zh;
             case "ar":
                 return content.landingpage.ar;
-            case "nl":
-                return content.landingpage.nl;
             case "fr":
                 return content.landingpage.fr;
             case "de":
