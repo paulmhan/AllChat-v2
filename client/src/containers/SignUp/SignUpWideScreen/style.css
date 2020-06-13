@@ -1,0 +1,41 @@
+#signup-container-widescreen {
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f7f7f7
+}
+
+#signup-form-container-widescreen {
+    padding-top: 100px;
+}
+
+#signup-form-widescreen {
+    background-color: white;
+}
+
+#signup-btn-widescreen {
+    background-color:  #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+}
+
+#signup-btn-widescreen:hover {
+    background-color: transparent;
+    color:  #32CD33 ;
+    transition: 0.8s;
+}
+
+#signup-page-image-widescreen {
+    margin: 0 auto;
+}
+
+#signup-header-widescreen {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#signup-form-directions-widescreen {
+    font-weight: lighter;
+    font-style: italic;
+}

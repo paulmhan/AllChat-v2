@@ -1,41 +1,40 @@
 #navbar {
-    background-color:#F7F7F7;
+    background-color:#32CD33;
 }
 
 #signup {
-    color: black;
+    color: white;
     position: relative;
     right: 30px;
 }
 
 #signin {
-    background-color:  #32CD33;
+    background-color: transparent;
     color: white;
-    border: solid #32CD33 1px;
+    border: solid white 1px;
     transition: 0.5s;
     position: relative;
     right: 20px;
 }
 
 #signin:hover {
-    background-color: transparent;
+    background-color: white;
     color:  #32CD33;
     transition: 0.8s;
 }
 
 #signout {
-    color: black;
+    color: white;
     position: relative;
     right: 20px;
 }
 
-#room-select {
-    color: black;
+#chatrooms {
+    color: white;
     position: relative;
-    right: 30px;
+    right: 20px;
 }
 
-#already-user {
-    position: relative;
-    right: 30px;
+#user-dropdown {
+    color: white;
 }
