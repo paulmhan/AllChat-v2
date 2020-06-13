@@ -105,6 +105,35 @@ class LandingPage extends Component {
         };
     }
 
+    renderStart(language){
+        switch(language){
+            case "es":
+                return content.start.es;
+            case "zh":
+                return content.start.zh;
+            case "ar":
+                return content.start.ar;
+            case "fr":
+                return content.start.fr;
+            case "de":
+                return content.start.de;
+            case "hi":
+                return content.start.hi;
+            case "ja":
+                return content.start.ja;
+            case "ko":
+                return content.start.ko;
+            case "ru":
+                return content.start.ru;
+            case "tl":
+                return content.start.tl;
+            case "vi":
+                return content.start.vi;
+            default:
+                return content.start.en;
+        };
+    }
+
 
 
     render() {
@@ -134,7 +163,9 @@ class LandingPage extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={5}>
-                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">Start Chatting</Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
+                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">
+                                    {this.renderStart(this.props.user?.language)}
+                                    </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>

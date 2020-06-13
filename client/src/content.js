@@ -41,5 +41,19 @@ export default
             ru: "Соберите людей вместе",
             tl: "Magkasama ang mga Tao",
             vi: "Đưa mọi người gần lại với nhau"
-        }
+        },
+        start: {
+            en: "Start Chatting",
+            es: "Comience a chatear",
+            zh: "开始聊",
+            ar: "ابدأ الدردشة",
+            fr: "Commencez à discuter",
+            de: "Starten Sie den Chat",
+            hi: "चैटिंग शुरू करें",
+            ja: "チャットを開始",
+            ko: "채팅 시작",
+            ru: "Начать чат",
+            tl: "Mag-umpisang mag-usap",
+            vi: "Bắt đầu trò chuyện"
+        },
     }
