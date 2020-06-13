@@ -11,6 +11,7 @@ export default
             ja: "コミュニケーションが世界規模で増加し続けるにつれて、迅速で信頼性の高い翻訳に対する要求も高まっています。 AllChatを使用すると、たとえ彼らの言語を話さなくても、世界中の誰とでも話すことができます",
             ko: "통신이 전 세계적으로 계속 증가함에 따라 빠르고 안정적인 번역에 대한 요구도 증가합니다. AllChat을 사용하면 언어를 구사하지 않아도 전 세계의 모든 사람과 대화 할 수 있습니다.",
             ru: "По мере того как общение продолжает расти в глобальном масштабе, растет и потребность в быстром и надежном переводе. С AllChat вы можете общаться с кем угодно по всему миру, даже если вы не говорите на его языке.",
+            tl: "Tulad ng patuloy na pagtaas ng komunikasyon sa isang global scale, gayon din ang hinihingi para sa mabilis, maaasahang pagsasalin. Sa AllChat, maaari kang makipag-usap sa kahit sino sa buong mundo, kahit na hindi ka nagsasalita ng kanilang wika.",
             vi: "Khi truyền thông tiếp tục tăng trên phạm vi toàn cầu, thì nhu cầu dịch thuật nhanh chóng, đáng tin cậy cũng vậy. Với AllChat, bạn có thể nói chuyện với bất kỳ ai trên toàn thế giới, ngay cả khi bạn không nói được ngôn ngữ của họ."
         },
         welcome: {
@@ -24,6 +25,7 @@ export default
             ja: "AllChatへようこそ！",
             ko: "AllChat에 오신 것을 환영합니다!",
             ru: "Добро пожаловать в AllChat!",
+            tl: "Maligayang pagdating sa AllChat!",
             vi: "Chào mừng đến với AllChat!"
         },
         bring: {
@@ -37,6 +39,7 @@ export default
             ja: "人をつなぐ",
             ko: "사람들을 하나로 모으기",
             ru: "Соберите людей вместе",
+            tl: "Magkasama ang mga Tao",
             vi: "Đưa mọi người gần lại với nhau"
         }
     }
