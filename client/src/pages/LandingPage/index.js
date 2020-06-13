@@ -17,7 +17,66 @@ class LandingPage extends Component {
         this.props.user || await this.props.loadUser();
     }
 
-    renderSwitch(language){
+    renderWelcome(language){
+        switch(language){
+            case "es":
+                return content.welcome.es;
+            case "zh":
+                return content.welcome.zh;
+            case "ar":
+                return content.welcome.ar;
+            case "nl":
+                return content.welcome.nl;
+            case "fr":
+                return content.welcome.fr;
+            case "de":
+                return content.welcome.de;
+            case "hi":
+                return content.welcome.hi;
+            case "ja":
+                return content.welcome.ja;
+            case "ko":
+                return content.welcome.ko;
+            case "ru":
+                return content.welcome.ru;
+            case "vi":
+                return content.welcome.vi;
+            default:
+                return content.welcome.en;
+        }
+    }
+
+    renderBring(language){
+        switch(language){
+            case "es":
+                return content.bring.es;
+            case "zh":
+                return content.bring.zh;
+            case "ar":
+                return content.bring.ar;
+            case "nl":
+                return content.bring.nl;
+            case "fr":
+                return content.bring.fr;
+            case "de":
+                return content.bring.de;
+            case "hi":
+                return content.bring.hi;
+            case "ja":
+                return content.bring.ja;
+            case "ko":
+                return content.bring.ko;
+            case "ru":
+                return content.bring.ru;
+            case "vi":
+                return content.bring.vi;
+            default:
+                return content.bring.en;
+        };
+    }
+
+
+    renderParagraph(language){
         switch(language){
             case "es":
                 return content.landingpage.es;
@@ -43,8 +102,10 @@ class LandingPage extends Component {
                 return content.landingpage.vi;
             default:
                 return content.landingpage.en;
-        }
+        };
     }
+
+
 
     render() {
         return (
@@ -53,7 +114,9 @@ class LandingPage extends Component {
                 <Grid.Column width={8}>
                     <Grid container id="inner-landing-container">
                         <Grid.Row centered>
-                            <h1 id="welcome">Welcome to AllChat!</h1>
+                            <h1 id="welcome">
+                            {this.renderWelcome(this.props.user?.language)}
+                            </h1>
                         </Grid.Row>
                         <Grid.Row centered>
                             <Grid.Column id="header" width={16}>
@@ -63,7 +126,7 @@ class LandingPage extends Component {
                         <Grid.Row centered>
                             <Grid.Column id="text1" width={16}>
                                 <h5 id="paragraph">
-                                    {this.renderSwitch(this.props.user?.language)}
+                                    {this.renderParagraph(this.props.user?.language)}
                                 </h5>
                                 </Grid.Column>
                             </Grid.Row>
