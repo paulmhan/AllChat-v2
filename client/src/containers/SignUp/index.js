@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Responsive, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
+import PeopleChatting from "../../assets/images/people-chatting.png";
 import "./style.css";
 
 class SignUp extends Component {
@@ -62,7 +63,7 @@ class SignUp extends Component {
     return (
       <Grid id="signup-container">
         <Grid.Column width={8}>
-          <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
+          <Image fluid id="signup-page-image" alt="people-chatting" src={PeopleChatting} />
         </Grid.Column>
         <Grid.Column width={8}>
           <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
-import { Responsive, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
+import PeopleChatting from "../../assets/images/people-chatting.png";
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
 
@@ -57,7 +58,7 @@ class SignIn extends Component {
 
       <Grid id="signin-container">
         <Grid.Column width={8}>
-          <img id="signout-page-image" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
+        <Image fluid id="signin-page-image" alt="people-chatting" src={PeopleChatting} />
         </Grid.Column>
         <Grid.Column width={8}>
           <Form id="signin-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>

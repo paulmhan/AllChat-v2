@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
-import { Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
+import PeopleChatting from "../../../assets/images/people-chatting.png";
 import { AUTH_USER, AUTH_USER_ERROR } from '../../../actions/types';
 import "./style.css";
 
@@ -67,7 +68,7 @@ class SignUpLargeScreen extends Component {
         return (
             <Grid id="signup-container-largescreen">
                 <Grid.Column width={8}>
-                    <img id="signout-page-image-largescreen" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
+                <Image fluid id="signup-page-image-largescreen" alt="people-chatting" src={PeopleChatting} />
                 </Grid.Column>
                 <Grid.Column width={8}>
                     <Form id="signup-form-container-largescreen" size='large' onSubmit={handleSubmit(this.onSubmit)}>
