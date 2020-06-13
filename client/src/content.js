@@ -31,12 +31,12 @@ export default
             es: "Juntar a la gente",
             zh: "凝聚人心",
             ar: "جمع الناس معا",
-            fr: "Bienvenue sur AllChat!",
-            de: "Willkommen bei AllChat!",
-            hi: "AllChat में आपका स्वागत है!",
+            fr: "Rassembler les gens",
+            de: "Leute zusammenbringen",
+            hi: "लोगों को एक साथ लाने के लिए",
             ja: "人をつなぐ",
-            ko: "사람들을 데려와",
-            ru: "Добро пожаловать в AllChat!",
-            vi: "Mang lại cho mọi người"
+            ko: "사람들을 하나로 모으기",
+            ru: "Соберите людей вместе",
+            vi: "Đưa mọi người gần lại với nhau"
         }
     }
