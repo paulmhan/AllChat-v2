@@ -59,9 +59,6 @@ class SignUp extends Component {
   }
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
-    console.log(...Responsive.onlyComputer);
-    console.log(...Responsive.onlyLargeScreen);
-    console.log(...Responsive.onlyWidescreen);
     return (
       <Grid id="signup-container">
         <Grid.Column width={8}>
