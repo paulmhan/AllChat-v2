@@ -56,4 +56,18 @@ export default
             tl: "Mag-umpisang mag-usap",
             vi: "Bắt đầu trò chuyện"
         },
+        rooms: {
+            en: "Chatrooms",
+            es: "Habitaciones",
+            zh: "房间数",
+            ar: "غرف",
+            fr: "Pièces",
+            de: "Räume",
+            hi: "कमरा",
+            ja: "部屋",
+            ko: "대화방",
+            ru: "Чаты",
+            tl: "Mga silid",
+            vi: "Phòng"
+        },
     }
