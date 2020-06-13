@@ -27,5 +27,19 @@ export default
             ko: "AllChat에 오신 것을 환영합니다!",
             ru: "Добро пожаловать в AllChat!",
             vi: "Chào mừng đến với AllChat!"
+        },
+        bring: {
+            en: "Bring People Together",
+            es: "¡Bienvenido a AllChat!",
+            zh: "欢迎来到AllChat！",
+            ar: "مرحبًا بك في AllChat!",
+            nl: "Welkom bij AllChat!",
+            fr: "Bienvenue sur AllChat!",
+            de: "Willkommen bei AllChat!",
+            hi: "AllChat में आपका स्वागत है!",
+            ja: "人をつなぐ",
+            ko: "사람들을 데려와",
+            ru: "Добро пожаловать в AllChat!",
+            vi: "Mang lại cho mọi người"
         }
     }

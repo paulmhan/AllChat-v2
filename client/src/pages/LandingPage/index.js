@@ -120,7 +120,9 @@ class LandingPage extends Component {
                         </Grid.Row>
                         <Grid.Row centered>
                             <Grid.Column id="header" width={16}>
-                                <h1 id="together">Bring People Together</h1>
+                                <h1 id="together">
+                                {this.renderBring(this.props.user?.language)}
+                                </h1>
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row centered>
