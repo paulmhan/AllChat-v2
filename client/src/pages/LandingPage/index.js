@@ -38,7 +38,7 @@ class LandingPage extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={5}>
-                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">Get Started</Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
+                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">Start Chatting</Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>

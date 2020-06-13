@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Responsive, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
 import { AUTH_USER, AUTH_USER_ERROR } from '../../actions/types';
@@ -59,6 +59,9 @@ class SignUp extends Component {
   }
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
+    console.log(...Responsive.onlyComputer);
+    console.log(...Responsive.onlyLargeScreen);
+    console.log(...Responsive.onlyWidescreen);
     return (
       <Grid id="signup-container">
         <Grid.Column width={8}>
