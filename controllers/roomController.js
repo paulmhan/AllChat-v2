@@ -67,17 +67,4 @@ module.exports = {
         }
     },
 
-    getActiveRoomAfterLeave: async (data, cb) => {
-        try {
-            const activeRoom = await Room.findById(data.roomId).populate("messages");
-            const userName = data.firstName.concat(" ", data.lastName);
-            activeRoom.users.pull(userName);
-            await activeRoom.save();
-            cb(activeRoom);
-        } catch (error) {
-            throw error;
-
-
-        }
-    }
 }
