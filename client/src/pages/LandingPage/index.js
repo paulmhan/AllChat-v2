@@ -75,7 +75,6 @@ class LandingPage extends Component {
         };
     }
 
-
     renderParagraph(language){
         switch(language){
             case "es":
