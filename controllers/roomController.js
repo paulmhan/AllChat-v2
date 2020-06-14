@@ -63,8 +63,6 @@ module.exports = {
             cb(activeRoom);
         } catch (error) {
             throw error;
-
         }
     },
-
 }

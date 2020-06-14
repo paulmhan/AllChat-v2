@@ -82,7 +82,7 @@ io.on("connection", socket => {
 
     socket.on("leaveRoom", data => {
         socket.leave(data.room._id);
-        io.to(data.room._id).emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName}has left the Chat at` });
+        io.to(data.room._id).emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has left the Chat at` });
         socket.emit("userLeftMessage", { message: `${data.user.firstName}\u00A0${data.user.lastName} has left the Chat at` });
         roomController.getActiveRoomAfterDelete(data, activeRoom => {
             socket.broadcast.to(data.room._id).emit("activeRoom", activeRoom);
@@ -99,7 +99,6 @@ io.on("connection", socket => {
         })
     }
     });
-
 
 });
 
