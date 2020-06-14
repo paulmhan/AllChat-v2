@@ -39,6 +39,8 @@ class LandingPage extends Component {
                 return content.welcome.ru;
             case "tl":
                 return content.welcome.tl;
+            case "te":
+                return content.welcome.te;
             case "vi":
                 return content.welcome.vi;
             default:
@@ -68,6 +70,8 @@ class LandingPage extends Component {
                 return content.bring.ru;
             case "tl":
                 return content.bring.tl;
+            case "te":
+                return content.bring.te;
             case "vi":
                 return content.bring.vi;
             default:
@@ -97,6 +101,8 @@ class LandingPage extends Component {
                 return content.landingpage.ru;
             case "tl":
                 return content.landingpage.tl;
+            case "te":
+                return content.landingpage.te;
             case "vi":
                 return content.landingpage.vi;
             default:
@@ -126,6 +132,8 @@ class LandingPage extends Component {
                 return content.start.ru;
             case "tl":
                 return content.start.tl;
+            case "te":
+                return content.start.te;
             case "vi":
                 return content.start.vi;
             default:
