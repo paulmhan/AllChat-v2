@@ -17,40 +17,69 @@
    margin-left: 10px;
    margin-bottom: 10px;
    color: white;
+   text-align: center;
 }
 
 #feedback {
     margin: 10px;
     margin-top: 20px;
     color: white;
+    text-align: center;
 }
 
 #developed {
     color: white;
+    text-align: center;
 }
 
 #powered {
     color: white;
 }
 
+
+
 #paul {
     margin-top: 10px;
+    position: relative;
+    left: 155px;
     margin-right:10px;
 }
 
 #suneetha {
     margin-top: 10px;
+    position: relative;
+    left: 155px;
     margin-right: 10px;
 }
 
 #james {
     margin-top: 10px;
+    position: relative;
+    left: 155px;
 }
 
 #socket {
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
-/* #semantic {
+#semantic {
+    position: relative;
+    right: 40px;
+}
 
-} */
+#react {
+    width: 120px;
+    height: 80px;
+    position: relative;
+    right: 110px;
+}
+
+#redux {
+    position: relative;
+    right: 140px;
+}
+
+#google-translate {
+    position: relative;
+    right: 180px;
+}
