@@ -16,12 +16,12 @@
     padding: 10px;
     border-radius: 10px;
     /* margin: 20px 0; */
-    width: 50%;
-    max-width: 50%;
+    /* width: 50%; */
+    /* max-width: 50%; */
 }
 
 #owner {
-    text-align: right;
+    /* text-align: right; */
     border: solid 1px #00b03c;
     background-color: #dcf7e5;
     padding: 10px;
@@ -52,15 +52,15 @@
     margin-left: 10px;
     margin-right: 10px;
     font-size: 10px;
-    color: black;
-    font-weight: lighter;
+    color:rgb(10, 96, 233);
+    /* font-weight: lighter; */
 }
 
 #owner-translate {
     margin-left: 10px;
     margin-right: 10px;
     font-size: 10px;
-    color: black
+    color:rgb(10, 96, 233)
 }
 
 #owner-date {

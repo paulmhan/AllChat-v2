@@ -66,7 +66,6 @@ class RoomListItems extends Component {
                   <List.Content>
                     <Link to={`/chat?room=${room._id}`}>
                       <Button
-                        fluid
                         id="JoinRoomBtn"
                         color='blue'
                         content='Join Room'
