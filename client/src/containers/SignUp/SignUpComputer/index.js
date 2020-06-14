@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Responsive, Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
+import { withRouter } from "react-router-dom";
 import PeopleChatting from "../../../assets/images/people-chatting.png";
 import { AUTH_USER, AUTH_USER_ERROR } from '../../../actions/types';
 import "./style.css";
@@ -181,4 +182,4 @@ const asyncValidate = async formValues => {
     }
 }
 
-export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: ['email'] })(SignUpComputer);
+export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: ['email'] })(withRouter(SignUpComputer));

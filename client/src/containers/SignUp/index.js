@@ -179,6 +179,7 @@
 
 
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import SignUpComputer from "./SignUpComputer";
 import SignUpLargeScreen from "./SignUpLargeScreen";
 import SignUpWideScreen from "./SignUpWideScreen";
@@ -196,4 +197,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);

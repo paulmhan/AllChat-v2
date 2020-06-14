@@ -44,7 +44,7 @@ const Developers = props => (
             <Grid.Column width={4}>
                 <Grid.Row>
                     <Grid.Column>
-                        <Header id="contact" as="h1">Contact</Header>
+                        <Header id="contact" as="h1">Contact:</Header>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
@@ -56,7 +56,7 @@ const Developers = props => (
             <Grid.Column width={4}>
                 <Grid.Row>
                     <Grid.Column>
-                        <Header id="developed" as="h1">Developers</Header>
+                        <Header id="developed" as="h1">Developers:</Header>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>

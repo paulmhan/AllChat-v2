@@ -71,7 +71,7 @@ class LandingPage extends Component {
                                         (English will be selected by default if no choice is made.)
                                     </Header>
                                     <Header id="demo-subheader2" as="h4">
-                                        Then, choose which room you want to join on the room selection page. Different flags will appear for different languages.
+                                        Then create a room, or join an existing room, to begin chatting with people all around the world. 
                                     </Header>
                                 </Grid.Column>
                             </Grid.Row>
@@ -91,6 +91,7 @@ export default compose(
     connect(null, { loadUser }),
 )(LandingPage)
 
+// Click on "See Translation" to view a message translated in your preferred language, and if you want to see the original, click "See Original". With AllChat, the language barrier is broken!
 // {/* After selecting a room, you can start chatting with people across the world! 
 //                                         And if someone sends a message in a language you're not familiar with, you can click the
 //                                         "See Translation" toggle to view a translated version of the message in your chosen language. */}
