@@ -5,7 +5,8 @@ import content from "../../content.js";
 import "./style.css";
 import Developers from "../../components/Developers";
 import PeopleChatting from "../../assets/images/people-chatting.png";
-import PlaceholderGif from "../../assets/gifs/placeholder2.gif";
+import AllChatDemo1 from "../../assets/gifs/AllChat-demo1.gif";
+import AllChatDemo2 from "../../assets/gifs/AllChat-demo2.gif";
 import { loadUser } from "../../actions/auth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
@@ -17,8 +18,8 @@ class LandingPage extends Component {
         this.props.user || await this.props.loadUser();
     }
 
-    renderWelcome(language){
-        switch(language){
+    renderWelcome(language) {
+        switch (language) {
             case "es":
                 return content.welcome.es;
             case "zh":
@@ -46,8 +47,8 @@ class LandingPage extends Component {
         }
     }
 
-    renderBring(language){
-        switch(language){
+    renderBring(language) {
+        switch (language) {
             case "es":
                 return content.bring.es;
             case "zh":
@@ -75,8 +76,8 @@ class LandingPage extends Component {
         };
     }
 
-    renderParagraph(language){
-        switch(language){
+    renderParagraph(language) {
+        switch (language) {
             case "es":
                 return content.landingpage.es;
             case "zh":
@@ -104,8 +105,8 @@ class LandingPage extends Component {
         };
     }
 
-    renderStart(language){
-        switch(language){
+    renderStart(language) {
+        switch (language) {
             case "es":
                 return content.start.es;
             case "zh":
@@ -137,33 +138,33 @@ class LandingPage extends Component {
 
     render() {
         return (
-        <>
-            <Grid id="landing-container">
-                <Grid.Column width={8}>
-                    <Grid container id="inner-landing-container">
-                        <Grid.Row centered>
-                            <h1 id="welcome">
-                            {this.renderWelcome(this.props.user?.language)}
-                            </h1>
-                        </Grid.Row>
-                        <Grid.Row centered>
-                            <Grid.Column id="header" width={16}>
-                                <h1 id="together">
-                                {this.renderBring(this.props.user?.language)}
+            <>
+                <Grid id="landing-container">
+                    <Grid.Column width={8}>
+                        <Grid container id="inner-landing-container">
+                            <Grid.Row centered>
+                                <h1 id="welcome">
+                                    {this.renderWelcome(this.props.user?.language)}
                                 </h1>
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row centered>
-                            <Grid.Column id="text1" width={16}>
-                                <h5 id="paragraph">
-                                    {this.renderParagraph(this.props.user?.language)}
-                                </h5>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Grid.Column id="header" width={16}>
+                                    <h1 id="together">
+                                        {this.renderBring(this.props.user?.language)}
+                                    </h1>
+                                </Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Grid.Column id="text1" width={16}>
+                                    <h5 id="paragraph">
+                                        {this.renderParagraph(this.props.user?.language)}
+                                    </h5>
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={5}>
                                     {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">
-                                    {this.renderStart(this.props.user?.language)}
+                                        {this.renderStart(this.props.user?.language)}
                                     </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
                                 </Grid.Column>
                             </Grid.Row>
@@ -182,7 +183,7 @@ class LandingPage extends Component {
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
-                                <Image fluid id="landing-gif" alt="landing-gif" src={PlaceholderGif} />
+                                <Image fluid id="chat-gif" alt="chat-gif" src={AllChatDemo1} />
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
@@ -194,14 +195,35 @@ class LandingPage extends Component {
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
                                     <Header id="demo-subheader1" as="h4">When signing up, you can select your preferred language from the dropdown menu.
-                                        (English will be selected by default if no choice is made.)
+                                    (English will be selected by default if no choice is made.)
                                     </Header>
                                     <Header id="demo-subheader2" as="h4">
-                                        Then create a room, or join an existing room, to begin chatting with people all around the world. 
+                                        Then create a room, or join an existing room, to begin chatting with people all around the world.
                                     </Header>
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
+                    </Grid.Column>
+                </Grid>
+
+                <Grid id="translate-demo-container">
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Header as="h1" id="translate-demo-header">With AllChat, the language barrier is broken!</Header>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Header id="translate-demo-subheader" as="h4">
+                                    Click on "See Translation" to view a message translated in your preferred language,
+                                     and if you want to see the original, click "See Original".
+                                </Header>
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid.Row centered>
+                            <Image fluid id="translate-gif" alt="translate-gif" src={AllChatDemo2} />
+                        </Grid.Row>
                     </Grid.Column>
                 </Grid>
 
@@ -223,7 +245,7 @@ export default compose(
     connect(mapStateToProps, { loadUser }),
 )(LandingPage)
 
-// Click on "See Translation" to view a message translated in your preferred language, and if you want to see the original, click "See Original". With AllChat, the language barrier is broken!
+//  With AllChat, the language barrier is broken!
 // {/* After selecting a room, you can start chatting with people across the world! 
 //                                         And if someone sends a message in a language you're not familiar with, you can click the
 //                                         "See Translation" toggle to view a translated version of the message in your chosen language. */}

@@ -84,7 +84,7 @@
     color:black;
     text-align: center;
     margin-top: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 #demo-subheader1 {
@@ -94,6 +94,29 @@
 }
 
 #demo-subheader2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#translate-demo-container {
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    margin-top: 40px;
+}
+
+#translate-demo-header {
+    font-size: 40px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+#translate-demo-subheader {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
