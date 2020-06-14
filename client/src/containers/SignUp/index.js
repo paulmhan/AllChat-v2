@@ -57,6 +57,10 @@ class SignUp extends Component {
       />
     );
   }
+
+  fileChange = () => {
+    console.log("hello");
+  }
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
@@ -109,7 +113,13 @@ class SignUp extends Component {
                   ]
                 }
               />
-              {/* <LanguageSelect/> */}
+             
+              <Button as="label" htmlFor="file" type="button">
+                   upload
+               </Button>
+               <input type="file" id="file" hidden onChange={this.fileChange} />
+               
+            
               <div>
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
                 <div>

@@ -1,9 +1,10 @@
 #JoinRoomBtn {
-    width: 143px;
     background-color: #32CD33;
     color: white;
     border: solid #32CD33 1px;
     transition: 0.5s;
+    margin: auto;
+    display: block;
 }
 
 #JoinRoomBtn:hover {

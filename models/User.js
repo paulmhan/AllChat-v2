@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 const { isEmail, isLength } = require('validator');
 const bcrypt = require('bcryptjs');
@@ -27,6 +28,10 @@ const UserSchema = new Schema({
   language: {
     type: String,
     default: "en",
+  },
+  image: {
+    type: String,
+    default: "",
   },
   room: {
     type: Schema.Types.ObjectId,
