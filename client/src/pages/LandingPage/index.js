@@ -210,7 +210,7 @@ class LandingPage extends Component {
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
-                                <Header as="h1" id="translate-demo-header">With AllChat, the language barrier is broken!</Header>
+                                <Header as="h1" id="translate-demo-header">With AllChat, the Language Barrier is Broken!</Header>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Header id="translate-demo-subheader" as="h4">
