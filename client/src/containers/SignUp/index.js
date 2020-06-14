@@ -114,35 +114,18 @@
 //                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
 //                 <div>
 //                   <Field name="language" component="select">
-//                     <option value="en" class="ae flag">English</option>
+//                     <option value="en" className="ae flag">English</option>
 //                     <option value="ar" flag="cn">Arabic</option>
-//                     <option value="hy" flag="cn">Armanian</option>
-//                     <option value="bn" flag="cn">Bengali</option>
-//                     <option value="bg" flag="cn">Bulgarian</option>
 //                     <option value="zh" flag="zh">Chinese</option>
-//                     <option value="hr" flag="cn">Croatian</option>
-//                     <option value="cs" flag="cn">Czech</option>
-//                     <option value="da" flag="cn">Danish</option>
-//                     <option value="nl" flag="cn">Dutch</option>
 //                     <option value="fr" flag="fr">French</option>
 //                     <option value="de" flag="de">German</option>
-//                     <option value="el" flag="cn">Greek</option>
-//                     <option value="gu" flag="cn">Gujrati</option>
-//                     <option value="haw" flag="cn">Hawaiian</option>
 //                     <option value="hi" flag="in">Hindi</option>
-//                     <option value="id" flag="cn">Indonesian</option>
 //                     <option value="ja" flag="jp">Japanese</option>
 //                     <option value="ko" flag="kr">Korean</option>
-//                     <option value="la" flag="kr">Latin</option>
-//                     <option value="fa" flag="kr">Persian</option>
-//                     <option value="pt" flag="pt">Portuguese</option>
 //                     <option value="ru" flag="ru">Russian</option>
 //                     <option value="es" flag="es">Spanish</option>
-//                     <option value="ta" flag="es">Tamil</option>
-//                     <option value="te" flag="es">Telugu</option>
-//                     <option value="tr" flag="es">Turkish</option>
+//                     <option value="tl" flag="tl">Tagalog (Filipino)</option>
 //                     <option value="vi" flag="es">Vietnamese</option>
-//                     <option value="zu" flag="es">Zulu</option>
 //                   </Field>
 //                 </div>
 //               </div>
@@ -176,7 +159,6 @@
 // }
 
 // export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: ['email'] })(SignUp);
-
 
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
