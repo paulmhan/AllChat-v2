@@ -7,8 +7,8 @@ const LeaveBtn = props => {
 
     return (
         <div>
-            <Link to={"/rooms"}>
-                <Button fluid id="LeaveBtn"><Icon id="leave-icon" name="arrow left" />Leave</Button>
+            <Link to={"/rooms"} centered>
+                <Button color='green' id="LeaveBtn"><Icon id="leave-icon" name="arrow left" />Leave</Button>
             </Link>
         </div>
     )
