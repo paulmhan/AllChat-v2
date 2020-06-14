@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Button, Image, Header, List } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import content from "../../content.js";
 import "./style.css";
 import Developers from "../../components/Developers";
 import PeopleChatting from "../../assets/images/people-chatting.png";
@@ -9,36 +10,161 @@ import { loadUser } from "../../actions/auth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 
+
 class LandingPage extends Component {
 
     async componentDidMount() {
         this.props.user || await this.props.loadUser();
     }
 
+    renderWelcome(language){
+        switch(language){
+            case "es":
+                return content.welcome.es;
+            case "zh":
+                return content.welcome.zh;
+            case "ar":
+                return content.welcome.ar;
+            case "fr":
+                return content.welcome.fr;
+            case "de":
+                return content.welcome.de;
+            case "hi":
+                return content.welcome.hi;
+            case "ja":
+                return content.welcome.ja;
+            case "ko":
+                return content.welcome.ko;
+            case "ru":
+                return content.welcome.ru;
+            case "tl":
+                return content.welcome.tl;
+            case "vi":
+                return content.welcome.vi;
+            default:
+                return content.welcome.en;
+        }
+    }
+
+    renderBring(language){
+        switch(language){
+            case "es":
+                return content.bring.es;
+            case "zh":
+                return content.bring.zh;
+            case "ar":
+                return content.bring.ar;
+            case "fr":
+                return content.bring.fr;
+            case "de":
+                return content.bring.de;
+            case "hi":
+                return content.bring.hi;
+            case "ja":
+                return content.bring.ja;
+            case "ko":
+                return content.bring.ko;
+            case "ru":
+                return content.bring.ru;
+            case "tl":
+                return content.bring.tl;
+            case "vi":
+                return content.bring.vi;
+            default:
+                return content.bring.en;
+        };
+    }
+
+    renderParagraph(language){
+        switch(language){
+            case "es":
+                return content.landingpage.es;
+            case "zh":
+                return content.landingpage.zh;
+            case "ar":
+                return content.landingpage.ar;
+            case "fr":
+                return content.landingpage.fr;
+            case "de":
+                return content.landingpage.de;
+            case "hi":
+                return content.landingpage.hi;
+            case "ja":
+                return content.landingpage.ja;
+            case "ko":
+                return content.landingpage.ko;
+            case "ru":
+                return content.landingpage.ru;
+            case "tl":
+                return content.landingpage.tl;
+            case "vi":
+                return content.landingpage.vi;
+            default:
+                return content.landingpage.en;
+        };
+    }
+
+    renderStart(language){
+        switch(language){
+            case "es":
+                return content.start.es;
+            case "zh":
+                return content.start.zh;
+            case "ar":
+                return content.start.ar;
+            case "fr":
+                return content.start.fr;
+            case "de":
+                return content.start.de;
+            case "hi":
+                return content.start.hi;
+            case "ja":
+                return content.start.ja;
+            case "ko":
+                return content.start.ko;
+            case "ru":
+                return content.start.ru;
+            case "tl":
+                return content.start.tl;
+            case "vi":
+                return content.start.vi;
+            default:
+                return content.start.en;
+        };
+    }
+
+
+
     render() {
         return (
-            <>
-                <Grid id="landing-container">
-                    <Grid.Column width={8}>
-                        <Grid container id="inner-landing-container">
-                            <Grid.Row centered>
-                                <h1 id="welcome">Welcome to AllChat!</h1>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Grid.Column id="header" width={16}>
-                                    <h1 id="together">Bring People Together</h1>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Grid.Column id="text1" width={16}>
-                                    <h5 id="paragraph">As communication continues to increase on a global scale, so too does the demand for quick, reliable translation.
-                                    With AllChat, you can talk to anyone across the world, even if you don't speak their language!
+        <>
+            <Grid id="landing-container">
+                <Grid.Column width={8}>
+                    <Grid container id="inner-landing-container">
+                        <Grid.Row centered>
+                            <h1 id="welcome">
+                            {this.renderWelcome(this.props.user?.language)}
+                            </h1>
+                        </Grid.Row>
+                        <Grid.Row centered>
+                            <Grid.Column id="header" width={16}>
+                                <h1 id="together">
+                                {this.renderBring(this.props.user?.language)}
+                                </h1>
+                            </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row centered>
+                            <Grid.Column id="text1" width={16}>
+                                <h5 id="paragraph">
+                                    {this.renderParagraph(this.props.user?.language)}
                                 </h5>
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={5}>
-                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">Start Chatting</Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
+                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">
+                                    {this.renderStart(this.props.user?.language)}
+                                    </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
@@ -94,8 +220,14 @@ class LandingPage extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return {
+        user: state.auth.currentUser
+    }
+}
+
 export default compose(
-    connect(null, { loadUser }),
+    connect(mapStateToProps, { loadUser }),
 )(LandingPage)
 
 
