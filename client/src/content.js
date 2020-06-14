@@ -12,6 +12,7 @@ export default
             ko: "통신이 전 세계적으로 계속 증가함에 따라 빠르고 안정적인 번역에 대한 요구도 증가합니다. AllChat을 사용하면 언어를 구사하지 않아도 전 세계의 모든 사람과 대화 할 수 있습니다.",
             ru: "По мере того как общение продолжает расти в глобальном масштабе, растет и потребность в быстром и надежном переводе. С AllChat вы можете общаться с кем угодно по всему миру, даже если вы не говорите на его языке.",
             tl: "Tulad ng patuloy na pagtaas ng komunikasyon sa isang global scale, gayon din ang hinihingi para sa mabilis, maaasahang pagsasalin. Sa AllChat, maaari kang makipag-usap sa kahit sino sa buong mundo, kahit na hindi ka nagsasalita ng kanilang wika.",
+            te: "ప్రపంచ స్థాయిలో కమ్యూనికేషన్ పెరుగుతూనే ఉన్నందున, శీఘ్ర, నమ్మకమైన అనువాదం కోసం డిమాండ్ కూడా పెరుగుతుంది. AllChat తో, మీరు వారి భాష మాట్లాడకపోయినా ప్రపంచవ్యాప్తంగా ఎవరితోనైనా మాట్లాడవచ్చు.",
             vi: "Khi truyền thông tiếp tục tăng trên phạm vi toàn cầu, thì nhu cầu dịch thuật nhanh chóng, đáng tin cậy cũng vậy. Với AllChat, bạn có thể nói chuyện với bất kỳ ai trên toàn thế giới, ngay cả khi bạn không nói được ngôn ngữ của họ."
         },
         welcome: {
@@ -26,6 +27,7 @@ export default
             ko: "AllChat에 오신 것을 환영합니다!",
             ru: "Добро пожаловать в AllChat!",
             tl: "Maligayang pagdating sa AllChat!",
+            te: "ఆల్ చాట్‌కు స్వాగతం!",
             vi: "Chào mừng đến với AllChat!"
         },
         bring: {
@@ -40,6 +42,7 @@ export default
             ko: "사람들을 하나로 모으기",
             ru: "Соберите людей вместе",
             tl: "Magkasama ang mga Tao",
+            te: "ప్రజలను కలిసి తీసుకురండి",
             vi: "Đưa mọi người gần lại với nhau"
         },
         start: {
@@ -54,6 +57,7 @@ export default
             ko: "채팅 시작",
             ru: "Начать чат",
             tl: "Mag-umpisang mag-usap",
+            te: "చాటింగ్ ప్రారంభించండి",
             vi: "Bắt đầu trò chuyện"
         },
         rooms: {
@@ -68,6 +72,7 @@ export default
             ko: "대화방",
             ru: "Чаты",
             tl: "Mga silid",
+            te: "రూములు",
             vi: "Phòng"
         },
         signout: {
@@ -82,6 +87,7 @@ export default
             ko: "로그 아웃",
             ru: "Выход",
             tl: "Mag-sign Out",
+            te: "సైన్ అవుట్ చేయండి",
             vi: "Đăng xuất"
         },
         logged: {
@@ -96,20 +102,22 @@ export default
             ko: "로그인",
             ru: "Войти в систему",
             tl: "Nakalog-in",
+            te: "లాగిన్ అయ్యారు",
             vi: "Đăng nhập"
         },
         norooms: {
             en: "No Rooms, Create One and Get Started!",
-            es: "Conectado",
-            zh: "登录",
-            ar: "تم تسجيل الدخول",
-            fr: "Connecté",
-            de: "Eingeloggt",
-            hi: "पमें लॉग इन",
-            ja: "ログインしました",
+            es: "¡Sin habitaciones, cree una y comience!",
+            zh: "没有房间，创建一个并开始！",
+            ar: "لا غرف ، أنشئ غرفة وابدأ!",
+            fr: "Pas de chambres, créez-en une et commencez!",
+            de: "Keine Zimmer, erstellen Sie eines und legen Sie los!",
+            hi: "नो रूम, क्रिएट वन एंड गेट स्टार्टेड!",
+            ja: "部屋なし、1つ作成して始めましょう！",
             ko: "방 없음, 하나 만들기 및 시작!",
-            ru: "Войти в систему",
-            tl: "Nakalog-in",
-            vi: "Đăng nhập"
+            ru: "Нет комнат, создайте и начните!",
+            tl: "Walang mga Kuwarto, Lumikha ng Isa at Magsimula!",
+            te: "గదులు లేవు, ఒకదాన్ని సృష్టించండి మరియు ప్రారంభించండి!",
+            vi: "Không có phòng, tạo một và bắt đầu!"
         },
     }
