@@ -58,9 +58,9 @@ class SignUp extends Component {
     );
   }
 
-  fileChange = () => {
-    console.log("hello");
-  }
+  // fileChange = () => {
+  //   console.log("hello");
+  // }
   
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
@@ -115,10 +115,10 @@ class SignUp extends Component {
                 }
               />
              
-              <Button as="label" htmlFor="file" type="button">
+              {/* <Button as="label" htmlFor="file" type="button">
                    upload
                </Button>
-               <input type="file" id="file" hidden onChange={this.fileChange} />
+               <input type="file" id="file" hidden onChange={this.fileChange} /> */}
                
             
               <div>

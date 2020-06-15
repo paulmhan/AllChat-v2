@@ -76,7 +76,7 @@ class Chat extends Component {
         );
     }
 
-    handleKeyUp = (dispatch) => {
+    handleKeyPress = () => {
         const user = this.props.user;
         const room = this.props.room;
         console.log("1 hello");
@@ -111,7 +111,7 @@ class Chat extends Component {
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
-                                    onKeyDown={() => this.handleKeyUp()}
+                                    onKeyDown={() => this.handleKeyPress()}
                                     fluid
                                 />
                             </Grid.Column>
