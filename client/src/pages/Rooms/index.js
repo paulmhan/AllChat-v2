@@ -44,7 +44,7 @@ class Rooms extends Component {
                 <Grid.Row centered>
                     <CreateRoomModal
                         createRoom={this.props.createRoom}
-                        userId={this.props.user?._id}
+                        user={this.props.user}
                     />
                 </Grid.Row>
                 <Grid.Row centered>
