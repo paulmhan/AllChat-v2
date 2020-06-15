@@ -150,5 +150,19 @@ export default
             te: "సభ్యత్వం పొందినప్పుడు, మీరు డ్రాప్-డౌన్ మెను నుండి మీకు ఇష్టమైన భాషను ఎంచుకోవచ్చు.(ఎంపికను ఎంచుకోకపోతే ఇంగ్లీష్ అప్రమేయంగా ఎంపిక చేయబడుతుంది).",
             vi: "Khi đăng ký, bạn có thể chọn ngôn ngữ ưa thích từ menu thả xuống.(Tiếng Anh sẽ được chọn theo mặc định nếu không có tùy chọn nào được chọn)."
         },
-
+        par2: {
+            en: "Then create a room, or join an existing room, to begin chatting with people all around the world.",
+            es: "Luego crea una sala, o únete a una sala existente, para comenzar a chatear con personas de todo el mundo.",
+            zh: "然后创建一个会议室，或加入现有会议室，开始与世界各地的人们聊天。",
+            ar: "ثم أنشئ غرفة ، أو انضم إلى غرفة موجودة ، لبدء الدردشة مع أشخاص من جميع أنحاء العالم.",
+            fr: "Créez ensuite une salle ou rejoignez une salle existante pour commencer à discuter avec des gens du monde entier.",
+            de: "Erstellen Sie dann einen Raum oder schließen Sie sich einem vorhandenen Raum an, um mit Menschen auf der ganzen Welt zu chatten.",
+            hi: "फिर दुनिया भर के लोगों के साथ बातचीत शुरू करने के लिए, एक कमरा बनाएं, या एक मौजूदा कमरे में शामिल हों।",
+            ja: "次に、部屋を作成するか、既存の部屋に参加して、世界中の人々とチャットを始めます。",
+            ko: "그런 다음 방을 만들거나 기존 방에 가입하여 전 세계 사람들과 채팅을 시작하십시오.",
+            ru: "Затем создайте комнату или присоединитесь к существующей комнате, чтобы начать общаться с людьми со всего мира.",
+            tl: "Pagkatapos ay lumikha ng isang silid, o sumali sa isang umiiral na silid, upang simulan ang pakikipag-chat sa mga tao sa buong mundo.",
+            te: "ప్రపంచవ్యాప్తంగా ఉన్న వ్యక్తులతో చాట్ చేయడం ప్రారంభించడానికి ఒక గదిని సృష్టించండి లేదా ఇప్పటికే ఉన్న గదిలో చేరండి.",
+            vi: "Sau đó, tạo một phòng, hoặc tham gia một phòng hiện có, để bắt đầu trò chuyện với mọi người trên khắp thế giới."
+        },
     }

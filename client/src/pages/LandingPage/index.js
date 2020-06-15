@@ -204,6 +204,37 @@ class LandingPage extends Component {
         };
     }
 
+    renderDemoParagraph2(language) {
+        switch (language) {
+            case "es":
+                return content.par2.es;
+            case "zh":
+                return content.par2.zh;
+            case "ar":
+                return content.par2.ar;
+            case "fr":
+                return content.par2.fr;
+            case "de":
+                return content.par2.de;
+            case "hi":
+                return content.par2.hi;
+            case "ja":
+                return content.par2.ja;
+            case "ko":
+                return content.par2.ko;
+            case "ru":
+                return content.par2.ru;
+            case "tl":
+                return content.par2.tl;
+            case "te":
+                return content.par2.te;
+            case "vi":
+                return content.par2.vi;
+            default:
+                return content.par2.en;
+        };
+    }
+
 
 
     render() {
@@ -268,7 +299,7 @@ class LandingPage extends Component {
                                     {this.renderDemoParagraph(this.props.user?.language)}
                                     </Header>
                                     <Header id="demo-subheader2" as="h4">
-                                        Then create a room, or join an existing room, to begin chatting with people all around the world.
+                                    {this.renderDemoParagraph2(this.props.user?.language)}
                                     </Header>
                                 </Grid.Column>
                             </Grid.Row>
