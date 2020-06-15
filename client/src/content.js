@@ -432,4 +432,37 @@ export default
             te: "అనువాదం చూడండి",
             vi: "xem phiên dịch"
         },
+        delete: {
+            en: "Delete",
+            es: "Eliminar",
+            zh: "删除",
+            ar: "حذف",
+            fr: "Supprimer",
+            de: "Löschen",
+            hi: "हटाएं",
+            it: "Elimina",
+            ja: "削除する",
+            ko: "지우다",
+            ru: "удалять",
+            tl: "Tanggalin",
+            te: "తొలగించు",
+            vi: "Xóa bỏ"
+        },
+        deletemessage: {
+            en: "Delete",
+            es: "Eliminar",
+            zh: "删除",
+            ar: "حذف",
+            fr: "Supprimer",
+            de: "Löschen",
+            hi: "हटाएं",
+            it: "Elimina",
+            ja: "削除する",
+            ko: "지우다",
+            ru: "удалять",
+            tl: "Tanggalin",
+            te: "తొలగించు",
+            vi: "Xóa bỏ"
+        },
+
     }

@@ -105,7 +105,7 @@ class MessageItem extends Component {
                                 <span id="owner-translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
                                     <span className="cursor">{this.state.translated ? this.renderSeeOriginal(this.props.user?.language) : this.renderSeeTranslation(this.props.user?.language)}</span>
                                 </span>
-                                <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={this.props.message} roomId={this.props.roomId} />
+                                <DeleteMessageModal deleteMessage={this.props.deleteMessage} message={this.props.message} roomId={this.props.roomId} user={this.props.user} />
 
                             </Grid.Column>
                         </Grid.Row>
@@ -120,7 +120,7 @@ class MessageItem extends Component {
                                     </p>
                                     <Message.Header compact> <p id="message-text"><small>{this.props.message.firstName}&nbsp;{this.props.message.lastName}:&nbsp;{this.props.message.text}</small></p></Message.Header>
                                     <span id="translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
-                                        <span className="cursor">{this.state.translated ? "See Original" : "See Translation"}</span>
+                                        <span className="cursor">{this.state.translated ? this.renderSeeOriginal(this.props.user?.language) : this.renderSeeTranslation(this.props.user?.language)}</span>
                                     </span>
                                 </Grid.Row>
                             </Grid.Column><Grid.Column width={8}></Grid.Column>
