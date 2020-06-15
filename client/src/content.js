@@ -464,5 +464,21 @@ export default
             te: "సందేశాన్ని తొలగించండి",
             vi: "Xóa tin nhắn"
         },
+        deletemessageconfirm: {
+            en: "Are you sure you want to delete this message?",
+            es: "¿Seguro que quieres borrar este mensaje?",
+            zh: "你确定要删除这条消息吗？",
+            ar: "هل أنت متأكد أنك تريد حذف هذه الرسالة؟",
+            fr: "Etes-vous sur de vouloir supprimer ce message?",
+            de: "Möchten Sie diese Nachricht wirklich löschen?",
+            hi: "क्या आप निश्चित रूप से यह संदेश हटाना चाहते हैं?",
+            it: "Sei sicuro di voler eliminare questo messaggio?",
+            ja: "このメッセージを削除してもよろしいですか？",
+            ko: "이 메시지를 삭제 하시겠습니까?",
+            ru: "Вы уверены, что хотите удалить это сообщение?",
+            tl: "Sigurado ka bang gusto mong tanggalin ang mensaheng ito?",
+            te: "మీరు ఖచ్చితంగా ఈ సందేశాన్ని తొలగించాలనుకుంటున్నారా?",
+            vi: "Bạn có chắc chắn muốn xóa tin nhắn này?"
+        },
 
     }

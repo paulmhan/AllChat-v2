@@ -77,6 +77,39 @@ class DeleteMessageModal extends Component {
     }
   }
 
+  renderDeleteMessageConfirm(language) {
+    switch (language) {
+      case "es":
+        return content.deletemessageconfirm.es;
+      case "zh":
+        return content.deletemessageconfirm.zh;
+      case "ar":
+        return content.deletemessageconfirm.ar;
+      case "fr":
+        return content.deletemessageconfirm.fr;
+      case "de":
+        return content.deletemessageconfirm.de;
+      case "hi":
+        return content.deletemessageconfirm.hi;
+      case "it":
+        return content.deletemessageconfirm.it;
+      case "ja":
+        return content.deletemessageconfirm.ja;
+      case "ko":
+        return content.deletemessageconfirm.ko;
+      case "ru":
+        return content.deletemessageconfirm.ru;
+      case "tl":
+        return content.deletemessageconfirm.tl;
+      case "te":
+        return content.deletemessageconfirm.te;
+      case "vi":
+        return content.deletemessageconfirm.vi;
+      default:
+        return content.deletemessageconfirm.en;
+    }
+  }
+
   closeConfigShow = (closeOnEscape) => () => {
     this.setState({ closeOnEscape, open: true });
   }
@@ -103,7 +136,7 @@ class DeleteMessageModal extends Component {
         <Header content={this.renderDeleteMessage(this.props.user?.language)}
         />
         <Modal.Content>
-          <p>Are you sure you want to delete this message?</p>
+          <p>{this.renderDeleteMessageConfirm(this.props.user?.language)}</p>
         </Modal.Content>
         <Modal.Actions>
           <Button
