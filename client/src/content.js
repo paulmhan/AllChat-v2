@@ -180,4 +180,19 @@ export default
             te: "ఆల్చాట్‌తో, భాషా అవరోధం విరిగింది!",
             vi: "Với AllChat, Rào cản ngôn ngữ bị hỏng!"
         },
+        tranpar: {
+            en: 'Click on "See Translation" to view a message translated in your preferred language,and if you want to see the original, click "See Original".',
+            es: 'Haga clic en "Ver traducción" para ver un mensaje traducido en su idioma preferido,y si desea ver el original, haga clic en "Ver original".',
+            zh: '点击“查看翻译”以查看您首选语言翻译的邮件，如果您想查看原图，请单击“查看原图”。',
+            ar: 'انقر على "انظر الترجمة" لعرض رسالة مترجمة إلى لغتك المفضلة ، وإذا كنت تريد مشاهدة الأصل ، فانقر فوق "انظر الأصلي".',
+            fr: `Cliquez sur "Voir la traduction" pour afficher un message traduit dans votre langue préférée,et si vous voulez voir l'original, cliquez sur "Voir l'original".`,
+            de: 'Klicken Sie auf "Übersetzung anzeigen", um eine in Ihre bevorzugte Sprache übersetzte Nachricht anzuzeigen. und wenn Sie das Original sehen möchten, klicken Sie auf "Original anzeigen".',
+            hi: 'अपनी पसंदीदा भाषा में अनुवादित संदेश देखने के लिए "अनुवाद देखें" पर क्लिक करें, और यदि आप मूल देखना चाहते हैं, तो "मूल देखें" पर क्लिक करें।',
+            ja: '「翻訳を表示」をクリックして、希望の言語に翻訳されたメッセージを表示します。オリジナルを見たい場合は、「オリジナルを見る」をクリックしてください。',
+            ko: '원하는 언어로 번역 된 메시지를 보려면 "번역보기"를 클릭하십시오. 원본을 보려면 "원본보기"를 클릭하십시오.',
+            ru: 'Нажмите «Просмотреть перевод», чтобы просмотреть сообщение, переведенное на выбранный вами язык, и если вы хотите увидеть оригинал, нажмите «Посмотреть оригинал».',
+            tl: 'Mag-click sa "Tingnan ang Pagsasalin" upang makita ang isang mensahe na isinalin sa iyong ginustong wika, at kung nais mong makita ang orihinal, i-click ang "Tingnan ang Orihinal".',
+            te: 'మీకు ఇష్టమైన భాషలో అనువదించబడిన సందేశాన్ని చూడటానికి "అనువాదం చూడండి" పై క్లిక్ చేయండి, మరియు మీరు అసలైనదాన్ని చూడాలనుకుంటే, "అసలు చూడండి" క్లిక్ చేయండి.',
+            vi: 'Nhấp vào "Xem bản dịch" để xem tin nhắn được dịch bằng ngôn ngữ ưa thích của bạn, và nếu bạn muốn xem bản gốc, nhấp vào "Xem bản gốc".'
+        },
     }

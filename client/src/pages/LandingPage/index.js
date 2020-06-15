@@ -266,6 +266,36 @@ class LandingPage extends Component {
         };
     }
 
+    renderTranslatePar(language) {
+        switch (language) {
+            case "es":
+                return content.tranpar.es;
+            case "zh":
+                return content.tranpar.zh;
+            case "ar":
+                return content.tranpar.ar;
+            case "fr":
+                return content.tranpar.fr;
+            case "de":
+                return content.tranpar.de;
+            case "hi":
+                return content.tranpar.hi;
+            case "ja":
+                return content.tranpar.ja;
+            case "ko":
+                return content.tranpar.ko;
+            case "ru":
+                return content.tranpar.ru;
+            case "tl":
+                return content.tranpar.tl;
+            case "te":
+                return content.tranpar.te;
+            case "vi":
+                return content.tranpar.vi;
+            default:
+                return content.tranpar.en;
+        };
+    }
 
 
     render() {
@@ -346,8 +376,7 @@ class LandingPage extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Header id="translate-demo-subheader" as="h4">
-                                    Click on "See Translation" to view a message translated in your preferred language,
-                                     and if you want to see the original, click "See Original".
+                                {this.renderDemoParagraph2(this.props.user?.language)}
                                 </Header>
                             </Grid.Row>
                         </Grid>
