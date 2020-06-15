@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
-import { Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Responsive, Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
+import { withRouter } from "react-router-dom";
+import PeopleChatting from "../../../assets/images/people-chatting.png";
 import { AUTH_USER, AUTH_USER_ERROR } from '../../../actions/types';
 import "./style.css";
 
@@ -65,11 +67,11 @@ class SignUpLargeScreen extends Component {
     render() {
         const { handleSubmit, invalid, submitting, submitFailed } = this.props;
         return (
-            <Grid id="signup-container-widescreen">
-                <Grid.Column width={8}>
-                    <img id="signout-page-image-widescreen" alt="people-chatting" src={require("../../assets/images/people-chatting.png")} />
-                </Grid.Column>
-                <Grid.Column width={8}>
+            <Responsive as={Grid} {...Responsive.onlyWidescreen} id="signup-container-widescreen">
+                <Responsive as={Grid.Column} {...Responsive.onlyWidescreen} width={8}>
+                <Image fluid id="signup-page-image-widescreen" alt="people-chatting" src={PeopleChatting} />
+                </Responsive>
+                <Responsive as={Grid.Column} {...Responsive.onlyWidescreen} width={8}>
                     <Form id="signup-form-container-widescreen" size='large' onSubmit={handleSubmit(this.onSubmit)}>
                         <Segment id="signup-form" stacked>
                             <Header id="signup-header-widescreen" as="h1">Sign Up and Start Chatting!</Header>
@@ -163,8 +165,8 @@ class SignUpLargeScreen extends Component {
                             </Button>
                         </Segment>
                     </Form>
-                </Grid.Column>
-            </Grid>
+                </Responsive>
+            </Responsive>
         );
     }
 }
@@ -180,4 +182,4 @@ const asyncValidate = async formValues => {
     }
 }
 
-export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: ['email'] })(SignUpLargeScreen);
+export default reduxForm({ form: 'signup', asyncValidate, asyncChangeFields: ['email'] })(withRouter(SignUpLargeScreen));
