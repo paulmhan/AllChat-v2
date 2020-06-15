@@ -92,7 +92,7 @@ io.on("connection", socket => {
     socket.on("disconnect", () => {
         console.log("Client disconnected.", socket.id);
         if(socket.room) {
-        io.to(socket.room._id).emit("userLeftMessage", { message: `${socket.user.firstName}\u00A0${socket.user.lastName}has left the Chat at` });
+        io.to(socket.room._id).emit("userLeftMessage", { message: `${socket.user.firstName}\u00A0${socket.user.lastName} has left the Chat at` });
         roomController.getActiveRoomAfterDelete(socket,  activeRoom => { 
             io.to( socket.room._id ).emit("activeRoom", activeRoom);
             socket.leave(socket.room._id);
