@@ -44,6 +44,39 @@ class DeleteMessageModal extends Component {
     }
   }
 
+  renderDeleteMessage(language) {
+    switch (language) {
+      case "es":
+        return content.deletemessage.es;
+      case "zh":
+        return content.deletemessage.zh;
+      case "ar":
+        return content.deletemessage.ar;
+      case "fr":
+        return content.deletemessage.fr;
+      case "de":
+        return content.deletemessage.de;
+      case "hi":
+        return content.deletemessage.hi;
+      case "it":
+        return content.deletemessage.it;
+      case "ja":
+        return content.deletemessage.ja;
+      case "ko":
+        return content.deletemessage.ko;
+      case "ru":
+        return content.deletemessage.ru;
+      case "tl":
+        return content.deletemessage.tl;
+      case "te":
+        return content.deletemessage.te;
+      case "vi":
+        return content.deletemessage.vi;
+      default:
+        return content.deletemessage.en;
+    }
+  }
+
   closeConfigShow = (closeOnEscape) => () => {
     this.setState({ closeOnEscape, open: true });
   }
@@ -67,7 +100,8 @@ class DeleteMessageModal extends Component {
         closeOnEscape={closeOnEscape}
         onClose={this.close}
       >
-        <Header content='Delete Message' />
+        <Header content={this.renderDeleteMessage(this.props.user?.language)}
+        />
         <Modal.Content>
           <p>Are you sure you want to delete this message?</p>
         </Modal.Content>
@@ -77,7 +111,7 @@ class DeleteMessageModal extends Component {
             negative
             onClick={() => this.deleteMessageAndClose()}>
             <Icon name='remove' />
-            {/* {this.renderDeleteMessage(this.props.user?.language)} */}
+            {this.renderDeleteMessage(this.props.user?.language)}
           </Button>
           <span className="cursor" id="delete" onClick={() => this.deleteMessageAndClose()}></span>
         </Modal.Actions>

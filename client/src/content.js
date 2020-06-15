@@ -449,20 +449,20 @@ export default
             vi: "Xóa bỏ"
         },
         deletemessage: {
-            en: "Delete",
-            es: "Eliminar",
-            zh: "删除",
-            ar: "حذف",
-            fr: "Supprimer",
-            de: "Löschen",
-            hi: "हटाएं",
-            it: "Elimina",
-            ja: "削除する",
-            ko: "지우다",
-            ru: "удалять",
-            tl: "Tanggalin",
-            te: "తొలగించు",
-            vi: "Xóa bỏ"
+            en: "Delete Message",
+            es: "Borrar mensaje",
+            zh: "删除留言",
+            ar: "حذف رسالة",
+            fr: "Supprimer le message",
+            de: "Nachricht löschen",
+            hi: "संदेश को हटाएं",
+            it: "Cancella il messaggio",
+            ja: "メッセージを削除",
+            ko: "메시지 삭제",
+            ru: "Удалить сообщение",
+            tl: "Tanggalin ang Mensahe",
+            te: "సందేశాన్ని తొలగించండి",
+            vi: "Xóa tin nhắn"
         },
 
     }
