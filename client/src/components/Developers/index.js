@@ -29,13 +29,13 @@ const Developers = props => (
                             <Image id="socket" href="https://socket.io/" target=":blank" size="tiny" src={SocketLogo} />
                         </Grid.Column>
                         <Grid.Column width={3}>
-                            <Image id="semantic" href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
-                        </Grid.Column>
-                        <Grid.Column width={3}>
                             <Image id="react" size="tiny" src={ReactLogo} />
                         </Grid.Column>
                         <Grid.Column width={3}>
                             <Image id="redux" size="tiny" src={ReduxLogo} />
+                        </Grid.Column>
+                        <Grid.Column width={3}>
+                            <Image id="semantic" href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
                         </Grid.Column>
                         <Grid.Column width={3}>
                             <Image id="google-translate" size="tiny" src={GoogleTranslateLogo} />

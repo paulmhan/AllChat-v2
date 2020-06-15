@@ -53,22 +53,23 @@
 
 #semantic {
     position: relative;
-    right: 40px;
+    right: 110px;
 }
 
 #react {
     width: 120px;
     height: 80px;
     position: relative;
-    right: 110px;
+    right: 50px;
+    
 }
 
 #redux {
     position: relative;
-    right: 140px;
+    right: 70px;
 }
 
 #google-translate {
     position: relative;
-    right: 180px;
+    right: 150px;
 }

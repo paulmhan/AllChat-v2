@@ -181,7 +181,11 @@ class LandingPage extends Component {
 
                 <Grid id="about-container">
                     <Grid.Column width={8}>
-
+                    <Grid container>
+                            <Grid.Row centered>
+                                <Image fluid id="landing-page-image" alt="people-chatting" src={PeopleChatting} />
+                            </Grid.Row>
+                        </Grid>
                     </Grid.Column>
                     <Grid.Column width={8}>
                         <Grid container>
