@@ -3,6 +3,7 @@ import DeleteMessageModal from "../../containers/DeleteMessageModal";
 import { Grid, Message, Image } from "semantic-ui-react";
 import Paul from "../../assets/images/paul-profile.jpg";
 import Suneetha from "../../assets/images/suneetha-profile.jpg";
+import Placeholder from "../../assets/images/def-image.jpg";
 import moment from 'moment';
 
 
@@ -29,7 +30,7 @@ class MessageItem extends Component {
                 <Grid.Row>
                     <Grid.Column width={8}></Grid.Column>
                     <Grid.Column width={8} id="owner">
-                    <Image circular size="tiny" src={Paul} floated='left'/>
+                    <Image circular size="tiny" src={Placeholder} floated='left'/>
                     <p id="timeStamp">
                         <span id="owner-date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
                     </p>
@@ -45,7 +46,7 @@ class MessageItem extends Component {
             : <>
                 <Grid.Row>
                 <Grid.Column width={8} id="message">
-                <Image circular size="tiny" src={Suneetha} floated='left'/>
+                <Image circular size="tiny" src={Placeholder} floated='left'/>
                 <Grid.Row>
                     <p id="timeStamp">
                         <span id="date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
