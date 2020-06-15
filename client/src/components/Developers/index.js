@@ -30,6 +30,8 @@ class Developers extends Component {
                 return content.power.de;
             case "hi":
                 return content.power.hi;
+            case "it":
+                return content.power.it;
             case "ja":
                 return content.power.ja;
             case "ko":
@@ -47,7 +49,7 @@ class Developers extends Component {
         };
     }
 
-    renderContant(language) {
+    renderContact(language) {
         switch (language) {
             case "es":
                 return content.contact.es;
@@ -61,6 +63,8 @@ class Developers extends Component {
                 return content.contact.de;
             case "hi":
                 return content.contact.hi;
+            case "it":
+                return content.contact.it;
             case "ja":
                 return content.contact.ja;
             case "ko":
@@ -92,6 +96,8 @@ class Developers extends Component {
                 return content.feedback.de;
             case "hi":
                 return content.feedback.hi;
+            case "it":
+                return content.feedback.it;
             case "ja":
                 return content.feedback.ja;
             case "ko":
@@ -123,6 +129,8 @@ class Developers extends Component {
                 return content.developers.de;
             case "hi":
                 return content.developers.hi;
+            case "it":
+                return content.developers.it;
             case "ja":
                 return content.developers.ja;
             case "ko":
@@ -174,7 +182,7 @@ class Developers extends Component {
                     <Grid.Column width={4}>
                         <Grid.Row centered>
                             <Grid.Column>
-                                <Header id="contact" as="h1">{this.renderPower(this.props.user?.language)}</Header>
+                                <Header id="contact" as="h1">{this.renderContact(this.props.user?.language)}</Header>
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
@@ -190,7 +198,7 @@ class Developers extends Component {
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
-                            <Grid.Column centered>
+                            <Grid.Column centered="true">
                                 <Image href="https://github.com/paulmhan" target=":blank" id="paul" circular size="tiny" src={Paul} />
                                 <Image href="https://github.com/suneethaburla" target=":blank" id="suneetha" circular size="tiny" src={Suneetha} />
                                 <Image href="https://github.com/jpgeib" target=":blank" id="james" circular size="tiny" src={James} />

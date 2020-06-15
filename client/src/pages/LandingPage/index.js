@@ -32,6 +32,8 @@ class LandingPage extends Component {
                 return content.welcome.de;
             case "hi":
                 return content.welcome.hi;
+            case "it":
+                return content.welcome.it;
             case "ja":
                 return content.welcome.ja;
             case "ko":
@@ -63,6 +65,8 @@ class LandingPage extends Component {
                 return content.bring.de;
             case "hi":
                 return content.bring.hi;
+            case "it":
+                return content.bring.it;
             case "ja":
                 return content.bring.ja;
             case "ko":
@@ -94,6 +98,8 @@ class LandingPage extends Component {
                 return content.landingpage.de;
             case "hi":
                 return content.landingpage.hi;
+            case "it":
+                return content.landingpage.it;
             case "ja":
                 return content.landingpage.ja;
             case "ko":
@@ -125,6 +131,8 @@ class LandingPage extends Component {
                 return content.start.de;
             case "hi":
                 return content.start.hi;
+            case "it":
+                return content.start.it;
             case "ja":
                 return content.start.ja;
             case "ko":
@@ -156,6 +164,8 @@ class LandingPage extends Component {
                 return content.demo.de;
             case "hi":
                 return content.demo.hi;
+            case "it":
+                return content.demo.it;
             case "ja":
                 return content.demo.ja;
             case "ko":
@@ -187,6 +197,8 @@ class LandingPage extends Component {
                 return content.par.de;
             case "hi":
                 return content.par.hi;
+            case "it":
+                return content.par.it;
             case "ja":
                 return content.par.ja;
             case "ko":
@@ -218,6 +230,8 @@ class LandingPage extends Component {
                 return content.par2.de;
             case "hi":
                 return content.par2.hi;
+            case "it":
+                return content.par2.it;
             case "ja":
                 return content.par2.ja;
             case "ko":
@@ -249,6 +263,8 @@ class LandingPage extends Component {
                 return content.tran.de;
             case "hi":
                 return content.tran.hi;
+            case "it":
+                return content.tran.it;
             case "ja":
                 return content.tran.ja;
             case "ko":
@@ -280,6 +296,8 @@ class LandingPage extends Component {
                 return content.tranpar.de;
             case "hi":
                 return content.tranpar.hi;
+            case "it":
+                return content.tranpar.it;
             case "ja":
                 return content.tranpar.ja;
             case "ko":

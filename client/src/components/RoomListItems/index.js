@@ -22,6 +22,8 @@ class RoomListItems extends Component {
         return content.norooms.de;
       case "hi":
         return content.norooms.hi;
+      case "it":
+        return content.norooms.it;
       case "ja":
         return content.norooms.ja;
       case "ko":
@@ -53,6 +55,8 @@ class RoomListItems extends Component {
         return content.join.de;
       case "hi":
         return content.join.hi;
+      case "it":
+        return content.join.it;
       case "ja":
         return content.join.ja;
       case "ko":
@@ -109,7 +113,7 @@ class RoomListItems extends Component {
               </Grid.Column>
               <Grid.Column width={1}>
                 <List.Content>
-                  {room.creator === this.props.user?._id && <DeleteRoomModal deleteRoom={this.props.deleteRoom} id={room._id} text={room.text} />}
+                  {room.creator === this.props.user?._id && <DeleteRoomModal deleteRoom={this.props.deleteRoom} id={room._id} text={room.text} user={this.props.user}/>}
                 </List.Content>
               </Grid.Column>
             </Grid>
