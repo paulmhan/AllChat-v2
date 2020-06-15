@@ -359,7 +359,7 @@ class LandingPage extends Component {
                     </Grid.Column>
                 </Grid>
 
-                <Grid id="about-container">
+                {/* <Grid id="about-container">
                     <Grid.Column width={8}>
                     <Grid container>
                             <Grid.Row centered>
@@ -386,7 +386,7 @@ class LandingPage extends Component {
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
-                </Grid>
+                </Grid> */}
 
                 <Grid id="demo-container">
                     <Grid.Column width={8}>
