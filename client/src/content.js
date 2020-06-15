@@ -336,4 +336,36 @@ export default
             te: "చేరండి",
             vi: "Tham gia"
         },
+        deleteroom: {
+            en: "Delete Room",
+            es: "Eliminar habitación",
+            zh: "删除房间",
+            ar: "حذف الغرفة",
+            fr: "Supprimer la pièce",
+            de: "Raum löschen",
+            hi: "कक्ष हटाएँ",
+            it: "Elimina stanza",
+            ja: "部屋を削除",
+            ko: "방 삭제",
+            ru: "Удалить комнату",
+            tl: "Tanggalin ang Kwarto",
+            te: "గదిని తొలగించండి",
+            vi: "Xóa phòng"
+        },
+        confirmdeleteroom: {
+            en: "Are you sure you want to delete this room?",
+            es: "¿Estás seguro de que quieres eliminar esta habitación?",
+            zh: "您确定要删除此房间吗？",
+            ar: "هل أنت متأكد أنك تريد حذف هذه الغرفة؟",
+            fr: "Voulez-vous vraiment supprimer cette pièce?",
+            de: "Möchten Sie diesen Raum wirklich löschen?",
+            hi: "क्या आप वाकई इस कमरे को हटाना चाहते हैं?",
+            it: "Sei sicuro di voler eliminare questa stanza?",
+            ja: "この部屋を削除してもよろしいですか？",
+            ko: "이 방을 삭제 하시겠습니까?",
+            ru: "Вы уверены, что хотите удалить эту комнату?",
+            tl: "Sigurado ka bang gusto mong tanggalin ang kuwartong ito?",
+            te: "మీరు ఖచ్చితంగా ఈ గదిని తొలగించాలనుకుంటున్నారా?",
+            vi: "Bạn có chắc chắn muốn xóa căn phòng này?"
+        },
     }

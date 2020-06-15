@@ -113,7 +113,7 @@ class RoomListItems extends Component {
               </Grid.Column>
               <Grid.Column width={1}>
                 <List.Content>
-                  {room.creator === this.props.user?._id && <DeleteRoomModal deleteRoom={this.props.deleteRoom} id={room._id} text={room.text} />}
+                  {room.creator === this.props.user?._id && <DeleteRoomModal deleteRoom={this.props.deleteRoom} id={room._id} text={room.text} user={this.props.user}/>}
                 </List.Content>
               </Grid.Column>
             </Grid>
