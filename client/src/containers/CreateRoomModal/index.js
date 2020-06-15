@@ -27,6 +27,8 @@ class CreateRoomModal extends Component {
                 return content.create.de;
             case "hi":
                 return content.create.hi;
+            case "it":
+                return content.create.it;
             case "ja":
                 return content.create.ja;
             case "ko":
@@ -58,6 +60,8 @@ class CreateRoomModal extends Component {
                 return content.roomname.de;
             case "hi":
                 return content.roomname.hi;
+            case "it":
+                return content.roomname.it;
             case "ja":
                 return content.roomname.ja;
             case "ko":
@@ -89,6 +93,8 @@ class CreateRoomModal extends Component {
                 return content.placeholder.de;
             case "hi":
                 return content.placeholder.hi;
+            case "it":
+                return content.placeholder.it;
             case "ja":
                 return content.placeholder.ja;
             case "ko":
