@@ -101,7 +101,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <Menu secondary widths={12} id="navbar">
+      <Menu fixed="top" secondary widths={12} id="navbar">
         <Menu.Item position="left">
           <AllChatTitle />
         </Menu.Item>
