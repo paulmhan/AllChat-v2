@@ -30,6 +30,8 @@ class RoomListItems extends Component {
             return content.norooms.ru;
         case "tl":
             return content.norooms.tl;
+        case "te":
+            return content.norooms.te;
         case "vi":
             return content.norooms.vi;
         default:

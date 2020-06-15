@@ -40,6 +40,8 @@ class LandingPage extends Component {
                 return content.welcome.ru;
             case "tl":
                 return content.welcome.tl;
+            case "te":
+                return content.welcome.te;
             case "vi":
                 return content.welcome.vi;
             default:
@@ -69,6 +71,8 @@ class LandingPage extends Component {
                 return content.bring.ru;
             case "tl":
                 return content.bring.tl;
+            case "te":
+                return content.bring.te;
             case "vi":
                 return content.bring.vi;
             default:
@@ -98,6 +102,8 @@ class LandingPage extends Component {
                 return content.landingpage.ru;
             case "tl":
                 return content.landingpage.tl;
+            case "te":
+                return content.landingpage.te;
             case "vi":
                 return content.landingpage.vi;
             default:
@@ -127,6 +133,8 @@ class LandingPage extends Component {
                 return content.start.ru;
             case "tl":
                 return content.start.tl;
+            case "te":
+                return content.start.te;
             case "vi":
                 return content.start.vi;
             default:
@@ -134,6 +142,160 @@ class LandingPage extends Component {
         };
     }
 
+    renderDemo(language) {
+        switch (language) {
+            case "es":
+                return content.demo.es;
+            case "zh":
+                return content.demo.zh;
+            case "ar":
+                return content.demo.ar;
+            case "fr":
+                return content.demo.fr;
+            case "de":
+                return content.demo.de;
+            case "hi":
+                return content.demo.hi;
+            case "ja":
+                return content.demo.ja;
+            case "ko":
+                return content.demo.ko;
+            case "ru":
+                return content.demo.ru;
+            case "tl":
+                return content.demo.tl;
+            case "te":
+                return content.demo.te;
+            case "vi":
+                return content.demo.vi;
+            default:
+                return content.demo.en;
+        };
+    }
+
+    renderDemoParagraph(language) {
+        switch (language) {
+            case "es":
+                return content.par.es;
+            case "zh":
+                return content.par.zh;
+            case "ar":
+                return content.par.ar;
+            case "fr":
+                return content.par.fr;
+            case "de":
+                return content.par.de;
+            case "hi":
+                return content.par.hi;
+            case "ja":
+                return content.par.ja;
+            case "ko":
+                return content.par.ko;
+            case "ru":
+                return content.par.ru;
+            case "tl":
+                return content.par.tl;
+            case "te":
+                return content.par.te;
+            case "vi":
+                return content.par.vi;
+            default:
+                return content.par.en;
+        };
+    }
+
+    renderDemoParagraph2(language) {
+        switch (language) {
+            case "es":
+                return content.par2.es;
+            case "zh":
+                return content.par2.zh;
+            case "ar":
+                return content.par2.ar;
+            case "fr":
+                return content.par2.fr;
+            case "de":
+                return content.par2.de;
+            case "hi":
+                return content.par2.hi;
+            case "ja":
+                return content.par2.ja;
+            case "ko":
+                return content.par2.ko;
+            case "ru":
+                return content.par2.ru;
+            case "tl":
+                return content.par2.tl;
+            case "te":
+                return content.par2.te;
+            case "vi":
+                return content.par2.vi;
+            default:
+                return content.par2.en;
+        };
+    }
+
+    renderTranslateHeader(language) {
+        switch (language) {
+            case "es":
+                return content.tran.es;
+            case "zh":
+                return content.tran.zh;
+            case "ar":
+                return content.tran.ar;
+            case "fr":
+                return content.tran.fr;
+            case "de":
+                return content.tran.de;
+            case "hi":
+                return content.tran.hi;
+            case "ja":
+                return content.tran.ja;
+            case "ko":
+                return content.tran.ko;
+            case "ru":
+                return content.tran.ru;
+            case "tl":
+                return content.tran.tl;
+            case "te":
+                return content.tran.te;
+            case "vi":
+                return content.tran.vi;
+            default:
+                return content.tran.en;
+        };
+    }
+
+    renderTranslatePar(language) {
+        switch (language) {
+            case "es":
+                return content.tranpar.es;
+            case "zh":
+                return content.tranpar.zh;
+            case "ar":
+                return content.tranpar.ar;
+            case "fr":
+                return content.tranpar.fr;
+            case "de":
+                return content.tranpar.de;
+            case "hi":
+                return content.tranpar.hi;
+            case "ja":
+                return content.tranpar.ja;
+            case "ko":
+                return content.tranpar.ko;
+            case "ru":
+                return content.tranpar.ru;
+            case "tl":
+                return content.tranpar.tl;
+            case "te":
+                return content.tranpar.te;
+            case "vi":
+                return content.tranpar.vi;
+            default:
+                return content.tranpar.en;
+        };
+    }
 
 
     render() {
@@ -190,15 +352,15 @@ class LandingPage extends Component {
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
-                                <Header as="h1" id="demo-header">How AllChat Works</Header>
+                                <Header as="h1" id="demo-header">{this.renderDemo(this.props.user?.language)}</Header>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <Header id="demo-subheader1" as="h4">When signing up, you can select your preferred language from the dropdown menu.
-                                    (English will be selected by default if no choice is made.)
+                                    <Header id="demo-subheader1" as="h4">
+                                    {this.renderDemoParagraph(this.props.user?.language)}
                                     </Header>
                                     <Header id="demo-subheader2" as="h4">
-                                        Then create a room, or join an existing room, to begin chatting with people all around the world.
+                                    {this.renderDemoParagraph2(this.props.user?.language)}
                                     </Header>
                                 </Grid.Column>
                             </Grid.Row>
@@ -210,12 +372,11 @@ class LandingPage extends Component {
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
-                                <Header as="h1" id="translate-demo-header">With AllChat, the Language Barrier is Broken!</Header>
+                                <Header as="h1" id="translate-demo-header">{this.renderTranslateHeader(this.props.user?.language)}</Header>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Header id="translate-demo-subheader" as="h4">
-                                    Click on "See Translation" to view a message translated in your preferred language,
-                                     and if you want to see the original, click "See Original".
+                                {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
                             </Grid.Row>
                         </Grid>
@@ -228,7 +389,7 @@ class LandingPage extends Component {
                 </Grid>
 
                 <footer id="developers-footer">
-                    <Developers />
+                    <Developers user={this.props.user}/>
                 </footer>
             </>
         )
