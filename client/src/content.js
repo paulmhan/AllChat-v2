@@ -300,4 +300,19 @@ export default
             te: "సైన్స్ ప్రాజెక్ట్ గ్రూప్",
             vi: "Nhóm dự án khoa học"
         },
+        join: {
+            en: "Join Room",
+            es: "Unirse",
+            zh: "加入",
+            ar: "انضم",
+            fr: "Joindre",
+            de: "Beitreten",
+            hi: "शामिल हों",
+            ja: "参加する",
+            ko: "붙다",
+            ru: "Присоединиться",
+            tl: "Sumali",
+            te: "చేరండి",
+            vi: "Tham gia"
+        },
     }
