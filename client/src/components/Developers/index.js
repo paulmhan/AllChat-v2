@@ -19,31 +19,124 @@ class Developers extends Component {
     renderPower(language) {
         switch (language) {
             case "es":
-                return content.tranpar.es;
+                return content.power.es;
             case "zh":
-                return content.tranpar.zh;
+                return content.power.zh;
             case "ar":
-                return content.tranpar.ar;
+                return content.power.ar;
             case "fr":
-                return content.tranpar.fr;
+                return content.power.fr;
             case "de":
-                return content.tranpar.de;
+                return content.power.de;
             case "hi":
-                return content.tranpar.hi;
+                return content.power.hi;
             case "ja":
-                return content.tranpar.ja;
+                return content.power.ja;
             case "ko":
-                return content.tranpar.ko;
+                return content.power.ko;
             case "ru":
-                return content.tranpar.ru;
+                return content.power.ru;
             case "tl":
-                return content.tranpar.tl;
+                return content.power.tl;
             case "te":
-                return content.tranpar.te;
+                return content.power.te;
             case "vi":
-                return content.tranpar.vi;
+                return content.power.vi;
             default:
-                return content.tranpar.en;
+                return content.power.en;
+        };
+    }
+
+    renderContant(language) {
+        switch (language) {
+            case "es":
+                return content.contact.es;
+            case "zh":
+                return content.contact.zh;
+            case "ar":
+                return content.contact.ar;
+            case "fr":
+                return content.contact.fr;
+            case "de":
+                return content.contact.de;
+            case "hi":
+                return content.contact.hi;
+            case "ja":
+                return content.contact.ja;
+            case "ko":
+                return content.contact.ko;
+            case "ru":
+                return content.contact.ru;
+            case "tl":
+                return content.contact.tl;
+            case "te":
+                return content.contact.te;
+            case "vi":
+                return content.contact.vi;
+            default:
+                return content.contact.en;
+        };
+    }
+
+    renderFeedback(language) {
+        switch (language) {
+            case "es":
+                return content.feedback.es;
+            case "zh":
+                return content.feedback.zh;
+            case "ar":
+                return content.feedback.ar;
+            case "fr":
+                return content.feedback.fr;
+            case "de":
+                return content.feedback.de;
+            case "hi":
+                return content.feedback.hi;
+            case "ja":
+                return content.feedback.ja;
+            case "ko":
+                return content.feedback.ko;
+            case "ru":
+                return content.feedback.ru;
+            case "tl":
+                return content.feedback.tl;
+            case "te":
+                return content.feedback.te;
+            case "vi":
+                return content.feedback.vi;
+            default:
+                return content.feedback.en;
+        };
+    }
+
+    renderDevelopers(language) {
+        switch (language) {
+            case "es":
+                return content.developers.es;
+            case "zh":
+                return content.developers.zh;
+            case "ar":
+                return content.developers.ar;
+            case "fr":
+                return content.developers.fr;
+            case "de":
+                return content.developers.de;
+            case "hi":
+                return content.developers.hi;
+            case "ja":
+                return content.developers.ja;
+            case "ko":
+                return content.developers.ko;
+            case "ru":
+                return content.developers.ru;
+            case "tl":
+                return content.developers.tl;
+            case "te":
+                return content.developers.te;
+            case "vi":
+                return content.developers.vi;
+            default:
+                return content.developers.en;
         };
     }
 
@@ -54,7 +147,7 @@ class Developers extends Component {
                     <Grid.Column width={7}>
                         <Grid.Row>
                             <Grid.Column>
-                                <Header id="powered" as="h1">Powered by:</Header>
+                                <Header id="powered" as="h1">{this.renderPower(this.props.user?.language)}</Header>
                             </Grid.Column>
                         </Grid.Row>
                         <br />
@@ -81,19 +174,19 @@ class Developers extends Component {
                     <Grid.Column width={4}>
                         <Grid.Row centered>
                             <Grid.Column>
-                                <Header id="contact" as="h1">Contact:</Header>
+                                <Header id="contact" as="h1">{this.renderPower(this.props.user?.language)}</Header>
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
                             <Grid.Column>
-                                <Link to="/contact"><Header id="feedback" as="h3"><Icon name="envelope" />Send Feedback</Header></Link>
+                                <Link to="/contact"><Header id="feedback" as="h3"><Icon name="envelope" />{this.renderFeedback(this.props.user?.language)}</Header></Link>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid.Column>
                     <Grid.Column width={5}>
                         <Grid.Row>
                             <Grid.Column>
-                                <Header id="developed" as="h1">Developers:</Header>
+                                <Header id="developed" as="h1">{this.renderDevelopers(this.props.user?.language)}</Header>
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
