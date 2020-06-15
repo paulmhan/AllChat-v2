@@ -160,13 +160,13 @@ class Developers extends Component {
                                     <Image id="semantic" href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
-                                    <Image id="react" size="tiny" src={ReactLogo} />
+                                    <Image id="react" href="https://reactjs.org/" target=":blank" size="tiny" src={ReactLogo} />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
-                                    <Image id="redux" size="tiny" src={ReduxLogo} />
+                                    <Image id="redux" href="https://redux.js.org/" target=":blank" size="tiny" src={ReduxLogo} />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
-                                    <Image id="google-translate" size="tiny" src={GoogleTranslateLogo} />
+                                    <Image id="google-translate" href="https://cloud.google.com/translate/docs" target=":blank" size="tiny" src={GoogleTranslateLogo} />
                                 </Grid.Column>
                             </Grid>
                         </Grid.Row>
