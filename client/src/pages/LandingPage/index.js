@@ -142,6 +142,37 @@ class LandingPage extends Component {
         };
     }
 
+    renderDemo(language) {
+        switch (language) {
+            case "es":
+                return content.demo.es;
+            case "zh":
+                return content.demo.zh;
+            case "ar":
+                return content.demo.ar;
+            case "fr":
+                return content.demo.fr;
+            case "de":
+                return content.demo.de;
+            case "hi":
+                return content.demo.hi;
+            case "ja":
+                return content.demo.ja;
+            case "ko":
+                return content.demo.ko;
+            case "ru":
+                return content.demo.ru;
+            case "tl":
+                return content.demo.tl;
+            case "te":
+                return content.demo.te;
+            case "vi":
+                return content.demo.vi;
+            default:
+                return content.demo.en;
+        };
+    }
+
 
 
     render() {
@@ -198,12 +229,12 @@ class LandingPage extends Component {
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
-                                <Header as="h1" id="demo-header">How AllChat Works</Header>
+                                <Header as="h1" id="demo-header">{this.renderDemo(this.props.user?.language)}</Header>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
                                     <Header id="demo-subheader1" as="h4">When signing up, you can select your preferred language from the dropdown menu.
-                                    (English will be selected by default if no choice is made.)
+                                    (English will be selected by default if no choice is made).
                                     </Header>
                                     <Header id="demo-subheader2" as="h4">
                                         Then create a room, or join an existing room, to begin chatting with people all around the world.

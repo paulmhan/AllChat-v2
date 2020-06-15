@@ -120,4 +120,19 @@ export default
             te: "గదులు లేవు, ఒకదాన్ని సృష్టించండి మరియు ప్రారంభించండి!",
             vi: "Không có phòng, tạo một và bắt đầu!"
         },
+        demo: {
+            en: "How AllChat Works",
+            es: "Cómo funciona AllChat",
+            zh: "AllChat如何运作",
+            ar: "كيف يعمل AllChat",
+            fr: "Comment fonctionne AllChat",
+            de: "Wie AllChat funktioniert",
+            hi: "ऑलचैट कैसे काम करता है",
+            ja: "AllChatの仕組み",
+            ko: "AllChat 작동 방식",
+            ru: "Как работает AllChat",
+            tl: "Paano gumagana ang AllChat",
+            te: "ఆల్ చాట్ ఎలా పనిచేస్తుంది",
+            vi: "Cách thức hoạt động của AllChat"
+        },
     }
