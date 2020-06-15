@@ -131,6 +131,7 @@ class SignUp extends Component {
                     <option value="fr" flag="fr">French</option>
                     <option value="de" flag="de">German</option>
                     <option value="hi" flag="in">Hindi</option>
+                    <option value="it" flag="it">Italian</option>
                     <option value="ja" flag="jp">Japanese</option>
                     <option value="ko" flag="kr">Korean</option>
                     <option value="ru" flag="ru">Russian</option>

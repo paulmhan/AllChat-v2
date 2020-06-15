@@ -25,6 +25,8 @@ class Navbar extends Component {
         return content.rooms.de;
       case "hi":
         return content.rooms.hi;
+      case "it":
+        return content.rooms.it;
       case "ja":
         return content.rooms.ja;
       case "ko":
@@ -56,6 +58,8 @@ class Navbar extends Component {
         return content.signout.de;
       case "hi":
         return content.signout.hi;
+      case "it":
+        return content.signout.it;
       case "ja":
         return content.signout.ja;
       case "ko":
@@ -87,6 +91,8 @@ class Navbar extends Component {
         return content.logged.de;
       case "hi":
         return content.logged.hi;
+      case "it":
+        return content.logged.it;
       case "ja":
         return content.logged.ja;
       case "ko":
