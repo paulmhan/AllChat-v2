@@ -4,7 +4,7 @@ import { Image, Grid, Form, Segment, Button, Header, Responsive } from 'semantic
 import { email, length, required } from 'redux-form-validators';
 import axios from 'axios';
 import { withRouter } from "react-router-dom";
-import PeopleChatting from "../../../assets/images/people-chatting.png";
+import PeopleChatting from "../../../assets/images/people-chatting-text.png";
 import { AUTH_USER, AUTH_USER_ERROR } from '../../../actions/types';
 import "./style.css";
 

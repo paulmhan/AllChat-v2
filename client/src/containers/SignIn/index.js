@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm, SubmissionError } from 'redux-form';
 import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, required } from 'redux-form-validators';
-import PeopleChatting from "../../assets/images/people-chatting.png";
+import PeopleChatting from "../../assets/images/people-chatting-text.png";
 import axios from 'axios';
 import { AUTH_USER } from '../../actions/types';
 

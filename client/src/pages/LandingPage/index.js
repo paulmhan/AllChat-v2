@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import content from "../../content.js";
 import "./style.css";
 import Developers from "../../components/Developers";
-import PeopleChatting from "../../assets/images/people-chatting.png";
+import PeopleChatting from "../../assets/images/people-chatting-text.png";
 import AllChatDemo1 from "../../assets/gifs/AllChat-demo1.gif";
 import AllChatDemo2 from "../../assets/gifs/AllChat-demo2.gif";
 import { loadUser } from "../../actions/auth";
