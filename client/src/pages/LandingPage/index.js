@@ -179,14 +179,32 @@ class LandingPage extends Component {
                     </Grid.Column>
                 </Grid>
 
-                <Grid id="demo-container">
+                <Grid id="about-container">
+                    <Grid.Column width={8}>
+
+                    </Grid.Column>
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
-                                <Image fluid id="chat-gif" alt="chat-gif" src={AllChatDemo1} />
+                                <Header id="about-header" as="h1">About AllChat</Header>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Grid.Column width={16}>
+                                    <Header id="about-subheader1" as="h4">
+                                    There are many different messaging apps out there, but what if you wanted to talk to someone in France, and don't speak French?
+                                    That's where AllChat comes in.
+                                    </Header>
+                                    <Header id="about-subheader2" as="h4">
+                                    AllChat utilizes its built-in API to translate the sender's message into the recipient's native language, allowing for more intuitive international communication. 
+                                    Whether its for sealing that important business deal, or discovering that special someone from across the globe, AllChat brings us all closer together.
+                                    </Header>
+                                </Grid.Column>
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
+                </Grid>
+
+                <Grid id="demo-container">
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
@@ -195,12 +213,19 @@ class LandingPage extends Component {
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
                                     <Header id="demo-subheader1" as="h4">When signing up, you can select your preferred language from the dropdown menu.
-                                    (English will be selected by default if no choice is made.)
+                                    English will be selected by default if no choice is made.
                                     </Header>
                                     <Header id="demo-subheader2" as="h4">
                                         Then create a room, or join an existing room, to begin chatting with people all around the world.
                                     </Header>
                                 </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Image fluid id="chat-gif" alt="chat-gif" src={AllChatDemo1} />
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
@@ -210,20 +235,22 @@ class LandingPage extends Component {
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
+                                <Image fluid id="translate-gif" alt="translate-gif" src={AllChatDemo2} />
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
                                 <Header as="h1" id="translate-demo-header">With AllChat, the Language Barrier is Broken!</Header>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Header id="translate-demo-subheader" as="h4">
                                     Click on "See Translation" to view a message translated in your preferred language,
-                                     and if you want to see the original, click "See Original".
+                                    and if you want to see the original, click "See Original".
                                 </Header>
                             </Grid.Row>
                         </Grid>
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-                        <Grid.Row centered>
-                            <Image fluid id="translate-gif" alt="translate-gif" src={AllChatDemo2} />
-                        </Grid.Row>
                     </Grid.Column>
                 </Grid>
 
