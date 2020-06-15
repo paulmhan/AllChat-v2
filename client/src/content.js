@@ -368,4 +368,20 @@ export default
             te: "మీరు ఖచ్చితంగా ఈ గదిని తొలగించాలనుకుంటున్నారా?",
             vi: "Bạn có chắc chắn muốn xóa căn phòng này?"
         },
+        leave: {
+            en: "Leave",
+            es: "Salir",
+            zh: "离开",
+            ar: "غادر",
+            fr: "Laisser",
+            de: "Verlassen",
+            hi: "छोड़ना",
+            it: "Partire",
+            ja: "去る",
+            ko: "떠나다",
+            ru: "Оставлять",
+            tl: "Umalis",
+            te: "లీవ్",
+            vi: "Rời khỏi"
+        },
     }

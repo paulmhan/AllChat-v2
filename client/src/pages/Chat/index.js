@@ -5,9 +5,7 @@ import { Field, reduxForm } from "redux-form";
 import { connect } from 'react-redux';
 import { compose } from "redux";
 import ChatSideBar from "../../components/ChatSideBar"
-// import ChatRoomHeader from "../../components/ChatRoomHeader";
 import MessageContainer from "../../containers/MessageContainer";
-// import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
 import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
@@ -25,13 +23,6 @@ class Chat extends Component {
         const roomId = urlParams.get('room');
         const data = { roomId, user: this.props.user };
         await this.props.getActiveRoom(data);
-        // window.addEventListener('beforeunload', function (e) {
-        //     // Cancel the event
-        //     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-        //     // Chrome requires returnValue to be set
-        //     e.returnValue = '';
-        //     console.log("mounted")
-        //   });
     }
 
     componentWillUnmount() {
@@ -40,10 +31,6 @@ class Chat extends Component {
         const room = this.props.room;
         console.log("closed")
         this.props.leaveRoom({ room, user });
-        // window.removeEventListener('beforeunload', function (e) {
-        //     delete e['returnValue'];
-        //     console.log("unmounted")
-        //   });
     }
 
 
@@ -101,6 +88,7 @@ class Chat extends Component {
                     <ChatSideBar
                         activeUsers={this.props.room.users}
                         roomName={this.props.room.text}
+                        user={this.props.user}
                     />
                 </Grid.Column>
                 <Grid.Column width={13}>
