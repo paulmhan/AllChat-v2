@@ -9,7 +9,7 @@ import ChatSideBar from "../../components/ChatSideBar"
 import MessageContainer from "../../containers/MessageContainer";
 // import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, isTypingMessage, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, isTyping, notTyping, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import "./style.css";
 
@@ -61,10 +61,8 @@ class Chat extends Component {
         const user = this.props.user;
         const room = this.props.room;
         this.props.sendMessage({ formValues, user, room });
+        this.props.notTyping({ user, room });
         dispatch({ type: 'SEND_MESSAGE' });
-        if (formValues === "") {
-            console.log("You must enter a message");
-        };
     }
 
     renderMessageInput = ({ input, meta }) => {
@@ -82,7 +80,7 @@ class Chat extends Component {
         const user = this.props.user;
         const room = this.props.room;
         console.log("1 hello");
-        this.props.isTypingMessage({ user, room });
+        this.props.isTyping({ user, room });
         console.log("2 hello");
         console.log();
     }
@@ -113,7 +111,7 @@ class Chat extends Component {
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
-                                    onKeyDown={this.handleKeyUp()}
+                                    onKeyDown={() => this.handleKeyUp()}
                                     fluid
                                 />
                             </Grid.Column>
@@ -153,7 +151,8 @@ export default compose(
         loadUser,
         subscribeToMessageFromServer,
         sendMessage,
-        isTypingMessage,
+        isTyping,
+        notTyping,
         getActiveRoom,
         unsubscribeMessage,
         leaveRoom,
