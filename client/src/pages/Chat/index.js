@@ -133,7 +133,6 @@ class Chat extends Component {
                         userLeft={this.props.userLeft}
                         deleteMessage={this.props.deleteMessage}
                         user={this.props.user}
-
                     />
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>

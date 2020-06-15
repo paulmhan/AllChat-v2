@@ -400,4 +400,36 @@ export default
             te: "పంపు",
             vi: "Gửi"
         },
+        original: {
+            en: "See Original",
+            es: "Enviar",
+            zh: "发送",
+            ar: "إرسال",
+            fr: "Envoyer",
+            de: "Senden",
+            hi: "संदेश",
+            it: "Spedire",
+            ja: "送る",
+            ko: "보내다",
+            ru: "послать",
+            tl: "Ipadala",
+            te: "పంపు",
+            vi: "Gửi"
+        },
+        translation: {
+            en: "Send",
+            es: "Enviar",
+            zh: "发送",
+            ar: "إرسال",
+            fr: "Envoyer",
+            de: "Senden",
+            hi: "संदेश",
+            it: "Spedire",
+            ja: "送る",
+            ko: "보내다",
+            ru: "послать",
+            tl: "Ipadala",
+            te: "పంపు",
+            vi: "Gửi"
+        },
     }
