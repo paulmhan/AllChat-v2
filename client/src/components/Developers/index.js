@@ -198,7 +198,7 @@ class Developers extends Component {
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
-                            <Grid.Column centered>
+                            <Grid.Column centered="true">
                                 <Image href="https://github.com/paulmhan" target=":blank" id="paul" circular size="tiny" src={Paul} />
                                 <Image href="https://github.com/suneethaburla" target=":blank" id="suneetha" circular size="tiny" src={Suneetha} />
                                 <Image href="https://github.com/jpgeib" target=":blank" id="james" circular size="tiny" src={James} />

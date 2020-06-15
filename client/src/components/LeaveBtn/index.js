@@ -43,7 +43,7 @@ class LeaveBtn extends Component {
     render() {
         return (
             <div>
-                <Link to={"/rooms"} centered>
+                <Link to={"/rooms"} centered="true">
                     <Button color='green' id="LeaveBtn"><Icon id="leave-icon" name="arrow left" />{this.renderLeave(this.props.user?.language)}</Button>
                 </Link>
             </div>
