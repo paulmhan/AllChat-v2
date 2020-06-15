@@ -9,6 +9,8 @@ import MessageContainer from "../../containers/MessageContainer";
 import requireAuth from "../../hoc/requireAuth";
 import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
+import content from "../../content.js";
+
 import "./style.css";
 
 
@@ -45,6 +47,39 @@ class Chat extends Component {
             this.scrollToBottom();
         }
     }
+
+    renderSend(language) {
+        switch (language) {
+          case "es":
+            return content.send.es;
+          case "zh":
+            return content.send.zh;
+          case "ar":
+            return content.send.ar;
+          case "fr":
+            return content.send.fr;
+          case "de":
+            return content.send.de;
+          case "hi":
+            return content.send.hi;
+          case "it":
+            return content.send.it;
+          case "ja":
+            return content.send.ja;
+          case "ko":
+            return content.send.ko;
+          case "ru":
+            return content.send.ru;
+          case "tl":
+            return content.send.tl;
+          case "te":
+            return content.send.te;
+          case "vi":
+            return content.send.vi;
+          default:
+            return content.send.en;
+        }
+      }
 
     scrollToBottom = () => {
         let chatTextArea = document.getElementById("message-container");
@@ -117,7 +152,7 @@ class Chat extends Component {
                                     type="submit"
                                 >
                                     <Icon name='arrow circle up' />
-                                    Send
+                                    {this.renderSend(this.props.user?.language)}
                                  </Button>
                             </Grid.Column>
                         </Grid>

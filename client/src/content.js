@@ -384,4 +384,20 @@ export default
             te: "లీవ్",
             vi: "Rời khỏi"
         },
+        send: {
+            en: "Send",
+            es: "Enviar",
+            zh: "发送",
+            ar: "إرسال",
+            fr: "Envoyer",
+            de: "Senden",
+            hi: "संदेश",
+            it: "Spedire",
+            ja: "送る",
+            ko: "보내다",
+            ru: "послать",
+            tl: "Ipadala",
+            te: "పంపు",
+            vi: "Gửi"
+        },
     }
