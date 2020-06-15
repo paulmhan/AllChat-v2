@@ -75,7 +75,7 @@ class CreateRoomModal extends Component {
         }
     }
 
-    renderPlaceHolder(language) {
+    renderPlaceholder(language) {
         switch (language) {
             case "es":
                 return content.placeholder.es;
@@ -161,7 +161,7 @@ class CreateRoomModal extends Component {
                         onKeyPress={this.keyPressed}
                         onChange={this.handleRoomNameChange}
                         autoComplete='off'
-                        placeholder='Enter room name...'
+                        placeholder={this.renderPlaceholder(this.props.user?.language)}
                         validate={
                             [
                                 required({ msg: 'You must provide a room name' })
@@ -172,7 +172,7 @@ class CreateRoomModal extends Component {
                 <Modal.Actions>
                     <Button
                         id="CreateRoomBtn-Inner"
-                        content='Create Room'
+                        content={this.renderCreateRoom(this.props.user?.language)}
                         size='large'
                         color='blue'
                         type="submit"

@@ -285,4 +285,19 @@ export default
             te: "దయచేసి గది పేరును నమోదు చేయండి",
             vi: "Vui lòng nhập tên phòng"
         },
+        placeholder: {
+            en: "Science Project Group",
+            es: "Grupo de proyectos de ciencias",
+            zh: "科学项目组",
+            ar: "مجموعة مشروع العلوم",
+            fr: "Groupe de projet scientifique",
+            de: "Wissenschaftliche Projektgruppe",
+            hi: "विज्ञान परियोजना समूह",
+            ja: "科学プロジェクトグループ",
+            ko: "과학 프로젝트 그룹",
+            ru: "Научно-проектная группа",
+            tl: "Grupo ng Science Project",
+            te: "సైన్స్ ప్రాజెక్ట్ గ్రూప్",
+            vi: "Nhóm dự án khoa học"
+        },
     }
