@@ -33,6 +33,8 @@ class Navbar extends Component {
         return content.rooms.ru;
       case "tl":
         return content.rooms.tl;
+      case "te":
+        return content.rooms.te;
       case "vi":
         return content.rooms.vi;
       default:
@@ -62,6 +64,8 @@ class Navbar extends Component {
         return content.signout.ru;
       case "tl":
         return content.signout.tl;
+      case "te":
+        return content.signout.te;
       case "vi":
         return content.signout.vi;
       default:
@@ -91,6 +95,8 @@ class Navbar extends Component {
         return content.logged.ru;
       case "tl":
         return content.logged.tl;
+      case "te":
+        return content.logged.te;
       case "vi":
         return content.logged.vi;
       default:
