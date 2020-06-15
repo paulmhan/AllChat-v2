@@ -44,6 +44,68 @@ class CreateRoomModal extends Component {
         }
     }
 
+    renderRoomName(language) {
+        switch (language) {
+            case "es":
+                return content.roomname.es;
+            case "zh":
+                return content.roomname.zh;
+            case "ar":
+                return content.roomname.ar;
+            case "fr":
+                return content.roomname.fr;
+            case "de":
+                return content.roomname.de;
+            case "hi":
+                return content.roomname.hi;
+            case "ja":
+                return content.roomname.ja;
+            case "ko":
+                return content.roomname.ko;
+            case "ru":
+                return content.roomname.ru;
+            case "tl":
+                return content.roomname.tl;
+            case "te":
+                return content.roomname.te;
+            case "vi":
+                return content.roomname.vi;
+            default:
+                return content.roomname.en;
+        }
+    }
+
+    renderPlaceHolder(language) {
+        switch (language) {
+            case "es":
+                return content.placeholder.es;
+            case "zh":
+                return content.placeholder.zh;
+            case "ar":
+                return content.placeholder.ar;
+            case "fr":
+                return content.placeholder.fr;
+            case "de":
+                return content.placeholder.de;
+            case "hi":
+                return content.placeholder.hi;
+            case "ja":
+                return content.placeholder.ja;
+            case "ko":
+                return content.placeholder.ko;
+            case "ru":
+                return content.placeholder.ru;
+            case "tl":
+                return content.placeholder.tl;
+            case "te":
+                return content.placeholder.te;
+            case "vi":
+                return content.placeholder.vi;
+            default:
+                return content.placeholder.en;
+        }
+    }
+
     closeConfigShow = (closeOnEscape) => () => {
         this.setState({ closeOnEscape, open: true });
     }
@@ -92,7 +154,7 @@ class CreateRoomModal extends Component {
                 closeOnEscape={closeOnEscape}
                 onClose={this.close}
                 >
-                <Modal.Header>Please Enter A Room Name</Modal.Header>
+                <Modal.Header>{this.renderRoomName(this.props.user?.language)}</Modal.Header>
                 <Modal.Content>
                     <Form.Input
                         fluid

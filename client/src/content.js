@@ -270,4 +270,19 @@ export default
             te: "కగదిని సృష్టించండి",
             vi: "Tạo phòng"
         },
+        roomname: {
+            en: "Please Enter A Room Name",
+            es: "Por favor, introduzca un nombre de habitación",
+            zh: "请输入房间名称",
+            ar: "يرجى إدخال اسم الغرفة",
+            fr: "Veuillez entrer un nom de chambre",
+            de: "Bitte geben Sie einen Raumnamen ein",
+            hi: "कृपया एक कमरे का नाम दर्ज करें",
+            ja: "部屋名を入力してください",
+            ko: "방 이름을 입력하십시오",
+            ru: "Пожалуйста, введите название комнаты",
+            tl: "Mangyaring Maglagay ng Pangalan ng Silid",
+            te: "దయచేసి గది పేరును నమోదు చేయండి",
+            vi: "Vui lòng nhập tên phòng"
+        },
     }
