@@ -255,4 +255,19 @@ export default
             te: "క్రియేటర్స్:",
             vi: "Người tạo"
         },
+        create: {
+            en: "Create Room",
+            es: "Crear habitación",
+            zh: "创建房间",
+            ar: "إنشاء غرفة",
+            fr: "Créer une chambre",
+            de: "Platz schaffen",
+            hi: "जगह बनाना",
+            ja: "部屋を作成",
+            ko: "방 만들기",
+            ru: "Создать комнату",
+            tl: "Lumikha ng Kuwarto",
+            te: "కగదిని సృష్టించండి",
+            vi: "Tạo phòng"
+        },
     }
