@@ -9,7 +9,7 @@ import ChatSideBar from "../../components/ChatSideBar"
 import MessageContainer from "../../containers/MessageContainer";
 // import LeaveBtn from "../../components/LeaveBtn";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, isTypingMessage, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import "./style.css";
 
@@ -25,13 +25,6 @@ class Chat extends Component {
         const roomId = urlParams.get('room');
         const data = { roomId, user: this.props.user };
         await this.props.getActiveRoom(data);
-        // window.addEventListener('beforeunload', function (e) {
-        //     // Cancel the event
-        //     e.preventDefault(); // If you prevent default behavior in Mozilla Firefox prompt will always be shown
-        //     // Chrome requires returnValue to be set
-        //     e.returnValue = '';
-        //     console.log("mounted")
-        //   });
     }
 
     componentWillUnmount() {
@@ -40,10 +33,6 @@ class Chat extends Component {
         const room = this.props.room;
         console.log("closed")
         this.props.leaveRoom({ room, user });
-        // window.removeEventListener('beforeunload', function (e) {
-        //     delete e['returnValue'];
-        //     console.log("unmounted")
-        //   });
     }
 
 
@@ -58,6 +47,7 @@ class Chat extends Component {
             this.scrollToBottom();
         }
     }
+    
 
     scrollToBottom = () => {
         let chatTextArea = document.getElementById("message-container");
@@ -88,9 +78,13 @@ class Chat extends Component {
         );
     }
 
-    handleKeyUp = (event) => {
-        console.log("hello");
-        console.log(event.keyCode)
+    handleKeyUp = (dispatch) => {
+        const user = this.props.user;
+        const room = this.props.room;
+        console.log("1 hello");
+        this.props.isTypingMessage({ user, room });
+        console.log("2 hello");
+        console.log();
     }
 
     render() {
@@ -112,13 +106,14 @@ class Chat extends Component {
                         user={this.props.user}
 
                     />
+                    <p>{this.props.typingText}</p>
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
                             <Grid.Column width={14}>
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
-                                    onKeyPress={this.handleKeyUp}
+                                    onKeyDown={this.handleKeyUp()}
                                     fluid
                                 />
                             </Grid.Column>
@@ -158,6 +153,7 @@ export default compose(
         loadUser,
         subscribeToMessageFromServer,
         sendMessage,
+        isTypingMessage,
         getActiveRoom,
         unsubscribeMessage,
         leaveRoom,

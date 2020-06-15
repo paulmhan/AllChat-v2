@@ -1,9 +1,11 @@
-import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "./../actions/socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS,IS_TYPINGMESSAGE, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "./../actions/socketTypes";
 import{ TRANSLATE_MESSAGE} from "./../actions/types";
 const INITIAL_STATE = {
     messages: [],
     userJoin: "",
     userLeft: "",
+    userTyping:"",
+    notTyping:"",
     rooms: [],
     activeRoom: {},
 };
@@ -35,6 +37,9 @@ export default function (state = INITIAL_STATE, action) {
             return { ...state, userJoin: action.payload.message, userLeft: "" };
         case USER_LEFT:
             return { ...state, userLeft: action.payload.message, userJoin: "" };
+        case IS_TYPINGMESSAGE:
+            console.log(action.payload, "reducer")
+            return { ...state, userTyping: action.payload.typingText, userJoin: "" };
         case NEW_ROOM:
             return { ...state, rooms: [...state.rooms, ...action.payload] };
         case LOAD_ROOMS:

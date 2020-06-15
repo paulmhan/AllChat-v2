@@ -61,6 +61,7 @@ class SignUp extends Component {
   fileChange = () => {
     console.log("hello");
   }
+  
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (

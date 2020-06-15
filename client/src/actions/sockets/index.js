@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../socketTypes";
+import { NEW_MESSAGE,IS_TYPINGMESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {    
@@ -27,6 +27,16 @@ export const subscribeToMessageFromServer = () => dispatch => {
         handle: data => {
             dispatch({
                 type: USER_LEFT,
+                payload: data,
+            })
+        },
+    });
+
+    dispatch({
+        event: "userTypingMessage",
+        handle: data => {
+            dispatch({
+                type: IS_TYPINGMESSAGE,
                 payload: data,
             })
         },
@@ -75,6 +85,14 @@ export const sendMessage = data => {
     };
 };
 
+export const isTypingMessage = data => {
+    console.log("typing message sent to server")
+    return {
+        event: "isTypingMessage",
+        payload: data,
+        emit: true
+    };
+};
 
 export const unsubscribeMessage = (message) => {
     return {
