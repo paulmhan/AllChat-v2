@@ -135,4 +135,20 @@ export default
             te: "ఆల్ చాట్ ఎలా పనిచేస్తుంది",
             vi: "Cách thức hoạt động của AllChat"
         },
+        par: {
+            en: "When signing up, you can select your preferred language from the dropdown menu. (English will be selected by default if no choice is made).",
+            es: "Al registrarse, puede seleccionar su idioma preferido en el menú desplegable. (El inglés se seleccionará de forma predeterminada si no se realiza ninguna elección).",
+            zh: "注册时，您可以从下拉菜单中选择首选语言.（如果没有选择，默认情况下将选择英语).",
+            ar: "عند الاشتراك ، يمكنك تحديد لغتك المفضلة من القائمة المنسدلة. (سيتم تحديد اللغة الإنجليزية بشكل افتراضي إذا لم يتم تحديد أي خيار).",
+            fr: "Lors de votre abonnement, vous pouvez sélectionner votre langue préférée dans le menu déroulant.(L'anglais sera sélectionné par défaut si aucune option n'est sélectionnée).",
+            de: "Beim Abonnieren können Sie Ihre bevorzugte Sprache aus dem Dropdown-Menü auswählen.(Englisch wird standardmäßig ausgewählt, wenn keine Option ausgewählt ist).",
+            hi: "सदस्यता लेते समय, आप ड्रॉप-डाउन मेनू से अपनी पसंदीदा भाषा का चयन कर सकते हैं।(यदि कोई विकल्प नहीं चुना गया है तो अंग्रेजी को डिफ़ॉल्ट रूप से चुना जाएगा)।",
+            ja: "サブスクライブするときに、ドロップダウンメニューから希望の言語を選択できます。オプションが選択されていない場合、英語がデフォルトで選択されます）。",
+            ko: "가입 할 때 드롭 다운 메뉴에서 원하는 언어를 선택할 수 있습니다.(옵션을 선택하지 않으면 영어가 기본적으로 선택됩니다).",
+            ru: "При подписке вы можете выбрать предпочитаемый язык из выпадающего меню.(Английский будет выбран по умолчанию, если не выбрана ни одна опция).",
+            tl: "Kapag nag-subscribe, maaari mong piliin ang iyong ginustong wika mula sa drop-down menu.(Ang Ingles ay mapipili nang default kung walang pagpipilian ay napili).",
+            te: "సభ్యత్వం పొందినప్పుడు, మీరు డ్రాప్-డౌన్ మెను నుండి మీకు ఇష్టమైన భాషను ఎంచుకోవచ్చు.(ఎంపికను ఎంచుకోకపోతే ఇంగ్లీష్ అప్రమేయంగా ఎంపిక చేయబడుతుంది).",
+            vi: "Khi đăng ký, bạn có thể chọn ngôn ngữ ưa thích từ menu thả xuống.(Tiếng Anh sẽ được chọn theo mặc định nếu không có tùy chọn nào được chọn)."
+        },
+
     }

@@ -173,6 +173,37 @@ class LandingPage extends Component {
         };
     }
 
+    renderDemoParagraph(language) {
+        switch (language) {
+            case "es":
+                return content.par.es;
+            case "zh":
+                return content.par.zh;
+            case "ar":
+                return content.par.ar;
+            case "fr":
+                return content.par.fr;
+            case "de":
+                return content.par.de;
+            case "hi":
+                return content.par.hi;
+            case "ja":
+                return content.par.ja;
+            case "ko":
+                return content.par.ko;
+            case "ru":
+                return content.par.ru;
+            case "tl":
+                return content.par.tl;
+            case "te":
+                return content.par.te;
+            case "vi":
+                return content.par.vi;
+            default:
+                return content.par.en;
+        };
+    }
+
 
 
     render() {
@@ -233,8 +264,8 @@ class LandingPage extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Grid.Column width={16}>
-                                    <Header id="demo-subheader1" as="h4">When signing up, you can select your preferred language from the dropdown menu.
-                                    (English will be selected by default if no choice is made).
+                                    <Header id="demo-subheader1" as="h4">
+                                    {this.renderDemoParagraph(this.props.user?.language)}
                                     </Header>
                                     <Header id="demo-subheader2" as="h4">
                                         Then create a room, or join an existing room, to begin chatting with people all around the world.
