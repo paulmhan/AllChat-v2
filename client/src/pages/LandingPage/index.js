@@ -376,7 +376,7 @@ class LandingPage extends Component {
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Header id="translate-demo-subheader" as="h4">
-                                {this.renderDemoParagraph2(this.props.user?.language)}
+                                {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
                             </Grid.Row>
                         </Grid>
@@ -389,7 +389,7 @@ class LandingPage extends Component {
                 </Grid>
 
                 <footer id="developers-footer">
-                    <Developers />
+                    <Developers user={this.props.user}/>
                 </footer>
             </>
         )
