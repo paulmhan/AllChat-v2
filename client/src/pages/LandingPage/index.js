@@ -235,6 +235,37 @@ class LandingPage extends Component {
         };
     }
 
+    renderTranslateHeader(language) {
+        switch (language) {
+            case "es":
+                return content.tran.es;
+            case "zh":
+                return content.tran.zh;
+            case "ar":
+                return content.tran.ar;
+            case "fr":
+                return content.tran.fr;
+            case "de":
+                return content.tran.de;
+            case "hi":
+                return content.tran.hi;
+            case "ja":
+                return content.tran.ja;
+            case "ko":
+                return content.tran.ko;
+            case "ru":
+                return content.tran.ru;
+            case "tl":
+                return content.tran.tl;
+            case "te":
+                return content.tran.te;
+            case "vi":
+                return content.tran.vi;
+            default:
+                return content.tran.en;
+        };
+    }
+
 
 
     render() {
@@ -311,7 +342,7 @@ class LandingPage extends Component {
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
-                                <Header as="h1" id="translate-demo-header">With AllChat, the Language Barrier is Broken!</Header>
+                                <Header as="h1" id="translate-demo-header">{this.renderTranslateHeader(this.props.user?.language)}</Header>
                             </Grid.Row>
                             <Grid.Row centered>
                                 <Header id="translate-demo-subheader" as="h4">

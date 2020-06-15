@@ -165,4 +165,19 @@ export default
             te: "ప్రపంచవ్యాప్తంగా ఉన్న వ్యక్తులతో చాట్ చేయడం ప్రారంభించడానికి ఒక గదిని సృష్టించండి లేదా ఇప్పటికే ఉన్న గదిలో చేరండి.",
             vi: "Sau đó, tạo một phòng, hoặc tham gia một phòng hiện có, để bắt đầu trò chuyện với mọi người trên khắp thế giới."
         },
+        tran: {
+            en: "With AllChat, the Language Barrier is Broken!",
+            es: "¡Con AllChat, la barrera del idioma está rota!",
+            zh: "有了AllChat，语言障碍就被打破了！",
+            ar: "مع AllChat ، يتم كسر حاجز اللغة!",
+            fr: "Avec AllChat, la barrière de la langue est brisée!",
+            de: "Mit AllChat ist die Sprachbarriere gebrochen!",
+            hi: "ऑलचैट के साथ, भाषा बैरियर टूटी हुई है!",
+            ja: "AllChatを使用すると、言語の壁が壊れます！",
+            ko: "AllChat으로 언어 장벽이 깨졌습니다!",
+            ru: "С AllChat языковой барьер сломан!",
+            tl: "PaSa AllChat, Broken ang Wika ng Wika!",
+            te: "ఆల్చాట్‌తో, భాషా అవరోధం విరిగింది!",
+            vi: "Với AllChat, Rào cản ngôn ngữ bị hỏng!"
+        },
     }
