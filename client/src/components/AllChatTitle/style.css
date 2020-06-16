@@ -1,8 +1,8 @@
-#allchat-icon {
+#allchat-icon-container {
     position: relative;
-    left: 20px;
+    left: 60px;
 }
 
-#main-header {
-    color: white;
+#allchat-logo {
+    width: 250px;
 }

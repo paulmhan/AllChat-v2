@@ -3,6 +3,7 @@
     border-radius: 10px;
     width: 60%;
     margin: 0 auto; /*This will automatically center anything*/
+    margin-top: 120px;
 }
 
 #contact-header {
