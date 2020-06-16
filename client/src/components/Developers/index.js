@@ -152,7 +152,7 @@ class Developers extends Component {
         return(
             <>
                 <Grid id="developers-container" divided>
-                    <Grid.Column width={7}>
+                    <Grid.Column width={6}>
                         <Grid.Row>
                             <Grid.Column>
                                 <Header id="powered" as="h1">{this.renderPower(this.props.user?.language)}</Header>
@@ -162,19 +162,19 @@ class Developers extends Component {
                         <Grid.Row centered>
                             <Grid>
                                 <Grid.Column width={3}>
-                                    <Image id="socket" href="https://socket.io/" target=":blank" size="tiny" src={SocketLogo} />
+                                    <Image id="socket" className="logos" href="https://socket.io/" target=":blank" size="tiny" src={SocketLogo} />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
-                                    <Image id="semantic" href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
+                                    <Image id="semantic" className="logos" href="https://react.semantic-ui.com/" target=":blank" size="tiny" src={SemanticLogo} />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
-                                    <Image id="react" href="https://reactjs.org/" target=":blank" size="tiny" src={ReactLogo} />
+                                    <Image id="react" className="logos" href="https://reactjs.org/" target=":blank" size="tiny" src={ReactLogo} />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
-                                    <Image id="redux" href="https://redux.js.org/" target=":blank" size="tiny" src={ReduxLogo} />
+                                    <Image id="redux" className="logos" href="https://redux.js.org/" target=":blank" size="tiny" src={ReduxLogo} />
                                 </Grid.Column>
                                 <Grid.Column width={3}>
-                                    <Image id="google-translate" href="https://cloud.google.com/translate/docs" target=":blank" size="tiny" src={GoogleTranslateLogo} />
+                                    <Image id="google-translate" className="logos" href="https://cloud.google.com/translate/docs" target=":blank" size="tiny" src={GoogleTranslateLogo} />
                                 </Grid.Column>
                             </Grid>
                         </Grid.Row>
@@ -191,7 +191,7 @@ class Developers extends Component {
                             </Grid.Column>
                         </Grid.Row>
                     </Grid.Column>
-                    <Grid.Column width={5}>
+                    <Grid.Column width={6}>
                         <Grid.Row>
                             <Grid.Column>
                                 <Header id="developed" as="h1">{this.renderDevelopers(this.props.user?.language)}</Header>
@@ -199,9 +199,9 @@ class Developers extends Component {
                         </Grid.Row>
                         <Grid.Row>
                             <Grid.Column centered="true">
-                                <Image href="https://github.com/paulmhan" target=":blank" id="paul" circular size="tiny" src={Paul} />
-                                <Image href="https://github.com/suneethaburla" target=":blank" id="suneetha" circular size="tiny" src={Suneetha} />
-                                <Image href="https://github.com/jpgeib" target=":blank" id="james" circular size="tiny" src={James} />
+                                <Image href="https://github.com/paulmhan" target=":blank" id="paul" className="logos dev" circular size="tiny" src={Paul} />
+                                <Image href="https://github.com/suneethaburla" target=":blank" id="suneetha" className="logos dev" circular size="tiny" src={Suneetha} />
+                                <Image href="https://github.com/jpgeib" target=":blank" id="james" className="logos dev" circular size="tiny" src={James} />
                             </Grid.Column>
                         </Grid.Row>
                     </Grid.Column>
