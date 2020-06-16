@@ -73,17 +73,72 @@ class ContactForm extends Component {
     }
   }
 
-  renderNames = ({ input, meta, placeholder }) => {
-    return (
-      <Form.Input
-        {...input}
-        error={meta.touched && meta.error}
-        fluid
-        autoComplete='off'
-        placeholder={placeholder}
-      />
-    );
+  renderEmailValidation(language) {
+    switch (language) {
+      case "es":
+        return content.validateemail.es;
+      case "zh":
+        return content.validateemail.zh;
+      case "ar":
+        return content.validateemail.ar;
+      case "fr":
+        return content.validateemail.fr;
+      case "de":
+        return content.validateemail.de;
+      case "hi":
+        return content.validateemail.hi;
+      case "it":
+        return content.validateemail.it;
+      case "ja":
+        return content.validateemail.ja;
+      case "ko":
+        return content.validateemail.ko;
+      case "ru":
+        return content.validateemail.ru;
+      case "tl":
+        return content.validateemail.tl;
+      case "te":
+        return content.validateemail.te;
+      case "vi":
+        return content.validateemail.vi;
+      default:
+        return content.validateemail.en;
+    }
   }
+
+  renderContactFeedback(language) {
+    switch (language) {
+      case "es":
+        return content.contactfeed.es;
+      case "zh":
+        return content.contactfeed.zh;
+      case "ar":
+        return content.contactfeed.ar;
+      case "fr":
+        return content.contactfeed.fr;
+      case "de":
+        return content.contactfeed.de;
+      case "hi":
+        return content.contactfeed.hi;
+      case "it":
+        return content.contactfeed.it;
+      case "ja":
+        return content.contactfeed.ja;
+      case "ko":
+        return content.contactfeed.ko;
+      case "ru":
+        return content.contactfeed.ru;
+      case "tl":
+        return content.contactfeed.tl;
+      case "te":
+        return content.contactfeed.te;
+      case "vi":
+        return content.contactfeed.vi;
+      default:
+        return content.contactfeed.en;
+    }
+  }
+
 
   renderEmail = ({ input, meta }) => {
     return (
@@ -94,7 +149,7 @@ class ContactForm extends Component {
         icon="user"
         iconPosition="left"
         autoComplete="off"
-        placeholder="Email Address"
+        placeholder="someone@example.com"
       />
     );
   }

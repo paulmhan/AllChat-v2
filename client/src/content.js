@@ -512,4 +512,36 @@ export default
             te: "ఈ విభాగం ఖాళీగా ఉండకూడదు.",
             vi: "Phần này không thể để trống."
         },
+        contactfeed: {
+            en: "Please enter your feedback...",
+            es: "Esta sección no puede estar en blanco.",
+            zh: "此部分不能为空。",
+            ar: "لا يمكن ترك هذا القسم فارغًا.",
+            fr: "Cette section ne peut pas être vide.",
+            de: "Dieser Abschnitt darf nicht leer sein.",
+            hi: "यह अनुभाग रिक्त नहीं हो सकता।",
+            it: "Questa sezione non può essere vuota.",
+            ja: "このセクションは空白にできません。",
+            ko: "이 섹션은 비워 둘 수 없습니다.",
+            ru: "Этот раздел не может быть пустым.",
+            tl: "Ang seksyon na ito ay hindi maaaring maging blangko.",
+            te: "ఈ విభాగం ఖాళీగా ఉండకూడదు.",
+            vi: "Phần này không thể để trống."
+        },
+        validateemail: {
+            en: "Please enter your feedback...",
+            es: "Esta sección no puede estar en blanco.",
+            zh: "此部分不能为空。",
+            ar: "لا يمكن ترك هذا القسم فارغًا.",
+            fr: "Cette section ne peut pas être vide.",
+            de: "Dieser Abschnitt darf nicht leer sein.",
+            hi: "यह अनुभाग रिक्त नहीं हो सकता।",
+            it: "Questa sezione non può essere vuota.",
+            ja: "このセクションは空白にできません。",
+            ko: "이 섹션은 비워 둘 수 없습니다.",
+            ru: "Этот раздел не может быть пустым.",
+            tl: "Ang seksyon na ito ay hindi maaaring maging blangko.",
+            te: "ఈ విభాగం ఖాళీగా ఉండకూడదు.",
+            vi: "Phần này không thể để trống."
+        },
     }
