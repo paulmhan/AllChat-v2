@@ -109,13 +109,10 @@ class Chat extends Component {
         );
     }
 
-    handleKeyPress = () => {
+    handleChange = () => {
         const user = this.props.user;
         const room = this.props.room;
-        console.log("1 hello");
         this.props.isTyping({ user, room });
-        console.log("2 hello");
-        console.log();
     }
 
     render() {
@@ -137,14 +134,14 @@ class Chat extends Component {
                         deleteMessage={this.props.deleteMessage}
                         user={this.props.user}
                     />
-                    <p>{this.props.typingText}</p>
+                    <p>{this.props.userTyping.typingText}</p>
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
                             <Grid.Column width={14}>
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
-                                    onKeyDown={() => this.handleKeyPress()}
+                                    onChange={this.handleChange}
                                     fluid
                                 />
                             </Grid.Column>
@@ -175,6 +172,7 @@ function mapStateToProps(state) {
         room: state.socket.activeRoom,
         userJoin: state.socket.userJoin,
         userLeft: state.socket.userLeft,
+        userTyping: state.socket.userTyping,
     }
 }
 

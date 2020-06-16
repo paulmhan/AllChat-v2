@@ -33,7 +33,7 @@ export const subscribeToMessageFromServer = () => dispatch => {
     });
 
     dispatch({
-        event: "userTypingMessage",
+        event: "userTyping",
         handle: data => {
             dispatch({
                 type: IS_TYPING,
@@ -43,7 +43,7 @@ export const subscribeToMessageFromServer = () => dispatch => {
     });
 
     dispatch({
-        event: "notTyping",
+        event: "userNotTyping",
         handle: data => {
             dispatch({
                 type: NOT_TYPING,
@@ -87,7 +87,6 @@ export const subscribeToRoomFromServer = () => dispatch => {
 };
 
 export const sendMessage = data => {
-    console.log("message sent to server")
     return {
         event: "message",
         payload: data,
@@ -96,7 +95,6 @@ export const sendMessage = data => {
 };
 
 export const isTyping = data => {
-    console.log("typing message sent to server")
     return {
         event: "isTyping",
         payload: data,
@@ -105,7 +103,6 @@ export const isTyping = data => {
 };
 
 export const notTyping = data => {
-    console.log("no typing message sent to server")
     return {
         event: "notTyping",
         payload: data,

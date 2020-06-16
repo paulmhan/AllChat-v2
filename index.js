@@ -90,15 +90,11 @@ io.on("connection", socket => {
     })
 
     socket.on("isTyping", data => {
-        console.log("server received")
         socket.broadcast.to(data.room._id).emit("userTyping", { typingText: `${data.user.firstName}\u00A0${data.user.lastName} is typing...`})
-        onsole.log("server sent")
     })
 
-    socket.on("noTyping", data => {
-        console.log("server received")
-        socket.broadcast.to(data.room._id).emit("notTyping", { typingText: ""})
-        onsole.log("server sent")
+    socket.on("notTyping", data => {
+        socket.broadcast.to(data.room._id).emit("userNotTyping", { typingText: ""})
     })
 
     socket.on("disconnect", () => {

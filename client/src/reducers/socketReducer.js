@@ -16,8 +16,6 @@ export default function (state = INITIAL_STATE, action) {
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
         case TRANSLATE_MESSAGE:
             const  {newMessage}   = action.payload
-            console.log(newMessage, "reducer newMessage")
-            // return { ...state, activeRoom: { ...state.activeRoom, messages: [...state.activeRoom.messages, newMessage] }};
             return {
                 ...state, activeRoom: {
                     ...state.activeRoom, messages: state.activeRoom.messages.filter(message => {
@@ -37,11 +35,9 @@ export default function (state = INITIAL_STATE, action) {
         case USER_LEFT:
             return { ...state, userLeft: action.payload.message, userJoin: "" };
         case IS_TYPING:
-            console.log(action.payload, "reducer")
-            return { ...state, userTyping: action.payload.typingText };
+            return { ...state, userTyping: action.payload };
         case NOT_TYPING:
-                console.log(action.payload, "reducer")
-            return { ...state, userTyping: action.payload.typingText};
+            return { ...state, userTyping: action.payload};
         case NEW_ROOM:
             return { ...state, rooms: [...state.rooms, ...action.payload] };
         case LOAD_ROOMS:
