@@ -163,7 +163,7 @@ class ContactForm extends Component {
         icon="write"
         iconPosition="left"
         autoComplete="off"
-        placeholder="Please enter your feedback..."
+        placeholder={this.renderContactFeedback(this.props.user?.language)}
       />
     )
   }
