@@ -62,7 +62,7 @@ class SignIn extends Component {
         </Grid.Column>
         <Grid.Column width={8}>
           <Form id="signin-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
-            <Segment id="signin-form" stacked>
+            <Segment fluid id="signin-form" stacked>
               <Header id="signin-header" as="h1">Sign In and Continue Chatting!</Header>
               <Header id="signin-form-directions" as="h4">Please provide your credentials:</Header>
               <Field
