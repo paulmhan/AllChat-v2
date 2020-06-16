@@ -7,7 +7,7 @@ import { compose } from "redux";
 import ChatSideBar from "../../components/ChatSideBar"
 import MessageContainer from "../../containers/MessageContainer";
 import requireAuth from "../../hoc/requireAuth";
-import { subscribeToMessageFromServer, sendMessage, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
+import { subscribeToMessageFromServer, sendMessage, isTyping, notTyping, getActiveRoom, unsubscribeMessage, leaveRoom, deleteMessage } from "../../actions/sockets";
 import { loadUser } from "../../actions/auth";
 import content from "../../content.js";
 
@@ -47,6 +47,7 @@ class Chat extends Component {
             this.scrollToBottom();
         }
     }
+    
 
     renderSend(language) {
         switch (language) {
@@ -93,10 +94,8 @@ class Chat extends Component {
         const user = this.props.user;
         const room = this.props.room;
         this.props.sendMessage({ formValues, user, room });
+        this.props.notTyping({ user, room });
         dispatch({ type: 'SEND_MESSAGE' });
-        if (formValues === "") {
-            console.log("You must enter a message");
-        };
     }
 
     renderMessageInput = ({ input, meta }) => {
@@ -110,9 +109,10 @@ class Chat extends Component {
         );
     }
 
-    handleKeyUp = (event) => {
-        console.log("hello");
-        console.log(event.keyCode)
+    handleChange = () => {
+        const user = this.props.user;
+        const room = this.props.room;
+        this.props.isTyping({ user, room });
     }
 
     render() {
@@ -134,13 +134,14 @@ class Chat extends Component {
                         deleteMessage={this.props.deleteMessage}
                         user={this.props.user}
                     />
+                    <p>{this.props.userTyping.typingText}</p>
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
                             <Grid.Column width={14}>
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
-                                    onKeyPress={this.handleKeyUp}
+                                    onChange={this.handleChange}
                                     fluid
                                 />
                             </Grid.Column>
@@ -171,6 +172,7 @@ function mapStateToProps(state) {
         room: state.socket.activeRoom,
         userJoin: state.socket.userJoin,
         userLeft: state.socket.userLeft,
+        userTyping: state.socket.userTyping,
     }
 }
 
@@ -180,6 +182,8 @@ export default compose(
         loadUser,
         subscribeToMessageFromServer,
         sendMessage,
+        isTyping,
+        notTyping,
         getActiveRoom,
         unsubscribeMessage,
         leaveRoom,

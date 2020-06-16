@@ -89,6 +89,14 @@ io.on("connection", socket => {
         })
     })
 
+    socket.on("isTyping", data => {
+        socket.broadcast.to(data.room._id).emit("userTyping", { typingText: `${data.user.firstName}\u00A0${data.user.lastName} is typing...`})
+    })
+
+    socket.on("notTyping", data => {
+        socket.broadcast.to(data.room._id).emit("userNotTyping", { typingText: ""})
+    })
+
     socket.on("disconnect", () => {
         console.log("Client disconnected.", socket.id);
         if(socket.room) {
