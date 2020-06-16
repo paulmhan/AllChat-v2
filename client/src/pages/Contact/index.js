@@ -12,7 +12,6 @@ import "./style.css";
 class Contact extends Component {
 
   state = {
-    name: "",
     email: "",
     text: "",
     success: ""
@@ -120,10 +119,9 @@ class Contact extends Component {
           <ContactForm
             onSubmit={this.onSubmit}
             success={this.state.success}
-            use={this.props.user}
+            user={this.props.user}
           />
         </Grid.Column>
-
       </Grid>
     );
   }

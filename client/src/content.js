@@ -496,4 +496,20 @@ export default
             te: "మేము ఏదైనా మరియు అన్ని అభిప్రాయాలకు విలువ ఇస్తాము! మేము మెరుగుపరచగల భాగాలపై మీకు సూచనలు ఉన్నాయా, మా అప్లికేషన్ యొక్క కార్యాచరణపై ప్రశ్నలు లేదా హలో చెప్పాలనుకుంటే, మా ఇన్‌బాక్స్ ఎల్లప్పుడూ తెరిచి ఉంటుంది.",
             vi: "Chúng tôi đánh giá bất kỳ và tất cả thông tin phản hồi! Cho dù bạn có đề xuất về các thành phần chúng tôi có thể cải thiện, câu hỏi về chức năng của ứng dụng của chúng tôi hoặc chỉ muốn nói xin chào, hộp thư đến của chúng tôi luôn mở."
         },
+        validate: {
+            en: "This section cannot be blank.",
+            es: "Esta sección no puede estar en blanco.",
+            zh: "此部分不能为空。",
+            ar: "لا يمكن ترك هذا القسم فارغًا.",
+            fr: "Cette section ne peut pas être vide.",
+            de: "Dieser Abschnitt darf nicht leer sein.",
+            hi: "यह अनुभाग रिक्त नहीं हो सकता।",
+            it: "Questa sezione non può essere vuota.",
+            ja: "このセクションは空白にできません。",
+            ko: "이 섹션은 비워 둘 수 없습니다.",
+            ru: "Этот раздел не может быть пустым.",
+            tl: "Ang seksyon na ito ay hindi maaaring maging blangko.",
+            te: "ఈ విభాగం ఖాళీగా ఉండకూడదు.",
+            vi: "Phần này không thể để trống."
+        },
     }
