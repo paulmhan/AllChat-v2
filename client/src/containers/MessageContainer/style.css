@@ -31,14 +31,14 @@
 
 #message-text {
     font-size: 20px;
-    margin-left: 10px;
+    margin-left: 100px;
     margin-right: 10px;
 
 }
 
 #owner-text {
     font-size: 20px;
-    margin-left: 10px;
+    margin-left: 100px;
     margin-right: 10px;
     color: black;
 }
@@ -65,6 +65,7 @@
 
 #owner-date {
     color: black;
+    margin-left: 10px;
 }
 
 #delete-message-btn {

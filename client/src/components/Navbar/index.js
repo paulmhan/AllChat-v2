@@ -120,7 +120,7 @@ class Navbar extends Component {
         {!this.props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup"><Icon name="signup" />Sign Up</Menu.Item>}
         {this.props.isLoggedIn && this.props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content={this.renderRooms(this.props.user?.language)} id="chatrooms" />}
         {this.props.isLoggedIn ?
-          <Dropdown id="user-dropdown" item text={`${this.renderLoggedIn(this.props.user?.language)}: ${this.props.user?.firstName} ${this.props.user?.lastName}`}>
+          <Dropdown id="user-dropdown" item text={`${this.props.user?.firstName} ${this.props.user?.lastName}`}>
             <Dropdown.Menu>
               <Dropdown.Item as={Link} to='/' onClick={this.props.signOut}>
                 <Icon name="sign-out" />
