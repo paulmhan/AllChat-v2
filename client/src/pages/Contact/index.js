@@ -55,6 +55,39 @@ class Contact extends Component {
     };
   }
 
+  renderContactParagraph(language) {
+    switch (language) {
+      case "es":
+        return content.contactpar.es;
+      case "zh":
+        return content.contactpar.zh;
+      case "ar":
+        return content.contactpar.ar;
+      case "fr":
+        return content.contactpar.fr;
+      case "de":
+        return content.contactpar.de;
+      case "hi":
+        return content.contactpar.hi;
+      case "it":
+        return content.contactpar.it;
+      case "ja":
+        return content.contactpar.ja;
+      case "ko":
+        return content.contactpar.ko;
+      case "ru":
+        return content.contactpar.ru;
+      case "tl":
+        return content.contactpar.tl;
+      case "te":
+        return content.contactpar.te;
+      case "vi":
+        return content.contactpar.vi;
+      default:
+        return content.contactpar.en;
+    };
+  }
+
   onSubmit = () => {
     emailjs.sendForm('default_service', 'template_8ThKxTDq', "#contact-form", "user_UQ5mLuD7ryVQD1fmgdrQX")
       .then(() => {
@@ -81,7 +114,7 @@ class Contact extends Component {
           <Header id="contact-header" as="h1">{this.renderContact(this.props.user?.language)}</Header>
         </Grid.Column>
         <Grid.Column width={16}>
-          <Header id="contact-par" as="p">We value any and all feedback! Whether you have suggestions on components we can improve on, questions on the functionality of our application, or just want to say hello, our inbox is always open.</Header>
+          <Header id="contact-par" as="p">{this.renderContactParagraph(this.props.user?.language)}</Header>
         </Grid.Column>
         <Grid.Column width={16}>
           <Header id="contact-form-directions" as="h4">Please fill out the following fields:</Header>
