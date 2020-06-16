@@ -7,6 +7,7 @@
     color: white;
     position: relative;
     right: 30px;
+    font-size: 18px;
 }
 
 #signin {
@@ -16,6 +17,7 @@
     transition: 0.5s;
     position: relative;
     right: 20px;
+    font-size: 18px;
 }
 
 #signin:hover {
@@ -34,8 +36,12 @@
     color: white;
     position: relative;
     right: 20px;
+    font-size: 18px;
 }
 
 #user-dropdown {
     color: white;
+    font-size: 18px;
+    position: relative;
+    right: 20px;
 }

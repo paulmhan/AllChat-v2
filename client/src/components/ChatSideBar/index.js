@@ -16,7 +16,7 @@ class ChatSideBar extends Component {
                     <div id="user-list">
                         {this.props.activeUsers?.map((user, index) =>
                             <Segment.Group key={index}>
-                                <Segment>{user}</Segment>
+                                <Segment id="user-name">{user}</Segment>
                             </Segment.Group>)}
                     </div>
                 </Segment.Group>

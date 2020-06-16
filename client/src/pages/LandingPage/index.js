@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import { Grid, Button, Image, Header, List } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import content from "../../content.js";
-import Developers from "../../components/Developers";
-import PeopleChatting from "../../assets/images/people-chatting.png";
-import AllChatDemo1 from "../../assets/gifs/AllChat-demo1.gif";
-import AllChatDemo2 from "../../assets/gifs/AllChat-demo2.gif";
+import "./style.css";
+import Footer from "../../components/Footer";
+import PeopleChatting from "../../assets/images/people-chatting-text.png";
+import AllChatDemo1 from "../../assets/gifs/AllChat-demo4.gif";
+import AllChatDemo2 from "../../assets/gifs/AllChat-demo5.gif";
 import { loadUser } from "../../actions/auth";
 import { connect } from 'react-redux';
 import { compose } from "redux";
-import "./style.css";
+
 
 
 class LandingPage extends Component {
@@ -359,14 +360,36 @@ class LandingPage extends Component {
                     </Grid.Column>
                 </Grid>
 
-                <Grid id="demo-container">
+                {/* <Grid id="about-container">
                     <Grid.Column width={8}>
-                        <Grid container>
+                    <Grid container>
                             <Grid.Row centered>
-                                <Image fluid id="chat-gif" alt="chat-gif" src={AllChatDemo1} />
+                                <Image fluid id="landing-page-image" alt="people-chatting" src={PeopleChatting} />
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Header id="about-header" as="h1">About AllChat</Header>
+                            </Grid.Row>
+                            <Grid.Row centered>
+                                <Grid.Column width={16}>
+                                    <Header id="about-subheader1" as="h4">
+                                    There are many different messaging apps out there, but what if you wanted to talk to someone in France, and don't speak French?
+                                    That's where AllChat comes in.
+                                    </Header>
+                                    <Header id="about-subheader2" as="h4">
+                                    AllChat utilizes its built-in API to translate the sender's message into the recipient's native language, allowing for more intuitive international communication. 
+                                    Whether its for sealing that important business deal, or discovering that special someone from across the globe, AllChat brings us all closer together.
+                                    </Header>
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
+                </Grid> */}
+
+                <Grid id="demo-container">
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
@@ -384,9 +407,23 @@ class LandingPage extends Component {
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Image fluid id="chat-gif" alt="chat-gif" src={AllChatDemo1} />
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
                 </Grid>
 
                 <Grid id="translate-demo-container">
+                    <Grid.Column width={8}>
+                        <Grid container>
+                            <Grid.Row centered>
+                                <Image fluid id="translate-gif" alt="translate-gif" src={AllChatDemo2} />
+                            </Grid.Row>
+                        </Grid>
+                    </Grid.Column>
                     <Grid.Column width={8}>
                         <Grid container>
                             <Grid.Row centered>
@@ -399,15 +436,10 @@ class LandingPage extends Component {
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
-                    <Grid.Column width={8}>
-                        <Grid.Row centered>
-                            <Image fluid id="translate-gif" alt="translate-gif" src={AllChatDemo2} />
-                        </Grid.Row>
-                    </Grid.Column>
                 </Grid>
 
                 <footer id="developers-footer">
-                    <Developers user={this.props.user}/>
+                    <Footer user={this.props.user}/>
                 </footer>
             </>
         )
