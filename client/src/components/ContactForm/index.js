@@ -50,10 +50,8 @@ class ContactForm extends Component {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
       <>
-          <Form id="contact-form" onSubmit={this.props.submit} method="POST">
+          <Form id="contact-form" onSubmit={handleSubmit(this.props.onSubmit)} method="POST">
             <Field
-              onChange={this.props.handleInputChange}
-              value={this.props.username}
               name='firstName'
               component={this.renderNames}
               placeholder="First Name"
@@ -64,8 +62,6 @@ class ContactForm extends Component {
               }
             />
             <Field
-              onChange={this.props.handleInputChange}
-              value={this.props.username}
               name='lastName'
               component={this.renderNames}
               placeholder="Last Name"
@@ -76,8 +72,6 @@ class ContactForm extends Component {
               }
             />
             <Field
-              onChange={this.props.handleInputChange}
-              value={this.props.useremail}
               name='email'
               component={this.renderEmail}
               validate={
@@ -88,8 +82,6 @@ class ContactForm extends Component {
               }
             />
             <Field 
-              onChange={this.props.handleInputChange} 
-              value={this.props.message}
               name="description"
               component={this.renderDescription}
               validate={
@@ -114,20 +106,3 @@ class ContactForm extends Component {
 }
 
 export default reduxForm({ form: "contact" })(ContactForm);
-
-// {/* <form >
-//           <div className="form-group mx-5 mt-2">
-//             <label htmlFor="name">Name</label>
-//             <input type="text" className="form-control" name="name" onChange={this.props.handleInputChange} value={this.props.username} />
-//           </div>
-//           <div className="form-group mx-5">
-//             <label htmlFor="exampleInputEmail1">Email address</label>
-//             <input type="email" className="form-control" aria-describedby="emailHelp" name="email" onChange={this.props.handleInputChange} value={this.props.useremail} />
-//           </div>
-//           <div className="form-group mx-5">
-//             <label htmlFor="message">Message</label>
-//             <textarea className="form-control" rows="5" name="text" onChange={this.props.handleInputChange} value={this.props.message}></textarea>
-//           </div>
-//           <button type="submit" className="btn btn-primary mx-5 mb-3">Submit</button>
-//           <p className="ml-5">{this.props.success}</p>
-//         </form> */}

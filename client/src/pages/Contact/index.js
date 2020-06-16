@@ -13,8 +13,8 @@ class Contact extends Component {
     success: ""
   }
 
-  sendEmail = event => {
-    event.preventDefault();
+  onSubmit = event => {
+    // event.preventDefault();
     emailjs.sendForm('default_service', 'template_8ThKxTDq', "#contact-form", "user_UQ5mLuD7ryVQD1fmgdrQX")
       .then(() => {
         this.setState({
@@ -37,18 +37,17 @@ class Contact extends Component {
     return (
       <Grid id="contact-container">
         <Grid.Column width={16}>
-          <Header id="contact-header" as="h1">Tell us what you think of our app! Any improvements we can make?</Header>
+          <Header id="contact-header" as="h1">Contact Us:</Header>
+        </Grid.Column>
+        <Grid.Column width={16}>
+          <Header id="contact-par" as="p">We value all and any feedback! Whether you have suggestions on components we can improve on, questions on the functionality of our application, or just want to say hello, our inbox is always open.</Header>
         </Grid.Column>
         <Grid.Column  width={16}>
           <Header id="contact-form-directions" as="h4">Please fill out the following fields:</Header>
         </Grid.Column>
         <Grid.Column width={16}>
           <ContactForm
-            submit={this.sendEmail}
-            handleInputChange={this.handleInputChange}
-            username={this.state.name}
-            useremail={this.state.email}
-            message={this.state.text}
+            onSubmit={this.onSubmit}
             success={this.state.success}
           />
         </Grid.Column>
