@@ -117,9 +117,6 @@ class Contact extends Component {
           <Header id="contact-par" as="p">{this.renderContactParagraph(this.props.user?.language)}</Header>
         </Grid.Column>
         <Grid.Column width={16}>
-          <Header id="contact-form-directions" as="h4">Please fill out the following fields:</Header>
-        </Grid.Column>
-        <Grid.Column width={16}>
           <ContactForm
             onSubmit={this.onSubmit}
             success={this.state.success}
