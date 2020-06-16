@@ -14,7 +14,7 @@ import James from "../../assets/images/james-profile.jpg";
 
 import "./style.css";
 
-class Developers extends Component {
+class Footer extends Component {
 
     renderPower(language) {
         switch (language) {
@@ -211,4 +211,4 @@ class Developers extends Component {
     }
 } 
 
-export default Developers;
+export default Footer;

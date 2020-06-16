@@ -3,7 +3,7 @@ import { Grid, Button, Image, Header, List } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import content from "../../content.js";
 import "./style.css";
-import Developers from "../../components/Developers";
+import Footer from "../../components/Footer";
 import PeopleChatting from "../../assets/images/people-chatting-text.png";
 import AllChatDemo1 from "../../assets/gifs/AllChat-demo1.gif";
 import AllChatDemo2 from "../../assets/gifs/AllChat-demo2.gif";
@@ -438,7 +438,7 @@ class LandingPage extends Component {
                 </Grid>
 
                 <footer id="developers-footer">
-                    <Developers user={this.props.user}/>
+                    <Footer user={this.props.user}/>
                 </footer>
             </>
         )
