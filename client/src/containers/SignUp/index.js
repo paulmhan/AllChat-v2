@@ -62,13 +62,13 @@ class SignUp extends Component {
   // fileChange = () => {
   //   console.log("hello");
   // }
-  
+
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
       <Grid id="signup-container">
         <Grid.Column width={8}>
-        <Image fluid id="signup-page-image" alt="people-chatting-text" src={PeopleChatting} />
+          <Image fluid id="signup-page-image" alt="people-chatting-text" src={PeopleChatting} />
         </Grid.Column>
         <Grid.Column width={8}>
           <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
@@ -115,13 +115,13 @@ class SignUp extends Component {
                   ]
                 }
               />
-             
+
               {/* <Button as="label" htmlFor="file" type="button">
                    upload
                </Button>
                <input type="file" id="file" hidden onChange={this.fileChange} /> */}
-               
-            
+
+
               <div>
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
                 <div>

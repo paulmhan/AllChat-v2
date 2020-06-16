@@ -2,11 +2,13 @@
     border-radius: 10px;
     width: 90%;
     margin: 0 auto;
+    margin-top: 120px;
     background-color: #f7f7f7
 }
 
 #signup-form-container {
-    padding-top: 100px;
+    padding-top: 30px;
+    
 }
 
 #signup-form {
@@ -27,7 +29,7 @@
 }
 
 #signup-page-image {
-    margin: 0 auto;
+    margin-right: auto;
 }
 
 #signup-header {
