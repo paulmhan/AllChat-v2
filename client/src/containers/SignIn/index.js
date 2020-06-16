@@ -58,7 +58,7 @@ class SignIn extends Component {
 
       <Grid id="signin-container">
         <Grid.Column width={8}>
-        <Image fluid id="signin-page-image" alt="people-chatting" src={PeopleChatting} />
+          <Image fluid id="signin-page-image" alt="people-chatting" src={PeopleChatting} />
         </Grid.Column>
         <Grid.Column width={8}>
           <Form id="signin-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
