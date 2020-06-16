@@ -181,7 +181,7 @@ class ContactForm extends Component {
             validate={
               [
                 required({ msg: this.renderValidation(this.props.user?.language) }),
-                email({ msg: 'You must provide a valid email address.' })
+                email({ msg: this.renderEmailValidation(this.props.user?.language) })
               ]
             }
           />

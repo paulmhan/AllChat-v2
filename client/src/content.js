@@ -529,19 +529,19 @@ export default
             vi: "Phần này không thể để trống."
         },
         validateemail: {
-            en: "Please enter your feedback...",
-            es: "Esta sección no puede estar en blanco.",
-            zh: "此部分不能为空。",
-            ar: "لا يمكن ترك هذا القسم فارغًا.",
-            fr: "Cette section ne peut pas être vide.",
-            de: "Dieser Abschnitt darf nicht leer sein.",
-            hi: "यह अनुभाग रिक्त नहीं हो सकता।",
-            it: "Questa sezione non può essere vuota.",
-            ja: "このセクションは空白にできません。",
-            ko: "이 섹션은 비워 둘 수 없습니다.",
-            ru: "Этот раздел не может быть пустым.",
-            tl: "Ang seksyon na ito ay hindi maaaring maging blangko.",
-            te: "ఈ విభాగం ఖాళీగా ఉండకూడదు.",
-            vi: "Phần này không thể để trống."
+            en: "You must provide a valid email address.",
+            es: "Debe proporcionar una dirección de correo electrónico válida.",
+            zh: "您必须提供一个有效的电子邮件地址。",
+            ar: "يجب عليك تقديم عنوان بريد إلكتروني صالح.",
+            fr: "Vous devez fournir une adresse e-mail valide.",
+            de: "Sie müssen eine gültige E-Mail-Adresse angeben.",
+            hi: "आपको एक मान्य ईमेल पता प्रदान करना होगा।",
+            it: "Devi fornire un indirizzo email valido.",
+            ja: "有効なメールアドレスを入力する必要があります。",
+            ko: "유효한 이메일 주소를 제공해야합니다.",
+            ru: "Вы должны предоставить действующий адрес электронной почты.",
+            tl: "Dapat kang magbigay ng isang wastong email address.",
+            te: "మీరు తప్పక చెల్లుబాటు అయ్యే ఇమెయిల్ చిరునామాను అందించాలి.",
+            vi: "Bạn phải cung cấp một địa chỉ email hợp lệ."
         },
     }
