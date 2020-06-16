@@ -480,5 +480,20 @@ export default
             te: "మీరు ఖచ్చితంగా ఈ సందేశాన్ని తొలగించాలనుకుంటున్నారా?",
             vi: "Bạn có chắc chắn muốn xóa tin nhắn này?"
         },
-
+        contactpar: {
+            en: "We value any and all feedback! Whether you have suggestions on components we can improve on, questions on the functionality of our application, or just want to say hello, our inbox is always open.",
+            es: "Valoramos todos y cada uno de los comentarios! Si tiene sugerencias sobre los componentes que podemos mejorar, preguntas sobre la funcionalidad de nuestra aplicación, o simplemente quiere saludar, nuestra bandeja de entrada siempre está abierta.",
+            zh: "我们重视任何反馈！无论您对我们可以改进的组件有建议，对我们的应用程序功能的疑问，还是想打个招呼，我们的收件箱始终处于打开状态。",
+            ar: "نحن نقدر أي وجميع ردود الفعل! سواء كان لديك اقتراحات حول المكونات التي يمكننا تحسينها ، أو أسئلة حول وظائف تطبيقنا ، أو ترغب فقط في الترحيب ، فإن البريد الوارد لدينا مفتوح دائمًا.",
+            fr: "Nous apprécions tous les commentaires! Que vous ayez des suggestions sur les composants que nous pouvons améliorer, des questions sur la fonctionnalité de notre application, ou que vous vouliez simplement dire bonjour, notre boîte de réception est toujours ouverte.",
+            de: "Wir freuen uns über jegliches Feedback! Egal, ob Sie Vorschläge zu Komponenten haben, die wir verbessern können, Fragen zur Funktionalität unserer Anwendung haben oder einfach nur Hallo sagen möchten, unser Posteingang ist immer geöffnet.",
+            hi: "हम किसी भी और सभी प्रतिक्रिया को महत्व देते हैं! चाहे आपके पास उन घटकों पर सुझाव हों जिन पर हम सुधार कर सकते हैं, हमारे आवेदन की कार्यक्षमता पर सवाल उठा सकते हैं, या सिर्फ नमस्ते कहना चाहते हैं, हमारा इनबॉक्स हमेशा खुला है।",
+            it: "Apprezziamo qualsiasi feedback! Sia che tu abbia suggerimenti sui componenti su cui possiamo migliorare, domande sulla funzionalità della nostra applicazione o desideri semplicemente salutare, la nostra casella di posta è sempre aperta.",
+            ja: "私たちはあらゆるフィードバックを大切にしています！私たちが改善できるコンポーネントに関する提案、アプリケーションの機能に関する質問がある場合、または挨拶したい場合でも、受信トレイは常に開いています。",
+            ko: "우리는 모든 의견을 소중하게 생각합니다! 개선 할 수있는 구성 요소에 대한 제안이 있거나 애플리케이션 기능에 대한 질문이 있거나 인사를하려는 경우 항상받은 편지함이 항상 열려 있습니다.",
+            ru: "Мы ценим любые отзывы! Если у вас есть предложения по компонентам, которые мы можем улучшить, вопросы по функциональности нашего приложения или просто хотите сказать привет, наш почтовый ящик всегда открыт.",
+            tl: "Pinahahalagahan namin ang anuman at lahat ng puna! Kung mayroon kang mga mungkahi sa mga sangkap na maaari naming mapagbuti, ang mga katanungan sa pag-andar ng aming aplikasyon, o nais lamang na kumusta, ang aming inbox ay palaging bukas.",
+            te: "మేము ఏదైనా మరియు అన్ని అభిప్రాయాలకు విలువ ఇస్తాము! మేము మెరుగుపరచగల భాగాలపై మీకు సూచనలు ఉన్నాయా, మా అప్లికేషన్ యొక్క కార్యాచరణపై ప్రశ్నలు లేదా హలో చెప్పాలనుకుంటే, మా ఇన్‌బాక్స్ ఎల్లప్పుడూ తెరిచి ఉంటుంది.",
+            vi: "Chúng tôi đánh giá bất kỳ và tất cả thông tin phản hồi! Cho dù bạn có đề xuất về các thành phần chúng tôi có thể cải thiện, câu hỏi về chức năng của ứng dụng của chúng tôi hoặc chỉ muốn nói xin chào, hộp thư đến của chúng tôi luôn mở."
+        },
     }

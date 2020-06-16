@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { compose } from "redux";
 
 
+
 class LandingPage extends Component {
 
     async componentDidMount() {
