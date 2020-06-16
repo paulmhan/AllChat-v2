@@ -49,27 +49,26 @@
 
 #socket {
     margin-left: 10px;
+    width: 80%;
+    height: auto;
 }
 
 #semantic {
-    position: relative;
-    right: 110px;
+    width: 80%;
+    height: auto;
 }
 
 #react {
-    width: 120px;
-    height: 80px;
-    position: relative;
-    right: 50px;
-    
+    width: 80%;
+    height: auto;
 }
 
 #redux {
-    position: relative;
-    right: 70px;
+    width: 80%;
+    height: auto;
 }
 
 #google-translate {
-    position: relative;
-    right: 150px;
+    width: 80%;
+    height: auto;
 }

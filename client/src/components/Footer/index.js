@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import content from "../../content.js";
 import SocketLogo from "../../assets/images/Socket-IO-Logo.svg"
 import SemanticLogo from "../../assets/images/semantic-ui-logo.png"
-import ReactLogo from "../../assets/images/React-icon.png";
+import ReactLogo from "../../assets/images/React-Logo.png";
 import ReduxLogo from "../../assets/images/Redux-logo.png";
 import GoogleTranslateLogo from "../../assets/images/GoogleTranslate-logo.png";
 import Paul from "../../assets/images/paul-profile.jpg";
