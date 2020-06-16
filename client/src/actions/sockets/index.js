@@ -1,4 +1,4 @@
-import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../socketTypes";
+import { NEW_MESSAGE, IS_TYPING, NOT_TYPING, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "../socketTypes";
 
 
 export const subscribeToMessageFromServer = () => dispatch => {    
@@ -27,6 +27,26 @@ export const subscribeToMessageFromServer = () => dispatch => {
         handle: data => {
             dispatch({
                 type: USER_LEFT,
+                payload: data,
+            })
+        },
+    });
+
+    dispatch({
+        event: "userTyping",
+        handle: data => {
+            dispatch({
+                type: IS_TYPING,
+                payload: data,
+            })
+        },
+    });
+
+    dispatch({
+        event: "userNotTyping",
+        handle: data => {
+            dispatch({
+                type: NOT_TYPING,
                 payload: data,
             })
         },
@@ -67,7 +87,6 @@ export const subscribeToRoomFromServer = () => dispatch => {
 };
 
 export const sendMessage = data => {
-    console.log("message sent to server")
     return {
         event: "message",
         payload: data,
@@ -75,6 +94,21 @@ export const sendMessage = data => {
     };
 };
 
+export const isTyping = data => {
+    return {
+        event: "isTyping",
+        payload: data,
+        emit: true
+    };
+};
+
+export const notTyping = data => {
+    return {
+        event: "notTyping",
+        payload: data,
+        emit: true
+    };
+};
 
 export const unsubscribeMessage = (message) => {
     return {

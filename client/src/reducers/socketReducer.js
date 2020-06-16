@@ -1,9 +1,10 @@
-import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "./../actions/socketTypes";
+import { NEW_MESSAGE, NEW_ROOM, LOAD_ROOMS,IS_TYPING, NOT_TYPING, ACTIVE_ROOM, USER_JOIN, USER_LEFT } from "./../actions/socketTypes";
 import{ TRANSLATE_MESSAGE} from "./../actions/types";
 const INITIAL_STATE = {
     messages: [],
     userJoin: "",
     userLeft: "",
+    userTyping:"",
     rooms: [],
     activeRoom: {},
 };
@@ -15,8 +16,6 @@ export default function (state = INITIAL_STATE, action) {
             return { ...state, activeRoom: { ...state.activeRoom, messages: action.payload.messages }};
         case TRANSLATE_MESSAGE:
             const  {newMessage}   = action.payload
-            console.log(newMessage, "reducer newMessage")
-            // return { ...state, activeRoom: { ...state.activeRoom, messages: [...state.activeRoom.messages, newMessage] }};
             return {
                 ...state, activeRoom: {
                     ...state.activeRoom, messages: state.activeRoom.messages.filter(message => {
@@ -35,6 +34,10 @@ export default function (state = INITIAL_STATE, action) {
             return { ...state, userJoin: action.payload.message, userLeft: "" };
         case USER_LEFT:
             return { ...state, userLeft: action.payload.message, userJoin: "" };
+        case IS_TYPING:
+            return { ...state, userTyping: action.payload };
+        case NOT_TYPING:
+            return { ...state, userTyping: action.payload};
         case NEW_ROOM:
             return { ...state, rooms: [...state.rooms, ...action.payload] };
         case LOAD_ROOMS:
