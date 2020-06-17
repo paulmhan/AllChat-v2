@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Image, Grid, Form, Segment, Button, Header, Flag } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import PeopleChatting from "../../assets/images/people-chatting-text.png";
 import axios from 'axios';
@@ -67,12 +67,12 @@ class SignUp extends Component {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
       <Grid id="signup-container">
-        <Grid.Column width={8}>
-          <Image fluid id="signup-page-image" alt="people-chatting-text" src={PeopleChatting} />
+        <Grid.Column  id="signup-image-div" tablet={16} computer={8}>
+          <Image verticalAllign="middle" centered fluid id="signup-page-image" alt="people-chatting-text" src={PeopleChatting} />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column tablet={16} computer={8}>
           <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
-            <Segment id="signup-form" stacked>
+            <Segment fluid id="signup-form" stacked>
               <Header id="signup-header" as="h1">Sign Up and Start Chatting!</Header>
               <Header id="signup-form-directions" as="h4">Please fill out the following information:</Header>
               <Field
@@ -127,7 +127,7 @@ class SignUp extends Component {
                 <div>
                   <Field name="language" component="select">
                     <option value="en" className="ae flag">English</option>
-                    <option value="ar" flag="cn">Arabic</option>
+                    <option value="ar" flag="cn"><i class="ae flag"></i>Arabic</option>
                     <option value="zh" flag="zh">Chinese</option>
                     <option value="fr" flag="fr">French</option>
                     <option value="de" flag="de">German</option>
