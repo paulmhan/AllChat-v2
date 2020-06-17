@@ -21,26 +21,27 @@
 </p>
 
 <p align="center">
-  <a href="#how-to-use">How To Use</a> •
+  <a href="#chat-example-usage">Chat Example Usage</a> •
   <a href="#features">Features</a> •
-  <a href="#download">Download</a> •
+  <a href="#technologies-used">Technologies Used</a> •
+  <a href="#apis-used">APIs Used</a> •
+  <a href="#contribute">Contribute</a> •
   <a href="#credits">Credits</a> •
-  <a href="#technologies">Technologies Used</a> 
+  <a href="#mvp">MVP</a> 
 </p>
 
-## Example Usage
+## Chat Example Usage
 ![](/client/src/assets/gifs/AllChat-demo4.gif)
-Users can create as many rooms as they would like. Once created, the room will appear in the room select page. Anyone can join any room 
 
-
-## How To Use?
-
-
+Users can create as many rooms as they would like. Once created, the room will appear in the room select page. Anyone can join any room and begin chatting.
 
 ## Features
 
-Translated Static Text
+* Translate Messages
+    - It does not matter what language other users speak. Every message has the option to be translated to your preferred language that you chose upon signing up. 
+
 ![](/client/src/assets/gifs/AllChat-demo5.gif)
+Translated Static Text
 ![](client/src/assets/images/translated.png)
 Multiple Rooms
 Multiple Users
@@ -87,11 +88,6 @@ Delete Rooms and Messages only by Creator
     },
 ```
 
-
-## Code Style
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
 ## Contribute
 
 If you wish to contribute, send a code snippet of a component, style, or anything else that can improve our app to one of our e-mail addresses:
@@ -99,6 +95,8 @@ If you wish to contribute, send a code snippet of a component, style, or anythin
 - paul.myung.han@gmail.com
 - suneetha@gmail.com
 - jpgeib2@gmail.com
+
+You can also contact us through our built in Contact Page, located in the footer.
 
 ## Credits
 
@@ -111,7 +109,7 @@ If you wish to contribute, send a code snippet of a component, style, or anythin
 - Suneetha Burla: 
     - Front-end Development
     - Back-end Server
-    - Socket.IO 
+    - Socket
     - MongoDB and Mongoose Schemas
     - GitHub: https://github.com/suneethaburla
 - James Geib: 
@@ -121,5 +119,5 @@ If you wish to contribute, send a code snippet of a component, style, or anythin
 
 ## MVP 
 
-Where it all began; our MVP version: [AllChat - MVP](https://github.com/paulmhan/AllChat)
+Where it all began: [AllChat - MVP](https://github.com/paulmhan/AllChat)
 
