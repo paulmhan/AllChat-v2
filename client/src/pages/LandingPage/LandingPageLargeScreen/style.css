@@ -31,10 +31,12 @@
 
 #landing-page-image-largescreen {
     margin: 0 auto;
+    position: relative;
+    bottom: 30px;
 }
 
 #inner-landing-container-largescreen {
-    padding-top: 100px;
+    padding-top: 30px;
 }
 
 #body-text-grid-largescreen {
@@ -80,33 +82,12 @@
     margin-top: 40px;
 }
 
-#about-header-largescreen {
-    font-size: 54px;
-    font-family: 'Rubik', sans-serif;
-    color: black;
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 20px;
-}
-
-#about-subheader1-largescreen {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-#about-subheader2-largescreen {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 #demo-container-largescreen {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 220px;
+    margin-top: 310px;
 }
 
 #demo-header-largescreen {
@@ -114,8 +95,8 @@
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
-    margin-top: 70px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #demo-subheader1-largescreen {
@@ -143,7 +124,7 @@
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
-    margin-top: 90px;
+    margin-top: 60px;
     margin-bottom: 30px;
 }
 
