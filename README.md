@@ -1,6 +1,12 @@
 # AllChat Messaging Application
 
-![](client/src/assets/images/AllChat-Logo.png)
+<h1 align="center">
+  <br>
+  <a href="https://all-chat-v2.herokuapp.com/"><img src="AllChat-Logo.png" alt="AllChat Logo" width="200"></a>
+  <br>
+  AllChat
+  <br>
+</h1>
 
 As communication continues to increase on a global scale, so too does the demand for quick, reliable translation. With AllChat, you can talk to anyone across the world, even if you don't speak their language. With AllChat, there are no language barriers! 
 
