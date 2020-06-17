@@ -30,23 +30,31 @@
   <a href="#mvp">MVP</a> 
 </p>
 
+![](client/src/assets/images/LandingPage.png)
+
+
 ## Chat Example Usage
 ![](/client/src/assets/gifs/AllChat-demo4.gif)
 
-Users can create as many rooms as they would like. Once created, the room will appear in the room select page. Anyone can join any room and begin chatting.
-
 ## Features
+* Translated Static Text
+    - When a user selects his/her preferred language upon sign up, all of the static text on the website will be translated to match that language. 
+    - Here is an example with a user who chose Spanish as his preferred language:
+
+![](client/src/assets/images/translated.png)
 
 * Translate Messages
     - It does not matter what language other users speak. Every message has the option to be translated to your preferred language that you chose upon signing up. 
+    - Click on "See Translation" to view a message translated in your preferred language,and if you want to see the original, click "See Original".
 
 ![](/client/src/assets/gifs/AllChat-demo5.gif)
-Translated Static Text
-![](client/src/assets/images/translated.png)
-Multiple Rooms
-Multiple Users
-Translate Messages
-Delete Rooms and Messages only by Creator
+
+* Rooms and Message Delete
+    - Not only are rooms and messages created with Socket in real time, but they can also be deleted. However, only the user who created the room/message can delete that room/message.
+
+![](/client/src/assets/gifs/delete.gif)
+
+
 
 
 
