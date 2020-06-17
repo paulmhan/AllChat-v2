@@ -19,9 +19,9 @@ class LandingPage extends Component {
     render() {
         return (
             <>
-                <LandingPageComputer />
-                <LandingPageLargeScreen />
-                <LandingPageWideScreen />
+                <LandingPageComputer isLoggedIn={this.props.authenticated}/>
+                <LandingPageLargeScreen isLoggedIn={this.props.authenticated}/>
+                <LandingPageWideScreen isLoggedIn={this.props.authenticated}/>
             </>
         )
 

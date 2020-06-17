@@ -9,6 +9,7 @@ import AllChatDemo2 from "../../../assets/gifs/AllChat-demo5.gif";
 import { loadUser } from "../../../actions/auth";
 import { connect } from "react-redux";
 import { compose } from "redux";
+import "./style.css";
 
 class LandingPageLargeScreen extends Component {
 
