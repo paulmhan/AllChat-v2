@@ -1,10 +1,9 @@
-# AllChat Messaging Application
 
 <h1 align="center">
   <br>
-  <a href="https://all-chat-v2.herokuapp.com/"><img src="AllChat-Logo.png" alt="AllChat Logo" width="200"></a>
+  <a href="https://all-chat-v2.herokuapp.com/"><img src="client/src/assets/images/AllChat-Logo.png" alt="AllChat Logo" width="200"></a>
   <br>
-  AllChat
+  AllChat Messaging Application
   <br>
 </h1>
 
@@ -28,7 +27,7 @@ You can begin chatting here: [AllChat](https://all-chat-v2.herokuapp.com/)
 
 ### APIs Used
 
-- Search for books using the [Google Cloud Translate](https://cloud.google.com/translate/docs/quickstarts)
+- All messages translated with [Google Cloud Translate](https://cloud.google.com/translate/docs/quickstarts)
 
 ```javascript
   translateMessage: async (req, res) => {
