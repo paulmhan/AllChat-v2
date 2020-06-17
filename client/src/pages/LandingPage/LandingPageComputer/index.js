@@ -318,7 +318,7 @@ class LandingPageComputer extends Component {
         return (
             <>
                 <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} id="landing-container-computer">
-                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} container id="inner-landing-container-computer">
                             <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
                                 <h1 id="welcome-computer">
@@ -340,7 +340,7 @@ class LandingPageComputer extends Component {
                                 </Responsive>
                             </Responsive>
                             <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
-                                <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={8}>
+                                <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={5}>
                                     {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started-computer">
                                         {this.renderStart(this.props.user?.language)}
                                     </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started-computer">Get Started</Button>}
@@ -348,7 +348,7 @@ class LandingPageComputer extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} container>
                             <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
                                 <Image fluid id="landing-page-image-computer" alt="people-chatting" src={PeopleChatting} />
@@ -358,7 +358,7 @@ class LandingPageComputer extends Component {
                 </Responsive>
 
                 <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} id="demo-container-computer">
-                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} container>
                             <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
                                 <Header as="h1" id="demo-header-computer">{this.renderDemo(this.props.user?.language)}</Header>
@@ -375,7 +375,7 @@ class LandingPageComputer extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} container>
                             <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
                                 <Image fluid id="chat-gif-computer" alt="chat-gif" src={AllChatDemo1} />
@@ -384,15 +384,8 @@ class LandingPageComputer extends Component {
                     </Responsive>
                 </Responsive>
 
-                <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} id="translate-demo-container-computer">
-                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={8}>
-                        <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} container>
-                            <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
-                                <Image fluid id="translate-gif-computer" alt="translate-gif" src={AllChatDemo2} />
-                            </Responsive>
-                        </Responsive>
-                    </Responsive>
-                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={8}>
+                <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} id="translate-demo-container-computer"> 
+                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={16}>
                         <Responsive as={Grid} container>
                             <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
                                 <Header as="h1" id="translate-demo-header-computer">{this.renderTranslateHeader(this.props.user?.language)}</Header>
@@ -401,6 +394,13 @@ class LandingPageComputer extends Component {
                                 <Header id="translate-demo-subheader-computer" as="h4">
                                 {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                    <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Column} width={16}>
+                        <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid} container>
+                            <Responsive {...Responsive.onlyComputer} minWidth={800} maxWidth={1199} as={Grid.Row} centered>
+                                <Image fluid id="translate-gif-computer" alt="translate-gif" src={AllChatDemo2} />
                             </Responsive>
                         </Responsive>
                     </Responsive>
