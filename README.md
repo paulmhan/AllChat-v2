@@ -21,7 +21,6 @@
 </p>
 
 <p align="center">
-  <a href="#chat-example-usage">Chat Example Usage</a> •
   <a href="#features">Features</a> •
   <a href="#technologies-used">Technologies Used</a> •
   <a href="#apis-used">APIs Used</a> •
@@ -33,21 +32,35 @@
 ![](client/src/assets/images/LandingPage.png)
 
 
-## Chat Example Usage
-![](/client/src/assets/gifs/AllChat-demo4.gif)
 
 ## Features
-* Translated Static Text
-    - When a user selects his/her preferred language upon sign up, all of the static text on the website will be translated to match that language. 
-    - Here is an example with a user who chose Spanish as his preferred language:
-
-![](client/src/assets/images/translated.png)
-
 * Translate Messages
     - It does not matter what language other users speak. Every message has the option to be translated to your preferred language that you chose upon signing up. 
     - Click on "See Translation" to view a message translated in your preferred language,and if you want to see the original, click "See Original".
 
 ![](/client/src/assets/gifs/AllChat-demo5.gif)
+
+
+*  User Authentication
+    - Using Passport.js' jwt stratgey, user login information is authenticated, and so is every request made by that user
+```javascript
+    // Create JWT Strategy for handling JWT
+    // This strategy is for authenticating users on each request
+    const jwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
+    // See if the user ID in the payload exists in our database
+    //  If it does, call 'done' with that user
+    //  otherwise, call done without a user object
+        try {
+        const user = await User.findById(payload.sub).select('-password');
+        if (!user) {
+            return done(null, false);
+        }
+        return done(null, user);
+        } catch (e) {
+            return done(e, false);
+        }
+    });
+```
 
 * Rooms and Message Delete
     - Not only are rooms and messages created with Socket in real time, but they can also be deleted. However, only the user who created the room/message can delete that room/message.
