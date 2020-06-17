@@ -206,7 +206,6 @@ class ContactForm extends Component {
           >
             {this.renderSendBtn(this.props.user?.language)}
           </Button>
-          <p>{this.props.success}</p>
         </Form>
       </>
     );

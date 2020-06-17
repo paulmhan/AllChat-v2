@@ -4,12 +4,12 @@ As communication continues to increase on a global scale, so too does the demand
 
 
 ## Screenshots
-![](client/src/assets/images/landingpage.png)
+![](client/src/assets/images/LandingPage.png)
 ![](client/src/assets/images/rooms.png)
 ![](client/src/assets/images/translated.png)
 
-![](/client/src/assets/AllChat-demo4.gif)
-![](/client/src/assets/AllChat-demo5.gif)
+![](/client/src/assets/gifs/AllChat-demo4.gif)
+![](/client/src/assets/gifs/AllChat-demo5.gif)
 
 ## Features
 
