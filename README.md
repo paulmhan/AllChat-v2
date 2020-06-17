@@ -1,10 +1,10 @@
 # AllChat Messaging Application
+![](client/src/assets/images/AllChat-Logo.png)
 
 As communication continues to increase on a global scale, so too does the demand for quick, reliable translation. With AllChat, you can talk to anyone across the world, even if you don't speak their language. With AllChat, there are no language barriers! 
 
 
 ## Screenshots
-![](client/src/assets/images/LandingPage.png)
 ![](client/src/assets/images/rooms.png)
 ![](client/src/assets/images/translated.png)
 
@@ -14,6 +14,33 @@ As communication continues to increase on a global scale, so too does the demand
 ## Features
 
 ## Technologies Used
+
+### APIs Used
+
+- Search for books using the [Google Cloud Translate](https://cloud.google.com/translate/docs/quickstarts)
+
+```javascript
+  translateMessage: async (req, res) => {
+      //grab the message object and the user's preferred language
+        const {message, language} = req.body;
+        try {
+            //make the API request to translate the message
+            const apiRes = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${language}&q=${encodeURIComponent(message.text)}&key=${process.env.REACT_APP_API_KEY}`);
+            //set the translated text to translation variable
+            const translation = apiRes.data.data.translations[0].translatedText;
+            const newMessage = message;
+            //set the text key in message to the translated message
+            newMessage.text = translation;
+            //set the origin language that was auto detected 
+            newMessage.originLanguage = apiRes.data.data.translations[0].detectedSourceLanguage;
+            console.log(newMessage)  
+            return res.json({newMessage})
+        } catch (error) {
+            throw error;
+        }
+    },
+```
+
 
 ## How To Use?
 
