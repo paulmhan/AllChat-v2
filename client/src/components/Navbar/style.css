@@ -1,16 +1,17 @@
+/* Computer Styling */
+
 #navbar {
     background-color:#32CD33;
-   
 }
 
-#signup {
+#signup-computer {
     color: white;
     position: relative;
     right: 60px;
     font-size: 18px;
 }
 
-#signin {
+#signin-computer {
     background-color: transparent;
     color: white;
     border: solid white 1px;
@@ -20,26 +21,59 @@
     font-size: 18px;
 }
 
-#signin:hover {
+#signin-computer:hover {
     background-color: white;
     color:  #32CD33;
     transition: 0.8s;
 }
 
-#signout {
-    color: white;
-    position: relative;
-    right: 40px;
-}
-
-#chatrooms {
+#chatrooms-computer {
     color: white;
     position: relative;
     right: 40px;
     font-size: 18px;
 }
 
-#user-dropdown {
+#user-dropdown-computer {
+    color: white;
+    font-size: 18px;
+    position: relative;
+    right: 40px;
+}
+
+/* Smaller screen styling */
+
+#signup-small {
+    color: white;
+    position: relative;
+    right: 60px;
+    font-size: 18px;
+}
+
+#signin-small {
+    background-color: transparent;
+    color: white;
+    border: solid white 1px;
+    transition: 0.5s;
+    position: relative;
+    right: 40px;
+    font-size: 18px;
+}
+
+#signin-small:hover {
+    background-color: white;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+#chatrooms-small {
+    color: white;
+    position: relative;
+    right: 40px;
+    font-size: 18px;
+}
+
+#user-dropdown-small {
     color: white;
     font-size: 18px;
     position: relative;
