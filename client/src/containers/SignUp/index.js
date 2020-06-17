@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
+import { Image, Grid, Form, Segment, Button, Header, Flag } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import PeopleChatting from "../../assets/images/people-chatting-text.png";
 import axios from 'axios';
@@ -126,7 +126,7 @@ class SignUp extends Component {
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>
                 <div>
                   <Field name="language" component="select">
-                    <option value="en" className="ae flag">English</option>
+                    <option value="en" flag="af">English</option>
                     <option value="ar" flag="cn">Arabic</option>
                     <option value="zh" flag="zh">Chinese</option>
                     <option value="fr" flag="fr">French</option>
