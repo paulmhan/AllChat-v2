@@ -1,29 +1,72 @@
 
 <h1 align="center">
   <br>
-  <a href="https://all-chat-v2.herokuapp.com/"><img src="client/src/assets/images/AllChat-Logo.png" alt="AllChat Logo" width="200"></a>
+  <a href="https://all-chat-v2.herokuapp.com/"><img src="client/src/assets/images/logo.png" alt="AllChat Logo" width="300" height="100"></a>
   <br>
-  AllChat Messaging Application
+  Messaging Application
   <br>
 </h1>
 
-As communication continues to increase on a global scale, so too does the demand for quick, reliable translation. With AllChat, you can talk to anyone across the world, even if you don't speak their language. With AllChat, there are no language barriers! 
-
-You can begin chatting here: [AllChat](https://all-chat-v2.herokuapp.com/)
-
-## Motivation 
 
 
-## Screenshots
-![](client/src/assets/images/rooms.png)
-![](client/src/assets/images/translated.png)
+<div align="center">
+<h4>As communication continues to increase on a global scale, so too does the demand for quick, reliable translation. With AllChat, you can talk to anyone across the world, even if you don't speak their language. With AllChat, there are no language barriers! You can begin chatting here: <a href="https://all-chat-v2.herokuapp.com/" target="_blank">AllChat</a></h4>
+</div>
 
+<p align="center">
+  <a href="https://github.com/feross/standard">
+    <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat"
+         alt="Standard">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#chat-example-usage">Chat Example Usage</a> •
+  <a href="#features">Features</a> •
+  <a href="#technologies-used">Technologies Used</a> •
+  <a href="#apis-used">APIs Used</a> •
+  <a href="#contribute">Contribute</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#mvp">MVP</a> 
+</p>
+
+![](client/src/assets/images/LandingPage.png)
+
+
+## Chat Example Usage
 ![](/client/src/assets/gifs/AllChat-demo4.gif)
-![](/client/src/assets/gifs/AllChat-demo5.gif)
 
 ## Features
+* Translated Static Text
+    - When a user selects his/her preferred language upon sign up, all of the static text on the website will be translated to match that language. 
+    - Here is an example with a user who chose Spanish as his preferred language:
+
+![](client/src/assets/images/translated.png)
+
+* Translate Messages
+    - It does not matter what language other users speak. Every message has the option to be translated to your preferred language that you chose upon signing up. 
+    - Click on "See Translation" to view a message translated in your preferred language,and if you want to see the original, click "See Original".
+
+![](/client/src/assets/gifs/AllChat-demo5.gif)
+
+* Rooms and Message Delete
+    - Not only are rooms and messages created with Socket in real time, but they can also be deleted. However, only the user who created the room/message can delete that room/message.
+
+![](/client/src/assets/gifs/delete.gif)
+
+
+
+
+
 
 ## Technologies Used
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Socket.IO](https://socket.io/)
+- [Passport.js](http://www.passportjs.org/)
+- [MongoDB](https://www.mongodb.com/)
+- [Express.js](https://expressjs.com)
+- [Node.js](https://nodejs.org/en/)
 
 ### APIs Used
 
@@ -35,7 +78,9 @@ You can begin chatting here: [AllChat](https://all-chat-v2.herokuapp.com/)
         const {message, language} = req.body;
         try {
             //make the API request to translate the message
-            const apiRes = await axios.get(`https://translation.googleapis.com/language/translate/v2?target=${language}&q=${encodeURIComponent(message.text)}&key=${process.env.REACT_APP_API_KEY}`);
+            const apiRes = await axios.get(
+                `https://translation.googleapis.com/language/translate/v2?target=${language}&q=${encodeURIComponent(message.text)}&key=${process.env.REACT_APP_API_KEY}`
+                );
             //set the translated text to translation variable
             const translation = apiRes.data.data.translations[0].translatedText;
             const newMessage = message;
@@ -51,15 +96,6 @@ You can begin chatting here: [AllChat](https://all-chat-v2.herokuapp.com/)
     },
 ```
 
-
-## How To Use?
-
-On the landing page, click "Get Started" and enter a username into the modal, then click "Join Chat Room". Once on the chat page, you can message other users who are currently signed in. If you wish to exit the chat, and sign up using a different name, click the "Leave" button in the top-right corner, and repeat the aforementioned steps.
-
-## Code Style
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
 ## Contribute
 
 If you wish to contribute, send a code snippet of a component, style, or anything else that can improve our app to one of our e-mail addresses:
@@ -68,18 +104,20 @@ If you wish to contribute, send a code snippet of a component, style, or anythin
 - suneetha@gmail.com
 - jpgeib2@gmail.com
 
+You can also contact us through our built in Contact Page, located in the footer.
+
 ## Credits
 
 - Paul Han: 
     - Front-end Development
     - Back-end Server 
-    - Socket.IO
+    - Socket
     - MongoDB and Mongoose Schemas
     - GitHub: https://github.com/paulmhan
 - Suneetha Burla: 
     - Front-end Development
     - Back-end Server
-    - Socket.IO 
+    - Socket
     - MongoDB and Mongoose Schemas
     - GitHub: https://github.com/suneethaburla
 - James Geib: 
@@ -89,5 +127,5 @@ If you wish to contribute, send a code snippet of a component, style, or anythin
 
 ## MVP 
 
-Where it all began; our MVP version of AllChat: [AllChat - MVP](https://github.com/paulmhan/AllChat)
+Where it all began: [AllChat - MVP](https://github.com/paulmhan/AllChat)
 
