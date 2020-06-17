@@ -6,11 +6,11 @@
 }
 
 #landing-container-largescreen {
-    background-color: #F7F7F7;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 115px;
+    padding: 10%;
 }
 
 #get-started-largescreen {
@@ -31,12 +31,7 @@
 
 #landing-page-image-largescreen {
     margin: 0 auto;
-    position: relative;
-    bottom: 30px;
-}
-
-#inner-landing-container-largescreen {
-    padding-top: 30px;
+    padding: 10%;
 }
 
 #body-text-grid-largescreen {
@@ -56,7 +51,7 @@
 
 #header-largescreen {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 4%;
 }
 
 #together-largescreen {
@@ -74,20 +69,12 @@
     background-color: #32CD33;
 }
 
-#about-container-largescreen {
-    background-color: #F7F7F7;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 40px;
-}
-
 #demo-container-largescreen {
-    background-color: #F7F7F7;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 310px;
+    padding: 10%;
 }
 
 #demo-header-largescreen {
@@ -112,11 +99,11 @@
 }
 
 #translate-demo-container-largescreen {
-    background-color: #F7F7F7;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 40px;
+    padding: 10%;
 }
 
 #translate-demo-header-largescreen {
@@ -124,8 +111,8 @@
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: 30px;
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 #translate-demo-subheader-largescreen {

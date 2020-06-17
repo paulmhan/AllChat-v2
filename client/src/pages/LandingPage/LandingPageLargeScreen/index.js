@@ -340,7 +340,7 @@ class LandingPageLargeScreen extends Component {
                                 </Responsive>
                             </Responsive>
                             <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
-                                <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={6}>
+                                <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={8}>
                                     {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started-largescreen">
                                         {this.renderStart(this.props.user?.language)}
                                     </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started-largescreen">Get Started</Button>}
