@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AllChatTitle from "../AllChatTitle";
 import { Link, withRouter } from 'react-router-dom';
-import { Responsive, Menu, Icon, Dropdown } from 'semantic-ui-react';
+import { Responsive, Menu, Icon, Dropdown, Image } from 'semantic-ui-react';
+import AllChatLogo from "../../assets/images/AllChat-Logo.png";
 import content from "../../content.js";
 import { signOut } from '../../actions/auth';
 import { connect } from 'react-redux';
@@ -117,7 +117,9 @@ class Navbar extends Component {
       <>
         <Responsive {...Responsive.onlyComputer} minWidth={1051} as={Menu} fixed="top" secondary widths={12} id="navbar">
           <Menu.Item position="left">
-            <AllChatTitle />
+            <div id="allchat-icon-container">
+              <Image id="allchat-logo" as={Link} to="/" name="home" fluid src={AllChatLogo} />
+            </div>
           </Menu.Item>
           {!this.props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup-computer"><Icon name="signup" />Sign Up</Menu.Item>}
           {this.props.isLoggedIn && this.props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content={this.renderRooms(this.props.user?.language)} id="chatrooms-computer" />}
@@ -135,7 +137,9 @@ class Navbar extends Component {
 
         <Responsive maxWidth={1050} as={Menu} fixed="top" secondary widths={12} id="navbar">
           <Menu.Item position="left">
-            <AllChatTitle />
+            <div id="allchat-icon-container">
+              <Image id="allchat-logo" as={Link} to="/" name="home" fluid src={AllChatLogo} />
+            </div>
           </Menu.Item>
           <Dropdown id="user-dropdown-small" item>
             <Dropdown.Menu>
@@ -155,10 +159,6 @@ class Navbar extends Component {
 
   }
 }
-
-
-
-
 
 export default compose(
   withRouter,

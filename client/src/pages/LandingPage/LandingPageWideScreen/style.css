@@ -6,7 +6,7 @@
 }
 
 #landing-container-widescreen {
-    background-color: #F7F7F7;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
@@ -64,7 +64,7 @@
 }
 
 #paragraph-widescreen {
-    font-size: 18px;
+    font-size: 24px;
 }
 
 #developers-footer-widescreen {
@@ -72,37 +72,8 @@
     background-color: #32CD33;
 }
 
-#about-container-widescreen {
-    background-color: #F7F7F7;
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 40px;
-}
-
-#about-header-widescreen {
-    font-size: 54px;
-    font-family: 'Rubik', sans-serif;
-    color: black;
-    text-align: center;
-    margin-top: 80px;
-    margin-bottom: 20px;
-}
-
-#about-subheader1-widescreen {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-#about-subheader2-widescreen {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 #demo-container-widescreen {
-    background-color: #F7F7F7;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
@@ -131,11 +102,11 @@
 }
 
 #translate-demo-container-widescreen {
-    background-color: #F7F7F7;
+    background-color: white;
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 40px;
+    margin-top: 220px;
 }
 
 #translate-demo-header-widescreen {

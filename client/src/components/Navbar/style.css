@@ -1,8 +1,20 @@
-/* Computer Styling */
+/* General styling */
+
+#allchat-icon-container {
+    margin: auto;
+    margin-left: 100px;
+}
+
+#allchat-logo {
+    width: 250px;
+    margin-left: 20px;
+}
 
 #navbar {
     background-color:#32CD33;
 }
+
+/* Computer Styling */
 
 #signup-computer {
     color: white;
