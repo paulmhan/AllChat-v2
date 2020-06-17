@@ -115,6 +115,12 @@ class Chat extends Component {
         this.props.isTyping({ user, room });
     }
 
+    handleBlur = () => {
+        const user = this.props.user;
+        const room = this.props.room;
+        this.props.notTyping({ user, room });
+    }
+
     render() {
         const { handleSubmit } = this.props;
         return (
@@ -134,7 +140,7 @@ class Chat extends Component {
                         deleteMessage={this.props.deleteMessage}
                         user={this.props.user}
                     />
-                    <p>{this.props.userTyping.typingText}</p>
+                    <div className="typing"><p>{this.props.userTyping.typingText}</p></div>
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
                             <Grid.Column width={14}>
@@ -142,6 +148,7 @@ class Chat extends Component {
                                     name="message"
                                     component={this.renderMessageInput}
                                     onChange={this.handleChange}
+                                    onBlur={this.handleBlur}
                                     fluid
                                 />
                             </Grid.Column>
