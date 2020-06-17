@@ -321,8 +321,8 @@ class LandingPage extends Component {
         return (
             <>
                 <Grid id="landing-container">
-                    <Grid.Column width={8}>
-                        <Grid container id="inner-landing-container">
+                    <Grid.Column width={8} >
+                        <Grid container id="inner-landing-container" >
                             <Grid.Row centered>
                                 <h1 id="welcome">
                                     {this.renderWelcome(this.props.user?.language)}
@@ -351,8 +351,8 @@ class LandingPage extends Component {
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
-                    <Grid.Column width={8}>
-                        <Grid container>
+                    <Grid.Column width={8} >
+                        <Grid container >
                             <Grid.Row centered>
                                 <Image fluid id="landing-page-image" alt="people-chatting" src={PeopleChatting} />
                             </Grid.Row>
@@ -390,7 +390,7 @@ class LandingPage extends Component {
                 </Grid> */}
 
                 <Grid id="demo-container">
-                    <Grid.Column width={8}>
+                    <Grid.Column width={8} className="para">
                         <Grid container>
                             <Grid.Row centered>
                                 <Header as="h1" id="demo-header">{this.renderDemo(this.props.user?.language)}</Header>
@@ -407,7 +407,7 @@ class LandingPage extends Component {
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
-                    <Grid.Column width={8}>
+                    <Grid.Column width={8}className="para">
                         <Grid container>
                             <Grid.Row centered>
                                 <Image fluid id="chat-gif" alt="chat-gif" src={AllChatDemo1} />
@@ -417,14 +417,14 @@ class LandingPage extends Component {
                 </Grid>
 
                 <Grid id="translate-demo-container">
-                    <Grid.Column width={8}>
+                    <Grid.Column width={8}className="para">
                         <Grid container>
                             <Grid.Row centered>
                                 <Image fluid id="translate-gif" alt="translate-gif" src={AllChatDemo2} />
                             </Grid.Row>
                         </Grid>
                     </Grid.Column>
-                    <Grid.Column width={8}>
+                    <Grid.Column width={8}className="para">
                         <Grid container>
                             <Grid.Row centered>
                                 <Header as="h1" id="translate-demo-header">{this.renderTranslateHeader(this.props.user?.language)}</Header>
