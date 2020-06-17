@@ -317,96 +317,96 @@ class LandingPageComputer extends Component {
     render() {
         return (
             <>
-                <Grid id="landing-container">
-                    <Grid.Column width={8}>
-                        <Grid container id="inner-landing-container">
-                            <Grid.Row centered>
-                                <h1 id="welcome">
+                <Responsive as={Grid} id="landing-container-computer">
+                    <Responsive as={Grid.Column} width={8}>
+                        <Responsive as={Grid} container id="inner-landing-container-computer">
+                            <Responsive as={Grid.Row} centered>
+                                <h1 id="welcome-computer">
                                     {this.renderWelcome(this.props.user?.language)}
                                 </h1>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Grid.Column id="header" width={16}>
-                                    <h1 id="together">
+                            </Responsive>
+                            <Responsive as={Grid.Row} centered>
+                                <Responsive as={Grid.Column} id="header-computer" width={16}>
+                                    <h1 id="together-computer">
                                         {this.renderBring(this.props.user?.language)}
                                     </h1>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Grid.Column id="text1" width={16}>
-                                    <h5 id="paragraph">
+                                </Responsive>
+                            </Responsive>
+                            <Responsive as={Grid.Row} centered>
+                                <Responsive as={Grid.Column} id="text1-computer" width={16}>
+                                    <h5 id="paragraph-computer">
                                         {this.renderParagraph(this.props.user?.language)}
                                     </h5>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Grid.Column width={5}>
-                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started">
+                                </Responsive>
+                            </Responsive>
+                            <Responsive as={Grid.Row} centered>
+                                <Responsive as={Grid.Column} width={5}>
+                                    {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started-computer">
                                         {this.renderStart(this.props.user?.language)}
-                                    </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started">Get Started</Button>}
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-                        <Grid container>
-                            <Grid.Row centered>
-                                <Image fluid id="landing-page-image" alt="people-chatting" src={PeopleChatting} />
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Column>
-                </Grid>
+                                    </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started-computer">Get Started</Button>}
+                                </Responsive>
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                    <Responsive as={Grid.Column} width={8}>
+                        <Responsive as={Grid} container>
+                            <Responsive as={Grid.Row} centered>
+                                <Image fluid id="landing-page-image-computer" alt="people-chatting" src={PeopleChatting} />
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                </Responsive>
 
-                <Grid id="demo-container">
-                    <Grid.Column width={8}>
-                        <Grid container>
-                            <Grid.Row centered>
-                                <Header as="h1" id="demo-header">{this.renderDemo(this.props.user?.language)}</Header>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Grid.Column width={16}>
-                                    <Header id="demo-subheader1" as="h4">
+                <Responsive as={Grid} id="demo-container-computer">
+                    <Responsive as={Grid.Column} width={8}>
+                        <Responsive as={Grid} container>
+                            <Responsive as={Grid.Row} centered>
+                                <Header as="h1" id="demo-header-computer">{this.renderDemo(this.props.user?.language)}</Header>
+                            </Responsive>
+                            <Responsive as={Grid.Row} centered>
+                                <Responsive as={Grid.Column} width={16}>
+                                    <Header id="demo-subheader1-computer" as="h4">
                                     {this.renderDemoParagraph(this.props.user?.language)}
                                     </Header>
-                                    <Header id="demo-subheader2" as="h4">
+                                    <Header id="demo-subheader2-computer" as="h4">
                                     {this.renderDemoParagraph2(this.props.user?.language)}
                                     </Header>
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-                        <Grid container>
-                            <Grid.Row centered>
-                                <Image fluid id="chat-gif" alt="chat-gif" src={AllChatDemo1} />
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Column>
-                </Grid>
+                                </Responsive>
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                    <Responsive as={Grid.Column} width={8}>
+                        <Responsive as={Grid} container>
+                            <Responsive as={Grid.Row} centered>
+                                <Image fluid id="chat-gif-computer" alt="chat-gif" src={AllChatDemo1} />
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                </Responsive>
 
-                <Grid id="translate-demo-container">
-                    <Grid.Column width={8}>
-                        <Grid container>
-                            <Grid.Row centered>
-                                <Image fluid id="translate-gif" alt="translate-gif" src={AllChatDemo2} />
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-                        <Grid container>
-                            <Grid.Row centered>
-                                <Header as="h1" id="translate-demo-header">{this.renderTranslateHeader(this.props.user?.language)}</Header>
-                            </Grid.Row>
-                            <Grid.Row centered>
-                                <Header id="translate-demo-subheader" as="h4">
+                <Responsive as={Grid} id="translate-demo-container-computer">
+                    <Responsive as={Grid.Column} width={8}>
+                        <Responsive as={Grid} container>
+                            <Responsive as={Grid.Row} centered>
+                                <Image fluid id="translate-gif-computer" alt="translate-gif" src={AllChatDemo2} />
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                    <Responsive as={Grid.Column} width={8}>
+                        <Responsive as={Grid} container>
+                            <Responsive as={Grid.Row} centered>
+                                <Header as="h1" id="translate-demo-header-computer">{this.renderTranslateHeader(this.props.user?.language)}</Header>
+                            </Responsive>
+                            <Responsive as={Grid.Row} centered>
+                                <Header id="translate-demo-subheader-computer" as="h4">
                                 {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Column>
-                </Grid>
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                </Responsive>
 
-                <footer id="developers-footer">
+                <footer id="developers-footer-computer">
                     <Footer user={this.props.user}/>
                 </footer>
             </>

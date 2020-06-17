@@ -1,11 +1,11 @@
-#welcome {
+#welcome-widescreen {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
 }
 
-#landing-container {
+#landing-container-widescreen {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -13,7 +13,7 @@
     margin-top: 115px;
 }
 
-#get-started {
+#get-started-widescreen {
     /* width: 200px; */
     background-color: #32CD33;
     color: white;
@@ -23,56 +23,56 @@
     display: block;
 }
 
-#get-started:hover {
+#get-started-widescreen:hover {
     background-color: transparent;
     color:  #32CD33;
     transition: 0.8s;
 }
 
-#landing-page-image {
+#landing-page-image-widescreen {
     margin: 0 auto;
 }
 
-#inner-landing-container {
+#inner-landing-container-widescreen {
     padding-top: 100px;
 }
 
-#body-text-grid {
+#body-text-grid-widescreen {
     background-color: transparent;
 }
 
-#text1 {
+#text1-widescreen {
     text-align: center;
     font-family: 'Rubik', sans-serif;
     color:black;
     font-size: 24px;
 }
 
-#text2 {
+#text2-widescreen {
     text-align: center;
 }
 
-#header {
+#header-widescreen {
     text-align: center;
     margin-bottom: 20px;
 }
 
-#together {
+#together-widescreen {
     color:black;
     font-size: 36px;
     text-align: center;
 }
 
-#paragraph {
+#paragraph-widescreen {
     font-size: 18px;
 }
 
-#developers-footer {
+#developers-footer-widescreen {
     margin-top: 50px;
     background-color: #32CD33;
 }
 
-#about-container {
+#about-container-widescreen {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -80,7 +80,7 @@
     margin-top: 40px;
 }
 
-#about-header {
+#about-header-widescreen {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
     color: black;
@@ -89,19 +89,19 @@
     margin-bottom: 20px;
 }
 
-#about-subheader1 {
+#about-subheader1-widescreen {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#about-subheader2 {
+#about-subheader2-widescreen {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#demo-container {
+#demo-container-widescreen {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -109,7 +109,7 @@
     margin-top: 220px;
 }
 
-#demo-header {
+#demo-header-widescreen {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
     color:black;
@@ -118,19 +118,19 @@
     margin-bottom: 30px;
 }
 
-#demo-subheader1 {
+#demo-subheader1-widescreen {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#demo-subheader2 {
+#demo-subheader2-widescreen {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#translate-demo-container {
+#translate-demo-container-widescreen {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -138,7 +138,7 @@
     margin-top: 40px;
 }
 
-#translate-demo-header {
+#translate-demo-header-widescreen {
     font-size: 40px;
     font-family: 'Rubik', sans-serif;
     color:black;
@@ -147,7 +147,7 @@
     margin-bottom: 30px;
 }
 
-#translate-demo-subheader {
+#translate-demo-subheader-widescreen {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;

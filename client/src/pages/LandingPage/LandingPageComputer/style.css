@@ -1,11 +1,11 @@
-#welcome {
+#welcome-computer {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
 }
 
-#landing-container {
+#landing-container-computer {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -13,7 +13,7 @@
     margin-top: 115px;
 }
 
-#get-started {
+#get-started-computer {
     /* width: 200px; */
     background-color: #32CD33;
     color: white;
@@ -23,56 +23,56 @@
     display: block;
 }
 
-#get-started:hover {
+#get-started-computer:hover {
     background-color: transparent;
     color:  #32CD33;
     transition: 0.8s;
 }
 
-#landing-page-image {
+#landing-page-image-computer {
     margin: 0 auto;
 }
 
-#inner-landing-container {
+#inner-landing-container-computer {
     padding-top: 100px;
 }
 
-#body-text-grid {
+#body-text-grid-computer {
     background-color: transparent;
 }
 
-#text1 {
+#text1-computer {
     text-align: center;
     font-family: 'Rubik', sans-serif;
     color:black;
     font-size: 24px;
 }
 
-#text2 {
+#text2-computer {
     text-align: center;
 }
 
-#header {
+#header-computer {
     text-align: center;
     margin-bottom: 20px;
 }
 
-#together {
+#together-computer {
     color:black;
     font-size: 36px;
     text-align: center;
 }
 
-#paragraph {
+#paragraph-computer {
     font-size: 18px;
 }
 
-#developers-footer {
+#developers-footer-computer {
     margin-top: 50px;
     background-color: #32CD33;
 }
 
-#about-container {
+#about-container-computer {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -80,7 +80,7 @@
     margin-top: 40px;
 }
 
-#about-header {
+#about-header-computer {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
     color: black;
@@ -89,19 +89,19 @@
     margin-bottom: 20px;
 }
 
-#about-subheader1 {
+#about-subheader1-computer {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#about-subheader2 {
+#about-subheader2-computer {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#demo-container {
+#demo-container-computer {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -109,7 +109,7 @@
     margin-top: 220px;
 }
 
-#demo-header {
+#demo-header-computer {
     font-size: 54px;
     font-family: 'Rubik', sans-serif;
     color:black;
@@ -118,19 +118,19 @@
     margin-bottom: 30px;
 }
 
-#demo-subheader1 {
+#demo-subheader1-computer {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#demo-subheader2 {
+#demo-subheader2-computer {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#translate-demo-container {
+#translate-demo-container-computer {
     background-color: #F7F7F7;
     border-radius: 10px;
     width: 90%;
@@ -138,7 +138,7 @@
     margin-top: 40px;
 }
 
-#translate-demo-header {
+#translate-demo-header-computer {
     font-size: 40px;
     font-family: 'Rubik', sans-serif;
     color:black;
@@ -147,7 +147,7 @@
     margin-bottom: 30px;
 }
 
-#translate-demo-subheader {
+#translate-demo-subheader-computer {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
