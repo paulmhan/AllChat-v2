@@ -8,7 +8,7 @@
 #landing-container {
     /* background-color: #F7F7F7; */
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto; /*This will automatically center anything*/
     /* margin-top: 115px; */
     padding:10%
@@ -35,7 +35,7 @@
 }
 
 #inner-landing-container {
-    padding-top: 100px;
+    padding: 20px 0;
 }
 
 #body-text-grid {
@@ -156,15 +156,6 @@
     margin-bottom: 10px;
 }
 
-/* @media only screen and (max-width: 968px) {
-    #heading, #container, #footer {
-     width:100%;
- }
-}
- @media only screen and (max-width: 768px) {
-    .nav  {
-     float:left;
- } */
 
 /* Mobile styling
 
