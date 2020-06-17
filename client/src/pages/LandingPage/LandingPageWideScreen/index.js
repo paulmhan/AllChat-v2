@@ -317,30 +317,30 @@ class LandingPageWideScreen extends Component {
     render() {
         return (
             <>
-                <Responsive as={Grid} id="landing-container-widescreen">
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container id="inner-landing-container-widescreen">
-                            <Responsive as={Grid.Row} centered>
+                <Responsive {...Responsive.onlyWidescreen} as={Grid} id="landing-container-widescreen">
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container id="inner-landing-container-widescreen">
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <h1 id="welcome-widescreen">
                                     {this.renderWelcome(this.props.user?.language)}
                                 </h1>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
-                                <Responsive as={Grid.Column} id="header-widescreen" width={16}>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
+                                <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} id="header-widescreen" width={16}>
                                     <h1 id="together-widescreen">
                                         {this.renderBring(this.props.user?.language)}
                                     </h1>
                                 </Responsive>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Responsive as={Grid.Column} id="text1-widescreen" width={16}>
                                     <h5 id="paragraph-widescreen">
                                         {this.renderParagraph(this.props.user?.language)}
                                     </h5>
                                 </Responsive>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
-                                <Responsive as={Grid.Column} width={5}>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
+                                <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={5}>
                                     {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started-widescreen">
                                         {this.renderStart(this.props.user?.language)}
                                     </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started-widescreen">Get Started</Button>}
@@ -348,23 +348,23 @@ class LandingPageWideScreen extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Image fluid id="landing-page-image-widescreen" alt="people-chatting" src={PeopleChatting} />
                             </Responsive>
                         </Responsive>
                     </Responsive>
                 </Responsive>
 
-                <Responsive as={Grid} id="demo-container-widescreen">
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                <Responsive {...Responsive.onlyWidescreen} as={Grid} id="demo-container-widescreen">
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Header as="h1" id="demo-header-widescreen">{this.renderDemo(this.props.user?.language)}</Header>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
-                                <Responsive as={Grid.Column} width={16}>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
+                                <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={16}>
                                     <Header id="demo-subheader1-widescreen" as="h4">
                                     {this.renderDemoParagraph(this.props.user?.language)}
                                     </Header>
@@ -375,29 +375,29 @@ class LandingPageWideScreen extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Image fluid id="chat-gif-widescreen" alt="chat-gif" src={AllChatDemo1} />
                             </Responsive>
                         </Responsive>
                     </Responsive>
                 </Responsive>
 
-                <Responsive as={Grid} id="translate-demo-container-widescreen">
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                <Responsive {...Responsive.onlyWidescreen} as={Grid} id="translate-demo-container-widescreen">
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Image fluid id="translate-gif-widescreen" alt="translate-gif" src={AllChatDemo2} />
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Header as="h1" id="translate-demo-header-widescreen">{this.renderTranslateHeader(this.props.user?.language)}</Header>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Header id="translate-demo-subheader-widescreen" as="h4">
                                 {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
@@ -405,10 +405,6 @@ class LandingPageWideScreen extends Component {
                         </Responsive>
                     </Responsive>
                 </Responsive>
-
-                <footer id="developers-footer-widescreen">
-                    <Footer user={this.props.user}/>
-                </footer>
             </>
         )
     }

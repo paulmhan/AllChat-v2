@@ -317,30 +317,30 @@ class LandingPageLargeScreen extends Component {
     render() {
         return (
             <>
-                <Responsive as={Grid} id="landing-container-largescreen">
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container id="inner-landing-container-largescreen">
-                            <Responsive as={Grid.Row} centered>
+                <Responsive {...Responsive.onlyLargeScreen} as={Grid} id="landing-container-largescreen">
+                    <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyLargeScreen} as={Grid} container id="inner-landing-container-largescreen">
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
                                 <h1 id="welcome-largescreen">
                                     {this.renderWelcome(this.props.user?.language)}
                                 </h1>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
-                                <Responsive as={Grid.Column} id="header-largescreen" width={16}>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
+                                <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} id="header-largescreen" width={16}>
                                     <h1 id="together-largescreen">
                                         {this.renderBring(this.props.user?.language)}
                                     </h1>
                                 </Responsive>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
-                                <Responsive as={Grid.Column} id="text1-largescreen" width={16}>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
+                                <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} id="text1-largescreen" width={16}>
                                     <h5 id="paragraph-largescreen">
                                         {this.renderParagraph(this.props.user?.language)}
                                     </h5>
                                 </Responsive>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
-                                <Responsive as={Grid.Column} width={5}>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
+                                <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={5}>
                                     {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started-largescreen">
                                         {this.renderStart(this.props.user?.language)}
                                     </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started-largescreen">Get Started</Button>}
@@ -348,23 +348,23 @@ class LandingPageLargeScreen extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                    <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyLargeScreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
                                 <Image fluid id="landing-page-image-largescreen" alt="people-chatting" src={PeopleChatting} />
                             </Responsive>
                         </Responsive>
                     </Responsive>
                 </Responsive>
 
-                <Responsive as={Grid} id="demo-container-largescreen">
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                <Responsive {...Responsive.onlyLargeScreen} as={Grid} id="demo-container-largescreen">
+                    <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyLargeScreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
                                 <Header as="h1" id="demo-header-largescreen">{this.renderDemo(this.props.user?.language)}</Header>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
-                                <Responsive as={Grid.Column} width={16}>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
+                                <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={16}>
                                     <Header id="demo-subheader1-largescreen" as="h4">
                                     {this.renderDemoParagraph(this.props.user?.language)}
                                     </Header>
@@ -375,29 +375,29 @@ class LandingPageLargeScreen extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                    <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyLargeScreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
                                 <Image fluid id="chat-gif-largescreen" alt="chat-gif" src={AllChatDemo1} />
                             </Responsive>
                         </Responsive>
                     </Responsive>
                 </Responsive>
 
-                <Responsive as={Grid} id="translate-demo-container-largescreen">
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                <Responsive {...Responsive.onlyLargeScreen} as={Grid} id="translate-demo-container-largescreen">
+                    <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyLargeScreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
                                 <Image fluid id="translate-gif-largescreen" alt="translate-gif" src={AllChatDemo2} />
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive as={Grid.Column} width={8}>
-                        <Responsive as={Grid} container>
-                            <Responsive as={Grid.Row} centered>
+                    <Responsive {...Responsive.onlyLargeScreen} as={Grid.Column} width={8}>
+                        <Responsive {...Responsive.onlyLargeScreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
                                 <Header as="h1" id="translate-demo-header-largescreen">{this.renderTranslateHeader(this.props.user?.language)}</Header>
                             </Responsive>
-                            <Responsive as={Grid.Row} centered>
+                            <Responsive {...Responsive.onlyLargeScreen} as={Grid.Row} centered>
                                 <Header id="translate-demo-subheader-largescreen" as="h4">
                                 {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
@@ -405,10 +405,6 @@ class LandingPageLargeScreen extends Component {
                         </Responsive>
                     </Responsive>
                 </Responsive>
-
-                <footer id="developers-footer-largescreen">
-                    <Footer user={this.props.user}/>
-                </footer>
             </>
         )
     }
