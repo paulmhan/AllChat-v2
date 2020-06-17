@@ -285,7 +285,7 @@ export default
             ko: "방 만들기",
             ru: "Создать комнату",
             tl: "Lumikha ng Kuwarto",
-            te: "కగదిని సృష్టించండి",
+            te: "గదిని సృష్టించండి",
             vi: "Tạo phòng"
         },
         roomname: {

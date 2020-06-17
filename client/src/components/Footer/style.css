@@ -26,30 +26,8 @@
     color: white;
 }
 
-
-
-/* #paul {
-    margin-top: 10px;
-    position: relative;
-    left: 155px;
-    margin-right:10px;
-}
-
-#suneetha {
-    margin-top: 10px;
-    position: relative;
-    left: 155px;
-    margin-right: 10px;
-}
-
-#james {
-    margin-top: 10px;
-    position: relative;
-    left: 155px;
-} */
-
 .logos {
- display: block;
+display: block;
 margin-left: auto;
 margin-right: auto;
    
@@ -59,34 +37,3 @@ margin-right: auto;
     margin:10px 
    }
 
-#react {
-    width: 80%;
-    height: auto;
-}
-
-
-/* #socket {
-    margin-left: 10px;
-    width: 80%;
-    height: auto;
-}
-
-#semantic {
-    width: 80%;
-    height: auto;
-}
-
-#react {
-    width: 80%;
-    height: auto;
-}
-
-#redux {
-    width: 80%;
-    height: auto;
-}
-
-#google-translate {
-    position: relative;
-    right: 180px;
-} */

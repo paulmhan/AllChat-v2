@@ -1,6 +1,7 @@
 #navbar {
     background-color:#32CD33;
-   
+    padding: 10px;
+    
 }
 
 #signup {
@@ -15,6 +16,8 @@
     color: white;
     border: solid white 1px;
     transition: 0.5s;
+    display: block;
+    
     position: relative;
     right: 20px;
     font-size: 18px;
