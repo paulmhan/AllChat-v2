@@ -6,11 +6,12 @@
 }
 
 #landing-container {
-    background-color: #F7F7F7;
+    /* background-color: #F7F7F7; */
     border-radius: 10px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 115px;
+    /* margin-top: 115px; */
+    padding:10%
 }
 
 #get-started {
@@ -34,7 +35,7 @@
 }
 
 #inner-landing-container {
-    padding-top: 100px;
+    padding: 20px 0;
 }
 
 #body-text-grid {
@@ -64,7 +65,7 @@
 }
 
 #paragraph {
-    font-size: 18px;
+    font-size: 24px;
 }
 
 #developers-footer {
@@ -102,11 +103,12 @@
 }
 
 #demo-container {
-    background-color: #F7F7F7;
+    /* background-color: #F7F7F7; */
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 220px;
+    /* margin-top: 220px; */
+    padding: 10%;
 }
 
 #demo-header {
@@ -131,11 +133,12 @@
 }
 
 #translate-demo-container {
-    background-color: #F7F7F7;
+    /* background-color: #F7F7F7; */
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 40px;
+    /* margin-top: 40px; */
+    padding: 10%;
 }
 
 #translate-demo-header {
@@ -152,6 +155,7 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
 
 /* Mobile styling
 

@@ -1,9 +1,10 @@
 #contact-container{
-    background-color: #F7F7F7;
+    
     border-radius: 10px;
     width: 60%;
     margin: 0 auto; /*This will automatically center anything*/
-    margin-top: 120px;
+   
+    padding:10%;
 }
 
 #contact-header {
@@ -13,6 +14,7 @@
 
 #contact-par{
     text-align: center;
+    font-size: 24px;
 }
 
 #contact-form-directions {

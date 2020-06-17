@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Button } from "semantic-ui-react";
+import { Form, Button, TextArea } from "semantic-ui-react";
 import { Field, reduxForm } from "redux-form";
 import { email, required } from "redux-form-validators";
 import content from "../../content.js";
@@ -161,6 +161,7 @@ class ContactForm extends Component {
         error={meta.touched && meta.error}
         fluid
         icon="write"
+        control={TextArea}
         iconPosition="left"
         autoComplete="off"
         placeholder={this.renderContactFeedback(this.props.user?.language)}
@@ -206,7 +207,6 @@ class ContactForm extends Component {
           >
             {this.renderSendBtn(this.props.user?.language)}
           </Button>
-          <p>{this.props.success}</p>
         </Form>
       </>
     );
