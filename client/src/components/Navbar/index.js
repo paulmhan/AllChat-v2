@@ -11,6 +11,7 @@ import "./style.css";
 
 class Navbar extends Component {
 
+
   renderRooms(language) {
     switch (language) {
       case "es":
