@@ -6,7 +6,7 @@
 #signup {
     color: white;
     position: relative;
-    right: 30px;
+    right: 60px;
     font-size: 18px;
 }
 
@@ -16,7 +16,7 @@
     border: solid white 1px;
     transition: 0.5s;
     position: relative;
-    right: 20px;
+    right: 40px;
     font-size: 18px;
 }
 
@@ -29,13 +29,13 @@
 #signout {
     color: white;
     position: relative;
-    right: 20px;
+    right: 40px;
 }
 
 #chatrooms {
     color: white;
     position: relative;
-    right: 20px;
+    right: 40px;
     font-size: 18px;
 }
 
@@ -43,5 +43,5 @@
     color: white;
     font-size: 18px;
     position: relative;
-    right: 20px;
+    right: 40px;
 }
