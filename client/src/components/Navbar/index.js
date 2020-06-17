@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AllChatTitle from "../AllChatTitle";
 import { Link, withRouter } from 'react-router-dom';
-import { Menu, Icon, Dropdown } from 'semantic-ui-react';
+import { Menu, Icon, Dropdown, Flag } from 'semantic-ui-react';
 import content from "../../content.js";
 import { signOut } from '../../actions/auth';
 import { connect } from 'react-redux';
@@ -10,6 +10,7 @@ import "./style.css";
 
 
 class Navbar extends Component {
+
 
   renderRooms(language) {
     switch (language) {
@@ -125,7 +126,7 @@ class Navbar extends Component {
               <Dropdown.Item as={Link} to='/' onClick={this.props.signOut}>
                 <Icon name="sign-out" />
                 {this.renderSignOut(this.props.user?.language)}
-            </Dropdown.Item>
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           : <Menu.Item as={Link} to='/signin' id="signin"><Icon name="sign-in" />Sign In</Menu.Item>}

@@ -168,13 +168,18 @@ class ContactForm extends Component {
     )
   }
 
-  
+  onSubmit = () => {
+    const { reset } = this.props;
+    this.props.onSubmit();
+    reset("contact");
+
+  }
 
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
       <>
-        <Form id="contact-form" onSubmit={handleSubmit(this.props.onSubmit)} method="POST">
+        <Form id="contact-form" onSubmit={handleSubmit(this.onSubmit)} method="POST">
           <Field
             name='email'
             component={this.renderEmail}
