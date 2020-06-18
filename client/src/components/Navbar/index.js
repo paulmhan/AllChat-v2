@@ -141,8 +141,8 @@ class Navbar extends Component {
               <Image id="allchat-logo" as={Link} to="/" name="home" fluid src={AllChatLogo} />
             </div>
           </Menu.Item>
-          <Dropdown id="user-dropdown-small" item>
-            <Dropdown.Menu>
+          <Dropdown id="user-dropdown-small" icon="bars" item>
+            <Dropdown.Menu id="dropdown-menu">
               {!this.props.isLoggedIn && <Dropdown.Item as={Link} to='/signup' id="signup-small"><Icon name="signup" />Sign Up</Dropdown.Item>}
               {this.props.isLoggedIn && this.props.history.location.pathname !== "/rooms" && <Dropdown.Item as={Link} to="/rooms" content={this.renderRooms(this.props.user?.language)} id="chatrooms-small" />}
               {this.props.isLoggedIn ?

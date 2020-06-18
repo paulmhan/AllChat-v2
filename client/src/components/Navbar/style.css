@@ -61,8 +61,6 @@
 
 #signup-small {
     color: white;
-    position: relative;
-    right: 60px;
     font-size: 18px;
 }
 
@@ -71,8 +69,6 @@
     color: white;
     border: solid white 1px;
     transition: 0.5s;
-    position: relative;
-    right: 40px;
     font-size: 18px;
 }
 
@@ -84,8 +80,6 @@
 
 #chatrooms-small {
     color: white;
-    position: relative;
-    right: 40px;
     font-size: 18px;
 }
 
@@ -93,5 +87,5 @@
     color: white;
     font-size: 18px;
     position: relative;
-    right: 40px;
+    right: 60px;
 }
