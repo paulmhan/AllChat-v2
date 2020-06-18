@@ -3,9 +3,9 @@
     color: white;
     border: solid #F22225 1px;
     transition: 0.5s;
-    display: block;
+    /* display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
 }
 
 #DeleteRoomBtn-Outer:hover {

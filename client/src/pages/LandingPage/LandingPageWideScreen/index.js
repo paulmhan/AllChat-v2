@@ -340,7 +340,7 @@ class LandingPageWideScreen extends Component {
                                 </Responsive>
                             </Responsive>
                             <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
-                                <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={6}>
+                                <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={7}>
                                     {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started-widescreen">
                                         {this.renderStart(this.props.user?.language)}
                                     </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started-widescreen">Get Started</Button>}
