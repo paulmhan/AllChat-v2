@@ -67,12 +67,12 @@ class SignUp extends Component {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
     return (
       <Grid id="signup-container">
-        <Grid.Column width={8}>
-          <Image fluid id="signup-page-image" alt="people-chatting-text" src={PeopleChatting} />
+        <Grid.Column  id="signup-image-div" tablet={16} computer={8}>
+          <Image verticalAllign="middle" centered fluid id="signup-page-image" alt="people-chatting-text" src={PeopleChatting} />
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column tablet={16} computer={8}>
           <Form id="signup-form-container" size='large' onSubmit={handleSubmit(this.onSubmit)}>
-            <Segment id="signup-form" stacked>
+            <Segment fluid id="signup-form" stacked>
               <Header id="signup-header" as="h1">Sign Up and Start Chatting!</Header>
               <Header id="signup-form-directions" as="h4">Please fill out the following information:</Header>
               <Field

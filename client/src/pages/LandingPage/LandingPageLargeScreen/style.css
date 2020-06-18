@@ -1,0 +1,121 @@
+#welcome-largescreen {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+}
+
+#landing-container-largescreen {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#get-started-largescreen {
+    /* width: 200px; */
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+    margin: auto;
+    display: block;
+}
+
+#get-started-largescreen:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+#landing-page-image-largescreen {
+    margin: 0 auto;
+    /* padding: 10%; */
+}
+
+#body-text-grid-largescreen {
+    background-color: transparent;
+}
+
+#text1-largescreen {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    font-size: 24px;
+}
+
+#text2-largescreen {
+    text-align: center;
+}
+
+#header-largescreen {
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+#together-largescreen {
+    color:black;
+    font-size: 36px;
+    text-align: center;
+}
+
+#paragraph-largescreen {
+    font-size: 18px;
+}
+
+#developers-footer-largescreen {
+    margin-top: 50px;
+    background-color: #32CD33;
+}
+
+#demo-container-largescreen {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#demo-header-largescreen {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 10px;
+}
+
+#demo-subheader1-largescreen {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#demo-subheader2-largescreen {
+    font-size: 24px;
+    text-align: center;
+}
+
+#translate-demo-container-largescreen {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#translate-demo-header-largescreen {
+    font-size: 40px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: 1%;
+}
+
+#translate-demo-subheader-largescreen {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
