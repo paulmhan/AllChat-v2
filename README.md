@@ -47,9 +47,9 @@
     // Create JWT Strategy for handling JWT
     // This strategy is for authenticating users on each request
     const jwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
-    // See if the user ID in the payload exists in our database
-    //  If it does, call 'done' with that user
-    //  otherwise, call done without a user object
+        // See if the user ID in the payload exists in our database
+        //  If it does, call 'done' with that user
+        //  otherwise, call done without a user object
         try {
         const user = await User.findById(payload.sub).select('-password');
         if (!user) {
