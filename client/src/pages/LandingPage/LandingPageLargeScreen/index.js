@@ -358,7 +358,7 @@ class LandingPageLargeScreen extends Component {
                 </Responsive>
 
                 <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid} id="demo-container-largescreen">
-                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid} container>
                             <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Row} centered>
                                 <Header as="h1" id="demo-header-largescreen">{this.renderDemo(this.props.user?.language)}</Header>
@@ -375,7 +375,8 @@ class LandingPageLargeScreen extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={2}></Responsive>
+                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={12}>
                         <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid} container>
                             <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Row} centered>
                                 <Image fluid id="chat-gif-largescreen" alt="chat-gif" src={AllChatDemo1} />
@@ -385,14 +386,7 @@ class LandingPageLargeScreen extends Component {
                 </Responsive>
 
                 <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid} id="translate-demo-container-largescreen">
-                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={8}>
-                        <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid} container>
-                            <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Row} centered>
-                                <Image fluid id="translate-gif-largescreen" alt="translate-gif" src={AllChatDemo2} />
-                            </Responsive>
-                        </Responsive>
-                    </Responsive>
-                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid} container>
                             <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Row} centered>
                                 <Header as="h1" id="translate-demo-header-largescreen">{this.renderTranslateHeader(this.props.user?.language)}</Header>
@@ -401,6 +395,14 @@ class LandingPageLargeScreen extends Component {
                                 <Header id="translate-demo-subheader-largescreen" as="h4">
                                 {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                    <Responsive as={Grid.Column} width={2} minWidth={1572} maxWidth={1919}></Responsive>
+                    <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Column} width={12}>
+                        <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid} container>
+                            <Responsive {...Responsive.onlyLargeScreen} minWidth={1572} maxWidth={1919} as={Grid.Row} centered>
+                                <Image fluid id="translate-gif-largescreen" alt="translate-gif" src={AllChatDemo2} />
                             </Responsive>
                         </Responsive>
                     </Responsive>

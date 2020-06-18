@@ -358,7 +358,7 @@ class LandingPageWideScreen extends Component {
                 </Responsive>
 
                 <Responsive {...Responsive.onlyWidescreen} as={Grid} id="demo-container-widescreen">
-                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
                             <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Header as="h1" id="demo-header-widescreen">{this.renderDemo(this.props.user?.language)}</Header>
@@ -375,7 +375,8 @@ class LandingPageWideScreen extends Component {
                             </Responsive>
                         </Responsive>
                     </Responsive>
-                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={2}></Responsive>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={12}>
                         <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
                             <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Image fluid id="chat-gif-widescreen" alt="chat-gif" src={AllChatDemo1} />
@@ -385,14 +386,7 @@ class LandingPageWideScreen extends Component {
                 </Responsive>
 
                 <Responsive {...Responsive.onlyWidescreen} as={Grid} id="translate-demo-container-widescreen">
-                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
-                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
-                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
-                                <Image fluid id="translate-gif-widescreen" alt="translate-gif" src={AllChatDemo2} />
-                            </Responsive>
-                        </Responsive>
-                    </Responsive>
-                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={8}>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={16}>
                         <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
                             <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
                                 <Header as="h1" id="translate-demo-header-widescreen">{this.renderTranslateHeader(this.props.user?.language)}</Header>
@@ -401,6 +395,14 @@ class LandingPageWideScreen extends Component {
                                 <Header id="translate-demo-subheader-widescreen" as="h4">
                                 {this.renderTranslatePar(this.props.user?.language)}
                                 </Header>
+                            </Responsive>
+                        </Responsive>
+                    </Responsive>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={2}></Responsive>
+                    <Responsive {...Responsive.onlyWidescreen} as={Grid.Column} width={12}>
+                        <Responsive {...Responsive.onlyWidescreen} as={Grid} container>
+                            <Responsive {...Responsive.onlyWidescreen} as={Grid.Row} centered>
+                                <Image fluid id="translate-gif-widescreen" alt="translate-gif" src={AllChatDemo2} />
                             </Responsive>
                         </Responsive>
                     </Responsive>

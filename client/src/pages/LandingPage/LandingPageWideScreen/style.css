@@ -101,6 +101,14 @@
     margin-bottom: 10px;
 }
 
+/* #chat-gif-widescreen {
+    height: 400px;
+}
+
+#translate-gif-widescreen {
+    height: 350px;
+} */
+
 #translate-demo-container-widescreen {
     background-color: white;
     border-radius: 10px;
@@ -115,7 +123,7 @@
     color:black;
     text-align: center;
     margin-top: 7%;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 #translate-demo-subheader-widescreen {
