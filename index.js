@@ -6,6 +6,7 @@ const roomController = require("./controllers/roomController");
 const userController = require("./controllers/userController");
 const messageController = require("./controllers/messageController");
 const jwt = require("jwt-simple");
+const path = require("path");
 
 
 const PORT = process.env.PORT || 3001;
@@ -14,16 +15,20 @@ const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
+// Setup middlewares
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+require('./services/passport');
+app.use(routes);
 
 //for production only
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
+    app.get("*", (req,res) => {
+        return res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    })
 }
-// Setup middlewares
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(routes);
-require('./services/passport');
+
 
 // Connect database
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
