@@ -94,12 +94,12 @@ class RoomListItems extends Component {
         <List.Item key={index}>
           <Segment id="room-segment">
             <Grid>
-              <Grid.Column width={12}>
+              <Grid.Column tablet={9} computer={12}>
                 <List.Content>
                   <p id="room-text">{room.text}</p>
                 </List.Content>
               </Grid.Column>
-              <Grid.Column width={3}>
+              <Grid.Column tablet={5} computer={3}>
                 <List.Content>
                   <Link to={`/chat?room=${room._id}`}>
                     <Button
@@ -111,7 +111,7 @@ class RoomListItems extends Component {
                   </Link>
                 </List.Content>
               </Grid.Column>
-              <Grid.Column width={1}>
+              <Grid.Column tablet={2} computer={1}>
                 <List.Content>
                   {room.creator === this.props.user?._id && <DeleteRoomModal deleteRoom={this.props.deleteRoom} id={room._id} text={room.text} user={this.props.user}/>}
                 </List.Content>

@@ -1,0 +1,132 @@
+#welcome-widescreen {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+}
+
+#landing-container-widescreen {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#get-started-widescreen {
+    /* width: 200px; */
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+    margin: auto;
+    display: block;
+}
+
+#get-started-widescreen:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+#landing-page-image-widescreen {
+    margin: 0 auto;
+}
+
+/* #inner-landing-container-widescreen {
+    
+} */
+
+#body-text-grid-widescreen {
+    background-color: transparent;
+}
+
+#text1-widescreen {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    font-size: 24px;
+}
+
+#text2-widescreen {
+    text-align: center;
+}
+
+#header-widescreen {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+#together-widescreen {
+    color:black;
+    font-size: 36px;
+    text-align: center;
+}
+
+#paragraph-widescreen {
+    font-size: 24px;
+}
+
+#developers-footer-widescreen {
+    margin-top: 50px;
+    background-color: #32CD33;
+}
+
+#demo-container-widescreen {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#demo-header-widescreen {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+#demo-subheader1-widescreen {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#demo-subheader2-widescreen {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* #chat-gif-widescreen {
+    height: 400px;
+}
+
+#translate-gif-widescreen {
+    height: 350px;
+} */
+
+#translate-demo-container-widescreen {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#translate-demo-header-widescreen {
+    font-size: 40px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 1%;
+}
+
+#translate-demo-subheader-widescreen {
+    font-size: 24px;
+    text-align: center;
+}

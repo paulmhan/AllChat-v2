@@ -18,7 +18,8 @@
 #chatroom-container {
     margin-right: 1px;
     margin-left: 1px;
-    margin-top: 40px;
+    margin-top: 1%;
+    padding: 8% 1% 2% 1%;
 }
 
 .joined {

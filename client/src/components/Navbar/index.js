@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import AllChatTitle from "../AllChatTitle";
 import { Link, withRouter } from 'react-router-dom';
-import { Menu, Icon, Dropdown, Flag } from 'semantic-ui-react';
+import { Responsive, Menu, Icon, Dropdown, Image } from 'semantic-ui-react';
+import AllChatLogo from "../../assets/images/AllChat-Logo.png";
 import content from "../../content.js";
 import { signOut } from '../../actions/auth';
 import { connect } from 'react-redux';
@@ -114,31 +114,51 @@ class Navbar extends Component {
 
   render() {
     return (
-      <Menu fixed="top" secondary widths={12} id="navbar">
-        <Menu.Item position="left">
-          <AllChatTitle />
-        </Menu.Item>
-        {!this.props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup"><Icon name="signup" />Sign Up</Menu.Item>}
-        {this.props.isLoggedIn && this.props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content={this.renderRooms(this.props.user?.language)} id="chatrooms" />}
-        {this.props.isLoggedIn ?
-          <Dropdown id="user-dropdown" item text={`${this.props.user?.firstName} ${this.props.user?.lastName}`}>
-            <Dropdown.Menu>
-              <Dropdown.Item as={Link} to='/' onClick={this.props.signOut}>
-                <Icon name="sign-out" />
-                {this.renderSignOut(this.props.user?.language)}
-              </Dropdown.Item>
+      <>
+        <Responsive {...Responsive.onlyComputer} minWidth={1051} as={Menu} fixed="top" secondary widths={12} id="navbar">
+          <Menu.Item position="left">
+            <div id="allchat-icon-container">
+              <Image id="allchat-logo" as={Link} to="/" name="home" fluid src={AllChatLogo} />
+            </div>
+          </Menu.Item>
+          {!this.props.isLoggedIn && <Menu.Item as={Link} to='/signup' id="signup-computer"><Icon name="signup" />Sign Up</Menu.Item>}
+          {this.props.isLoggedIn && this.props.history.location.pathname !== "/rooms" && <Menu.Item as={Link} to="/rooms" content={this.renderRooms(this.props.user?.language)} id="chatrooms-computer" />}
+          {this.props.isLoggedIn ?
+            <Dropdown id="user-dropdown-computer" item text={`${this.props.user?.firstName} ${this.props.user?.lastName}`}>
+              <Dropdown.Menu>
+                <Dropdown.Item as={Link} to='/' onClick={this.props.signOut}>
+                  <Icon name="sign-out" />
+                  {this.renderSignOut(this.props.user?.language)}
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            : <Menu.Item as={Link} to='/signin' id="signin-computer"><Icon name="sign-in" />Sign In</Menu.Item>}
+        </Responsive>
+
+        <Responsive maxWidth={1050} as={Menu} fixed="top" secondary widths={12} id="navbar">
+          <Menu.Item position="left">
+            <div id="allchat-icon-container">
+              <Image id="allchat-logo" as={Link} to="/" name="home" fluid src={AllChatLogo} />
+            </div>
+          </Menu.Item>
+          <Dropdown id="user-dropdown-small" icon="bars" item>
+            <Dropdown.Menu id="dropdown-menu">
+              {!this.props.isLoggedIn && <Dropdown.Item as={Link} to='/signup' id="signup-small"><Icon name="signup" />Sign Up</Dropdown.Item>}
+              {this.props.isLoggedIn && this.props.history.location.pathname !== "/rooms" && <Dropdown.Item as={Link} to="/rooms" content={this.renderRooms(this.props.user?.language)} id="chatrooms-small" />}
+              {this.props.isLoggedIn ?
+                <Dropdown.Item as={Link} to='/' onClick={this.props.signOut}>
+                  <Icon name="sign-out" />
+                  {this.renderSignOut(this.props.user?.language)}
+                </Dropdown.Item>
+                : <Dropdown.Item as={Link} to='/signin' id="signin-small"><Icon name="sign-in" />Sign In</Dropdown.Item>}
             </Dropdown.Menu>
           </Dropdown>
-          : <Menu.Item as={Link} to='/signin' id="signin"><Icon name="sign-in" />Sign In</Menu.Item>}
-      </Menu>
+        </Responsive>
+      </>
     );
 
   }
 }
-
-
-
-
 
 export default compose(
   withRouter,
