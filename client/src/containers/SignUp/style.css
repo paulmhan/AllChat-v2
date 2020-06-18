@@ -2,21 +2,20 @@
     border-radius: 10px;
     width: 90%;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 7%;
     background-color: #f7f7f7;
 }
 
 #signup-form-container {
-    padding-top: 30px;
-    
+    padding-top: 3%;
 }
 
-#signup-page-image {
+/* #signup-page-image {
     height: 80%;
     width: 80%;
     max-width: 500px;
     max-height: 400px;
-}
+} */
 
 #signup-form {
     background-color: white;
@@ -37,7 +36,7 @@
 
 #signup-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 6%;
 }
 
 #signup-form-directions {
