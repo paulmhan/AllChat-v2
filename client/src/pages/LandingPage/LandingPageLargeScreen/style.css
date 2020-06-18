@@ -82,20 +82,19 @@
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    /* margin-top: 20px;
+    margin-bottom: 10px; */
 }
 
 #demo-subheader1-largescreen {
     font-size: 24px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 5%;
 }
 
 #demo-subheader2-largescreen {
     font-size: 24px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 #translate-demo-container-largescreen {
@@ -111,8 +110,8 @@
     font-family: 'Rubik', sans-serif;
     color:black;
     text-align: center;
-    margin-top: 2%;
-    margin-bottom: 1%;
+    /* margin-top: 2%;
+    margin-bottom: 1%; */
 }
 
 #translate-demo-subheader-largescreen {
