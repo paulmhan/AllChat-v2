@@ -81,8 +81,8 @@ class RoomListItems extends Component {
         <Segment>
           <Grid>
             <Grid.Row centered>
-              <Grid.Column width={7}>
-                <Header id="no-roooms-header" content={this.renderNoRooms(this.props.user?.language)} />
+              <Grid.Column computer={9} largeScreen={7}>
+                <Header textAlign="center" id="no-roooms-header" content={this.renderNoRooms(this.props.user?.language)}></Header>
               </Grid.Column>
             </Grid.Row>
           </Grid>

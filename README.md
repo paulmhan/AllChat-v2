@@ -29,7 +29,7 @@
   <a href="#mvp">MVP</a> 
 </p>
 
-![](client/src/assets/images/LandingPage.png)
+![](client/src/assets/images/LandingPage-AllChatV2.png)
 
 
 
