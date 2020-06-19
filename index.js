@@ -3,7 +3,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require("./routes");
 const roomController = require("./controllers/roomController");
-const userController = require("./controllers/userController");
 const messageController = require("./controllers/messageController");
 const jwt = require("jwt-simple");
 const path = require("path");
@@ -48,7 +47,6 @@ io.on("connection", socket => {
     })
     socket.on("createRoom", data => {
         //data is the room name and userID
-        // socket.join(data.roomName)
         roomController.createRoom(data, newRoom => {
             io.emit("serverToClientRoom", newRoom);
         });

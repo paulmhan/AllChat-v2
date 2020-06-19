@@ -14,7 +14,6 @@
 }
 
 #get-started-widescreen {
-    /* width: 200px; */
     background-color: #32CD33;
     color: white;
     border: solid #32CD33 1px;
@@ -33,9 +32,6 @@
     margin: 0 auto;
 }
 
-/* #inner-landing-container-widescreen {
-    
-} */
 
 #body-text-grid-widescreen {
     background-color: transparent;
@@ -100,14 +96,6 @@
     text-align: center;
     margin-bottom: 10px;
 }
-
-/* #chat-gif-widescreen {
-    height: 400px;
-}
-
-#translate-gif-widescreen {
-    height: 350px;
-} */
 
 #translate-demo-container-widescreen {
     background-color: white;

@@ -6,16 +6,13 @@
 }
 
 #landing-container {
-    /* background-color: #F7F7F7; */
     border-radius: 10px;
     width: 100%;
     margin: 0 auto; /*This will automatically center anything*/
-    /* margin-top: 115px; */
     padding:10%
 }
 
 #get-started {
-    /* width: 200px; */
     background-color: #32CD33;
     color: white;
     border: solid #32CD33 1px;
@@ -103,11 +100,9 @@
 }
 
 #demo-container {
-    /* background-color: #F7F7F7; */
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    /* margin-top: 220px; */
     padding: 10%;
 }
 
@@ -133,11 +128,9 @@
 }
 
 #translate-demo-container {
-    /* background-color: #F7F7F7; */
     border-radius: 10px;
     width: 90%;
     margin: 0 auto; /*This will automatically center anything*/
-    /* margin-top: 40px; */
     padding: 10%;
 }
 
@@ -157,59 +150,5 @@
 }
 
 
-/* Mobile styling
 
-#welcome-mobile {
-    text-align: center;
-}
 
-#together-mobile {
-    text-align: center;
-}
-
-#paragraph-mobile {
-    text-align: center;
-}
-
-#get-started-mobile {
-    background-color: #32CD33;
-    color: white;
-    border: solid #32CD33 1px;
-    transition: 0.5s;
-}
-
-#get-started-mobile:hover {
-    background-color: transparent;
-    color:  #32CD33;
-    transition: 0.8s;
-}
-
-/* iPad styling */
-
-/* #welcome-tablet {
-    text-align: center;
-}
-
-#together-tablet {
-    text-align: center;
-}
-
-#paragraph-tablet {
-    text-align: center;
-    font-size: 18px;
-}
-
-#get-started-tablet {
-    background-color: #32CD33;
-    color: white;
-    border: solid #32CD33 1px;
-    transition: 0.5s;
-}
-
-#get-started-tablet:hover {
-    background-color: transparent;
-    color:  #32CD33;
-    transition: 0.8s;
-} */ 
-
-/* Computer styling */
