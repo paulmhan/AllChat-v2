@@ -10,8 +10,7 @@ import { connect } from "react-redux";
 import { compose } from "redux";
 import "./style.css";
 
-class LandingPageComputer extends Component {
-
+class LandingPageMobile extends Component {
     async componentDidMount() {
         this.props.user || await this.props.loadUser();
     }
@@ -407,7 +406,6 @@ class LandingPageComputer extends Component {
             </>
         )
     }
-
 }
 
 function mapStateToProps(state) {
@@ -418,4 +416,4 @@ function mapStateToProps(state) {
 
 export default compose(
     connect(mapStateToProps, { loadUser }),
-)(LandingPageComputer);
+)(LandingPageMobile);

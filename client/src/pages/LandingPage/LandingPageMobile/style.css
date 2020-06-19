@@ -1,0 +1,134 @@
+#welcome-computer {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+}
+
+#landing-container-computer {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#get-started-computer {
+    /* width: 200px; */
+    background-color: #32CD33;
+    color: white;
+    border: solid #32CD33 1px;
+    transition: 0.5s;
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#get-started-computer:hover {
+    background-color: transparent;
+    color:  #32CD33;
+    transition: 0.8s;
+}
+
+#landing-page-image-computer {
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+/* #inner-landing-container-computer {
+    
+} */
+
+#body-text-grid-computer {
+    background-color: transparent;
+}
+
+#text1-computer {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    font-size: 24px;
+}
+
+#text2-computer {
+    text-align: center;
+}
+
+#header-computer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#together-computer {
+    color:black;
+    font-size: 36px;
+    text-align: center;
+}
+
+#paragraph-computer {
+    font-size: 18px;
+}
+
+#developers-footer-computer {
+    margin-top: 50px;
+    background-color: #32CD33;
+}
+
+#demo-container-computer {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#demo-header-computer {
+    font-size: 54px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
+#demo-subheader1-computer {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#demo-subheader2-computer {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* #chat-gif-computer {
+    margin-top: 80px;
+} */
+
+#translate-demo-container-computer {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto; /*This will automatically center anything*/
+    padding: 10%;
+}
+
+#translate-demo-header-computer {
+    font-size: 40px;
+    font-family: 'Rubik', sans-serif;
+    color:black;
+    text-align: center;
+    margin-top: 7%;
+    margin-bottom: 2%;
+}
+
+#translate-demo-subheader-computer {
+    font-size: 24px;
+    text-align: center;
+}
+
+#translate-gif-computer {
+    margin-top: 20px;
+}
