@@ -143,7 +143,7 @@ class Chat extends Component {
                     <div className="typing"><p>{this.props.userTyping.typingText}</p></div>
                     <Form onSubmit={handleSubmit(this.handleMessageSubmit)}>
                         <Grid>
-                            <Grid.Column tablet={12} computer={13} largeScreen={14}>
+                            <Grid.Column tablet={12} computer={13} largeScreen={14} widescreen={14}>
                                 <Field
                                     name="message"
                                     component={this.renderMessageInput}
@@ -152,7 +152,7 @@ class Chat extends Component {
                                     fluid
                                 />
                             </Grid.Column>
-                            <Grid.Column tablet={4} computer={3} largeScreen={2}>
+                            <Grid.Column tablet={4} computer={3} largeScreen={2} widescreen={2}>
                                 <Button
                                     fluid
                                     id="SendBtn"
