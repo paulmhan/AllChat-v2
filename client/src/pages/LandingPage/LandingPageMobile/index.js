@@ -338,7 +338,7 @@ class LandingPageMobile extends Component {
                                 </Responsive>
                             </Responsive>
                             <Responsive {...Responsive.onlyMobile}  maxWidth={414} as={Grid.Row} centered>
-                                <Responsive {...Responsive.onlyMobile}  maxWidth={414} as={Grid.Column} width={5}>
+                                <Responsive {...Responsive.onlyMobile}  maxWidth={414} as={Grid.Column} width={16}>
                                     {this.props.isLoggedIn ? <Button fluid as={Link} to='/rooms' size="massive" id="get-started-computer">
                                         {this.renderStart(this.props.user?.language)}
                                     </Button> : <Button fluid as={Link} to='/signup' size="massive" id="get-started-computer">Get Started</Button>}
