@@ -1,13 +1,18 @@
 import React, { Component } from "react";
-import "./style.css";
+import { connect } from 'react-redux';
 import Footer from "../../components/Footer";
 import LandingPageComputer from "./LandingPageComputer/index.js";
 import LandingPageLargeScreen from "./LandingPageLargeScreen/index.js";
 import LandingPageWideScreen from "./LandingPageWideScreen/index.js";
 import LandingPageTablet from "./LandingPageTablet/index.js";
 import LandingPageMobile from "./LandingPageMobile/index.js";
+import { loadUser } from "../../actions/auth";
+import "./style.css";
 
 class LandingPage extends Component {
+    async componentDidMount() {
+        this.props.user || await this.props.loadUser();
+    }
 
     render() {
         return (
@@ -27,5 +32,12 @@ class LandingPage extends Component {
 
 }
 
-export default LandingPage;
+function mapStateToProps(state) {
+    return {
+        user: state.auth.currentUser,
+    }
+}
+
+
+export default connect(mapStateToProps, { loadUser })(LandingPage)
 
