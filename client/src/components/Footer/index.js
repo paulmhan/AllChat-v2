@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Header, List, Image, Icon } from "semantic-ui-react";
+import { Grid, Header, Image, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import content from "../../content.js";
 import SocketLogo from "../../assets/images/Socket-IO-Logo.svg"

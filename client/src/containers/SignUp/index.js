@@ -10,10 +10,8 @@ import "./style.css";
 class SignUp extends Component {
   onSubmit = async (formValues, dispatch) => {
     try {
-      console.log(formValues);
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
-      console.log(data.user, "signup");
       dispatch({ type: AUTH_USER, payload: data });
       this.props.history.push('/');
     } catch (e) {
@@ -59,9 +57,6 @@ class SignUp extends Component {
     );
   }
 
-  // fileChange = () => {
-  //   console.log("hello");
-  // }
 
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;

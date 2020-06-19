@@ -38,7 +38,6 @@ io.on("connection", socket => {
     socket.on("message", data => {
         //data is {formvalues, user, room}
         messageController.createMessage(data, activeRoom => {
-            // console.log(activeRoom, "asdasdasdasdasdasdafasfasfas");
             io.to(data.room._id).emit("serverToClientMessage", activeRoom);
         })
     });

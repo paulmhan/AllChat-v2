@@ -31,7 +31,6 @@ class Chat extends Component {
         this.props.unsubscribeMessage();
         const user = this.props.user;
         const room = this.props.room;
-        console.log("closed")
         this.props.leaveRoom({ room, user });
     }
 

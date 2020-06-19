@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import DeleteMessageModal from "../../containers/DeleteMessageModal";
 import { Grid, Message, Image } from "semantic-ui-react";
-import Paul from "../../assets/images/paul-profile.jpg";
-import Suneetha from "../../assets/images/suneetha-profile.jpg";
 import Placeholder from "../../assets/images/def-image.jpg";
 import content from "../../content.js";
 import moment from 'moment';

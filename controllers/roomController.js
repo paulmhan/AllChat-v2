@@ -19,7 +19,6 @@ module.exports = {
                 const deletedRoom = await Room.findByIdAndDelete(roomId);
                 const rooms = await Room.find().populate("messages");
                 if (!rooms) {
-                    console.log("No Rooms");
                     cb("Error");
                 }
                 cb(rooms);
@@ -33,7 +32,6 @@ module.exports = {
         try {
             const rooms = await Room.find().populate("messages");
             if (!rooms) {
-                console.log("No Rooms");
                 cb("Error");
             }
             cb(rooms);
