@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Image, Grid, Form, Segment, Button, Header, Flag } from 'semantic-ui-react';
+import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import PeopleChatting from "../../assets/images/people-chatting-text.png";
 import axios from 'axios';
@@ -110,12 +110,6 @@ class SignUp extends Component {
                   ]
                 }
               />
-
-              {/* <Button as="label" htmlFor="file" type="button">
-                   upload
-               </Button>
-               <input type="file" id="file" hidden onChange={this.fileChange} /> */}
-
 
               <div>
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>

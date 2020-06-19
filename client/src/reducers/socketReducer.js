@@ -19,8 +19,8 @@ export default function (state = INITIAL_STATE, action) {
             return {
                 ...state, activeRoom: {
                     ...state.activeRoom, messages: state.activeRoom.messages.filter(message => {
-                       if(message._id == newMessage._id) {
-                        message.text =  newMessage.text
+                       if(message._id === newMessage._id) {
+                        message.text = newMessage.text
                         message.originLanguage = newMessage.originLanguage
                        }
                        return message;
