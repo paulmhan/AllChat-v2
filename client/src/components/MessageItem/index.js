@@ -101,7 +101,7 @@ class MessageItem extends Component {
                                 <p id="timeStamp">
                                     <span id="owner-date">{moment(this.props.message.dateCreated).format('l, h:mm a')}</span>
                                 </p>
-                                <Message.Header compac="true"> <p id="owner-text"><small>{this.props.message.text}</small></p></Message.Header>
+                                <Message.Header compact="true"> <p id="owner-text"><small>{this.props.message.text}</small></p></Message.Header>
                                 <span id="owner-translate" size='mini' onClick={() => this.runTranslate(this.props.message, this.props.user.language)}>
                                     <span className="cursor">{this.state.translated ? this.renderSeeOriginal(this.props.user?.language) : this.renderSeeTranslation(this.props.user?.language)}</span>
                                 </span>

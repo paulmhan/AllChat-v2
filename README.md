@@ -101,7 +101,6 @@
             newMessage.text = translation;
             //set the origin language that was auto detected 
             newMessage.originLanguage = apiRes.data.data.translations[0].detectedSourceLanguage;
-            console.log(newMessage)  
             return res.json({newMessage})
         } catch (error) {
             throw error;
