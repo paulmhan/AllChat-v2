@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Responsive, Grid, Button, Image, Header, GridColumn } from "semantic-ui-react";
+import { Responsive, Grid, Button, Image, Header } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import content from "../../../content.js";
-import Footer from "../../../components/Footer";
 import PeopleChatting from "../../../assets/images/people-chatting-text.png";
 import AllChatDemo1 from "../../../assets/gifs/AllChat-demo4.gif";
 import AllChatDemo2 from "../../../assets/gifs/AllChat-demo5.gif";

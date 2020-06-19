@@ -10,12 +10,6 @@
     padding-top: 3%;
 }
 
-/* #signup-page-image {
-    height: 80%;
-    width: 80%;
-    max-width: 500px;
-    max-height: 400px;
-} */
 
 #signup-form {
     background-color: white;
@@ -50,48 +44,3 @@
     }
   }
 
-/* Mobile styling
-
-#signup-container-mobile {
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    background-color: #f7f7f7
-}
-
-#signup-btn-mobile {
-    background-color:  #32CD33;
-    color: white;
-    border: solid #32CD33 1px;
-    transition: 0.5s;
-}
-
-#signup-btn-mobile:hover {
-    background-color: transparent;
-    color:  #32CD33 ;
-    transition: 0.8s;
-}
-
-/* Tablet styling */
-
-/* #signup-container-tablet {
-    border-radius: 10px;
-    width: 90%;
-    margin: 0 auto;
-    background-color: #f7f7f7
-}
-
-#signup-btn-tablet {
-    background-color:  #32CD33;
-    color: white;
-    border: solid #32CD33 1px;
-    transition: 0.5s;
-}
-
-#signup-btn-tablet:hover {
-    background-color: transparent;
-    color:  #32CD33 ;
-    transition: 0.8s;
-} */ 
-
-/* Computer styling */

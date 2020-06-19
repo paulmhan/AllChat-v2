@@ -14,7 +14,6 @@
 }
 
 #get-started-largescreen {
-    /* width: 200px; */
     background-color: #32CD33;
     color: white;
     border: solid #32CD33 1px;
@@ -31,7 +30,6 @@
 
 #landing-page-image-largescreen {
     margin: 0 auto;
-    /* padding: 10%; */
 }
 
 #body-text-grid-largescreen {

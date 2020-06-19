@@ -14,7 +14,6 @@
 }
 
 #get-started-computer {
-    /* width: 200px; */
     background-color: #32CD33;
     color: white;
     border: solid #32CD33 1px;
@@ -34,10 +33,6 @@
     margin: 0 auto;
     margin-top: 35px;
 }
-
-/* #inner-landing-container-computer {
-    
-} */
 
 #body-text-grid-computer {
     background-color: transparent;
@@ -103,9 +98,6 @@
     margin-bottom: 10px;
 }
 
-/* #chat-gif-computer {
-    margin-top: 80px;
-} */
 
 #translate-demo-container-computer {
     background-color: white;

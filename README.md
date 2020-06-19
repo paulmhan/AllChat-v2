@@ -10,7 +10,7 @@
 
 
 <div align="center">
-<h4>As communication continues to increase on a global scale, so too does the demand for quick, reliable translation. With AllChat, you can talk to anyone across the world, even if you don't speak their language. With AllChat, there are no language barriers! You can begin chatting here: <a href="https://all-chat-v2.herokuapp.com/" target="_blank">AllChat</a></h4>
+<h4>As communication continues to increase on a global scale, so too does the demand for quick, reliable translation. With AllChat, you can talk to anyone across the world, even if you don't speak their language; there are no language barriers! You can begin chatting here: <a href="https://all-chat-v2.herokuapp.com/" target="_blank">AllChat</a></h4>
 </div>
 
 <p align="center">

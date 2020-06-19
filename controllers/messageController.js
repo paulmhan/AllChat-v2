@@ -28,8 +28,7 @@ module.exports = {
             const newMessage = message;
             newMessage.text = translation;
             newMessage.originLanguage = apiRes.data.data.translations[0].detectedSourceLanguage;
-            console.log(newMessage)  
-            return res.json({newMessage})
+            return res.json({newMessage});
         } catch (error) {
             throw error;
         }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Image, Grid, Form, Segment, Button, Header, Flag } from 'semantic-ui-react';
+import { Image, Grid, Form, Segment, Button, Header } from 'semantic-ui-react';
 import { email, length, required } from 'redux-form-validators';
 import PeopleChatting from "../../assets/images/people-chatting-text.png";
 import axios from 'axios';
@@ -10,10 +10,8 @@ import "./style.css";
 class SignUp extends Component {
   onSubmit = async (formValues, dispatch) => {
     try {
-      console.log(formValues);
       const { data } = await axios.post('/api/auth/signup', formValues);
       localStorage.setItem('token', data.token);
-      console.log(data.user, "signup");
       dispatch({ type: AUTH_USER, payload: data });
       this.props.history.push('/');
     } catch (e) {
@@ -59,9 +57,6 @@ class SignUp extends Component {
     );
   }
 
-  // fileChange = () => {
-  //   console.log("hello");
-  // }
 
   render() {
     const { handleSubmit, invalid, submitting, submitFailed } = this.props;
@@ -115,12 +110,6 @@ class SignUp extends Component {
                   ]
                 }
               />
-
-              {/* <Button as="label" htmlFor="file" type="button">
-                   upload
-               </Button>
-               <input type="file" id="file" hidden onChange={this.fileChange} /> */}
-
 
               <div>
                 <label style={{ fontStyle: "italic" }}>Select Your Language</label>

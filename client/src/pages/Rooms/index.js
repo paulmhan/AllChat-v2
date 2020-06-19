@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Responsive, Grid, Pagination, Segment } from "semantic-ui-react";
+import { Grid, Pagination, Segment } from "semantic-ui-react";
 import CreateRoomModal from '../../containers/CreateRoomModal';
 import requireAuth from "../../hoc/requireAuth";
 import { connect } from 'react-redux';
