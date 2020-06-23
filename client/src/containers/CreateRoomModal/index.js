@@ -124,6 +124,7 @@ class CreateRoomModal extends Component {
     };
 
     createRoom = () => {
+        console.log("hello");
         const data = {
             roomName: this.state.roomName,
             userId: this.props.user?._id

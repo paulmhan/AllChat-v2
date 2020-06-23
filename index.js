@@ -28,7 +28,6 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-
 // Connect database
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/chat_db', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
 
@@ -51,7 +50,6 @@ io.on("connection", socket => {
             io.emit("serverToClientRoom", newRoom);
         });
     })
-
     socket.on("getAllRooms", () => {
         roomController.getAllRooms(rooms => {
             if (rooms !== "Error") {
@@ -59,7 +57,6 @@ io.on("connection", socket => {
             }
         });
     })
-
     socket.on("deleteRoom", data => {
         //data is { token:"asdasd", payload: "id of room" }
         let decoded = jwt.decode(data.token, process.env.SECRET);
@@ -71,7 +68,6 @@ io.on("connection", socket => {
             }
         });
     })
-
     socket.on("getActiveRoom", data => {
         socket.join(data.roomId);
         roomController.getActiveRoom(data, activeRoom => {

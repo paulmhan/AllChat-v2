@@ -35,7 +35,6 @@ class Rooms extends Component {
             start: data.activePage === 1 ? 0 : data.activePage * 10 - 10,
             end: data.activePage * 10
         });
-        
     }
 
     render() {
