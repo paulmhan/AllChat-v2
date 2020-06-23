@@ -10,8 +10,7 @@ import App from './containers/App';
 import reducers from './reducers';
 
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true }) || compose;
-const composeEnhancers = compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // 1st param is our reducers
 // 2nd param is any preloaded state we want
 // 3rd param is any middlwares we want applied to redux
